@@ -37,6 +37,10 @@ UNLESS ~CD_STATE_NOTVALID~
 // The stuff copied gets lower cased by the tool, even if in caps here...
 PRINT ~The language is %LANGUAGE%~
 
+INCLUDE "%MOD_FOLDER%/laf/anari.tpa"
+LAF anari END
+// LAF run STR_VAR file=anari location=laf END
+
 COPY ~ahungry_heart/audio/%LANGUAGE%~ ~override~ // All audio files
 COPY ~ahungry_heart/portraits/anaril.bmp~ ~override~ // All portrait files
 COPY ~ahungry_heart/portraits/anarim.bmp~ ~override~ // All portrait files
