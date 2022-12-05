@@ -2,7 +2,7 @@ BEGIN uxolr
 
 IF ~NumTimesTalkedTo(0)~ THEN
   BEGIN FirstMeeting
-    SAY ~You there, hero.  I have an important message for you.  I'm Olrun and I seek your assistance~ [uxolr14]
+    SAY ~Hail friend, it is I, Olrun.  Have you a moment?~ [uxolr14]
 
     IF ~GlobalLT("Chapter","GLOBAL",3)~ THEN
       REPLY ~Hey Olrun, you seen Irenicus around here?~ GOTO InquireIrenicus

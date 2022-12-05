@@ -15,11 +15,11 @@ SAY NAME2 ~Olrun~
 
 // espeak-ng -w uxolr06.wav -s130 -v mb-us1 'I admire your courage and dedication'
 SAY SELECT_COMMON1 ~Yes?~ [uxolr01]
-SAY SELECT_COMMON2 ~Let's work together, and I'm sure we can make it through this challenge!~ [uxolr02]
-SAY SELECT_COMMON3 ~No matter what obstacles stand in our way, we will prevail!~ [uxolr03]
-SAY SELECT_COMMON4 ~We must stay alert and remain vigilant against those who would seek to use the Heart for ill.~ [uxolr04]
-SAY SELECT_COMMON5 ~Let us bravely march forward and protect Baldur's Gate!~ [uxolr05]
-SAY SELECT_COMMON6 ~We mustn't give up now—we're so close to achieving our goal!~ [uxolr06]
+SAY SELECT_COMMON2 ~Let us show our enemies the power of our strength!~ [uxolr02]
+SAY SELECT_COMMON3 ~My axe is always read for a fight!~ [uxolr03]
+SAY SELECT_COMMON4 ~We must prove our courage in the face of danger!~ [uxolr04]
+SAY SELECT_COMMON5 ~If our enemies stand in our way, we will crush them!~ [uxolr05]
+SAY SELECT_COMMON6 ~Let us use our courage and wisdom to triumph over adversity!~ [uxolr06]
 
 SAY SELECT_ACTION1 ~On it.~ [uxolr07]
 SAY SELECT_ACTION2 ~As you wish.~ [uxolr08]
@@ -40,6 +40,11 @@ WRITE_ASCII 0x260 ~~ 	    #8  // general script
 WRITE_ASCII 0x268 ~~	    #8	// default script
 WRITE_ASCII 0X34  ~uxolrs~ #8  // small portrait
 WRITE_ASCII 0x3c  ~uxolrm~ #8  // medium portrait
+
+WRITE_LONG 0x28  0x6102 // FIGHTER_MALE_DWARF (https://gibberlings3.github.io/iesdp/files/ids/bgee/animate.htm)
+WRITE_BYTE 0x272 0x4 // Dwarf (https://gibberlings3.github.io/iesdp/files/ids/bg2/race.htm)
+WRITE_BYTE 0x273 0x2 // Fighter (https://gibberlings3.github.io/iesdp/files/ids/bg2/class.htm)
+WRITE_BYTE 0x275 0x1 // Male (https://gibberlings3.github.io/iesdp/files/ids/bg2/gender.htm)
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/uxbana.d~ // All Branwen's banters with other party members will go here. We need the "EVALUATE_BUFFER" because the chapter variable now uses the OUTER_SPRINT variable defined above for the EET continuous journal system.
 	~%MOD_FOLDER%/dialogues/uxolr.d~  // Branwen's greeting dialogue will go here.
@@ -84,6 +89,7 @@ WRITE_ASCII 0x268 ~~	    #8	// default script
 WRITE_ASCII 0X34  ~olruns~ #8  // small portrait
 WRITE_ASCII 0x3c  ~olrunm~ #8  // medium portrait
 
+WRITE_LONG 0x28  0x6102 // FIGHTER_MALE_DWARF (https://gibberlings3.github.io/iesdp/files/ids/bgee/animate.htm)
 WRITE_BYTE 0x272 0x4 // Dwarf (https://gibberlings3.github.io/iesdp/files/ids/bg2/race.htm)
 WRITE_BYTE 0x273 0x2 // Fighter (https://gibberlings3.github.io/iesdp/files/ids/bg2/class.htm)
 WRITE_BYTE 0x275 0x1 // Male (https://gibberlings3.github.io/iesdp/files/ids/bg2/gender.htm)
