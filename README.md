@@ -12,7 +12,7 @@ https://www.gibberlings3.net/forums/topic/36224-the-first-ai-designed-mod-the-he
 
 Source code:
 
-GPLv3 or later.
+GPLv3 or later (like weidu itself), see LICENSE
 
 
 Art/audio/dialogue/story etc. (creative assets):
@@ -22,5 +22,5 @@ CC-BY-NC-SA-4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
 This means you're free to:
 - Share/adapt/remix the material
 - but NOT for commercial purposes
-- and you must share-alike your derivatives under this came
+- and you must share-alike your derivatives under this same
   CC-BY-NC-SA-4.0 license
