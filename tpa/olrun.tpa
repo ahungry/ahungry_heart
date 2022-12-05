@@ -1,0 +1,161 @@
+DEFINE_ACTION_FUNCTION ~olrun~ BEGIN
+
+// When launching like this vs top level tp2, it seems to want
+// the exact output name for the COPY command.
+COPY ~%MOD_FOLDER%/portraits/olrunl.bmp~ ~override/uxolrl.bmp~
+COPY ~%MOD_FOLDER%/portraits/olrunm.bmp~ ~override/uxolrm.bmp~
+COPY ~%MOD_FOLDER%/portraits/olruns.bmp~ ~override/uxolrs.bmp~
+
+// The following is the copying of Olrun's .cre file, as well as assigning his sound-set.
+// See the file sndslot.ids for a listing of sounds you can add.
+COPY ~%MOD_FOLDER%/cre/uxolr.cre~ ~override/uxolr.cre~
+
+SAY NAME1 ~Olrun~
+SAY NAME2 ~Olrun~
+
+// espeak-ng -w uxolr06.wav -s130 -v mb-us1 'I admire your courage and dedication'
+SAY SELECT_COMMON1 ~Yes?~ [uxolr01]
+SAY SELECT_COMMON2 ~Let's work together, and I'm sure we can make it through this challenge!~ [uxolr02]
+SAY SELECT_COMMON3 ~No matter what obstacles stand in our way, we will prevail!~ [uxolr03]
+SAY SELECT_COMMON4 ~We must stay alert and remain vigilant against those who would seek to use the Heart for ill.~ [uxolr04]
+SAY SELECT_COMMON5 ~Let us bravely march forward and protect Baldur's Gate!~ [uxolr05]
+SAY SELECT_COMMON6 ~We mustn't give up now—we're so close to achieving our goal!~ [uxolr06]
+
+SAY SELECT_ACTION1 ~On it.~ [uxolr07]
+SAY SELECT_ACTION2 ~As you wish.~ [uxolr08]
+SAY SELECT_ACTION3 ~Yea yea.~ [uxolr09]
+SAY SELECT_ACTION4 ~If I must.~ [uxolr10]
+SAY SELECT_ACTION5 ~Athar was never so bossy.~ [uxolr11]
+SAY SELECT_ACTION6 ~Oooooookay~ [uxolr12]
+// espeak-ng -w uxolr13.wav -s130 -v mb-us1 'Yep yep yep, going going going'
+SAY SELECT_ACTION7 ~Yep yep yep, going going going.~ [uxolr13]
+
+WRITE_LONG  0x10 0x0 // clear all flags
+WRITE_ASCII 0x248 ~uxolrs~ #8  // override script where you put all the commands for lovetalks and such.
+WRITE_ASCII 0x2cc ~uxolr~  #8  // dialogue file where we'll put Branwen's greeting dialogue.
+WRITE_ASCII 0x280 ~uxolr~  #32 // death variable - when we want to refer to Branwen in the game, we'll call her O#Bran. For example, InParty("O#Bran") means that Branwen is in party.
+WRITE_ASCII 0x250 ~~ 	    #8  // class script
+WRITE_ASCII 0x258 ~~ 	    #8  // race script
+WRITE_ASCII 0x260 ~~ 	    #8  // general script
+WRITE_ASCII 0x268 ~~	    #8	// default script
+WRITE_ASCII 0X34  ~uxolrs~ #8  // small portrait
+WRITE_ASCII 0x3c  ~uxolrm~ #8  // medium portrait
+
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/uxbana.d~ // All Branwen's banters with other party members will go here. We need the "EVALUATE_BUFFER" because the chapter variable now uses the OUTER_SPRINT variable defined above for the EET continuous journal system.
+	~%MOD_FOLDER%/dialogues/uxolr.d~  // Branwen's greeting dialogue will go here.
+	~%MOD_FOLDER%/dialogues/uxolrj.d~ // The rest of Branwen's dialogue: her commentary, interjections, talks with the player, lovetalks and everything else.
+	~%MOD_FOLDER%/dialogues/uxolrp.d~ // Branwen's leaving party dialogue will go here.
+
+	~%MOD_FOLDER%/scripts/uxolrs.baf~ // Branwen's script.
+	~%MOD_FOLDER%/scripts/uxolrd.baf~ // Branwen's dream script for events at rest. If you want your NPC to talk to you at rest, add scripting here.
+	~%MOD_FOLDER%/scripts/uxolrf.baf~ // Branwen's "fixing" script. Remember how various modders advised you to "select your NPC and press K"? Well, that's how they do it.
+
+// Now we are going to add Branwen content for the Throne of Bhaal. You need one more cre file, or you could use the same one twice.
+ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN // It means that the Throne of Bhaal is installed. If not, this part is not added to the game. This check also works for BG2:EE games.
+BEGIN // you WILL need an END below.
+
+COPY ~%MOD_FOLDER%/cre/uxolr25.cre~ ~override/uxolr25.cre~
+SAY NAME1 ~Olrun~
+SAY NAME2 ~Olrun~
+
+SAY SELECT_COMMON1 ~Yes?~ [uxolr01]
+SAY SELECT_COMMON2 ~Let's work together, and I'm sure we can make it through this challenge!~ [uxolr02]
+SAY SELECT_COMMON3 ~No matter what obstacles stand in our way, we will prevail!~ [uxolr03]
+SAY SELECT_COMMON4 ~We must stay alert and remain vigilant against those who would seek to use the Heart for ill.~ [uxolr04]
+SAY SELECT_COMMON5 ~Let us bravely march forward and protect Baldur's Gate!~ [uxolr05]
+SAY SELECT_COMMON6 ~We mustn't give up now—we're so close to achieving our goal!~ [uxolr06]
+
+SAY SELECT_ACTION1 ~On it.~ [uxolr07]
+SAY SELECT_ACTION2 ~As you wish.~ [uxolr08]
+SAY SELECT_ACTION3 ~Yea yea.~ [uxolr09]
+SAY SELECT_ACTION4 ~If I must.~ [uxolr10]
+SAY SELECT_ACTION5 ~Athar was never so bossy.~ [uxolr11]
+SAY SELECT_ACTION6 ~Oooooookay~ [uxolr12]
+SAY SELECT_ACTION7 ~Yep yep yep, going going going.~ [uxolr13]
+
+WRITE_LONG  0x10 0x0 // clear all flags
+WRITE_ASCII 0x248 ~uxolrs~ #8  // override script where you put all the commands for lovetalks and such.
+WRITE_ASCII 0x2cc ~uxolr~  #8  // dialogue file where we'll put Branwen's greeting dialogue.
+WRITE_ASCII 0x280 ~uxolr~  #32 // death variable - when we want to refer to Branwen in the game, we'll call her O#Bran. For example, InParty("O#Bran") means that Branwen is in party.
+WRITE_ASCII 0x250 ~~ 	    #8  // class script
+WRITE_ASCII 0x258 ~~ 	    #8  // race script
+WRITE_ASCII 0x260 ~~ 	    #8  // general script
+WRITE_ASCII 0x268 ~~	    #8	// default script
+WRITE_ASCII 0X34  ~olruns~ #8  // small portrait
+WRITE_ASCII 0x3c  ~olrunm~ #8  // medium portrait
+
+WRITE_BYTE 0x272 0x4 // Dwarf (https://gibberlings3.github.io/iesdp/files/ids/bg2/race.htm)
+WRITE_BYTE 0x273 0x2 // Fighter (https://gibberlings3.github.io/iesdp/files/ids/bg2/class.htm)
+WRITE_BYTE 0x275 0x1 // Male (https://gibberlings3.github.io/iesdp/files/ids/bg2/gender.htm)
+
+
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/uxbana25.d~  // All Branwen's ToB banters with other party members will go here. Again, we use 25, because it's a tradution for ToB. Again, "EVALUATE_BUFFER" because of the chapter numbers
+	~%MOD_FOLDER%/dialogues/uxolr25.d~  // Branwen's ToB greeting dialogue will go here.
+	~%MOD_FOLDER%/dialogues/uxolr25j.d~  // The rest of Branwen's ToB dialogue: her commentary, interjections, talks with the player, lovetalks and everything else.
+	~%MOD_FOLDER%/dialogues/uxolr25p.d~  // Branwen's ToB leaving party dialogue will go here.
+
+	~%MOD_FOLDER%/scripts/uxolr25s.baf~ // Branwen's script for ToB.
+	~%MOD_FOLDER%/scripts/uxolr25d.baf~ // Branwen's dream script for ToB.
+
+END // and here ends ToB content
+
+// https://www.gibberlings3.net/forums/topic/15833-dialog-files-and-how-they-are-referenced/
+// First block runs if uxolr isn't present, and we are NOT using a TOB entry
+// Second block runs if uxolr isn't preset, and we ARE using a TOB entry
+// Ensure these are all 8 or fewer for the resref I guess
+// P = Party join/leave, J = interjections and dialogue, D = Dream Script (rest)
+// 25 variations - not sure...
+APPEND ~pdialog.2da~
+~uxolr         uxolrp              uxolrj             uxolrd~
+UNLESS ~uxolr~
+UNLESS ~25POST~ // if we do not have tob tables,
+
+
+APPEND ~pdialog.2da~
+~uxolr         uxolrp              uxolrj             uxolrd              uxolr25p             uxolr25j             uxolr25d       uxolr25s~
+UNLESS ~uxolr~
+IF ~25POST~ // if we do have tob tables
+
+
+// interdia.2da is a bit simpler, but acts the same as pdialog.2da.
+// It adds the NPCs banter file, which is used for inter-party banter, and romance dialogues.
+APPEND ~interdia.2da~
+~uxolr uxbana~
+UNLESS ~uxolr~
+UNLESS ~25FILE~
+
+APPEND ~interdia.2da~
+~uxolr uxbana uxbana25~
+UNLESS ~uxolr~
+IF ~25FILE~
+
+
+// EET related code
+ACTION_IF GAME_IS ~eet~ BEGIN //only true if game is detected as Enhanced Edition Trilogy (mod for BG2:EE)
+  INCLUDE ~EET/other/EET_functions.tph~ //declaration of external EET functions used below. This is part of the EET package the player has in his install so don't worry about it
+  LAF ~EET_NPC_TRANSITION~ //function used to automatically implement EET continuity system. This deals with the transition to ToB and automatically creates all the needed script blocks and dialogue entries for e.g. the calling of the SoA Branwen the player left somewhere via the fate spirit, the disabling of the fate spirit calling if Branwen is in the party upon transition etc. The function will be executed upon installation of the mod. What follows is all entries we need for our Branwen:
+    INT_VAR
+      type = 3 //informs the function that this is BG2 NPC without BG1 content (because the mod doesn't add to BG1)
+      default_ToB = 1 //NPC available as summonable NPC when the game is started in ToB (= new ToB game)
+      clean_ToB = 1 //forces function to clean old BG1 Branwen code that exists in AR4000.BCS and FATESP.DLG (i.e. no entry for the original BG1 Branwen if this mod is installed)
+    STR_VAR
+      dv = "uxolr" //Branwen Death Variable (script name)
+      override_BG1 = "uxolrs" //Branwen SoA Override script
+      override_SoD = "uxolrs" //Branwen SoA Override script
+      override_SoA = "uxolrs" //Branwen SoA Override script
+      override_ToB = "uxolr25s" //Branwen ToB Override script
+      dialog_ToB = "uxolr25" //Branwen ToB dialogue file
+      cre_ToB = "uxolr25" //Branwen ToB CRE filename
+      traFile = EVAL "%MOD_FOLDER%/tra/%LANGUAGE%/fatesp.tra"
+      string = "@0" //from the TRA file specified via traFile
+      stringPosDV = "Cernd" //Branwen will be appended right above Cernd
+      clean_ToB_DV = "Olrun" //death variable of BG1 Branwen (see clean_ToB comment)
+  END
+END ELSE BEGIN //we use different Fate Spirit dialogue patching for any other platform than EET
+  ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN // Just add the fate stuff if we are on tob
+  BEGIN
+    COMPILE ~%MOD_FOLDER%/dialogues/fatesp.d~ USING "%MOD_FOLDER%/tra/%LANGUAGE%/fatesp.tra"
+  END
+END
+
+END

@@ -1,5 +1,0 @@
-DEFINE_ACTION_FUNCTION ~anari~ BEGIN
-
-PRINT ~In the Anari LAF~
-
-END
