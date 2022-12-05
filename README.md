@@ -24,7 +24,7 @@ https://www.gibberlings3.net/forums/topic/36224-the-first-ai-designed-mod-the-he
 
 # TODO
 
-## Add the characters
+## Add the Characters
 
 - Anari (added and voiced) - wip
 - Olrun (added and voiced) - wip
@@ -35,9 +35,11 @@ https://www.gibberlings3.net/forums/topic/36224-the-first-ai-designed-mod-the-he
 - Horvath - pending
 - Viconia - pending
 
-## Add the quests
+## Add the Items
 
-## Add (reuse?) the areas
+## Add the Quests
+
+## Add (reuse?) the Areas
 
 # License
 
