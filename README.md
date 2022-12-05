@@ -14,6 +14,8 @@ https://www.gibberlings3.net/forums/topic/36224-the-first-ai-designed-mod-the-he
 - [Ahungry - The Heart of Baldur's Gate](#ahungry---the-heart-of-baldurs-gate)
 - [TODO](#todo)
     - [Add the characters](#add-the-characters)
+    - [Add the quests](#add-the-quests)
+    - [Add (reuse?) the areas](#add-reuse-the-areas)
 - [License](#license)
     - [Source code:](#source-code)
     - [Art/audio/dialogue/story etc. (creative assets):](#artaudiodialoguestory-etc-creative-assets)
@@ -32,6 +34,10 @@ https://www.gibberlings3.net/forums/topic/36224-the-first-ai-designed-mod-the-he
 - The Guardian - pending
 - Horvath - pending
 - Viconia - pending
+
+## Add the quests
+
+## Add (reuse?) the areas
 
 # License
 
