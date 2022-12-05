@@ -1,0 +1,203 @@
+// NOTE: Some resources expect B25 (tob) - with ux prefix, that leaves us 3 letters
+BACKUP ~ahungry_heart/backup~
+AUTHOR ~Ahungry~
+VERSION 1.0
+
+AUTO_TRA ~ahungry_heart/lang/%s~
+
+// /* next comes the definition of the journal numbers so EET's continuous journal system works, too */
+// ALWAYS
+//   ACTION_IF NOT VARIABLE_IS_SET bg2_chapter BEGIN
+//     ACTION_IF GAME_IS ~eet~ BEGIN
+//       OUTER_SET bg2_chapter = 12 // EET uses continuous chapter numbering from BG1 through TOB and this starts at "12" in BGII
+//     END ELSE BEGIN
+//       OUTER_SET bg2_chapter = 0 // all other game types (BGII(:EE), BGT) restart chapter numbering in SOA
+//     END
+//     OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+//       OUTER_SET bg2_chapter = bg2_chapter + 1
+//       OUTER_SPRINT name_source ~bg2_chapter_%i%~
+//       OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+//     END
+//   END
+
+LANGUAGE
+  ~English~
+  ~english~
+  ~ahungry_heart/lang/english/game.tra~
+  ~ahungry_heart/lang/english/weidu.tra~
+
+
+BEGIN @001 DESIGNATED 1 LABEL ahungry_heart
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @002
+
+// These two lines were created by CamDawg. It's a new state that checks if NPC is able to talk. USE this in your mod. See the dialogue for details.
+APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
+UNLESS ~CD_STATE_NOTVALID~
+
+// The stuff copied gets lower cased by the tool, even if in caps here...
+PRINT ~The language is %LANGUAGE%~
+
+COPY ~ahungry_heart/audio/%LANGUAGE%~ ~override~ // All audio files
+COPY ~ahungry_heart/portraits/anaril.bmp~ ~override~ // All portrait files
+COPY ~ahungry_heart/portraits/anarim.bmp~ ~override~ // All portrait files
+COPY ~ahungry_heart/portraits/anaris.bmp~ ~override~ // All portrait files
+COPY ~ahungry_heart/audio/blank.mus~ ~override~ // The blank file
+
+// The following is the copying of Anari's .cre file, as well as assigning his sound-set.
+// See the file sndslot.ids for a listing of sounds you can add.
+COPY ~ahungry_heart/cre/uxana.cre~ ~override/uxana.cre~
+SAY NAME1 ~Anari~
+SAY NAME2 ~Anari~
+
+// espeak-ng -w uxana06.wav -s130 -v mb-us1 'I admire your courage and dedication'
+SAY SELECT_COMMON1 ~Yes?~ [uxana01]
+SAY SELECT_COMMON2 ~Let's work together, and I'm sure we can make it through this challenge!~ [uxana02]
+SAY SELECT_COMMON3 ~No matter what obstacles stand in our way, we will prevail!~ [uxana03]
+SAY SELECT_COMMON4 ~We must stay alert and remain vigilant against those who would seek to use the Heart for ill.~ [uxana04]
+SAY SELECT_COMMON5 ~Let us bravely march forward and protect Baldur's Gate!~ [uxana05]
+SAY SELECT_COMMON6 ~We mustn't give up now—we're so close to achieving our goal!~ [uxana06]
+
+SAY SELECT_ACTION1 ~On it.~ [uxana07]
+SAY SELECT_ACTION2 ~As you wish.~ [uxana08]
+SAY SELECT_ACTION3 ~Yea yea.~ [uxana09]
+SAY SELECT_ACTION4 ~If I must.~ [uxana10]
+SAY SELECT_ACTION5 ~Athar was never so bossy.~ [uxana11]
+SAY SELECT_ACTION6 ~Oooooookay~ [uxana12]
+// espeak-ng -w uxana13.wav -s130 -v mb-us1 'Yep yep yep, going going going'
+SAY SELECT_ACTION7 ~Yep yep yep, going going going.~ [uxana13]
+
+WRITE_LONG  0x10 0x0 // clear all flags
+WRITE_ASCII 0x248 ~uxanas~ #8  // override script where you put all the commands for lovetalks and such.
+WRITE_ASCII 0x2cc ~uxana~  #8  // dialogue file where we'll put Branwen's greeting dialogue.
+WRITE_ASCII 0x280 ~uxana~  #32 // death variable - when we want to refer to Branwen in the game, we'll call her O#Bran. For example, InParty("O#Bran") means that Branwen is in party.
+WRITE_ASCII 0x250 ~~ 	    #8  // class script
+WRITE_ASCII 0x258 ~~ 	    #8  // race script
+WRITE_ASCII 0x260 ~~ 	    #8  // general script
+WRITE_ASCII 0x268 ~~	    #8	// default script
+WRITE_ASCII 0X34  ~anaris~ #8  // small portrait
+WRITE_ASCII 0x3c  ~anarim~ #8  // medium portrait
+
+COMPILE EVALUATE_BUFFER ~ahungry_heart/dialogues/uxbana.d~ // All Branwen's banters with other party members will go here. We need the "EVALUATE_BUFFER" because the chapter variable now uses the OUTER_SPRINT variable defined above for the EET continuous journal system.
+	~ahungry_heart/dialogues/uxana.d~  // Branwen's greeting dialogue will go here.
+	~ahungry_heart/dialogues/uxanaj.d~ // The rest of Branwen's dialogue: her commentary, interjections, talks with the player, lovetalks and everything else.
+	~ahungry_heart/dialogues/uxanap.d~ // Branwen's leaving party dialogue will go here.
+
+	~ahungry_heart/scripts/uxanas.baf~ // Branwen's script.
+	~ahungry_heart/scripts/uxanad.baf~ // Branwen's dream script for events at rest. If you want your NPC to talk to you at rest, add scripting here.
+	~ahungry_heart/scripts/uxanaf.baf~ // Branwen's "fixing" script. Remember how various modders advised you to "select your NPC and press K"? Well, that's how they do it.
+
+
+// The following is appending what we wrote in AR1000.baf to the bottom of
+// AR1000.bcs
+
+// EXTEND_TOP ~Ar1000.bcs~ ~AnariTheNPC\ar1000.baf~
+
+// This code is also used by BG2 Fixpack - it would help you to run custom music for your NPC from "a clean slate", installing "blank" music you could run it with. Not everyone installs the Fixpack, though, so here we go:
+// Feel free to skip this code if you're not using any music in your mod, only your NPC's voice.
+COPY_EXISTING ~songlist.2da~ ~override~
+  SET_2DA_ENTRY 0 2 3 ~blank.mus~
+// You will note there's a Blank.mus file in your Audio directory - it's needed exactly for that purpose. Delete it if you're not using any music in your mod.
+
+// Now we are going to add Branwen content for the Throne of Bhaal. You need one more cre file, or you could use the same one twice.
+ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN // It means that the Throne of Bhaal is installed. If not, this part is not added to the game. This check also works for BG2:EE games.
+BEGIN // you WILL need an END below.
+
+COPY ~ahungry_heart/cre/uxana25.cre~ ~override/uxana25.cre~
+SAY NAME1 ~Anari~
+SAY NAME2 ~Anari~
+
+SAY SELECT_COMMON1 ~Yes?~ [uxana01]
+SAY SELECT_COMMON2 ~Let's work together, and I'm sure we can make it through this challenge!~ [uxana02]
+SAY SELECT_COMMON3 ~No matter what obstacles stand in our way, we will prevail!~ [uxana03]
+SAY SELECT_COMMON4 ~We must stay alert and remain vigilant against those who would seek to use the Heart for ill.~ [uxana04]
+SAY SELECT_COMMON5 ~Let us bravely march forward and protect Baldur's Gate!~ [uxana05]
+SAY SELECT_COMMON6 ~We mustn't give up now—we're so close to achieving our goal!~ [uxana06]
+
+SAY SELECT_ACTION1 ~On it.~ [uxana07]
+SAY SELECT_ACTION2 ~As you wish.~ [uxana08]
+SAY SELECT_ACTION3 ~Yea yea.~ [uxana09]
+SAY SELECT_ACTION4 ~If I must.~ [uxana10]
+SAY SELECT_ACTION5 ~Athar was never so bossy.~ [uxana11]
+SAY SELECT_ACTION6 ~Oooooookay~ [uxana12]
+SAY SELECT_ACTION7 ~Yep yep yep, going going going.~ [uxana13]
+
+WRITE_LONG  0x10 0x0 // clear all flags
+WRITE_ASCII 0x248 ~uxanas~ #8  // override script where you put all the commands for lovetalks and such.
+WRITE_ASCII 0x2cc ~uxana~  #8  // dialogue file where we'll put Branwen's greeting dialogue.
+WRITE_ASCII 0x280 ~uxana~  #32 // death variable - when we want to refer to Branwen in the game, we'll call her O#Bran. For example, InParty("O#Bran") means that Branwen is in party.
+WRITE_ASCII 0x250 ~~ 	    #8  // class script
+WRITE_ASCII 0x258 ~~ 	    #8  // race script
+WRITE_ASCII 0x260 ~~ 	    #8  // general script
+WRITE_ASCII 0x268 ~~	    #8	// default script
+WRITE_ASCII 0X34  ~anaris~ #8  // small portrait
+WRITE_ASCII 0x3c  ~anarim~ #8  // medium portrait
+
+
+COMPILE EVALUATE_BUFFER ~ahungry_heart/dialogues/uxbana25.d~  // All Branwen's ToB banters with other party members will go here. Again, we use 25, because it's a tradution for ToB. Again, "EVALUATE_BUFFER" because of the chapter numbers
+	~ahungry_heart/dialogues/uxana25.d~  // Branwen's ToB greeting dialogue will go here.
+	~ahungry_heart/dialogues/uxana25j.d~  // The rest of Branwen's ToB dialogue: her commentary, interjections, talks with the player, lovetalks and everything else.
+	~ahungry_heart/dialogues/uxana25p.d~  // Branwen's ToB leaving party dialogue will go here.
+
+	~ahungry_heart/scripts/uxana25s.baf~ // Branwen's script for ToB.
+	~ahungry_heart/scripts/uxana25d.baf~ // Branwen's dream script for ToB.
+
+END // and here ends ToB content
+
+// https://www.gibberlings3.net/forums/topic/15833-dialog-files-and-how-they-are-referenced/
+// First block runs if uxana isn't present, and we are NOT using a TOB entry
+// Second block runs if uxana isn't preset, and we ARE using a TOB entry
+// Ensure these are all 8 or fewer for the resref I guess
+// P = Party join/leave, J = interjections and dialogue, D = Dream Script (rest)
+// 25 variations - not sure...
+APPEND ~pdialog.2da~
+~uxana         uxanap              uxanaj             uxanad~
+UNLESS ~uxana~
+UNLESS ~25POST~ // if we do not have tob tables,
+
+
+APPEND ~pdialog.2da~
+~uxana         uxanap              uxanaj             uxanad              uxana25p             uxana25j             uxana25d       uxana25s~
+UNLESS ~uxana~
+IF ~25POST~ // if we do have tob tables
+
+
+// interdia.2da is a bit simpler, but acts the same as pdialog.2da.
+// It adds the NPCs banter file, which is used for inter-party banter, and romance dialogues.
+APPEND ~interdia.2da~
+~uxana uxbana~
+UNLESS ~uxana~
+UNLESS ~25FILE~
+
+APPEND ~interdia.2da~
+~uxana uxbana uxbana25~
+UNLESS ~uxana~
+IF ~25FILE~
+
+
+// EET related code
+ACTION_IF GAME_IS ~eet~ BEGIN //only true if game is detected as Enhanced Edition Trilogy (mod for BG2:EE)
+  INCLUDE ~EET/other/EET_functions.tph~ //declaration of external EET functions used below. This is part of the EET package the player has in his install so don't worry about it
+  LAF ~EET_NPC_TRANSITION~ //function used to automatically implement EET continuity system. This deals with the transition to ToB and automatically creates all the needed script blocks and dialogue entries for e.g. the calling of the SoA Branwen the player left somewhere via the fate spirit, the disabling of the fate spirit calling if Branwen is in the party upon transition etc. The function will be executed upon installation of the mod. What follows is all entries we need for our Branwen:
+    INT_VAR
+      type = 3 //informs the function that this is BG2 NPC without BG1 content (because the mod doesn't add to BG1)
+      default_ToB = 1 //NPC available as summonable NPC when the game is started in ToB (= new ToB game)
+      clean_ToB = 1 //forces function to clean old BG1 Branwen code that exists in AR4000.BCS and FATESP.DLG (i.e. no entry for the original BG1 Branwen if this mod is installed)
+    STR_VAR
+      dv = "uxana" //Branwen Death Variable (script name)
+      override_BG1 = "uxanas" //Branwen SoA Override script
+      override_SoD = "uxanas" //Branwen SoA Override script
+      override_SoA = "uxanas" //Branwen SoA Override script
+      override_ToB = "uxana25s" //Branwen ToB Override script
+      dialog_ToB = "uxana25" //Branwen ToB dialogue file
+      cre_ToB = "uxana25" //Branwen ToB CRE filename
+      traFile = EVAL "ahungry_heart/tra/%LANGUAGE%/fatesp.tra"
+      string = "@0" //from the TRA file specified via traFile
+      stringPosDV = "Cernd" //Branwen will be appended right above Cernd
+      clean_ToB_DV = "Anari" //death variable of BG1 Branwen (see clean_ToB comment)
+  END
+END ELSE BEGIN //we use different Fate Spirit dialogue patching for any other platform than EET
+  ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN // Just add the fate stuff if we are on tob
+  BEGIN
+    COMPILE ~ahungry_heart/dialogues/fatesp.d~ USING "ahungry_heart/tra/%LANGUAGE%/fatesp.tra"
+  END
+END
