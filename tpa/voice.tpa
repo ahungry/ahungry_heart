@@ -1,0 +1,226 @@
+DEFINE_ACTION_FUNCTION ~the voice~ BEGIN
+
+// When launching like this vs top level tp2, it seems to want
+// the exact output name for the COPY command.
+COPY ~%MOD_FOLDER%/portraits/the voicel.bmp~ ~override/uxvoil.bmp~
+COPY ~%MOD_FOLDER%/portraits/the voicem.bmp~ ~override/uxvoim.bmp~
+COPY ~%MOD_FOLDER%/portraits/the voices.bmp~ ~override/uxvois.bmp~
+
+// The following is the copying of The Voice's .cre file, as well as assigning his sound-set.
+// See the file sndslot.ids for a listing of sounds you can add.
+COPY ~%MOD_FOLDER%/cre/uxvoi.cre~ ~override/uxvoi.cre~
+
+SAY NAME1 ~The Voice~
+SAY NAME2 ~The Voice~
+
+SAY INITIAL_MEETING ~You there, hero.  I have an important message for you.  I'm The Voice and I seek your assistance~ [uxvoi01]
+SAY MORALE ~I'm in Over My Head!~ [uxvoi02]
+SAY HAPPY ~Together We Are Unstoppable!~ [uxvoi03]
+SAY UNHAPPY_ANNOYED ~Get out of my way!~ [uxvoi04]
+SAY UNHAPPY_SERIOUS ~Don't make me angry!~ [uxvoi05]
+SAY UNHAPPY_BREAKING ~I won't stand for this!~ [uxvoi06]
+SAY LEADER ~I will lead the way.~ [uxvoi07]
+SAY TIRED ~Give me a moment to regroup.~ [uxvoi08]
+SAY BORED ~Come on, let's put on a show.~ [uxvoi09]
+SAY BATTLE_CRY1 ~Prepare to die!~ [uxvoi10]
+SAY BATTLE_CRY2 ~Let's see how you look with an arrow between your eyes!~ [uxvoi11]
+SAY BATTLE_CRY3 ~My bow will sing true!~ [uxvoi12]
+SAY BATTLE_CRY4 ~One shot, one kill!~ [uxvoi13]
+SAY BATTLE_CRY5 ~Feel the power of The Voice!~ [uxvoi14]
+SAY DAMAGE ~Ouch! That hurts.~ [uxvoi15]
+SAY DYING ~I think I'm dying.~ [uxvoi16]
+SAY HURT ~Where's The Voice?  I need a heal!~ [uxvoi17]
+SAY AREA_FOREST ~The power of the forest flows through my veins! With my bow, I pledge to protect it! I will never be silenced, my voice will soar above!~ [uxvoi18]
+SAY AREA_CITY ~So much to explore!~ [uxvoi19]
+SAY AREA_DUNGEON ~It's Dark and Dangerous, Stay Together!~ [uxvoi20]
+SAY AREA_DAY ~The Sun Warms My Soul, Nature's Beauty Is Everywhere! We Should Appreciate the Little Things.~ [uxvoi21]
+SAY AREA_NIGHT ~Fear Not, I Will Be Your Guide!~ [uxvoi22]
+SAY SELECT_COMMON1 ~Yes?~ [uxvoi23]
+SAY SELECT_COMMON2 ~Let's work together, and I'm sure we can make it through this challenge!~ [uxvoi24]
+SAY SELECT_COMMON3 ~No matter what obstacles stand in our way, we will prevail!~ [uxvoi25]
+SAY SELECT_COMMON4 ~We must stay alert and remain vigilant against those who would seek to use the Heart for ill.~ [uxvoi26]
+SAY SELECT_COMMON5 ~Let us bravely march forward and protect Baldur's Gate!~ [uxvoi27]
+SAY SELECT_COMMON6 ~We mustn't give up now—we're so close to achieving our goal!~ [uxvoi28]
+SAY SELECT_ACTION1 ~On it.~ [uxvoi29]
+SAY SELECT_ACTION2 ~As you wish.~ [uxvoi30]
+SAY SELECT_ACTION3 ~Yea yea.~ [uxvoi31]
+SAY SELECT_ACTION4 ~If I must.~ [uxvoi32]
+SAY SELECT_ACTION5 ~Athar was never so bossy.~ [uxvoi33]
+SAY SELECT_ACTION6 ~Oooooookay~ [uxvoi34]
+SAY SELECT_ACTION7 ~Yep yep yep, going going going.~ [uxvoi35]
+SAY SELECT_RARE1 ~Give me some space!~ [uxvoi36]
+SAY SELECT_RARE2 ~Leave me alone!~ [uxvoi37]
+SAY CRITICAL_HIT ~My Bow Is Fierce and Strong!~ [uxvoi38]
+SAY CRITICAL_MISS ~My Bow Will Have its Revenge!~ [uxvoi39]
+SAY TARGET_IMMUNE ~My weapon is useless!~ [uxvoi40]
+SAY INVENTORY_FULL ~My load is more than I can bear.~ [uxvoi41]
+SAY SPELL_DISRUPTED ~My spell was interrupted.~ [uxvoi42]
+SAY REACT_TO_DIE_GENERAL ~That's gonna leave a mark.~ [uxvoi43]
+SAY REACT_TO_DIE_SPECIFIC ~They have returned to the earth.~ [uxvoi44]
+SAY SET_A_TRAP ~The trap is set!~ [uxvoi45]
+SAY PICKED_POCKET ~I hope there is more than pocket lint here.~ [uxvoi46]
+SAY HIDDEN_IN_SHADOWS ~No chance of finding me now.~ [uxvoi47]
+
+SAY ATTACK1 ~Their life won't be long now.~ [uxvoi48]
+SAY ATTACK2 ~Prepare for extinction.~ [uxvoi49]
+SAY ATTACK3 ~This is the start for me, and the end for you.~ [uxvoi50]
+SAY ATTACK4 ~Die.~ [uxvoi51]
+
+
+// SAY COMPLIMENT1 ~One shot, one kill!~ [uxvoi13]
+// SAY COMPLIMENT2 ~One shot, one kill!~ [uxvoi13]
+// SAY COMPLIMENT3 ~One shot, one kill!~ [uxvoi13]
+// SAY EXISTANCE1 ~One shot, one kill!~ [uxvoi13]
+// SAY EXISTANCE2 ~One shot, one kill!~ [uxvoi13]
+// SAY EXISTANCE3 ~One shot, one kill!~ [uxvoi13]
+// SAY EXISTANCE4 ~One shot, one kill!~ [uxvoi13]
+// SAY EXISTANCE5 ~One shot, one kill!~ [uxvoi13]
+// SAY DIALOGUE_DEFAULT ~One shot, one kill!~ [uxvoi13]
+// SAY DIALOGUE_HOSTILE ~One shot, one kill!~ [uxvoi13]
+// SAY INSULT ~One shot, one kill!~ [uxvoi13]
+// SAY INTERACTION1 ~One shot, one kill!~ [uxvoi13]
+// SAY INTERACTION2 ~One shot, one kill!~ [uxvoi13]
+// SAY INTERACTION3 ~One shot, one kill!~ [uxvoi13]
+// SAY INTERACTION4 ~One shot, one kill!~ [uxvoi13]
+// SAY INTERACTION5 ~One shot, one kill!~ [uxvoi13]
+// SAY MISCELLANEOUS ~One shot, one kill!~ [uxvoi13]
+// SAY RESPONSE_TO_COMPLIMENT2 ~One shot, one kill!~ [uxvoi13]
+// SAY RESPONSE_TO_COMPLIMENT3 ~One shot, one kill!~ [uxvoi13]
+// SAY RESPONSE_TO_INSULT1 ~One shot, one kill!~ [uxvoi13]
+// SAY RESPONSE_TO_INSULT2 ~One shot, one kill!~ [uxvoi13]
+// SAY RESPONSE_TO_INSULT3 ~One shot, one kill!~ [uxvoi13]
+// SAY SPECIAL1 ~One shot, one kill!~ [uxvoi13]
+// SAY SPECIAL2 ~One shot, one kill!~ [uxvoi13]
+// SAY SPECIAL3 ~One shot, one kill!~ [uxvoi13]
+
+// SAY STORE_NAME ~~
+// SAY UNIDENTIFIED_DESC ~~
+// SAY IDENTIFIED_DESC ~~
+// SAY DESC ~~
+SAY BIO ~A history of The Voice will appear here.~
+
+WRITE_LONG  0x10 0x0 // clear all flags
+WRITE_ASCII 0x248 ~uxvois~ #8  // override script where you put all the commands for lovetalks and such.
+WRITE_ASCII 0x2cc ~uxvoi~  #8  // dialogue file where we'll put Branwen's greeting dialogue.
+WRITE_ASCII 0x280 ~uxvoi~  #32 // death variable - when we want to refer to Branwen in the game, we'll call her O#Bran. For example, InParty("O#Bran") means that Branwen is in party.
+WRITE_ASCII 0x250 ~~ 	    #8  // class script
+WRITE_ASCII 0x258 ~~ 	    #8  // race script
+WRITE_ASCII 0x260 ~~ 	    #8  // general script
+WRITE_ASCII 0x268 ~~	    #8	// default script
+WRITE_ASCII 0X34  ~uxvois~ #8  // small portrait
+WRITE_ASCII 0x3c  ~uxvoim~ #8  // medium portrait
+
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/uxbana.d~ // All Branwen's banters with other party members will go here. We need the "EVALUATE_BUFFER" because the chapter variable now uses the OUTER_SPRINT variable defined above for the EET continuous journal system.
+	~%MOD_FOLDER%/dialogues/uxvoi.d~  // Branwen's greeting dialogue will go here.
+	~%MOD_FOLDER%/dialogues/uxvoij.d~ // The rest of Branwen's dialogue: her commentary, interjections, talks with the player, lovetalks and everything else.
+	~%MOD_FOLDER%/dialogues/uxvoip.d~ // Branwen's leaving party dialogue will go here.
+
+	~%MOD_FOLDER%/scripts/uxvois.baf~ // Branwen's script.
+	~%MOD_FOLDER%/scripts/uxvoid.baf~ // Branwen's dream script for events at rest. If you want your NPC to talk to you at rest, add scripting here.
+	~%MOD_FOLDER%/scripts/uxvoif.baf~ // Branwen's "fixing" script. Remember how various modders advised you to "select your NPC and press K"? Well, that's how they do it.
+
+// Now we are going to add Branwen content for the Throne of Bhaal. You need one more cre file, or you could use the same one twice.
+ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN // It means that the Throne of Bhaal is installed. If not, this part is not added to the game. This check also works for BG2:EE games.
+BEGIN // you WILL need an END below.
+
+COPY ~%MOD_FOLDER%/cre/uxvoi25.cre~ ~override/uxvoi25.cre~
+SAY NAME1 ~The Voice~
+SAY NAME2 ~The Voice~
+
+SAY SELECT_COMMON1 ~Yes?~ [uxvoi01]
+SAY SELECT_COMMON2 ~Let's work together, and I'm sure we can make it through this challenge!~ [uxvoi02]
+SAY SELECT_COMMON3 ~No matter what obstacles stand in our way, we will prevail!~ [uxvoi03]
+SAY SELECT_COMMON4 ~We must stay alert and remain vigilant against those who would seek to use the Heart for ill.~ [uxvoi04]
+SAY SELECT_COMMON5 ~Let us bravely march forward and protect Baldur's Gate!~ [uxvoi05]
+SAY SELECT_COMMON6 ~We mustn't give up now—we're so close to achieving our goal!~ [uxvoi06]
+
+SAY SELECT_ACTION1 ~On it.~ [uxvoi07]
+SAY SELECT_ACTION2 ~As you wish.~ [uxvoi08]
+SAY SELECT_ACTION3 ~Yea yea.~ [uxvoi09]
+SAY SELECT_ACTION4 ~If I must.~ [uxvoi10]
+SAY SELECT_ACTION5 ~Athar was never so bossy.~ [uxvoi11]
+SAY SELECT_ACTION6 ~Oooooookay~ [uxvoi12]
+SAY SELECT_ACTION7 ~Yep yep yep, going going going.~ [uxvoi13]
+
+WRITE_LONG  0x10 0x0 // clear all flags
+WRITE_ASCII 0x248 ~uxvois~ #8  // override script where you put all the commands for lovetalks and such.
+WRITE_ASCII 0x2cc ~uxvoi~  #8  // dialogue file where we'll put Branwen's greeting dialogue.
+WRITE_ASCII 0x280 ~uxvoi~  #32 // death variable - when we want to refer to Branwen in the game, we'll call her O#Bran. For example, InParty("O#Bran") means that Branwen is in party.
+WRITE_ASCII 0x250 ~~ 	    #8  // class script
+WRITE_ASCII 0x258 ~~ 	    #8  // race script
+WRITE_ASCII 0x260 ~~ 	    #8  // general script
+WRITE_ASCII 0x268 ~~	    #8	// default script
+WRITE_ASCII 0X34  ~the voices~ #8  // small portrait
+WRITE_ASCII 0x3c  ~the voicem~ #8  // medium portrait
+
+
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/uxbana25.d~  // All Branwen's ToB banters with other party members will go here. Again, we use 25, because it's a tradution for ToB. Again, "EVALUATE_BUFFER" because of the chapter numbers
+	~%MOD_FOLDER%/dialogues/uxvoi25.d~  // Branwen's ToB greeting dialogue will go here.
+	~%MOD_FOLDER%/dialogues/uxvoi25j.d~  // The rest of Branwen's ToB dialogue: her commentary, interjections, talks with the player, lovetalks and everything else.
+	~%MOD_FOLDER%/dialogues/uxvoi25p.d~  // Branwen's ToB leaving party dialogue will go here.
+
+	~%MOD_FOLDER%/scripts/uxvoi25s.baf~ // Branwen's script for ToB.
+	~%MOD_FOLDER%/scripts/uxvoi25d.baf~ // Branwen's dream script for ToB.
+
+END // and here ends ToB content
+
+// https://www.gibberlings3.net/forums/topic/15833-dialog-files-and-how-they-are-referenced/
+// First block runs if uxvoi isn't present, and we are NOT using a TOB entry
+// Second block runs if uxvoi isn't preset, and we ARE using a TOB entry
+// Ensure these are all 8 or fewer for the resref I guess
+// P = Party join/leave, J = interjections and dialogue, D = Dream Script (rest)
+// 25 variations - not sure...
+APPEND ~pdialog.2da~
+~uxvoi         uxvoip              uxvoij             uxvoid~
+UNLESS ~uxvoi~
+UNLESS ~25POST~ // if we do not have tob tables,
+
+
+APPEND ~pdialog.2da~
+~uxvoi         uxvoip              uxvoij             uxvoid              uxvoi25p             uxvoi25j             uxvoi25d       uxvoi25s~
+UNLESS ~uxvoi~
+IF ~25POST~ // if we do have tob tables
+
+
+// interdia.2da is a bit simpler, but acts the same as pdialog.2da.
+// It adds the NPCs banter file, which is used for inter-party banter, and romance dialogues.
+APPEND ~interdia.2da~
+~uxvoi uxbana~
+UNLESS ~uxvoi~
+UNLESS ~25FILE~
+
+APPEND ~interdia.2da~
+~uxvoi uxbana uxbana25~
+UNLESS ~uxvoi~
+IF ~25FILE~
+
+
+// EET related code
+ACTION_IF GAME_IS ~eet~ BEGIN //only true if game is detected as Enhanced Edition Trilogy (mod for BG2:EE)
+  INCLUDE ~EET/other/EET_functions.tph~ //declaration of external EET functions used below. This is part of the EET package the player has in his install so don't worry about it
+  LAF ~EET_NPC_TRANSITION~ //function used to automatically implement EET continuity system. This deals with the transition to ToB and automatically creates all the needed script blocks and dialogue entries for e.g. the calling of the SoA Branwen the player left somewhere via the fate spirit, the disabling of the fate spirit calling if Branwen is in the party upon transition etc. The function will be executed upon installation of the mod. What follows is all entries we need for our Branwen:
+    INT_VAR
+      type = 3 //informs the function that this is BG2 NPC without BG1 content (because the mod doesn't add to BG1)
+      default_ToB = 1 //NPC available as summonable NPC when the game is started in ToB (= new ToB game)
+      clean_ToB = 1 //forces function to clean old BG1 Branwen code that exists in AR4000.BCS and FATESP.DLG (i.e. no entry for the original BG1 Branwen if this mod is installed)
+    STR_VAR
+      dv = "uxvoi" //Branwen Death Variable (script name)
+      override_BG1 = "uxvois" //Branwen SoA Override script
+      override_SoD = "uxvois" //Branwen SoA Override script
+      override_SoA = "uxvois" //Branwen SoA Override script
+      override_ToB = "uxvoi25s" //Branwen ToB Override script
+      dialog_ToB = "uxvoi25" //Branwen ToB dialogue file
+      cre_ToB = "uxvoi25" //Branwen ToB CRE filename
+      traFile = EVAL "%MOD_FOLDER%/tra/%LANGUAGE%/fatesp.tra"
+      string = "@0" //from the TRA file specified via traFile
+      stringPosDV = "Cernd" //Branwen will be appended right above Cernd
+      clean_ToB_DV = "The Voice" //death variable of BG1 Branwen (see clean_ToB comment)
+  END
+END ELSE BEGIN //we use different Fate Spirit dialogue patching for any other platform than EET
+  ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN // Just add the fate stuff if we are on tob
+  BEGIN
+    COMPILE ~%MOD_FOLDER%/dialogues/fatesp.d~ USING "%MOD_FOLDER%/tra/%LANGUAGE%/fatesp.tra"
+  END
+END
+
+END
