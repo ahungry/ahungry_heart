@@ -23,15 +23,22 @@ https://www.gibberlings3.net/forums/topic/36224-the-first-ai-designed-mod-the-he
 
 <!-- markdown-toc end -->
 
+# Characters
+
+![Characters](https://github.com/ahungry/ahungry_heart/blob/master/docs/thumbs/characters.png)
+
+Anari / Athar / Olrun / The Voice / Zariel
+
+
 # TODO
 
 ## Add the Characters
 
-- Anari (added and voiced) - wip
-- Olrun (added and voiced) - wip
-- Athar - pending
-- Zariel - pending
-- The Voice - pending
+- Anari (added and voiced) - DONE
+- Olrun (added and voicing) - TODO
+- Athar - (added and voicing) - TODO
+- Zariel (added and voiced )- DONE
+- The Voice (added and voiced) - DONE
 - The Guardian - pending
 - Horvath - pending
 - Viconia - pending
