@@ -1,8 +1,0 @@
-// IF
-// See([PC])
-// NumTimesTalkedTo(0)
-// !Global("OlrunJoined","LOCALS",1)
-// THEN
-// RESPONSE #100
-// Dialogue(Nearest([PC]))
-// END

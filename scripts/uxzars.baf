@@ -1,7 +1,7 @@
 // IF
 // See([PC])
 // NumTimesTalkedTo(0)
-// !Global("AnariJoined","LOCALS",1)
+// !Global("ZarielJoined","LOCALS",1)
 // THEN
 // RESPONSE #100
 // Dialogue(Nearest([PC]))
