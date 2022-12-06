@@ -5,13 +5,13 @@ IF ~NumTimesTalkedTo(0)~ THEN
     SAY ~Some call me The Voice, you may call me friend.  Well met traveller.~ [uxvoi01]
 
     IF ~GlobalLT("Chapter","GLOBAL",3)~ THEN
-      REPLY ~Hey Anari, you seen Irenicus around here?~ GOTO InquireIrenicus
+      REPLY ~Hey The Voice, you seen Irenicus around here?~ GOTO InquireIrenicus
 
     IF ~~ THEN
       REPLY ~Heya.~ GOTO Greet
 
-    IF ~Class(Player1,RANGER)~ THEN
-      REPLY ~I know a ranger when I see one!~ GOTO BothRangers
+    IF ~Class(Player1,CLERIC)~ THEN
+      REPLY ~I know a cleric when I see one!~ GOTO BothClerics
 
     IF ~~ THEN
       REPLY ~Go away.~ GOTO GoAway
@@ -19,12 +19,12 @@ END
 
 IF ~~ THEN
   BEGIN InquireIrenicus
-    SAY ~Nope, but I can help you look for him. I'm a ranger!~ [uxvoi00]
+    SAY ~Nope, but I can help you look for him. I'm a cleric!~ [uxvoi00]
 
     IF ~~ THEN
       REPLY ~Sure. Join the party~
         DO ~
-          SetGlobal("AnariJoined","LOCALS",1)
+          SetGlobal("The VoiceJoined","LOCALS",1)
           JoinParty()
         ~ EXIT
 
@@ -34,12 +34,12 @@ END
 
 IF ~~ THEN
   BEGIN Greet
-    SAY ~So, you need a ranger in your group?~ [uxvoi00]
+    SAY ~So, you need a cleric in your group?~ [uxvoi00]
 
     IF ~~ THEN
       REPLY ~Yes, as a matter of fact we do.~
         DO ~
-          SetGlobal("AnariJoined","LOCALS",1)
+          SetGlobal("The VoiceJoined","LOCALS",1)
           JoinParty()
         ~ EXIT
 
@@ -48,13 +48,13 @@ IF ~~ THEN
 END
 
 IF ~~ THEN
-  BEGIN BothRangers
-    SAY ~Another ranger! Hail and well met brother. Let us journey together and smite evil.~ [uxvoi00]
+  BEGIN BothClerics
+    SAY ~Another cleric! Hail and well met brother. Let us journey together and smite evil.~ [uxvoi00]
 
     IF ~~ THEN
       REPLY ~Sounds like a plan.~
       DO ~
-        SetGlobal("AnariJoined","LOCALS",1)
+        SetGlobal("The VoiceJoined","LOCALS",1)
         JoinParty()
       ~ EXIT
 
