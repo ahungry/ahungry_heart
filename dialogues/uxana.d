@@ -2,7 +2,7 @@ BEGIN uxana
 
 IF ~NumTimesTalkedTo(0)~ THEN
   BEGIN FirstMeeting
-    SAY ~You there, hero.  I have an important message for you.  I'm Anari and I seek your assistance~ [uxana14]
+    SAY ~You there, hero.  I have an important message for you.  I'm Anari and I seek your assistance~ [uxana01]
 
     IF ~GlobalLT("Chapter","GLOBAL",3)~ THEN
       REPLY ~Hey Anari, you seen Irenicus around here?~ GOTO InquireIrenicus
