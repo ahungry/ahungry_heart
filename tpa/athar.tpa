@@ -110,7 +110,23 @@ WRITE_ASCII 0x268 ~~	    #8	// default script
 WRITE_ASCII 0X34  ~uxaths~ #8  // small portrait
 WRITE_ASCII 0x3c  ~uxathm~ #8  // medium portrait
 
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/uxbana.d~ // All Branwen's banters with other party members will go here. We need the "EVALUATE_BUFFER" because the chapter variable now uses the OUTER_SPRINT variable defined above for the EET continuous journal system.
+WRITE_LONG 0x28  0x6100     // FIGHTER_MALE_HUMAN (https://gibberlings3.github.io/iesdp/files/ids/bgee/animate.htm)
+WRITE_BYTE 0x272 0x1        // Human (https://gibberlings3.github.io/iesdp/files/ids/bg2/race.htm)
+WRITE_BYTE 0x273 6          // Paladin (https://gibberlings3.github.io/iesdp/files/ids/bg2/class.htm)
+WRITE_BYTE 0x275 0x1        // Male (https://gibberlings3.github.io/iesdp/files/ids/bg2/gender.htm)
+WRITE_LONG 0x244 0x40040000 // Kit Cavalier (https://gibberlings3.github.io/iesdp/file_formats/ie_formats/cre_v1.htm)
+
+// Use eekeeper to see the codes, looks like a color index
+WRITE_BYTE 0x2c  0x87 // Metal Colour
+WRITE_BYTE 0x2d  0x12 // Minor Colour
+WRITE_BYTE 0x2e  0x1f // Major Colour
+WRITE_BYTE 0x2f  0x0c // skin Colour
+WRITE_BYTE 0x30  0x87 // Leather Colour
+WRITE_BYTE 0x31  0x87 // Armor Colour
+WRITE_BYTE 0x32  0x29 // Hair Colour
+
+
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/uxbath.d~ // All Branwen's banters with other party members will go here. We need the "EVALUATE_BUFFER" because the chapter variable now uses the OUTER_SPRINT variable defined above for the EET continuous journal system.
 	~%MOD_FOLDER%/dialogues/uxath.d~  // Branwen's greeting dialogue will go here.
 	~%MOD_FOLDER%/dialogues/uxathj.d~ // The rest of Branwen's dialogue: her commentary, interjections, talks with the player, lovetalks and everything else.
 	~%MOD_FOLDER%/dialogues/uxathp.d~ // Branwen's leaving party dialogue will go here.
@@ -154,7 +170,7 @@ WRITE_ASCII 0X34  ~athars~ #8  // small portrait
 WRITE_ASCII 0x3c  ~atharm~ #8  // medium portrait
 
 
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/uxbana25.d~  // All Branwen's ToB banters with other party members will go here. Again, we use 25, because it's a tradution for ToB. Again, "EVALUATE_BUFFER" because of the chapter numbers
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/uxbath25.d~  // All Branwen's ToB banters with other party members will go here. Again, we use 25, because it's a tradution for ToB. Again, "EVALUATE_BUFFER" because of the chapter numbers
 	~%MOD_FOLDER%/dialogues/uxath25.d~  // Branwen's ToB greeting dialogue will go here.
 	~%MOD_FOLDER%/dialogues/uxath25j.d~  // The rest of Branwen's ToB dialogue: her commentary, interjections, talks with the player, lovetalks and everything else.
 	~%MOD_FOLDER%/dialogues/uxath25p.d~  // Branwen's ToB leaving party dialogue will go here.
@@ -185,12 +201,12 @@ IF ~25POST~ // if we do have tob tables
 // interdia.2da is a bit simpler, but acts the same as pdialog.2da.
 // It adds the NPCs banter file, which is used for inter-party banter, and romance dialogues.
 APPEND ~interdia.2da~
-~uxath uxbana~
+~uxath uxbath~
 UNLESS ~uxath~
 UNLESS ~25FILE~
 
 APPEND ~interdia.2da~
-~uxath uxbana uxbana25~
+~uxath uxbath uxbath25~
 UNLESS ~uxath~
 IF ~25FILE~
 
