@@ -2,7 +2,7 @@ BEGIN uxvoi
 
 IF ~NumTimesTalkedTo(0)~ THEN
   BEGIN FirstMeeting
-    SAY ~You there, hero.  I have an important message for you.  I'm Anari and I seek your assistance~ [uxvoi01]
+    SAY ~Some call me The Voice, you may call me friend.  Well met traveller.~ [uxvoi01]
 
     IF ~GlobalLT("Chapter","GLOBAL",3)~ THEN
       REPLY ~Hey Anari, you seen Irenicus around here?~ GOTO InquireIrenicus
