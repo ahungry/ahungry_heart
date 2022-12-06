@@ -2,9 +2,9 @@ DEFINE_ACTION_FUNCTION ~athar~ BEGIN
 
 // When launching like this vs top level tp2, it seems to want
 // the exact output name for the COPY command.
-COPY ~%MOD_FOLDER%/portraits/atharl.bmp~ ~override/uxathl.bmp~
-COPY ~%MOD_FOLDER%/portraits/atharm.bmp~ ~override/uxathm.bmp~
-COPY ~%MOD_FOLDER%/portraits/athars.bmp~ ~override/uxaths.bmp~
+COPY ~%MOD_FOLDER%/portraits/athar.pngl.bmp~ ~override/uxathl.bmp~
+COPY ~%MOD_FOLDER%/portraits/athar.pngm.bmp~ ~override/uxathm.bmp~
+COPY ~%MOD_FOLDER%/portraits/athar.pngs.bmp~ ~override/uxaths.bmp~
 
 // The following is the copying of Athar's .cre file, as well as assigning his sound-set.
 // See the file sndslot.ids for a listing of sounds you can add.
