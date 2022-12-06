@@ -57,15 +57,15 @@ SAY INVENTORY_FULL ~My load is more than I can bear.~ [uxana41]
 SAY SPELL_DISRUPTED ~My spell was interrupted.~ [uxana42]
 SAY REACT_TO_DIE_GENERAL ~That's gonna leave a mark.~ [uxana43]
 SAY REACT_TO_DIE_SPECIFIC ~They have returned to the earth.~ [uxana44]
+SAY SET_A_TRAP ~The trap is set!~ [uxana45]
+SAY PICKED_POCKET ~I hope there is more than pocket lint here.~ [uxana46]
+SAY HIDDEN_IN_SHADOWS ~No chance of finding me now.~ [uxana47]
 
 SAY ATTACK1 ~Prepare to die!~ [uxana10]
 SAY ATTACK2 ~Let's see how you look with an arrow between your eyes!~ [uxana11]
 SAY ATTACK3 ~My bow will sing true!~ [uxana12]
 SAY ATTACK4 ~One shot, one kill!~ [uxana13]
 
-SAY SET_A_TRAP ~One shot, one kill!~ [uxana13]
-SAY PICKED_POCKET ~One shot, one kill!~ [uxana13]
-SAY HIDDEN_IN_SHADOWS ~One shot, one kill!~ [uxana13]
 
 // SAY COMPLIMENT1 ~One shot, one kill!~ [uxana13]
 // SAY COMPLIMENT2 ~One shot, one kill!~ [uxana13]
