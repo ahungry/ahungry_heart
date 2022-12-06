@@ -83,6 +83,7 @@ WRITE_LONG 0x28  0x6102 // FIGHTER_MALE_DWARF (https://gibberlings3.github.io/ie
 WRITE_BYTE 0x272 0x4 // Dwarf (https://gibberlings3.github.io/iesdp/files/ids/bg2/race.htm)
 WRITE_BYTE 0x273 0x2 // Fighter (https://gibberlings3.github.io/iesdp/files/ids/bg2/class.htm)
 WRITE_BYTE 0x275 0x1 // Male (https://gibberlings3.github.io/iesdp/files/ids/bg2/gender.htm)
+WRITE_LONG 0x244 0x00004000 // Kit Barbarian (https://gibberlings3.github.io/iesdp/file_formats/ie_formats/cre_v1.htm)
 
 // Use eekeeper to see the codes, looks like a color index
 WRITE_BYTE 0x2c  0x81 // Metal Colour
