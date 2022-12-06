@@ -2,7 +2,7 @@ BEGIN uxzar
 
 IF ~NumTimesTalkedTo(0)~ THEN
   BEGIN FirstMeeting
-    SAY ~Hmm, you look interesting.  I am Zariel, lend me your ear~~ [uxzar01]
+    SAY ~Hmm, you look interesting.  I am Zariel, lend me your ear.~ [uxzar01]
 
     IF ~GlobalLT("Chapter","GLOBAL",3)~ THEN
       REPLY ~Hey Zariel, you seen Irenicus around here?~ GOTO InquireIrenicus
