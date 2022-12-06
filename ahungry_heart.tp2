@@ -43,8 +43,10 @@ COPY ~%MOD_FOLDER%/audio/blank.mus~ ~override~ // The blank file
 
 INCLUDE "%MOD_FOLDER%/tpa/anari.tpa"
 INCLUDE "%MOD_FOLDER%/tpa/olrun.tpa"
+INCLUDE "%MOD_FOLDER%/tpa/zariel.tpa"
 LAF anari END
 LAF olrun END
+LAF zariel END
 
 // The following is appending what we wrote in AR1000.baf to the bottom of
 // AR1000.bcs
