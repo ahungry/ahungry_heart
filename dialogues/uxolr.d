@@ -10,8 +10,8 @@ IF ~NumTimesTalkedTo(0)~ THEN
     IF ~~ THEN
       REPLY ~Heya.~ GOTO Greet
 
-    IF ~Class(Player1,RANGER)~ THEN
-      REPLY ~I know a ranger when I see one!~ GOTO BothRangers
+    IF ~Class(Player1,FIGHTER)~ THEN
+      REPLY ~I know a fighter when I see one!~ GOTO BothFighters
 
     IF ~~ THEN
       REPLY ~Go away.~ GOTO GoAway
@@ -19,7 +19,7 @@ END
 
 IF ~~ THEN
   BEGIN InquireIrenicus
-    SAY ~Nope, but I can help you look for him. I'm a ranger!~ [uxolr00]
+    SAY ~Nope, but I can help you look for him. I'm a fighter!~ [uxolr00]
 
     IF ~~ THEN
       REPLY ~Sure. Join the party~
@@ -34,7 +34,7 @@ END
 
 IF ~~ THEN
   BEGIN Greet
-    SAY ~So, you need a ranger in your group?~ [uxolr00]
+    SAY ~So, you need a fighter in your group?~ [uxolr00]
 
     IF ~~ THEN
       REPLY ~Yes, as a matter of fact we do.~
@@ -48,8 +48,8 @@ IF ~~ THEN
 END
 
 IF ~~ THEN
-  BEGIN BothRangers
-    SAY ~Another ranger! Hail and well met brother. Let us journey together and smite evil.~ [uxolr00]
+  BEGIN BothFighters
+    SAY ~Another fighter! Hail and well met brother. Let us journey together and smite evil.~ [uxolr00]
 
     IF ~~ THEN
       REPLY ~Sounds like a plan.~

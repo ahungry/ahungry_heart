@@ -2,7 +2,7 @@ BEGIN uxzar
 
 IF ~NumTimesTalkedTo(0)~ THEN
   BEGIN FirstMeeting
-    SAY ~You there, hero.  I have an important message for you.  I'm Zariel and I seek your assistance~ [uxzar01]
+    SAY ~Hmm, you look interesting.  I am Zariel, lend me your ear~~ [uxzar01]
 
     IF ~GlobalLT("Chapter","GLOBAL",3)~ THEN
       REPLY ~Hey Zariel, you seen Irenicus around here?~ GOTO InquireIrenicus
@@ -10,8 +10,8 @@ IF ~NumTimesTalkedTo(0)~ THEN
     IF ~~ THEN
       REPLY ~Heya.~ GOTO Greet
 
-    IF ~Class(Player1,RANGER)~ THEN
-      REPLY ~I know a ranger when I see one!~ GOTO BothRangers
+    IF ~Class(Player1,THIEF)~ THEN
+      REPLY ~I know a thief when I see one!~ GOTO BothThiefs
 
     IF ~~ THEN
       REPLY ~Go away.~ GOTO GoAway
@@ -19,7 +19,7 @@ END
 
 IF ~~ THEN
   BEGIN InquireIrenicus
-    SAY ~Nope, but I can help you look for him. I'm a ranger!~ [uxzar00]
+    SAY ~Nope, but I can help you look for him. I'm a thief!~ [uxzar00]
 
     IF ~~ THEN
       REPLY ~Sure. Join the party~
@@ -34,7 +34,7 @@ END
 
 IF ~~ THEN
   BEGIN Greet
-    SAY ~So, you need a ranger in your group?~ [uxzar00]
+    SAY ~So, you need a thief in your group?~ [uxzar00]
 
     IF ~~ THEN
       REPLY ~Yes, as a matter of fact we do.~
@@ -48,8 +48,8 @@ IF ~~ THEN
 END
 
 IF ~~ THEN
-  BEGIN BothRangers
-    SAY ~Another ranger! Hail and well met brother. Let us journey together and smite evil.~ [uxzar00]
+  BEGIN BothThiefs
+    SAY ~Another thief! Hail and well met brother. Let us journey together and smite evil.~ [uxzar00]
 
     IF ~~ THEN
       REPLY ~Sounds like a plan.~
