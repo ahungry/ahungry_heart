@@ -21,7 +21,7 @@ https://www.gibberlings3.net/forums/topic/36224-the-first-ai-designed-mod-the-he
 
 - Anari (added and voiced) - DONE
 - Olrun (added and voicing) - TODO
-- Athar - (added and voicing) - TODO
+- Athar - (added and voiced) - DONE
 - Zariel (added and voiced )- DONE
 - The Voice (added and voiced) - DONE
 - The Guardian - pending
