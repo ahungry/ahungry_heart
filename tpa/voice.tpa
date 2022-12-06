@@ -1,10 +1,10 @@
-DEFINE_ACTION_FUNCTION ~the voice~ BEGIN
+DEFINE_ACTION_FUNCTION ~voice~ BEGIN
 
 // When launching like this vs top level tp2, it seems to want
 // the exact output name for the COPY command.
-COPY ~%MOD_FOLDER%/portraits/the voicel.bmp~ ~override/uxvoil.bmp~
-COPY ~%MOD_FOLDER%/portraits/the voicem.bmp~ ~override/uxvoim.bmp~
-COPY ~%MOD_FOLDER%/portraits/the voices.bmp~ ~override/uxvois.bmp~
+COPY ~%MOD_FOLDER%/portraits/thevoicel.bmp~ ~override/uxvoil.bmp~
+COPY ~%MOD_FOLDER%/portraits/thevoicem.bmp~ ~override/uxvoim.bmp~
+COPY ~%MOD_FOLDER%/portraits/thevoices.bmp~ ~override/uxvois.bmp~
 
 // The following is the copying of The Voice's .cre file, as well as assigning his sound-set.
 // See the file sndslot.ids for a listing of sounds you can add.
