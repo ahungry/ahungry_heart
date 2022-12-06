@@ -2,7 +2,7 @@ BEGIN uxolr
 
 IF ~NumTimesTalkedTo(0)~ THEN
   BEGIN FirstMeeting
-    SAY ~Hail friend, it is I, Olrun.  Have you a moment?~ [uxolr14]
+    SAY ~Hail friend, it is I, Olrun.  Have you a moment?~ [uxolr01]
 
     IF ~GlobalLT("Chapter","GLOBAL",3)~ THEN
       REPLY ~Hey Olrun, you seen Irenicus around here?~ GOTO InquireIrenicus
