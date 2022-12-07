@@ -1,34 +1,32 @@
 BEGIN uxolr
 
-IF ~NumTimesTalkedTo(0)
-    !Global("uxolrunPrelude", "GLOBALS", 1)~ THEN
-    BEGIN prelude
-      SAY ~Noooo, we were too late!~ [uxolr52]
-      ++ ~Did...did you see that?~ + prelude2
-      ++ ~...~ + prelude2
+IF ~!Global("uxolrunPrelude", "GLOBALS", 1)~ THEN BEGIN prelude
+  SAY ~Noooo, we were too late!~ [uxolr52]
+  ++ ~Did...did you see that?~ + prelude2
+  ++ ~...~ + prelude2
 END
 
-IF ~~ THEN
-  BEGIN prelude2
-    SAY ~Yes, we tried to come as soon as we could - we got a glimpse of the battle from afar, but were thousands of yards out.~
+IF ~~ THEN BEGIN prelude2
+  SAY ~Only the aftermath - we just arrived in the wee hours of the morn.~
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN
-  BEGIN FirstMeeting
-    SAY ~Hail friend, it is I, Olrun.  Have you a moment?~ [uxolr01]
+// IF ~NumTimesTalkedTo(0)
+// IF ~Global("uxolrunPrelude", "GLOBALS", 1)~ THEN BEGIN FirstMeeting
+IF ~True()~ THEN BEGIN FirstMeeting
+  SAY ~Hail friend, it is I, Olrun.  Have you a moment?~ [uxolr01]
 
-    IF ~GlobalLT("Chapter","GLOBAL",3)~ THEN
-      REPLY ~Hey Olrun, you seen Irenicus around here?~ GOTO InquireIrenicus
+  IF ~GlobalLT("Chapter","GLOBAL",3)~ THEN
+    REPLY ~Hey Olrun, you seen Irenicus around here?~ GOTO InquireIrenicus
 
-    IF ~~ THEN
-      REPLY ~Heya.~ GOTO Greet
+  IF ~~ THEN
+    REPLY ~Heya.~ GOTO Greet
 
-    IF ~Class(Player1,FIGHTER)~ THEN
-      REPLY ~I know a fighter when I see one!~ GOTO BothFighters
+  IF ~Class(Player1,FIGHTER)~ THEN
+    REPLY ~I know a fighter when I see one!~ GOTO BothFighters
 
-    IF ~~ THEN
-      REPLY ~Go away.~ GOTO GoAway
+  IF ~~ THEN
+    REPLY ~Go away.~ GOTO GoAway
 END
 
 IF ~~ THEN

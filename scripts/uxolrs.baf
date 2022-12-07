@@ -12,7 +12,6 @@
 
 IF
 See([PC])
-NumTimesTalkedTo(0)
 !Global("uxolrunPrelude","GLOBALS",1)
 THEN
 RESPONSE #100

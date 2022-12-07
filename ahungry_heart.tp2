@@ -49,10 +49,10 @@ INCLUDE "%MOD_FOLDER%/tpa/voice.tpa"
 INCLUDE "%MOD_FOLDER%/tpa/athar.tpa"
 LAF items END
 LAF anari END
-LAF olrun END
 LAF zariel END
 LAF voice END
 LAF athar END
+LAF olrun END
 
 // The following is appending what we wrote in AR1000.baf to the bottom of
 // AR1000.bcs

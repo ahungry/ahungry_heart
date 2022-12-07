@@ -6,3 +6,13 @@
 // RESPONSE #100
 // Dialogue(Nearest([PC]))
 // END
+
+IF
+See([PC])
+Global("uxatharPrelude", "GLOBALS", 1)
+!Global("uxzarielPrelude","GLOBALS",1)
+THEN
+RESPONSE #100
+Dialogue(Nearest([PC]))
+SetGlobal("uxzarielPrelude","GLOBALS",1)
+END

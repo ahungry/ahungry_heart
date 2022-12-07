@@ -1,5 +1,10 @@
 BEGIN uxzar
 
+IF ~!Global("uxzarielrelude", "GLOBALS", 1)~ THEN BEGIN prelude
+  SAY ~Such a bummer.~
+  IF ~~ THEN EXIT
+END
+
 IF ~NumTimesTalkedTo(0)~ THEN
   BEGIN FirstMeeting
     SAY ~Hmm, you look interesting.  I am Zariel, lend me your ear.~ [uxzar01]
