@@ -10,8 +10,7 @@ COPY ~%MOD_FOLDER%/portraits/anari.pngs.bmp~ ~override/uxanas.bmp~
 COPY ~%MOD_FOLDER%/items/uxbow01.itm~ ~override~
 SAY NAME1 ~Anari's Bow of the Wild~
 SAY NAME2 ~Anari's Bow of the Wild~
-SAY DESC ~
-This weapon has been handed down for generations.
+SAY DESC ~This weapon has been handed down for generations.
 
 STATISTICS:
 
@@ -54,14 +53,24 @@ Allows unlimited +2 arrows.~
 COPY ~%MOD_FOLDER%/items/uxlea01.itm~ ~override~
 SAY NAME1 ~Anari's Armor of the Wild +3~
 SAY NAME2 ~Anari's Armor of the Wild +3~
-SAY DESC ~A mystical armor crafted from
-the hides of wild animals, granting its wearer
-increased agility in battle.
+SAY DESC ~A mystical armor crafted from the hides of wild animals,
+granting its wearer increased agility in battle.
 
-+3 AC bonus
+STATISTICS:
 
-Armor class: 3
+Armor Class: 3 (1 vs piercing, 2 vs missile)
 ~
+// SAY DESC ~A mystical armor crafted from the hides of wild animals,
+// granting its wearer increased agility in battle.
+
+// STATISTICS:
+
+// Equipped abilities:
+// - Armor Class: +3 AC bonus
+
+// Armor Class: 3 (1 vs piercing, 2 vs missile)
+// ~
+// Armor Class: 3 (1 vs piercing and missile)
 SAY UNIDENTIFIED_DESC ~Anari's Armor of the Wild.
 Allows unlimited +2 arrows.~
 

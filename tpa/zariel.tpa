@@ -7,12 +7,30 @@ COPY ~%MOD_FOLDER%/portraits/zariel.pngm.bmp~ ~override/uxzarm.bmp~
 COPY ~%MOD_FOLDER%/portraits/zariel.pngs.bmp~ ~override/uxzars.bmp~
 
 // Add the items
+COPY ~%MOD_FOLDER%/items/uxclk01.itm~ ~override~
+SAY NAME1 ~Zariel's Cloak~
+SAY NAME2 ~Zariel's Cloak~
+SAY DESC ~This is Zariel's cloak.  It aids her in remaining undetected.
+
+STATISTICS:
+
+Equipped abilities:
+- Non Detection
+
+Type: Cloak
+Requires:
+ Zariel
+
+Weight: 0
+~
+SAY UNIDENTIFIED_DESC ~Zariel's Cloak~
+
 COPY ~%MOD_FOLDER%/items/uxhel01.itm~ ~override~
 SAY NAME1 ~Zariel's Sun Hat~
 SAY NAME2 ~Zariel's Sun Hat~
-SAY DESC ~This is Zariel's sun hat.  The hat assists in concealing her devilish
-horns, which are protruding out of some holes in the hat, in a
-decorative fashion (deceiving all but the most astute observer).
+SAY DESC ~This is Zariel's sun hat.  The hat assists in concealing
+her devilish horns, which are protruding out of some holes in the hat,
+in a decorative fashion (deceiving all but the most astute observer).
 
 STATISTICS:
 
@@ -204,6 +222,7 @@ WRITE_BYTE 0x30  0x2f // Leather Colour
 WRITE_BYTE 0x31  0x2f // Armor Colour
 WRITE_BYTE 0x32  0xde // Hair Colour
 
+ADD_CRE_ITEM ~uxclk01~ #0 #0 #0 ~IDENTIFIED~ ~CLOAK~ EQUIP // TWOHANDED
 ADD_CRE_ITEM ~uxhel01~ #0 #0 #0 ~IDENTIFIED~ ~HELMET~ EQUIP // TWOHANDED
 ADD_CRE_ITEM ~uxdag02~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~ EQUIP // TWOHANDED
 ADD_CRE_ITEM ~uxdag01~ #0 #0 #0 ~IDENTIFIED~ ~SHIELD~ EQUIP // TWOHANDED
