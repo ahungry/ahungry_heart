@@ -218,30 +218,63 @@ END // and here ends ToB content
 // Ensure these are all 8 or fewer for the resref I guess
 // P = Party join/leave, J = interjections and dialogue, D = Dream Script (rest)
 // 25 variations - not sure...
-APPEND ~pdialog.2da~
-~uxolr         uxolrp              uxolrj             uxolrd~
-UNLESS ~uxolr~
-UNLESS ~25POST~ // if we do not have tob tables,
+
+ACTION_IF NOT GAME_IS ~eet~ BEGIN
+  APPEND ~pdialog.2da~
+  ~uxolr         uxolrp              uxolrj             uxolrd~
+  UNLESS ~uxolr~
+  UNLESS ~25POST~ // if we do not have tob tables,
 
 
-APPEND ~pdialog.2da~
-~uxolr         uxolrp              uxolrj             uxolrd              uxolr25p             uxolr25j             uxolr25d       uxolr25s~
-UNLESS ~uxolr~
-IF ~25POST~ // if we do have tob tables
+  APPEND ~pdialog.2da~
+  ~uxolr         uxolrp              uxolrj             uxolrd              uxolr25p             uxolr25j             uxolr25d       uxolr25s~
+  UNLESS ~uxolr~
+  IF ~25POST~ // if we do have tob tables
+
+  // interdia.2da is a bit simpler, but acts the same as pdialog.2da.
+  // It adds the NPCs banter file, which is used for inter-party banter, and romance dialogues.
+  APPEND ~interdia.2da~
+  ~uxolr uxbolr~
+  UNLESS ~uxolr~
+  UNLESS ~25FILE~
+
+  APPEND ~interdia.2da~
+  ~uxolr uxbolr uxbolr25~
+  UNLESS ~uxolr~
+  IF ~25FILE~
+END
+
+// This may fix MULTIG lookup in an EET game pre-EET_End
+ACTION_IF GAME_IS ~eet~ BEGIN
+  // This also gets added in that scenario
+  APPEND ~bddialog.2da~
+  ~uxolr         uxolrp              uxolrj             uxolrd~
+  UNLESS ~uxolr~
+  UNLESS ~25POST~ // if we do not have tob tables,
+
+  APPEND ~25dialog.2da~
+  ~UXOLR             uxolr25p          UXOLRJ            uxolr25d~
+  UNLESS ~uxolr~
+  UNLESS ~25POST~ // if we do not have tob tables,
 
 
-// interdia.2da is a bit simpler, but acts the same as pdialog.2da.
-// It adds the NPCs banter file, which is used for inter-party banter, and romance dialogues.
-APPEND ~interdia.2da~
-~uxolr uxbolr~
-UNLESS ~uxolr~
-UNLESS ~25FILE~
+  APPEND ~bgdialog.2da~
+  ~uxolr         uxolrp              uxolrj             uxolrd~
+  UNLESS ~uxolr~
+  UNLESS ~25POST~ // if we do not have tob tables,
 
-APPEND ~interdia.2da~
-~uxolr uxbolr uxbolr25~
-UNLESS ~uxolr~
-IF ~25FILE~
+  // For EET, it expects to use this type of format I guess?  Stars in the slots
+  //~uxolr         uxolrp              uxolrj             uxolrd              uxolr25p             uxolr25j             uxolr25d       uxolr25s~
+  APPEND ~pdialog.2da~
+  ~uxolr                  uxolrp                 uxolrj                 uxolrd                 ***                    ***                    ***                    ***~
+  UNLESS ~uxolr~
+  IF ~25POST~ // if we do have tob tables
 
+  APPEND ~interdia.2da~
+  ~uxolr     uxbolr    ***~
+  UNLESS ~uxolr~
+  IF ~25FILE~
+END
 
 // EET related code
 ACTION_IF GAME_IS ~eet~ BEGIN //only true if game is detected as Enhanced Edition Trilogy (mod for BG2:EE)

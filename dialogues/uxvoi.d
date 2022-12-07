@@ -29,7 +29,7 @@ IF ~~ THEN
     IF ~~ THEN
       REPLY ~Sure. Join the party~
         DO ~
-          SetGlobal("TheVoiceJoined","LOCALS",1)
+          SetGlobal("VoiceJoined","LOCALS",1)
           JoinParty()
         ~ EXIT
 
@@ -44,7 +44,7 @@ IF ~~ THEN
     IF ~~ THEN
       REPLY ~Yes, as a matter of fact we do.~
         DO ~
-          SetGlobal("TheVoiceJoined","LOCALS",1)
+          SetGlobal("VoiceJoined","LOCALS",1)
           JoinParty()
         ~ EXIT
 
@@ -59,7 +59,7 @@ IF ~~ THEN
     IF ~~ THEN
       REPLY ~Sounds like a plan.~
       DO ~
-        SetGlobal("TheVoiceJoined","LOCALS",1)
+        SetGlobal("VoiceJoined","LOCALS",1)
         JoinParty()
       ~ EXIT
 
