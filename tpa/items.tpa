@@ -1,0 +1,31 @@
+DEFINE_ACTION_FUNCTION ~items~ BEGIN
+
+COPY ~%MOD_FOLDER%/items/uxhel02.itm~ ~override~
+SAY NAME1 ~Balduran's Circlet~
+SAY NAME2 ~Balduran's Circlet~
+SAY DESC ~This is Balduran's crown, reshaped into a circlet.
+
+STATISTICS:
+
+Type: Helmet
+Requires:
+ 6 Strength
+
+Weight: 2
+~
+SAY UNIDENTIFIED_DESC ~Athar's Circlet~
+// NOTE: only if sod
+WRITE_ASCII 0x0022 ~JB~ #2
+WRITE_ASCII 0x3a ~1BAND01~ #8 // Paper doll
+WRITE_ASCII 0x58 ~CMISCAA~ #8 // Description background
+WRITE_ASCII 0x60 5 // Enchantment
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x7 END
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x8 END
+// Color
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x61 parameter2=53 target=1 timing=2 END
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x61 parameter2=48 target=1 timing=2 END
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x61 parameter2=49 target=1 timing=2 END
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x61 parameter2=50 target=1 timing=2 END
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x61 parameter2=52 target=1 timing=2 END
+
+END

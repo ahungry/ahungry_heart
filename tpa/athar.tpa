@@ -6,6 +6,61 @@ COPY ~%MOD_FOLDER%/portraits/athar.pngl.bmp~ ~override/uxathl.bmp~
 COPY ~%MOD_FOLDER%/portraits/athar.pngm.bmp~ ~override/uxathm.bmp~
 COPY ~%MOD_FOLDER%/portraits/athar.pngs.bmp~ ~override/uxaths.bmp~
 
+// Add the items
+COPY ~%MOD_FOLDER%/items/uxsw101.itm~ ~override~
+SAY NAME1 ~Sword of Justice~
+SAY NAME2 ~Sword of Justice~
+SAY DESC ~This is Athar's "Sword of Justice".
+He uses it to smite evil.
+
+STATISTICS:
+
+Equipped abilities:
+- +1 Additional Attack
+
+Damage: 1d6+2 (slashing)
+Speed Factor: 2
+Proficiency Type: Short Swords
+Type: One-handed
+Requires:
+ Athar
+
+Weight: 3
+~
+SAY UNIDENTIFIED_DESC ~The Sword of Justice~
+// WRITE_ASCII 0x0022 ~S3~ #2
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x7 END
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x8 END
+// Color
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x78 parameter2=16 target=1 timing=2 END
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x73 parameter2=21 target=1 timing=2 END
+
+COPY ~%MOD_FOLDER%/items/uxshd01.itm~ ~override~
+SAY NAME1 ~Shield of Honor~
+SAY NAME2 ~Shield of Honor~
+SAY DESC ~This is Athar's "Shield of Honor".
+He uses it to smite evil.
+
+STATISTICS:
+
+Equipped abilities:
+- Armor class bonus: 2
+
+Requires:
+ Athar
+
+Weight: 3
+~
+SAY UNIDENTIFIED_DESC ~Shield of Honor~
+WRITE_ASCII 0x0022 ~D2~ #2
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x7 END
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x8 END
+// Color
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x4a parameter2=32 target=1 timing=2 END
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x4b parameter2=33 target=1 timing=2 END
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x73 parameter2=34 target=1 timing=2 END
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x78 parameter2=37 target=1 timing=2 END
+
 // The following is the copying of Athar's .cre file, as well as assigning his sound-set.
 // See the file sndslot.ids for a listing of sounds you can add.
 COPY ~%MOD_FOLDER%/cre/uxath.cre~ ~override/uxath.cre~
@@ -125,6 +180,10 @@ WRITE_BYTE 0x30  0x87 // Leather Colour
 WRITE_BYTE 0x31  0x87 // Armor Colour
 WRITE_BYTE 0x32  0x29 // Hair Colour
 
+ADD_CRE_ITEM ~uxsw101~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~ EQUIP // TWOHANDED
+ADD_CRE_ITEM ~uxshd01~ #0 #0 #0 ~IDENTIFIED~ ~SHIELD~ EQUIP // TWOHANDED
+ADD_CRE_ITEM ~plat02~ #0 #0 #0 ~IDENTIFIED~ ~ARMOR~ EQUIP // TWOHANDED
+ADD_CRE_ITEM ~uxhel02~ #0 #0 #0 ~IDENTIFIED~ ~HELMET~ EQUIP // TWOHANDED
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/uxbath.d~ // All Branwen's banters with other party members will go here. We need the "EVALUATE_BUFFER" because the chapter variable now uses the OUTER_SPRINT variable defined above for the EET continuous journal system.
 	~%MOD_FOLDER%/dialogues/uxath.d~  // Branwen's greeting dialogue will go here.
