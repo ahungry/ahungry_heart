@@ -7,7 +7,6 @@ COPY ~%MOD_FOLDER%/portraits/anari.pngm.bmp~ ~override/uxanam.bmp~
 COPY ~%MOD_FOLDER%/portraits/anari.pngs.bmp~ ~override/uxanas.bmp~
 
 // Add the items
-// COPY_EXISTING ~uxbow01.itm~ ~override~
 COPY ~%MOD_FOLDER%/items/uxbow01.itm~ ~override~
 SAY NAME1 ~Anari's Bow of the Wild~
 SAY NAME2 ~Anari's Bow of the Wild~
@@ -216,12 +215,12 @@ SET_BG2_PROFICIENCY PROFICIENCYMACE 0
 SET_BG2_PROFICIENCY PROFICIENCYCLUB 0
 SET_BG2_PROFICIENCY PROFICIENCYBLACKJACK 0
 
-COPY_EXISTING ~uxana.cre~ ~override~
-  ADD_CRE_ITEM ~uxbow01~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~ // EQUIP TWOHANDED
-  ADD_CRE_ITEM ~uxqui00~ #0 #0 #0 ~IDENTIFIED~ ~QUIVER~
-  ADD_CRE_ITEM ~blun01~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON2~ EQUIP
-  ADD_CRE_ITEM ~blun04~ #0 #0 #0 ~IDENTIFIED~ ~SHIELD~ EQUIP
-  ADD_CRE_ITEM ~uxlea01~ #0 #0 #0 ~IDENTIFIED~ ~ARMOR~ EQUIP
+//COPY_EXISTING ~uxana.cre~ ~override~
+ADD_CRE_ITEM ~uxbow01~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~ // EQUIP TWOHANDED
+ADD_CRE_ITEM ~uxqui00~ #0 #0 #0 ~IDENTIFIED~ ~QUIVER~
+ADD_CRE_ITEM ~blun01~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON2~ EQUIP
+ADD_CRE_ITEM ~blun04~ #0 #0 #0 ~IDENTIFIED~ ~SHIELD~ EQUIP
+ADD_CRE_ITEM ~uxlea01~ #0 #0 #0 ~IDENTIFIED~ ~ARMOR~ EQUIP
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/uxbana.d~ // All Branwen's banters with other party members will go here. We need the "EVALUATE_BUFFER" because the chapter variable now uses the OUTER_SPRINT variable defined above for the EET continuous journal system.
 	~%MOD_FOLDER%/dialogues/uxana.d~  // Branwen's greeting dialogue will go here.

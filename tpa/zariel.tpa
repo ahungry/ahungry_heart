@@ -6,6 +6,33 @@ COPY ~%MOD_FOLDER%/portraits/zariel.pngl.bmp~ ~override/uxzarl.bmp~
 COPY ~%MOD_FOLDER%/portraits/zariel.pngm.bmp~ ~override/uxzarm.bmp~
 COPY ~%MOD_FOLDER%/portraits/zariel.pngs.bmp~ ~override/uxzars.bmp~
 
+// Add the items
+COPY ~%MOD_FOLDER%/items/uxhel01.itm~ ~override~
+SAY NAME1 ~Zariel's Sun Hat~
+SAY NAME2 ~Zariel's Sun Hat~
+SAY DESC ~
+This is Zariel's sun hat.  The hat assists in concealing her devilish
+horns, which are protruding out of some holes in the hat, in a
+decorative fashion (deceiving all but the most astute observer).
+
+STATISTICS:
+
+Type: Helmet
+Requires:
+ Zariel
+
+Weight: 0
+~
+SAY UNIDENTIFIED_DESC ~Zariel's Sun Hat~
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x7 END
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x8 END
+// Red Color
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x83 parameter2=53 target=1 timing=2 END
+// LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0 parameter2=48 target=1 timing=2 END
+// LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=4 parameter2=49 target=1 timing=2 END
+// LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=4 parameter2=50 target=1 timing=2 END
+// LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=4 parameter2=52 target=1 timing=2 END
+
 // The following is the copying of Zariel's .cre file, as well as assigning his sound-set.
 // See the file sndslot.ids for a listing of sounds you can add.
 COPY ~%MOD_FOLDER%/cre/uxzar.cre~ ~override/uxzar.cre~
@@ -124,6 +151,8 @@ WRITE_BYTE 0x2f  0x0c // skin Colour
 WRITE_BYTE 0x30  0x2f // Leather Colour
 WRITE_BYTE 0x31  0x2f // Armor Colour
 WRITE_BYTE 0x32  0xde // Hair Colour
+
+ADD_CRE_ITEM ~uxhel01~ #0 #0 #0 ~IDENTIFIED~ ~HELMET~ EQUIP // TWOHANDED
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/uxbzar.d~ // All Branwen's banters with other party members will go here. We need the "EVALUATE_BUFFER" because the chapter variable now uses the OUTER_SPRINT variable defined above for the EET continuous journal system.
 	~%MOD_FOLDER%/dialogues/uxzar.d~  // Branwen's greeting dialogue will go here.
