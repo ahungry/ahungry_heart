@@ -32,7 +32,9 @@ See([PC])
 Global("uxPreludeDone","GLOBALS",1)
 Global("uxGroupJoin","GLOBALS", 1)
 !Global("ZarielJoined", "LOCALS", 1)
+!Global("ZarielJoinedOnce", "LOCALS", 1)
 THEN RESPONSE #100
 SetGlobal("ZarielJoined", "LOCALS", 1)
+SetGlobal("ZarielJoinedOnce", "LOCALS", 1)
 JoinParty()
 END

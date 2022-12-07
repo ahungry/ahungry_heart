@@ -32,7 +32,9 @@ See([PC])
 Global("uxPreludeDone","GLOBALS",1)
 Global("uxGroupJoin","GLOBALS", 1)
 !Global("VoiceJoined", "LOCALS", 1)
+!Global("VoiceJoinedOnce", "LOCALS", 1)
 THEN RESPONSE #100
 SetGlobal("VoiceJoined", "LOCALS", 1)
+SetGlobal("VoiceJoinedOnce", "LOCALS", 1)
 JoinParty()
 END

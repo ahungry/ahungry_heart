@@ -34,7 +34,9 @@ See([PC])
 Global("uxPreludeDone","GLOBALS",1)
 Global("uxGroupJoin","GLOBALS", 1)
 !Global("OlrunJoined", "LOCALS", 1)
+!Global("OlrunJoinedOnce", "LOCALS", 1)
 THEN RESPONSE #100
 SetGlobal("OlrunJoined", "LOCALS", 1)
+SetGlobal("OlrunJoinedOnce", "LOCALS", 1)
 JoinParty()
 END
