@@ -44,7 +44,7 @@ SAY UNIDENTIFIED_DESC ~Zariel's Sun Hat~
 WRITE_ASCII 0x0022 ~H0~ #2
 LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x7 END
 LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x8 END
-// Red Color
+// Weapon Color
 LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0xc3 parameter2=53 target=1 timing=2 END
 LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x4a parameter2=48 target=1 timing=2 END
 LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0xc6 parameter2=49 target=1 timing=2 END
@@ -73,7 +73,7 @@ SAY UNIDENTIFIED_DESC ~Zariel's "Left Hand"~
 WRITE_ASCII 0x0022 ~S3~ #2
 LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x7 END
 LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x8 END
-// Red Color
+// Weapon Color
 LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x4a parameter2=16 target=1 timing=2 END
 LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x4b parameter2=21 target=1 timing=2 END
 

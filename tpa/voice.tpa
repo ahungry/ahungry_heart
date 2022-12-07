@@ -6,6 +6,72 @@ COPY ~%MOD_FOLDER%/portraits/thevoice.pngl.bmp~ ~override/uxvoil.bmp~
 COPY ~%MOD_FOLDER%/portraits/thevoice.pngm.bmp~ ~override/uxvoim.bmp~
 COPY ~%MOD_FOLDER%/portraits/thevoice.pngs.bmp~ ~override/uxvois.bmp~
 
+// Add the items
+COPY ~%MOD_FOLDER%/items/uxclk02.itm~ ~override~
+SAY NAME1 ~The Voice's Robe~
+SAY NAME2 ~The Voice's Robe~
+SAY DESC ~This is The Voice's Robe.
+Not much is known about it.
+
+STATISTICS:
+
+Armor Class: 5
+
+STATISTICS:
+
+Requires:
+ The Voice
+
+Weight: 5
+~
+SAY UNIDENTIFIED_DESC ~The Voice's Robe~
+// WRITE_ASCII 0x3a ~1BAND01~ #8 // Paper doll
+// WRITE_ASCII 0x58 ~CMISCAA~ #8 // Description background
+WRITE_ASCII 0x60 5 // Enchantment
+// WRITE_ASCII 0x0022 ~S3~ #2
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x7 END
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x8 END
+
+// Armor Color
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x4b parameter2=5 target=1 timing=2 END
+// Strap
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x4b parameter2=4 target=1 timing=2 END
+// Belt
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x4a parameter2=0 target=1 timing=2 END
+
+
+COPY ~%MOD_FOLDER%/items/uxsta01.itm~ ~override~
+SAY NAME1 ~The Voice's Staff~
+SAY NAME2 ~The Voice's Staff~
+SAY DESC ~This is The Voice's Staff.
+Not much is known about it.
+
+STATISTICS:
+
+Damage: 1d6+3 (slashing)
+Speed Factor: 5
+Proficiency Type: Staff
+Type: Two-handed
+Requires:
+ The Voice
+
+Weight: 5
+~
+SAY UNIDENTIFIED_DESC ~The Voice's Staff~
+WRITE_ASCII 0x0022 ~GS~ #2
+// WRITE_ASCII 0x0022 ~HB~ #2
+// WRITE_ASCII 0x3a ~1BAND01~ #8 // Paper doll
+// WRITE_ASCII 0x58 ~CMISCAA~ #8 // Description background
+WRITE_ASCII 0x60 5 // Enchantment
+// WRITE_ASCII 0x0022 ~S3~ #2
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x7 END
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x8 END
+// Weapon Color
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x4b parameter2=16 target=1 timing=2 END
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x68 parameter2=21 target=1 timing=2 END
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x68 parameter2=20 target=1 timing=2 END
+
+
 // The following is the copying of The Voice's .cre file, as well as assigning his sound-set.
 // See the file sndslot.ids for a listing of sounds you can add.
 COPY ~%MOD_FOLDER%/cre/uxvoi.cre~ ~override/uxvoi.cre~
@@ -111,20 +177,24 @@ WRITE_ASCII 0X34  ~uxvois~ #8  // small portrait
 WRITE_ASCII 0x3c  ~uxvoim~ #8  // medium portrait
 
 // WRITE_LONG 0x28  0x6310 // THIEF_FEMALE_HUMAN (https://gibberlings3.github.io/iesdp/files/ids/bgee/animate.htm)
-WRITE_LONG 0x28  0x6402 // Monk (https://gibberlings3.github.io/iesdp/files/ids/bgee/animate.htm)
+// WRITE_LONG 0x28  0x6402 // Monk (https://gibberlings3.github.io/iesdp/files/ids/bgee/animate.htm)
+WRITE_LONG 0x28  0x6211 // MAGE_FEMALE_ELF (https://gibberlings3.github.io/iesdp/files/ids/bgee/animate.htm)
 WRITE_BYTE 0x272 0x1 // Human (https://gibberlings3.github.io/iesdp/files/ids/bg2/race.htm)
 WRITE_BYTE 0x273 14 // Cleric/mage (https://gibberlings3.github.io/iesdp/files/ids/bg2/class.htm)
 WRITE_BYTE 0x275 0x2 // Female (https://gibberlings3.github.io/iesdp/files/ids/bg2/gender.htm)
 // WRITE_LONG 0x244 0x40030000 // Kit Kensai
 
 // Use eekeeper to see the codes, looks like a color index
-WRITE_BYTE 0x2c  0x4b // Metal Colour
-WRITE_BYTE 0x2d  0x4b // Minor Colour
-WRITE_BYTE 0x2e  0x4b // Major Colour
+WRITE_BYTE 0x2c  0x8a // Metal Colour
+WRITE_BYTE 0x2d  0x8a // Minor Colour
+WRITE_BYTE 0x2e  0x8a // Major Colour
 WRITE_BYTE 0x2f  0xde // skin Colour
-WRITE_BYTE 0x30  0x4b // Leather Colour
-WRITE_BYTE 0x31  0x4b // Armor Colour
+WRITE_BYTE 0x30  0x8a // Leather Colour
+WRITE_BYTE 0x31  0x8a // Armor Colour
 WRITE_BYTE 0x32  0xde // Hair Colour
+
+ADD_CRE_ITEM ~uxsta01~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~ EQUIP TWOHANDED
+ADD_CRE_ITEM ~uxclk02~ #0 #0 #0 ~IDENTIFIED~ ~ARMOR~ EQUIP
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/uxbvoi.d~ // All Branwen's banters with other party members will go here. We need the "EVALUATE_BUFFER" because the chapter variable now uses the OUTER_SPRINT variable defined above for the EET continuous journal system.
 	~%MOD_FOLDER%/dialogues/uxvoi.d~  // Branwen's greeting dialogue will go here.

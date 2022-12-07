@@ -59,6 +59,11 @@ granting its wearer increased agility in battle.
 STATISTICS:
 
 Armor Class: 3 (1 vs piercing, 2 vs missile)
+
+Requires:
+ Anari
+
+Weight: 5
 ~
 // SAY DESC ~A mystical armor crafted from the hides of wild animals,
 // granting its wearer increased agility in battle.
@@ -224,7 +229,6 @@ SET_BG2_PROFICIENCY PROFICIENCYMACE 0
 SET_BG2_PROFICIENCY PROFICIENCYCLUB 0
 SET_BG2_PROFICIENCY PROFICIENCYBLACKJACK 0
 
-//COPY_EXISTING ~uxana.cre~ ~override~
 ADD_CRE_ITEM ~uxbow01~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~ // EQUIP TWOHANDED
 ADD_CRE_ITEM ~uxqui00~ #0 #0 #0 ~IDENTIFIED~ ~QUIVER~
 ADD_CRE_ITEM ~blun01~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON2~ EQUIP
