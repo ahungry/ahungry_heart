@@ -2,7 +2,7 @@ BEGIN uxana
 
 
 IF ~!Global("uxanaPrelude", "GLOBALS", 1)~ THEN BEGIN prelude
-  SAY ~We were on our way here to discuss a matter of utmost urgency with Gorion, however it seems we're on our own.  Take care traveller, and may you never cross paths with those who struggle for The Heart of Baldur's Gate.~
+  SAY @0009
   IF ~~ THEN EXIT
 END
 

@@ -1,7 +1,7 @@
 BEGIN uxvoi
 
 IF ~!Global("uxvoicePrelude", "GLOBALS", 1)~ THEN BEGIN prelude
-  SAY ~May he rest among the Gods.~
+  SAY @0008
   IF ~~ THEN EXIT
 END
 

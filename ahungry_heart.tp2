@@ -27,8 +27,8 @@ LANGUAGE
   ~%MOD_FOLDER%/lang/english/weidu.tra~
 
 
-BEGIN @001 DESIGNATED 1 LABEL %MOD_FOLDER%
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @002
+BEGIN @10000 DESIGNATED 1 LABEL ahungry_heart
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @20000
 
 // These two lines were created by CamDawg. It's a new state that checks if NPC is able to talk. USE this in your mod. See the dialogue for details.
 APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~

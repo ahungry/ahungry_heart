@@ -1,7 +1,7 @@
 BEGIN uxzar
 
 IF ~!Global("uxzarielPrelude", "GLOBALS", 1)~ THEN BEGIN prelude
-  SAY ~Such a bummer - based on what's left of the body, this was the work of a powerful entity.~
+  SAY @0007
   IF ~~ THEN EXIT
 END
 
@@ -30,6 +30,7 @@ IF ~~ THEN
       REPLY ~Sure. Join the party~
         DO ~
           SetGlobal("ZarielJoined","LOCALS",1)
+          SetGlobal("uxGroupJoin", "GLOBALS", 1)
           JoinParty()
         ~ EXIT
 

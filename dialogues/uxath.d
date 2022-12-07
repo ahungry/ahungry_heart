@@ -1,11 +1,11 @@
 BEGIN uxath
 
 IF ~!Global("uxatharPrelude", "GLOBALS", 1)~ THEN BEGIN prelude
-  SAY ~I am sorry for your misfortune.  Had I been able, I would have helped.~
+  SAY @0006
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN
+IF ~True()~ THEN
   BEGIN FirstMeeting
     SAY ~You there, hero. I'm Athar and I seek your assistance~ [uxath01]
 

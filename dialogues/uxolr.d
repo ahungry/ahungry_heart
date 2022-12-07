@@ -1,13 +1,18 @@
 BEGIN uxolr
 
 IF ~!Global("uxolrunPrelude", "GLOBALS", 1)~ THEN BEGIN prelude
-  SAY ~Noooo, we were too late!~ [uxolr52]
-  ++ ~Did...did you see that?~ + prelude2
-  ++ ~...~ + prelude2
+  SAY @0001
+  ++ @0002 + prelude2
+  ++ @0003 + prelude3
 END
 
 IF ~~ THEN BEGIN prelude2
-  SAY ~Only the aftermath - we just arrived in the wee hours of the morn.~ [uxbad00]
+  SAY @0004
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN prelude3
+  SAY @0005
   IF ~~ THEN EXIT
 END
 

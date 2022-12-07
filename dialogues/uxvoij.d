@@ -1,8 +1,8 @@
 BEGIN uxvoij
 
-IF ~IsGabber(Player1)~ uxAnaPID
+IF ~IsGabber(Player1)~ uxVoiPID
   SAY ~What's up?~
-  ++ ~Anari, what brings you to our quest?~ + quest
+  ++ ~The Voice, what brings you to our quest?~ + quest
   ++ ~Nevermind~ EXIT
 END
 

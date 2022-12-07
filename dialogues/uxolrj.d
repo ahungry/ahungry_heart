@@ -1,6 +1,6 @@
 BEGIN uxolrj
 
-IF ~IsGabber(Player1)~ uxolrPID
+IF ~IsGabber(Player1)~ uxOlrPID
   SAY ~What's up?~
   ++ ~Olrun, what brings you to our quest?~ + quest
   ++ ~Nevermind~ EXIT

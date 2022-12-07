@@ -1,29 +1,16 @@
-// General silent actions/mannerisms/responses
-@1001 = ~...(remain silent)...~
-@1002 = ~...(nod yes)...~
-@1003 = ~...(shrug my hands)...~
-@1004 = ~...(shake head no)...~
-@1005 = ~...(run away)...~
+// Prelude segment
 
-// Gorion responses
-@1100 = ~Scared? It's alright <CHARNAME>, just nod if you're ready.~
-@1101 = ~Come back when you're ready to go, but do not tarry too long.~
-
-// Imoen
-@1200 = ~Hey, don't give me that look!~
-@1201 = ~Cat got your tongue?  Well, I'm comin' with ya!~
-@1202 = ~Hey, wait for me!~
-@1203 = ~Sorry I followed ya, but I never get out of Candlekeep and those monks are such a bore. Never any decent coin in their pockets neither. I... I saw Gorion, and I am SO sorry! Kinda figured something bad might happen to you out here. ~
-
-// basic_interactions
-
-// Winthrop
-@10000 = ~Not in the mood eh? Lighten up would'ya!  Anyways, care to take a look at what I have in?~
-// Shank
-@10001 = ~Well, you match the description - my apologies, but it's time for you to die.~
-// Carbos
-@10002 = ~Aw well, it hardly matters.  It's your unlucky day, cause you're 'bout to die and I'm 'bout to be rich!~
-
-// Phlydia bg1re
-@10003 = ~Hmmm! There's a bit of paper stuck in the spine of this book. I just noticed it when I pulled out some straw... Is this yours, <CHARNAME>? Oh, I see. It's addressed to Tamah Venustas. Let me just pull it gently out and... Oooops!! It tore. Oh my. This looks like the handwriting of Camryn the Scribe. Oh dear. It's a love-letter. Let me just fold it back together... Ummm, <CHARNAME>, I just saw Camryn by the Library stairs. Would you mind...~
-@10004 = ~You would be doing me...and him...a favor if you would, <CHARNAME>. (Lowers her voice.) Camryn has been one of your staunchest supporters here, you know. When the Keeper of the Tomes didn't want you staying here, Camryn stood by your father and insisted that you be allowed to live in the safety of Candlekeep. He's always been fond of children, which is funny since Gorion and I used to joke about Camryn being a bit of a cold fish. We never imagined that he would ever find anyone enough to his liking... When he met Tamah... ahhhh... they were so much in love. You should ask Camryn about it... It's such a sad story.~
+// Olrun
+@0001 = ~Noooo, we were too late!~ [uxolr52]
+  @0002 = ~Did...did you see that?~
+    @0004 = "Only the aftermath - we just arrived in the wee hours of the morn." [uxbad00]
+  @0003 = ~...~
+    @0005 = "Cat got yer tongue my <LADYLORD>?  Well, I don't blame ya." [uxbad00]
+// Athar
+@0006 = "I am sorry for your misfortune.  Had I been able, I would have helped." [uxbad00]
+// Zariel
+@0007 = "Such a bummer - based on what's left of the body, this was clearly the work of a powerful entity." [uxbad00]
+// Voice
+@0008 = ~May he rest among the Gods.~ [uxbad00]
+// Anari
+@0009 = ~We were on our way here to discuss a matter of utmost urgency with Gorion, however it seems we're on our own.  Take care traveller, and may you never cross paths with those who struggle for The Heart of Baldur's Gate.~ [uxbad00]

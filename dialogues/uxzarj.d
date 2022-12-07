@@ -1,6 +1,6 @@
 BEGIN uxzarj
 
-IF ~IsGabber(Player1)~ uxAnaPID
+IF ~IsGabber(Player1)~ uxZarPID
   SAY ~What's up?~
   ++ ~Zariel, what brings you to our quest?~ + quest
   ++ ~Nevermind~ EXIT

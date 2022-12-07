@@ -1,8 +1,8 @@
 BEGIN uxathj
 
-IF ~IsGabber(Player1)~ uxAnaPID
+IF ~IsGabber(Player1)~ uxAthPID
   SAY ~What's up?~
-  ++ ~Anari, what brings you to our quest?~ + quest
+  ++ ~Athar, what brings you to our quest?~ + quest
   ++ ~Nevermind~ EXIT
 END
 

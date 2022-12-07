@@ -23,6 +23,16 @@ Global("uxanariPrelude", "GLOBALS", 1)
 !Global("uxPreludeDone","GLOBALS",1)
 THEN
 RESPONSE #100
-EscapeAreaMove()
+//EscapeAreaMove()
 SetGlobal("uxPreludeDone","GLOBALS",1)
+END
+
+IF
+See([PC])
+Global("uxPreludeDone","GLOBALS",1)
+Global("uxGroupJoin","GLOBALS", 1)
+!Global("ZarielJoined", "LOCALS", 1)
+THEN RESPONSE #100
+SetGlobal("ZarielJoined", "LOCALS", 1)
+JoinParty()
 END
