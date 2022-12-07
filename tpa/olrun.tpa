@@ -6,6 +6,59 @@ COPY ~%MOD_FOLDER%/portraits/olrun.pngl.bmp~ ~override/uxolrl.bmp~
 COPY ~%MOD_FOLDER%/portraits/olrun.pngm.bmp~ ~override/uxolrm.bmp~
 COPY ~%MOD_FOLDER%/portraits/olrun.pngs.bmp~ ~override/uxolrs.bmp~
 
+// Add the items
+COPY ~%MOD_FOLDER%/items/uxham01.itm~ ~override~
+SAY NAME1 ~Olrun's Hammer of Smithing~
+SAY NAME2 ~Olrun's Hammer of Smithing~
+SAY DESC ~This is Olrun's "Hammer of Smithing".
+The 'h' is silent.
+
+STATISTICS:
+
+Damage: 1d4+3 (crushing)
+Speed Factor: 2
+Proficiency Type: Hammers
+Type: One-handed
+Requires:
+ Olrun
+
+Weight: 3
+~
+SAY UNIDENTIFIED_DESC ~The Hammer of Smithing~
+// WRITE_ASCII 0x0022 ~S3~ #2
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x7 END
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x8 END
+// Color
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x60 parameter2=16 target=1 timing=2 END
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x3a parameter2=21 target=1 timing=2 END
+
+COPY ~%MOD_FOLDER%/items/uxlea02.itm~ ~override~
+SAY NAME1 ~Olrun's Armor~
+SAY NAME2 ~Olrun's Armor~
+SAY DESC ~This is Olrun's personal armor.
+When he's wearing this, he is ready to rage.
+
+STATISTICS:
+
+Armor Class: 3 (1 vs piercing, 2 vs missile)
+
+Requires:
+ Olrun
+
+Weight: 3
+~
+SAY UNIDENTIFIED_DESC ~Olrun's Armor~
+WRITE_ASCII 0x0022 ~3a~ #2
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x7 END
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x8 END
+
+// Armor Color
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x88 parameter2=5 target=1 timing=2 END
+// Strap
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0xa0 parameter2=4 target=1 timing=2 END
+// Belt
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0xd6 parameter2=0 target=1 timing=2 END
+
 // The following is the copying of Olrun's .cre file, as well as assigning his sound-set.
 // See the file sndslot.ids for a listing of sounds you can add.
 COPY ~%MOD_FOLDER%/cre/uxolr.cre~ ~override/uxolr.cre~
@@ -87,12 +140,17 @@ WRITE_LONG 0x244 0x00004000 // Kit Barbarian (https://gibberlings3.github.io/ies
 
 // Use eekeeper to see the codes, looks like a color index
 WRITE_BYTE 0x2c  0x81 // Metal Colour
-WRITE_BYTE 0x2d  0x73 // Minor Colour
+WRITE_BYTE 0x2d  0xd6 // Minor Colour
 WRITE_BYTE 0x2e  0x81 // Major Colour
 WRITE_BYTE 0x2f  0x0c // skin Colour
 WRITE_BYTE 0x30  0x81 // Leather Colour
 WRITE_BYTE 0x31  0x81 // Armor Colour
 WRITE_BYTE 0x32  0x72 // Hair Colour
+
+ADD_CRE_ITEM ~uxham01~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~ EQUIP // TWOHANDED
+ADD_CRE_ITEM ~ax1h02~ #0 #0 #0 ~IDENTIFIED~ ~SHIELD~ EQUIP // TWOHANDED
+ADD_CRE_ITEM ~uxlea02~ #0 #0 #0 ~IDENTIFIED~ ~ARMOR~ EQUIP // TWOHANDED
+ADD_CRE_ITEM ~uxhel02~ #0 #0 #0 ~IDENTIFIED~ ~HELMET~ EQUIP // TWOHANDED
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/uxbolr.d~ // All Branwen's banters with other party members will go here. We need the "EVALUATE_BUFFER" because the chapter variable now uses the OUTER_SPRINT variable defined above for the EET continuous journal system.
 	~%MOD_FOLDER%/dialogues/uxolr.d~  // Branwen's greeting dialogue will go here.

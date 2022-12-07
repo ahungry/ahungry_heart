@@ -76,11 +76,12 @@ Weight: 5
 // Armor Class: 3 (1 vs piercing, 2 vs missile)
 // ~
 // Armor Class: 3 (1 vs piercing and missile)
-SAY UNIDENTIFIED_DESC ~Anari's Armor of the Wild.
-Allows unlimited +2 arrows.~
+SAY UNIDENTIFIED_DESC ~Anari's Armor of the Wild.~
 
 // Force it to be leather
-WRITE_ASCII 0x0022 ~2A~ #2
+// WRITE_ASCII 0x0022 ~2A~ #2
+// Or plate
+WRITE_ASCII 0x0022 ~3a~ #2
 
 LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x7 END
 LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x8 END
@@ -95,11 +96,11 @@ LPF ADD_ITEM_EQEFFECT
 END
 
 // Green Armor Color
-LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0 parameter2=5 target=1 timing=2 END
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x4b parameter2=5 target=1 timing=2 END
 // Strap
-LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x82 parameter2=4 target=1 timing=2 END
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0xe6 parameter2=4 target=1 timing=2 END
 // Belt
-LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0 parameter2=0 target=1 timing=2 END
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x4b parameter2=0 target=1 timing=2 END
 
 
 
@@ -234,6 +235,7 @@ ADD_CRE_ITEM ~uxqui00~ #0 #0 #0 ~IDENTIFIED~ ~QUIVER~
 ADD_CRE_ITEM ~blun01~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON2~ EQUIP
 ADD_CRE_ITEM ~blun04~ #0 #0 #0 ~IDENTIFIED~ ~SHIELD~ EQUIP
 ADD_CRE_ITEM ~uxlea01~ #0 #0 #0 ~IDENTIFIED~ ~ARMOR~ EQUIP
+ADD_CRE_ITEM ~uxhel02~ #0 #0 #0 ~IDENTIFIED~ ~HELMET~ EQUIP
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/uxbana.d~ // All Branwen's banters with other party members will go here. We need the "EVALUATE_BUFFER" because the chapter variable now uses the OUTER_SPRINT variable defined above for the EET continuous journal system.
 	~%MOD_FOLDER%/dialogues/uxana.d~  // Branwen's greeting dialogue will go here.
