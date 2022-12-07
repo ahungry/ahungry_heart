@@ -17,10 +17,10 @@ https://www.gibberlings3.net/forums/topic/36224-the-first-ai-designed-mod-the-he
 
 # TODO
 
-## Add the Characters
+## DONE(ish) Add the Characters
 
 - Anari (added and voiced) - DONE
-- Olrun (added and voicing) - TODO
+- Olrun (added and voiced) - DONE
 - Athar - (added and voiced) - DONE
 - Zariel (added and voiced )- DONE
 - The Voice (added and voiced) - DONE
@@ -28,9 +28,9 @@ https://www.gibberlings3.net/forums/topic/36224-the-first-ai-designed-mod-the-he
 - Horvath - pending
 - Viconia - pending
 
-## Add the Items
+## DONE Add the Items
 
-## Add the Quests
+## TODO Add the Quests
 
 ## Add (reuse?) the Areas
 
