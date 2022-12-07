@@ -1,7 +1,7 @@
 BEGIN uxana
 
 
-IF ~!Global("uxanaPrelude", "GLOBALS", 1)~ THEN BEGIN prelude
+IF ~!Global("uxanariPrelude", "GLOBALS", 1)~ THEN BEGIN prelude
   SAY @0009
   IF ~~ THEN EXIT
 END

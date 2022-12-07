@@ -43,8 +43,8 @@ COPY ~%MOD_FOLDER%/audio/blank.mus~ ~override~ // The blank file
 
 INCLUDE "%MOD_FOLDER%/tpa/items.tpa"
 INCLUDE "%MOD_FOLDER%/tpa/anari.tpa"
-INCLUDE "%MOD_FOLDER%/tpa/olrun.tpa"
 INCLUDE "%MOD_FOLDER%/tpa/zariel.tpa"
+INCLUDE "%MOD_FOLDER%/tpa/olrun.tpa"
 INCLUDE "%MOD_FOLDER%/tpa/voice.tpa"
 INCLUDE "%MOD_FOLDER%/tpa/athar.tpa"
 LAF items END
