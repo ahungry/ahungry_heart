@@ -9,9 +9,82 @@ COPY ~%MOD_FOLDER%/portraits/anari.pngs.bmp~ ~override/uxanas.bmp~
 // Add the items
 // COPY_EXISTING ~uxbow01.itm~ ~override~
 COPY ~%MOD_FOLDER%/items/uxbow01.itm~ ~override~
+SAY NAME1 ~Anari's Bow of the Wild~
+SAY NAME2 ~Anari's Bow of the Wild~
+SAY DESC ~
+This weapon has been handed down for generations.
+
+STATISTICS:
+
+THAC0: +3
+Damage: +2
+Speed Factor: 5
+Proficiency Type: Longbow
+Type: Two-handed
+Requires:
+ 6 Strength
+
+Weight: 2
+~
+SAY UNIDENTIFIED_DESC ~Anari's bow.~
+
 COPY ~%MOD_FOLDER%/items/uxqui00.itm~ ~override~
+SAY NAME1 ~Wild Arrow Quiver~
+SAY NAME2 ~Wild Arrow Quiver~
+SAY DESC ~Anari's quiver.
+
+Allows unlimited arrows.~
+SAY UNIDENTIFIED_DESC ~Anari's quiver.~
+
 COPY ~%MOD_FOLDER%/items/uxqui01.itm~ ~override~
+SAY NAME1 ~Wild Arrow Quiver +1~
+SAY NAME2 ~Wild Arrow Quiver +1~
+SAY DESC ~Anari's quiver.
+
+Allows unlimited +1 arrows.~
+SAY UNIDENTIFIED_DESC ~Anari's quiver.~
+
 COPY ~%MOD_FOLDER%/items/uxqui02.itm~ ~override~
+SAY NAME1 ~Wild Arrow Quiver +2~
+SAY NAME2 ~Wild Arrow Quiver +2~
+SAY DESC ~Anari's quiver.~
+SAY UNIDENTIFIED_DESC ~Anari's quiver.
+
+Allows unlimited +2 arrows.~
+
+COPY ~%MOD_FOLDER%/items/uxlea01.itm~ ~override~
+SAY NAME1 ~Anari's Armor of the Wild +3~
+SAY NAME2 ~Anari's Armor of the Wild +3~
+SAY DESC ~A mystical armor crafted from
+the hides of wild animals, granting its wearer
+increased agility in battle.
+
++3 AC bonus
+
+Armor class: 3
+~
+SAY UNIDENTIFIED_DESC ~Anari's Armor of the Wild.
+Allows unlimited +2 arrows.~
+
+LPF ADD_ITEM_EQEFFECT
+  INT_VAR silent=1
+          opcode=0x0   // Armor class
+          parameter1=3 // +3 ac
+          parameter2=0 // All types
+          target=1
+          timing=2
+END
+
+LPF ADD_ITEM_EQEFFECT
+  INT_VAR silent=1
+          opcode=0x7      // Color
+          parameter1=0x82 // Green
+          parameter2=5    // Armor Color
+          target=1
+          timing=2
+END
+
+
 
 // The following is the copying of Anari's .cre file, as well as assigning his sound-set.
 // See the file sndslot.ids for a listing of sounds you can add.
@@ -132,9 +205,20 @@ WRITE_BYTE 0x30  0x82 // Leather Colour
 WRITE_BYTE 0x31  0x82 // Armor Colour
 WRITE_BYTE 0x32  0x88 // Hair Colour
 
+// Zero out some of the proficiencies in the cre file, since the
+// user ends up with a free level up.
+SET_BG2_PROFICIENCY PROFICIENCY2WEAPON 0
+SET_BG2_PROFICIENCY PROFICIENCYMACE 0
+SET_BG2_PROFICIENCY PROFICIENCYCLUB 0
+SET_BG2_PROFICIENCY PROFICIENCYBLACKJACK 0
+
 COPY_EXISTING ~uxana.cre~ ~override~
-  ADD_CRE_ITEM ~uxbow01~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~ EQUIP TWOHANDED
+  ADD_CRE_ITEM ~uxbow01~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~ // EQUIP TWOHANDED
   ADD_CRE_ITEM ~uxqui00~ #0 #0 #0 ~IDENTIFIED~ ~QUIVER~
+  ADD_CRE_ITEM ~uxqui00~ #0 #0 #0 ~IDENTIFIED~ ~QUIVER~
+  ADD_CRE_ITEM ~blun01~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON2~ EQUIP
+  ADD_CRE_ITEM ~blun04~ #0 #0 #0 ~IDENTIFIED~ ~SHIELD~ EQUIP
+  ADD_CRE_ITEM ~uxlea01~ #0 #0 #0 ~IDENTIFIED~ ~ARMOR~ EQUIP
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/uxbana.d~ // All Branwen's banters with other party members will go here. We need the "EVALUATE_BUFFER" because the chapter variable now uses the OUTER_SPRINT variable defined above for the EET continuous journal system.
 	~%MOD_FOLDER%/dialogues/uxana.d~  // Branwen's greeting dialogue will go here.
