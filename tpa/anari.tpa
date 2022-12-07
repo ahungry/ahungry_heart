@@ -66,6 +66,12 @@ Armor class: 3
 SAY UNIDENTIFIED_DESC ~Anari's Armor of the Wild.
 Allows unlimited +2 arrows.~
 
+// Force it to be leather
+WRITE_ASCII 0x0022 ~2A~ #2
+
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x7 END
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x8 END
+
 LPF ADD_ITEM_EQEFFECT
   INT_VAR silent=1
           opcode=0x0   // Armor class
@@ -75,14 +81,12 @@ LPF ADD_ITEM_EQEFFECT
           timing=2
 END
 
-LPF ADD_ITEM_EQEFFECT
-  INT_VAR silent=1
-          opcode=0x7      // Color
-          parameter1=0x82 // Green
-          parameter2=5    // Armor Color
-          target=1
-          timing=2
-END
+// Green Armor Color
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0 parameter2=5 target=1 timing=2 END
+// Strap
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x82 parameter2=4 target=1 timing=2 END
+// Belt
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0 parameter2=0 target=1 timing=2 END
 
 
 
@@ -197,12 +201,12 @@ WRITE_BYTE 0x275 0x2        // Female (https://gibberlings3.github.io/iesdp/file
 WRITE_LONG 0x244 0x40080000 // Kit Stalker (https://gibberlings3.github.io/iesdp/file_formats/ie_formats/cre_v1.htm)
 
 // Use eekeeper to see the codes, looks like a color index
-WRITE_BYTE 0x2c  0x82 // Metal Colour
+WRITE_BYTE 0x2c  0x06 // Metal Colour
 WRITE_BYTE 0x2d  0x73 // Minor Colour
-WRITE_BYTE 0x2e  0x82 // Major Colour
+WRITE_BYTE 0x2e  0x06 // Major Colour
 WRITE_BYTE 0x2f  0x0c // skin Colour
-WRITE_BYTE 0x30  0x82 // Leather Colour
-WRITE_BYTE 0x31  0x82 // Armor Colour
+WRITE_BYTE 0x30  0x06 // Leather Colour
+WRITE_BYTE 0x31  0x06 // Armor Colour
 WRITE_BYTE 0x32  0x88 // Hair Colour
 
 // Zero out some of the proficiencies in the cre file, since the
@@ -214,7 +218,6 @@ SET_BG2_PROFICIENCY PROFICIENCYBLACKJACK 0
 
 COPY_EXISTING ~uxana.cre~ ~override~
   ADD_CRE_ITEM ~uxbow01~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~ // EQUIP TWOHANDED
-  ADD_CRE_ITEM ~uxqui00~ #0 #0 #0 ~IDENTIFIED~ ~QUIVER~
   ADD_CRE_ITEM ~uxqui00~ #0 #0 #0 ~IDENTIFIED~ ~QUIVER~
   ADD_CRE_ITEM ~blun01~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON2~ EQUIP
   ADD_CRE_ITEM ~blun04~ #0 #0 #0 ~IDENTIFIED~ ~SHIELD~ EQUIP
