@@ -8,11 +8,11 @@ Global("Uxspawn","GLOBAL",0)
 THEN
 RESPONSE #100
 // CreateCreature("Uxana",[1175.663],13)  // To choose your own coordinates, choose a spot in the game and press CTRL-X
-CreateCreature("uxANA",[1100.750],13)  // To choose your own coordinates, choose a spot in the game and press CTRL-X
-CreateCreature("uxVOI",[1100.750],13)  // To choose your own coordinates, choose a spot in the game and press CTRL-X
-CreateCreature("uxOLR",[1100.750],13)  // To choose your own coordinates, choose a spot in the game and press CTRL-X
-CreateCreature("uxZAR",[1100.750],13)  // To choose your own coordinates, choose a spot in the game and press CTRL-X
-CreateCreature("uxATH",[1100.750],13)  // To choose your own coordinates, choose a spot in the game and press CTRL-X
+CreateCreature("uxANA",[1100.730],13)  // To choose your own coordinates, choose a spot in the game and press CTRL-X
+CreateCreature("uxVOI",[1130.650],13)  // To choose your own coordinates, choose a spot in the game and press CTRL-X
+CreateCreature("uxOLR",[1030.670],13)  // To choose your own coordinates, choose a spot in the game and press CTRL-X
+CreateCreature("uxZAR",[1030.800],13)  // To choose your own coordinates, choose a spot in the game and press CTRL-X
+CreateCreature("uxATH",[1005.735],13)  // To choose your own coordinates, choose a spot in the game and press CTRL-X
 SetGlobal("Uxspawn","GLOBAL",1)
 Continue()
 END
