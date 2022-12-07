@@ -10,8 +10,7 @@ COPY ~%MOD_FOLDER%/portraits/zariel.pngs.bmp~ ~override/uxzars.bmp~
 COPY ~%MOD_FOLDER%/items/uxhel01.itm~ ~override~
 SAY NAME1 ~Zariel's Sun Hat~
 SAY NAME2 ~Zariel's Sun Hat~
-SAY DESC ~
-This is Zariel's sun hat.  The hat assists in concealing her devilish
+SAY DESC ~This is Zariel's sun hat.  The hat assists in concealing her devilish
 horns, which are protruding out of some holes in the hat, in a
 decorative fashion (deceiving all but the most astute observer).
 
@@ -34,6 +33,58 @@ LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0xc6 parameter2=49 
 LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0xc6 parameter2=50 target=1 timing=2 END
 LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0xc6 parameter2=52 target=1 timing=2 END
 
+COPY ~%MOD_FOLDER%/items/uxdag01.itm~ ~override~
+SAY NAME1 ~Zariel's "Left Hand"~
+SAY NAME2 ~Zariel's "Left Hand"~
+SAY DESC ~This is Zariel's "Left Hand". An affectionate term she has
+given one of her daggers. As the name would imply, she wields
+it in her off hand.
+
+STATISTICS:
+
+Damage: 1d4+2 (piercing)
+Speed Factor: 2
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ Zariel
+
+Weight: 1
+~
+SAY UNIDENTIFIED_DESC ~Zariel's "Left Hand"~
+WRITE_ASCII 0x0022 ~S3~ #2
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x7 END
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x8 END
+// Red Color
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x4a parameter2=16 target=1 timing=2 END
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x4b parameter2=21 target=1 timing=2 END
+
+COPY ~%MOD_FOLDER%/items/uxdag02.itm~ ~override~
+SAY NAME1 ~Zariel's "Right Hand"~
+SAY NAME2 ~Zariel's "Right Hand"~
+SAY DESC ~This is Zariel's "Right Hand". An affectionate term she has
+given one of her daggers. As the name would imply, she wields
+it in her main hand.
+
+STATISTICS:
+
+Damage: 1d4+2 (piercing)
+Speed Factor: 2
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ Zariel
+
+Weight: 1
+~
+SAY UNIDENTIFIED_DESC ~Zariel's "Right Hand"~
+WRITE_ASCII 0x0022 ~S3~ #2
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x7 END
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x8 END
+// Red Color
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x4b parameter2=16 target=1 timing=2 END
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x4a parameter2=21 target=1 timing=2 END
+
 // The following is the copying of Zariel's .cre file, as well as assigning his sound-set.
 // See the file sndslot.ids for a listing of sounds you can add.
 COPY ~%MOD_FOLDER%/cre/uxzar.cre~ ~override/uxzar.cre~
@@ -55,7 +106,7 @@ SAY BATTLE_CRY2 ~Blood and guts, blood and guts.  After this can we snack on som
 SAY BATTLE_CRY3 ~Killing with my buds, Athar and Anari.  Oh look there, it's The Voice and Olrun wantin to party.~ [uxzar12]
 SAY BATTLE_CRY4 ~Die fiend die!~ [uxzar13]
 SAY BATTLE_CRY5 ~Feel the power of Zariel! Yes, I too refer to myself in the third.~ [uxzar14]
-SAY DAMAGE ~You dare to strike?~ [uxzar15]
+SAY DAMAGE ~You dare to strike me?~ [uxzar15]
 SAY DYING ~See you sods on the other side.~ [uxzar16]
 SAY HURT ~Ever hear of a healing potion?~ [uxzar17]
 SAY AREA_FOREST ~The power of the forest - nah, just kidding.  Let's go roast some marshmallows.~ [uxzar18]
@@ -154,6 +205,8 @@ WRITE_BYTE 0x31  0x2f // Armor Colour
 WRITE_BYTE 0x32  0xde // Hair Colour
 
 ADD_CRE_ITEM ~uxhel01~ #0 #0 #0 ~IDENTIFIED~ ~HELMET~ EQUIP // TWOHANDED
+ADD_CRE_ITEM ~uxdag02~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~ EQUIP // TWOHANDED
+ADD_CRE_ITEM ~uxdag01~ #0 #0 #0 ~IDENTIFIED~ ~SHIELD~ EQUIP // TWOHANDED
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/uxbzar.d~ // All Branwen's banters with other party members will go here. We need the "EVALUATE_BUFFER" because the chapter variable now uses the OUTER_SPRINT variable defined above for the EET continuous journal system.
 	~%MOD_FOLDER%/dialogues/uxzar.d~  // Branwen's greeting dialogue will go here.
