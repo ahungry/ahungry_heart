@@ -10,11 +10,11 @@ END
 
 IF ~~ THEN
   BEGIN prelude2
-      SAY ~Yes, we tried to come as soon as we could - we got a glimpse of the battle from afar, but were thousands of yards out.~
+    SAY ~Yes, we tried to come as soon as we could - we got a glimpse of the battle from afar, but were thousands of yards out.~
   IF ~~ THEN EXIT
 END
 
-IF ~NumTimesTalkedTo(0)~ THEN
+IF ~~ THEN
   BEGIN FirstMeeting
     SAY ~Hail friend, it is I, Olrun.  Have you a moment?~ [uxolr01]
 
