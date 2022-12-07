@@ -7,7 +7,7 @@ IF ~!Global("uxolrunPrelude", "GLOBALS", 1)~ THEN BEGIN prelude
 END
 
 IF ~~ THEN BEGIN prelude2
-  SAY ~Only the aftermath - we just arrived in the wee hours of the morn.~ [uxbad01]
+  SAY ~Only the aftermath - we just arrived in the wee hours of the morn.~ [uxbad00]
   IF ~~ THEN EXIT
 END
 
