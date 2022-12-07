@@ -56,8 +56,12 @@ LAF athar END
 
 // The following is appending what we wrote in AR1000.baf to the bottom of
 // AR1000.bcs
+EXTEND_TOP ~AR2600.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
+EXTEND_TOP ~BG2600.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
+// EXTEND_TOP ~BG2616.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
+// EXTEND_BOTTOM ~BG2616.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
 
-// EXTEND_TOP ~Ar1000.bcs~ ~AnariTheNPC\ar1000.baf~
+
 
 // This code is also used by BG2 Fixpack - it would help you to run custom music for your NPC from "a clean slate", installing "blank" music you could run it with. Not everyone installs the Fixpack, though, so here we go:
 // Feel free to skip this code if you're not using any music in your mod, only your NPC's voice.
