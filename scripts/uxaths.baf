@@ -1,3 +1,5 @@
+// Main script
+
 // IF
 // See([PC])
 // NumTimesTalkedTo(0)
@@ -6,3 +8,13 @@
 // RESPONSE #100
 // Dialogue(Nearest([PC]))
 // END
+
+IF
+See([PC])
+NumTimesTalkedTo(0)
+!Global("uxatharPrelude","GLOBALS",1)
+THEN
+RESPONSE #100
+Dialogue(Nearest([PC]))
+SetGlobal("uxatharPrelude","GLOBALS",1)
+END

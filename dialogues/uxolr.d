@@ -1,5 +1,19 @@
 BEGIN uxolr
 
+IF ~NumTimesTalkedTo(0)
+    !Global("uxolrunPrelude", "GLOBALS", 1)~ THEN
+    BEGIN prelude
+      SAY ~Noooo, we were too late!~ [uxolr52]
+      ++ ~Did...did you see that?~ + prelude2
+      ++ ~...~ + prelude2
+END
+
+IF ~~ THEN
+  BEGIN prelude2
+      SAY ~Yes, we tried to come as soon as we could - we got a glimpse of the battle from afar, but were thousands of yards out.~
+  IF ~~ THEN EXIT
+END
+
 IF ~NumTimesTalkedTo(0)~ THEN
   BEGIN FirstMeeting
     SAY ~Hail friend, it is I, Olrun.  Have you a moment?~ [uxolr01]

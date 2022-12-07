@@ -274,6 +274,7 @@ WRITE_LONG 0x28  0x6310 // THIEF_FEMALE_HUMAN (https://gibberlings3.github.io/ie
 WRITE_BYTE 0x272 0x1 // Human (https://gibberlings3.github.io/iesdp/files/ids/bg2/race.htm)
 WRITE_BYTE 0x273 0x4 // Thief (https://gibberlings3.github.io/iesdp/files/ids/bg2/class.htm)
 WRITE_BYTE 0x275 0x2 // Female (https://gibberlings3.github.io/iesdp/files/ids/bg2/gender.htm)
+WRITE_BYTE 0x270 128 // Neutral (https://gibberlings3.github.io/iesdp/files/ids/bg2/ea.htm)
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/uxbzar25.d~  // All Branwen's ToB banters with other party members will go here. Again, we use 25, because it's a tradution for ToB. Again, "EVALUATE_BUFFER" because of the chapter numbers
 	~%MOD_FOLDER%/dialogues/uxzar25.d~  // Branwen's ToB greeting dialogue will go here.

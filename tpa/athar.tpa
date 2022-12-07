@@ -68,7 +68,7 @@ COPY ~%MOD_FOLDER%/cre/uxath.cre~ ~override/uxath.cre~
 SAY NAME1 ~Athar~
 SAY NAME2 ~Athar~
 
-SAY INITIAL_MEETING ~You there, hero.  I am Athar and I seek your assistance~ [uxath01]
+SAY INITIAL_MEETING ~You there, hero.  I am Athar and I seek your assistance.~ [uxath01]
 SAY MORALE ~I must withdraw.~ [uxath02]
 SAY HAPPY ~This behavior is acceptable.~ [uxath03]
 SAY UNHAPPY_ANNOYED ~Our actions are not those I condone.~ [uxath04]
@@ -170,6 +170,7 @@ WRITE_BYTE 0x272 0x1        // Human (https://gibberlings3.github.io/iesdp/files
 WRITE_BYTE 0x273 6          // Paladin (https://gibberlings3.github.io/iesdp/files/ids/bg2/class.htm)
 WRITE_BYTE 0x275 0x1        // Male (https://gibberlings3.github.io/iesdp/files/ids/bg2/gender.htm)
 WRITE_LONG 0x244 0x40040000 // Kit Cavalier (https://gibberlings3.github.io/iesdp/file_formats/ie_formats/cre_v1.htm)
+WRITE_BYTE 0x270 128 // Neutral (https://gibberlings3.github.io/iesdp/files/ids/bg2/ea.htm)
 
 // Use eekeeper to see the codes, looks like a color index
 WRITE_BYTE 0x2c  0x87 // Metal Colour

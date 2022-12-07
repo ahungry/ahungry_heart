@@ -213,6 +213,7 @@ WRITE_BYTE 0x272 0x2        // Elf (https://gibberlings3.github.io/iesdp/files/i
 WRITE_BYTE 0x273 18         // Cleric/Ranger (https://gibberlings3.github.io/iesdp/files/ids/bg2/class.htm)
 WRITE_BYTE 0x275 0x2        // Female (https://gibberlings3.github.io/iesdp/files/ids/bg2/gender.htm)
 WRITE_LONG 0x244 0x40080000 // Kit Stalker (https://gibberlings3.github.io/iesdp/file_formats/ie_formats/cre_v1.htm)
+WRITE_BYTE 0x270 128 // Neutral (https://gibberlings3.github.io/iesdp/files/ids/bg2/ea.htm)
 
 // Use eekeeper to see the codes, looks like a color index
 WRITE_BYTE 0x2c  0x06 // Metal Colour

@@ -183,6 +183,7 @@ WRITE_BYTE 0x272 0x1 // Human (https://gibberlings3.github.io/iesdp/files/ids/bg
 WRITE_BYTE 0x273 14 // Cleric/mage (https://gibberlings3.github.io/iesdp/files/ids/bg2/class.htm)
 WRITE_BYTE 0x275 0x2 // Female (https://gibberlings3.github.io/iesdp/files/ids/bg2/gender.htm)
 // WRITE_LONG 0x244 0x40030000 // Kit Kensai
+WRITE_BYTE 0x270 128 // Neutral (https://gibberlings3.github.io/iesdp/files/ids/bg2/ea.htm)
 
 // Use eekeeper to see the codes, looks like a color index
 WRITE_BYTE 0x2c  0x8a // Metal Colour
