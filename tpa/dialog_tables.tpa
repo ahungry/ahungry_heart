@@ -1,0 +1,77 @@
+// This allows easily building out according to our naming convention, the
+// various dialogue / lookup tables (to work around the MULTIG fallback).
+// This enables PID so CHARNAME can talk to the NPCs.
+// In an EET install, if we don't do the latter segment, MULTIG takes
+// precedence until EET_End is ran, which can really hinder mod development
+// iteration.
+// TODO: I may want a check here, so if this mod comes after EET_End, I
+// can test and make sure all is well - and perhaps use the not eet game
+// segment to allow EET_End to "properly" close up the dialog (or just keep the latter)
+DEFINE_ACTION_FUNCTION dialog_tables STR_VAR code = "xxx" BEGIN
+
+// https://www.gibberlings3.net/forums/topic/15833-dialog-files-and-how-they-are-referenced/
+// First block runs if uxvoi isn't present, and we are NOT using a TOB entry
+// Second block runs if uxvoi isn't preset, and we ARE using a TOB entry
+// Ensure these are all 8 or fewer for the resref I guess
+// P = Party join/leave, J = interjections and dialogue, D = Dream Script (rest)
+// 25 variations - not sure...
+ACTION_IF NOT GAME_IS ~eet~ BEGIN
+  APPEND ~pdialog.2da~
+  ~ux%code%         ux%code%p              ux%code%j             ux%code%d~
+  UNLESS ~ux%code%~
+  UNLESS ~25POST~ // if we do not have tob tables,
+
+
+  APPEND ~pdialog.2da~
+  ~ux%code%         ux%code%p              ux%code%j             ux%code%d              ux%code%25p             ux%code%25j             ux%code%25d       ux%code%25s~
+  UNLESS ~ux%code%~
+  IF ~25POST~ // if we do have tob tables
+
+
+  // interdia.2da is a bit simpler, but acts the same as pdialog.2da.
+  // It adds the NPCs banter file, which is used for inter-party banter, and romance dialogues.
+  APPEND ~interdia.2da~
+  ~ux%code% uxb%code%~
+  UNLESS ~ux%code%~
+  UNLESS ~25FILE~
+
+  APPEND ~interdia.2da~
+  ~ux%code% uxb%code% uxb%code%25~
+  UNLESS ~ux%code%~
+  IF ~25FILE~
+END
+
+// This may fix MULTIG lookup in an EET game pre-EET_End
+ACTION_IF GAME_IS ~eet~ BEGIN
+  // This also gets added in that scenario
+  APPEND ~bddialog.2da~
+  ~ux%code%         ux%code%p              ux%code%j             ux%code%d~
+  UNLESS ~ux%code%~
+  UNLESS ~25POST~ // if we do not have tob tables,
+
+  APPEND ~25dialog.2da~
+  ~UX%CODE%             ux%code%25p          UX%CODE%J            ux%code%25d~
+  UNLESS ~ux%code%~
+  UNLESS ~25POST~ // if we do not have tob tables,
+
+
+  APPEND ~bgdialog.2da~
+  ~ux%code%         ux%code%p              ux%code%j             ux%code%d~
+  UNLESS ~ux%code%~
+  UNLESS ~25POST~ // if we do not have tob tables,
+
+  // For EET, it expects to use this type of format I guess?  Stars in the slots
+  //~ux%code%         ux%code%p              ux%code%j             ux%code%d              ux%code%25p             ux%code%25j             ux%code%25d       ux%code%25s~
+  APPEND ~pdialog.2da~
+  ~ux%code%                  ux%code%p                 ux%code%j                 ux%code%d                 ***                    ***                    ***                    ***~
+  UNLESS ~ux%code%~
+  IF ~25POST~ // if we do have tob tables
+
+  APPEND ~interdia.2da~
+  ~ux%code%     uxb%code%    ***~
+  UNLESS ~ux%code%~
+  IF ~25FILE~
+END
+
+
+END

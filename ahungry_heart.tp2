@@ -1,5 +1,5 @@
 // NOTE: Some resources expect B25 (tob) - with ux prefix, that leaves us 3 letters
-BACKUP ~%MOD_FOLDER%/backup~
+BACKUP ~ahungry_heart/backup~
 AUTHOR ~Ahungry~
 VERSION 1.0
 
@@ -27,7 +27,7 @@ LANGUAGE
   ~%MOD_FOLDER%/lang/english/weidu.tra~
 
 
-BEGIN @10000 DESIGNATED 1 LABEL ahungry_heart
+BEGIN @10000 DESIGNATED 1 LABEL ahungry_heart_main
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @20000
 
 // These two lines were created by CamDawg. It's a new state that checks if NPC is able to talk. USE this in your mod. See the dialogue for details.
@@ -41,6 +41,7 @@ PRINT ~The folder is %MOD_FOLDER%~
 COPY ~%MOD_FOLDER%/audio/%LANGUAGE%~ ~override~ // All audio files
 COPY ~%MOD_FOLDER%/audio/blank.mus~ ~override~ // The blank file
 
+INCLUDE "%MOD_FOLDER%/tpa/dialog_tables.tpa"
 INCLUDE "%MOD_FOLDER%/tpa/items.tpa"
 INCLUDE "%MOD_FOLDER%/tpa/anari.tpa"
 INCLUDE "%MOD_FOLDER%/tpa/zariel.tpa"
