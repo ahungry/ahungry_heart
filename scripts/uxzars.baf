@@ -16,3 +16,13 @@ RESPONSE #100
 Dialogue(Nearest([PC]))
 SetGlobal("uxzarielPrelude","GLOBALS",1)
 END
+
+IF
+See([PC])
+Global("uxanariPrelude", "GLOBALS", 1)
+!Global("uxPreludeDone","GLOBALS",1)
+THEN
+RESPONSE #100
+EscapeAreaMove()
+SetGlobal("uxPreludeDone","GLOBALS",1)
+END

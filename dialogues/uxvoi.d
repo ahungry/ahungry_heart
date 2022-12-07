@@ -1,6 +1,11 @@
 BEGIN uxvoi
 
-IF ~NumTimesTalkedTo(0)~ THEN
+IF ~!Global("uxvoicePrelude", "GLOBALS", 1)~ THEN BEGIN prelude
+  SAY ~May he rest among the Gods.~
+  IF ~~ THEN EXIT
+END
+
+IF ~True()~ THEN
   BEGIN FirstMeeting
     SAY ~Some call me The Voice, you may call me friend.  Well met traveller.~ [uxvoi01]
 

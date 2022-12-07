@@ -1,6 +1,12 @@
 BEGIN uxana
 
-IF ~NumTimesTalkedTo(0)~ THEN
+
+IF ~!Global("uxanaPrelude", "GLOBALS", 1)~ THEN BEGIN prelude
+  SAY ~We were on our way here to discuss a matter of utmost urgency with Gorion, however it seems we're on our own.  Take care traveller, and may you never cross paths with those who struggle for The Heart of Baldur's Gate.~
+  IF ~~ THEN EXIT
+END
+
+IF ~True()~ THEN
   BEGIN FirstMeeting
     SAY ~You there, hero.  I have an important message for you.  I'm Anari and I seek your assistance~ [uxana01]
 
