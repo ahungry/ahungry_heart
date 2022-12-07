@@ -6,6 +6,13 @@ COPY ~%MOD_FOLDER%/portraits/anari.pngl.bmp~ ~override/uxanal.bmp~
 COPY ~%MOD_FOLDER%/portraits/anari.pngm.bmp~ ~override/uxanam.bmp~
 COPY ~%MOD_FOLDER%/portraits/anari.pngs.bmp~ ~override/uxanas.bmp~
 
+// Add the items
+// COPY_EXISTING ~uxbow01.itm~ ~override~
+COPY ~%MOD_FOLDER%/items/uxbow01.itm~ ~override~
+COPY ~%MOD_FOLDER%/items/uxqui00.itm~ ~override~
+COPY ~%MOD_FOLDER%/items/uxqui01.itm~ ~override~
+COPY ~%MOD_FOLDER%/items/uxqui02.itm~ ~override~
+
 // The following is the copying of Anari's .cre file, as well as assigning his sound-set.
 // See the file sndslot.ids for a listing of sounds you can add.
 COPY ~%MOD_FOLDER%/cre/uxana.cre~ ~override/uxana.cre~
@@ -125,6 +132,9 @@ WRITE_BYTE 0x30  0x82 // Leather Colour
 WRITE_BYTE 0x31  0x82 // Armor Colour
 WRITE_BYTE 0x32  0x88 // Hair Colour
 
+COPY_EXISTING ~uxana.cre~ ~override~
+  ADD_CRE_ITEM ~uxbow01~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~ EQUIP TWOHANDED
+  ADD_CRE_ITEM ~uxqui00~ #0 #0 #0 ~IDENTIFIED~ ~QUIVER~
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/uxbana.d~ // All Branwen's banters with other party members will go here. We need the "EVALUATE_BUFFER" because the chapter variable now uses the OUTER_SPRINT variable defined above for the EET continuous journal system.
 	~%MOD_FOLDER%/dialogues/uxana.d~  // Branwen's greeting dialogue will go here.
