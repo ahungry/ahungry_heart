@@ -85,14 +85,14 @@ COMPILE EVALUATE_BUFFER
   ~%MOD_FOLDER%/dialogues/ux_pids_%name%.d~ // The rest of dialogue: commentary, interjections, talks with the player, lovetalks and everything else.
   ~%MOD_FOLDER%/dialogues/ux_kick_%name%.d~ // leaving party dialogue will go here.
 
-  ~%MOD_FOLDER%/scripts/ux_main_%name%.baf~ // Main script.
-  ~%MOD_FOLDER%/scripts/ux_dream_%name%.baf~ // Dream script for events at rest. If you want your NPC to talk to you at rest, add scripting here.
-  ~%MOD_FOLDER%/scripts/ux_fix_%name%.baf~ // "fixing" script. Remember how various modders advised you to "select your NPC and press K"? Well, that's how they do it.
+  // ~%MOD_FOLDER%/scripts/ux_main_%name%.baf~ // Main script.
+  // ~%MOD_FOLDER%/scripts/ux_dream_%name%.baf~ // Dream script for events at rest. If you want your NPC to talk to you at rest, add scripting here.
+  // ~%MOD_FOLDER%/scripts/ux_fix_%name%.baf~ // "fixing" script. Remember how various modders advised you to "select your NPC and press K"? Well, that's how they do it.
 
-// Try to alias scripts?
-COPY_EXISTING ~ux_main_%name%.bcs~  ~override/ux%code%s.bcs~
-COPY_EXISTING ~ux_dream_%name%.bcs~ ~override/ux%code%d.bcs~
-COPY_EXISTING ~ux_fix_%name%.bcs~   ~override/ux%code%f.bcs~
+// Alias scripts
+COPY ~%MOD_FOLDER%/scripts/ux_main_%name%.baf~  ~override/ux%code%s.bcs~ COMPILE_BAF_TO_BCS
+COPY ~%MOD_FOLDER%/scripts/ux_dream_%name%.baf~ ~override/ux%code%d.bcs~ COMPILE_BAF_TO_BCS
+COPY ~%MOD_FOLDER%/scripts/ux_fix_%name%.baf~   ~override/ux%code%f.bcs~ COMPILE_BAF_TO_BCS
 END
 
 // Try to just include this once - not sure if that feature is natively supported or not
