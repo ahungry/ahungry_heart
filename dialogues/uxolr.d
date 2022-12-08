@@ -30,12 +30,12 @@ IF ~True()~ THEN BEGIN FirstMeeting
 END
 
 IF ~~ THEN BEGIN BigGreet
-  SAY @0033
+  SAY @0023
   IF ~~ THEN GOTO Recruit
 END
 
 IF ~~ THEN BEGIN Greet
-  SAY @0038
+  SAY @0028
   IF ~~ THEN GOTO Recruit
 END
 

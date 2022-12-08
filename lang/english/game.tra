@@ -21,57 +21,57 @@
   @0012 = ~Sure, what's up?~
   @0011 = ~Sorry Zariel, I can't at the moment.~
 @0013 = ~My friends and I are on a quest at the moment, pertaining to The Heart of Baldur's Gate.  Care to join us?  I know that you and Gorion were close, and he would no doubt appreciate us keeping an eye on you.~
-  @0014 = "I would love to join your group. (note: this option recruits all 5)"
-  @0017 = "I can't join your quest, but I would love to have you along on mine."
+  @0014 = "I would love to join your group. ( NOTE: This option recruits all 5 at once )"
+  @0017 = "I can't join your group, but I would love to have you join mine."
   @0015 = "Sorry Zariel, I'm on my own adventure at the moment."
 @0016 = "That's fine, should you change your mind, you'll find us around."
-@0018 = "So, you're pickin' and choosin' who will come?  Care to include me?"
-@0019 = "So, what'll it be?"
+@0018 = "So, you're pickin' and choosin' who will come?  Care to include me? I can slice n' dice like few others."
+@0019 = "Well?"
 
 // Olrun
 @0020 = ~Hail friend, it is I, Olrun.  Have you a moment?~ [uxolr01]
   @0022 = ~Sure, what's up?~
   @0021 = ~Sorry Olrun, I can't at the moment.~
 @0023 = ~My friends and I are on a quest at the moment, pertaining to The Heart of Baldur's Gate.  Care to join us?  I know that you and Gorion were close, and he would no doubt appreciate us keeping an eye on you.~
-  @0024 = "I would love to join your group. (note: this option recruits all 5)"
-  @0027 = "I can't join your quest, but I would love to have you along on mine."
+  @0024 = "I would love to join your group. ( NOTE: This option recruits all 5 at once )"
+  @0027 = "I can't join your group, but I would love to have you join mine."
   @0025 = "Sorry Olrun, I'm on my own adventure at the moment."
 @0026 = "That's fine, should you change your mind, you'll find us around."
-@0028 = "So, you're pickin' and choosin' who will come?  Care to include me?"
-@0029 = "So, what'll it be?"
+@0028 = "Breakin apart a lifelong team just like that?  Well, may as well bring me along as well."
+@0029 = "So?"
 
 // Voice
 @0030 = ~Some call me The Voice, you may call me friend.  Well met traveller.~ [uxvoi01]
   @0032 = ~So "friend", how can I assist you today?~
   @0031 = ~Sorry Voice, I don't wish to speak with you.~
 @0033 = ~My friends and I are on a quest at the moment, pertaining to The Heart of Baldur's Gate.  Care to join us?  I know that you and Gorion were close, and he would no doubt appreciate us keeping an eye on you.~
-  @0034 = "I would love to join your group. (note: this option recruits all 5)"
-  @0037 = "I can't join your quest, but I would love to have you along on mine."
+  @0034 = "I would love to join your group. ( NOTE: This option recruits all 5 at once )"
+  @0037 = "I can't join your group, but I would love to have you join mine."
   @0035 = ~Sorry "friend", I'm on my own adventure at the moment.~
 @0036 = "That's fine, should you change your mind, you'll find us around."
-@0038 = "So, you're pickin' and choosin' who will come?  Care to include me?"
-@0039 = "So, what'll it be?"
+@0038 = "I do not believe it wise to separate us, but allow me to offer my aid to you."
+@0039 = "Would you have me?"
 
 // Anari
 @0040 = ~You there, hero.  I have an important message for you.  I'm Anari and I seek your assistance~ [uxana01]
   @0042 = ~Sure, what's up?~
   @0041 = ~Sorry Anari, I can't at the moment.~
 @0043 = ~My friends and I are on a quest at the moment, pertaining to The Heart of Baldur's Gate.  Care to join us?  I know that you and Gorion were close, and he would no doubt appreciate us keeping an eye on you.~
-  @0044 = "I would love to join your group. (note: this option recruits all 5)"
-  @0047 = "I can't join your quest, but I would love to have you along on mine."
+  @0044 = "I would love to join your group. ( NOTE: This option recruits all 5 at once )"
+  @0047 = "I can't join your group, but I would love to have you join mine."
   @0045 = "Sorry Anari, I'm on my own adventure at the moment."
 @0046 = "That's fine, should you change your mind, you'll find us around."
-@0048 = "So, you're pickin' and choosin' who will come?  Care to include me?"
-@0049 = "So, what'll it be?"
+@0048 = "If our group is to separate, it will surely be temporary.  For now, I offer you my aid."
+@0049 = "What is your decision?"
 
 // Athar
 @0050 = ~You there, hero. I'm Athar and I seek your assistance~ [uxath01]
   @0052 = ~Sure, what's up?~
   @0051 = ~Sorry Athar, I can't at the moment.~
 @0053 = ~My friends and I are on a quest at the moment, pertaining to The Heart of Baldur's Gate.  Care to join us?  I know that you and Gorion were close, and he would no doubt appreciate us keeping an eye on you.~
-  @0054 = "I would love to join your group. (note: this option recruits all 5)"
-  @0057 = "I can't join your quest, but I would love to have you along on mine."
+  @0054 = "I would love to join your group. ( NOTE: This option recruits all 5 at once )"
+  @0057 = "I can't join your group, but I would love to have you join mine."
   @0055 = "Sorry Athar, I'm on my own adventure at the moment."
 @0056 = "That's fine, should you change your mind, you'll find us around."
-@0058 = "So, you're pickin' and choosin' who will come?  Care to include me?"
-@0059 = "So, what'll it be?"
+@0058 = "Hmm, it seems you aim to follow your own path.  I offer you my sword."
+@0059 = "Shall we go forth?"
