@@ -1,8 +1,8 @@
 // Spawn at the Friendly arm inn bridge
 
 IF
-Global("ux_spawn_fai","GLOBAL",0)
 Global("ux_prelude_done", "GLOBAL", 1)
+!Global("ux_spawn_fai", "GLOBAL", 1)
 THEN
 RESPONSE #100
 // CreateCreature("Uxana",[1175.663],13)  // To choose your own coordinates, choose a spot in the game and press CTRL-X
@@ -11,6 +11,6 @@ CreateCreature("uxVOI",[1060.3280],14)
 CreateCreature("uxOLR",[1220.3265],3)
 CreateCreature("uxZAR",[1180.3280],13)
 CreateCreature("uxATH",[1067.3312],9)
-SetGlobal("ux_spawn_fai","GLOBAL",1)
+SetGlobal("ux_spawn_fai", "GLOBAL", 1)
 Continue()
 END

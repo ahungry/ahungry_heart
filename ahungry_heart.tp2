@@ -55,6 +55,8 @@ LAF voice END
 LAF athar END
 LAF olrun END
 
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/ux_prelude_chain.d~
+
 // The following is appending what we wrote in AR1000.baf to the bottom of
 // AR1000.bcs
 

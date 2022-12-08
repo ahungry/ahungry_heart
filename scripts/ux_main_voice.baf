@@ -1,29 +1,10 @@
-// IF
-// See([PC])
-// NumTimesTalkedTo(0)
-// !Global("ux_in_party_anari","LOCALS",1)
-// THEN
-// RESPONSE #100
-// Dialogue(Nearest([PC]))
-// END
-
-// Open up initial dialogue and then leave until later
+// Exit prelude
 IF
-See([PC])
-Global("ux_prelude_zariel", "GLOBAL", 1)
-!Global("ux_prelude_voice","GLOBAL",1)
+Global("ux_prelude_done","GLOBAL",1)
+!Global("ux_prelude_exit_voice", "GLOBAL", 1)
 THEN
 RESPONSE #100
-Dialogue(Nearest([PC]))
-SetGlobal("ux_prelude_voice","GLOBAL",1)
-END
-
-IF
-See([PC])
-Global("ux_prelude_anari", "GLOBAL", 1)
-!Global("ux_prelude_done","GLOBAL",1)
-THEN
-RESPONSE #100
+SetGlobal("ux_prelude_exit_voice", "GLOBAL", 1)
 EscapeArea()
 END
 
