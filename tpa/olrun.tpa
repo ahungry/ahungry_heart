@@ -153,14 +153,7 @@ ADD_CRE_ITEM ~ax1h02~ #0 #0 #0 ~IDENTIFIED~ ~SHIELD~ EQUIP // TWOHANDED
 ADD_CRE_ITEM ~uxlea02~ #0 #0 #0 ~IDENTIFIED~ ~ARMOR~ EQUIP // TWOHANDED
 ADD_CRE_ITEM ~uxhel02~ #0 #0 #0 ~IDENTIFIED~ ~HELMET~ EQUIP // TWOHANDED
 
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/uxbolr.d~ // All Branwen's banters with other party members will go here. We need the "EVALUATE_BUFFER" because the chapter variable now uses the OUTER_SPRINT variable defined above for the EET continuous journal system.
-	~%MOD_FOLDER%/dialogues/uxolr.d~  // Branwen's greeting dialogue will go here.
-	~%MOD_FOLDER%/dialogues/uxolrj.d~ // The rest of Branwen's dialogue: her commentary, interjections, talks with the player, lovetalks and everything else.
-	~%MOD_FOLDER%/dialogues/uxolrp.d~ // Branwen's leaving party dialogue will go here.
-
-	~%MOD_FOLDER%/scripts/uxolrs.baf~ // Branwen's script.
-	~%MOD_FOLDER%/scripts/uxolrd.baf~ // Branwen's dream script for events at rest. If you want your NPC to talk to you at rest, add scripting here.
-	~%MOD_FOLDER%/scripts/uxolrf.baf~ // Branwen's "fixing" script. Remember how various modders advised you to "select your NPC and press K"? Well, that's how they do it.
+LAF ux_cre_compile STR_VAR name = "olrun" code = "olr" END
 
 // Now we are going to add Branwen content for the Throne of Bhaal. You need one more cre file, or you could use the same one twice.
 ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN // It means that the Throne of Bhaal is installed. If not, this part is not added to the game. This check also works for BG2:EE games.
@@ -202,13 +195,7 @@ WRITE_BYTE 0x273 0x2 // Fighter (https://gibberlings3.github.io/iesdp/files/ids/
 WRITE_BYTE 0x275 0x1 // Male (https://gibberlings3.github.io/iesdp/files/ids/bg2/gender.htm)
 
 
-COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/uxbolr25.d~  // All Branwen's ToB banters with other party members will go here. Again, we use 25, because it's a tradution for ToB. Again, "EVALUATE_BUFFER" because of the chapter numbers
-	~%MOD_FOLDER%/dialogues/uxolr25.d~  // Branwen's ToB greeting dialogue will go here.
-	~%MOD_FOLDER%/dialogues/uxolr25j.d~  // The rest of Branwen's ToB dialogue: her commentary, interjections, talks with the player, lovetalks and everything else.
-	~%MOD_FOLDER%/dialogues/uxolr25p.d~  // Branwen's ToB leaving party dialogue will go here.
-
-	~%MOD_FOLDER%/scripts/uxolr25s.baf~ // Branwen's script for ToB.
-	~%MOD_FOLDER%/scripts/uxolr25d.baf~ // Branwen's dream script for ToB.
+LAF ux_cre_compile STR_VAR name = "olrun25" code = "olr25" END
 
 END // and here ends ToB content
 
