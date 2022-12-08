@@ -230,13 +230,18 @@ ADD_CRE_ITEM ~uxdag02~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~ EQUIP // TWOHANDED
 ADD_CRE_ITEM ~uxdag01~ #0 #0 #0 ~IDENTIFIED~ ~SHIELD~ EQUIP // TWOHANDED
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/uxbzar.d~ // All Branwen's banters with other party members will go here. We need the "EVALUATE_BUFFER" because the chapter variable now uses the OUTER_SPRINT variable defined above for the EET continuous journal system.
-	~%MOD_FOLDER%/dialogues/uxzar.d~  // Branwen's greeting dialogue will go here.
+	// ~%MOD_FOLDER%/dialogues/uxzar.d~  // Branwen's greeting dialogue will go here.
+	~%MOD_FOLDER%/dialogues/ux_zariel_greeting.d~  // Branwen's greeting dialogue will go here.
 	~%MOD_FOLDER%/dialogues/uxzarj.d~ // The rest of Branwen's dialogue: her commentary, interjections, talks with the player, lovetalks and everything else.
 	~%MOD_FOLDER%/dialogues/uxzarp.d~ // Branwen's leaving party dialogue will go here.
 
-	~%MOD_FOLDER%/scripts/uxzars.baf~ // Branwen's script.
+	~%MOD_FOLDER%/scripts/ux_zariel_main.baf~ // Branwen's script.
+	// ~%MOD_FOLDER%/scripts/uxzars.baf~ // Branwen's script.
 	~%MOD_FOLDER%/scripts/uxzard.baf~ // Branwen's dream script for events at rest. If you want your NPC to talk to you at rest, add scripting here.
 	~%MOD_FOLDER%/scripts/uxzarf.baf~ // Branwen's "fixing" script. Remember how various modders advised you to "select your NPC and press K"? Well, that's how they do it.
+
+// Try to alias scripts?
+COPY_EXISTING ~ux_zariel_main.bcs~ ~override/uxzars.bcs~
 
 // Now we are going to add Branwen content for the Throne of Bhaal. You need one more cre file, or you could use the same one twice.
 ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN // It means that the Throne of Bhaal is installed. If not, this part is not added to the game. This check also works for BG2:EE games.

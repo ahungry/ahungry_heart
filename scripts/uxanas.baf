@@ -24,8 +24,8 @@ Global("ux_prelude_anari", "GLOBAL", 1)
 !Global("ux_prelude_done","GLOBAL",1)
 THEN
 RESPONSE #100
-EscapeArea()
 SetGlobal("ux_prelude_done", "GLOBAL", 1)
+EscapeArea()
 END
 
 // Be on standby for a group join
