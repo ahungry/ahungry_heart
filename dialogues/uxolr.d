@@ -1,7 +1,7 @@
 BEGIN uxolr
 
 // BEGIN Prelude segment
-IF ~!Global("uxolrunPrelude", "GLOBALS", 1)~ THEN BEGIN prelude
+IF ~!Global("uxolrunPrelude", "GLOBAL", 1)~ THEN BEGIN prelude
   SAY @0001
   ++ @0002 + prelude2
   ++ @0003 + prelude3
@@ -22,9 +22,9 @@ END
 // BEGIN Party Join
 IF ~True()~ THEN BEGIN FirstMeeting
   SAY @0020
-  IF ~!Global("ux_group_join_deny", "GLOBALS", 1)~ THEN
+  IF ~!Global("ux_group_join_deny", "GLOBAL", 1)~ THEN
   REPLY @0022 + BigGreet
-  IF ~Global("ux_group_join_deny", "GLOBALS", 1)~ THEN
+  IF ~Global("ux_group_join_deny", "GLOBAL", 1)~ THEN
   REPLY @0022 + Greet
   ++ @0021 + GoAway
 END
@@ -41,12 +41,12 @@ END
 
 IF ~~ THEN BEGIN Recruit
   SAY @0029
-  IF ~!Global("ux_group_join_deny", "GLOBALS", 1)~ THEN
+  IF ~!Global("ux_group_join_deny", "GLOBAL", 1)~ THEN
   REPLY @0024 DO ~SetGlobal("ux_in_party_olrun", "LOCALS", 1)
-               SetGlobal("ux_request_group_join", "GLOBALS", 1)
+               SetGlobal("ux_request_group_join", "GLOBAL", 1)
                JoinParty()~ EXIT
   ++ @0027 DO ~SetGlobal("ux_in_party_olrun", "LOCALS", 1)
-               SetGlobal("ux_group_join_deny", "GLOBALS", 1)
+               SetGlobal("ux_group_join_deny", "GLOBAL", 1)
                JoinParty()~ EXIT
   ++ @0025 + GoAway
 END

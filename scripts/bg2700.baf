@@ -1,7 +1,7 @@
 // Spawn at the Gorion circles
 
 IF
-Global("Ux_spawn","GLOBAL",0)
+Global("ux_spawn","GLOBAL",0)
 THEN
 RESPONSE #100
 // CreateCreature("Uxana",[1175.663],13)  // To choose your own coordinates, choose a spot in the game and press CTRL-X
@@ -10,6 +10,6 @@ CreateCreature("uxVOI",[3135.1365],13)
 CreateCreature("uxOLR",[3030.1340],13)
 CreateCreature("uxZAR",[3080.1440],13)
 CreateCreature("uxATH",[3020.1390],13)
-SetGlobal("Ux_spawn","GLOBAL",1)
+SetGlobal("ux_spawn","GLOBAL",1)
 Continue()
 END

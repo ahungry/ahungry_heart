@@ -12,30 +12,29 @@
 // Open up initial dialogue and then leave until later
 IF
 See([PC])
-Global("uxolrunPrelude", "GLOBALS", 1)
-!Global("ux_prelude_athar","GLOBALS",1)
+Global("uxolrunPrelude", "GLOBAL", 1)
+!Global("ux_prelude_athar","GLOBAL",1)
 THEN
 RESPONSE #100
 Dialogue(Nearest([PC]))
-SetGlobal("ux_prelude_athar","GLOBALS",1)
+SetGlobal("ux_prelude_athar","GLOBAL",1)
 END
 
 IF
 See([PC])
-Global("ux_prelude_anari", "GLOBALS", 1)
-!Global("ux_prelude_done","GLOBALS",1)
+Global("ux_prelude_anari", "GLOBAL", 1)
+!Global("ux_prelude_done","GLOBAL",1)
 THEN
 RESPONSE #100
-EscapeAreaMove()
-SetGlobal("ux_prelude_done","GLOBALS",1)
+EscapeArea()
 END
 
 // Be on standby for a group join
 IF
 See([PC])
-!Global("ux_group_join_deny", "GLOBALS", 1)
-Global("ux_prelude_done","GLOBALS",1)
-Global("ux_request_group_join","GLOBALS", 1)
+!Global("ux_group_join_deny", "GLOBAL", 1)
+Global("ux_prelude_done","GLOBAL",1)
+Global("ux_request_group_join","GLOBAL", 1)
 !Global("Ux_in_party_athar", "LOCALS", 1)
 !Global("Ux_in_party_once_athar", "LOCALS", 1)
 THEN RESPONSE #100

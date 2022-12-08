@@ -1,7 +1,7 @@
 BEGIN uxvoi
 
 // BEGIN Prelude segment
-IF ~!Global("ux_prelude_voice", "GLOBALS", 1)~ THEN BEGIN prelude
+IF ~!Global("ux_prelude_voice", "GLOBAL", 1)~ THEN BEGIN prelude
   SAY @0008
   IF ~~ THEN EXIT
 END
@@ -11,9 +11,9 @@ END
 // BEGIN Party Join
 IF ~True()~ THEN BEGIN FirstMeeting
   SAY @0030
-  IF ~!Global("ux_group_join_deny", "GLOBALS", 1)~ THEN
+  IF ~!Global("ux_group_join_deny", "GLOBAL", 1)~ THEN
   REPLY @0032 + BigGreet
-  IF ~Global("ux_group_join_deny", "GLOBALS", 1)~ THEN
+  IF ~Global("ux_group_join_deny", "GLOBAL", 1)~ THEN
   REPLY @0032 + Greet
   ++ @0031 + GoAway
 END
@@ -30,12 +30,12 @@ END
 
 IF ~~ THEN BEGIN Recruit
   SAY @0039
-  IF ~!Global("ux_group_join_deny", "GLOBALS", 1)~ THEN
+  IF ~!Global("ux_group_join_deny", "GLOBAL", 1)~ THEN
   REPLY @0034 DO ~SetGlobal("ux_in_party_voice", "LOCALS", 1)
-               SetGlobal("ux_request_group_join", "GLOBALS", 1)
+               SetGlobal("ux_request_group_join", "GLOBAL", 1)
                JoinParty()~ EXIT
   ++ @0037 DO ~SetGlobal("ux_in_party_voice", "LOCALS", 1)
-               SetGlobal("ux_group_join_deny", "GLOBALS", 1)
+               SetGlobal("ux_group_join_deny", "GLOBAL", 1)
                JoinParty()~ EXIT
   ++ @0035 + GoAway
 END
