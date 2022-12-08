@@ -1,10 +1,14 @@
 BEGIN uxzar
 
+// BEGIN Prelude segment
 IF ~!Global("ux_prelude_zariel", "GLOBALS", 1)~ THEN BEGIN prelude
   SAY @0007
   IF ~~ THEN EXIT
 END
+// END Prelude segment
 
+
+// BEGIN Party Join
 IF ~True()~ THEN BEGIN FirstMeeting
   SAY @0010
   ++ @0012 + Greet
@@ -26,3 +30,4 @@ IF ~~ THEN BEGIN GoAway
   SAY @0016
   IF ~~ THEN EXIT
 END
+// END Party Join

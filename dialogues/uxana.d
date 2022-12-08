@@ -1,76 +1,34 @@
 BEGIN uxana
 
 
+// BEGIN Prelude segment
 IF ~!Global("ux_prelude_anari", "GLOBALS", 1)~ THEN BEGIN prelude
   SAY @0009
   IF ~~ THEN EXIT
 END
+// END Prelude segment
 
-IF ~True()~ THEN
-  BEGIN FirstMeeting
-    SAY ~You there, hero.  I have an important message for you.  I'm Anari and I seek your assistance~ [uxana01]
 
-    IF ~GlobalLT("Chapter","GLOBAL",3)~ THEN
-      REPLY ~Hey Anari, you seen Irenicus around here?~ GOTO InquireIrenicus
-
-    IF ~~ THEN
-      REPLY ~Heya.~ GOTO Greet
-
-    IF ~Class(Player1,RANGER)~ THEN
-      REPLY ~I know a ranger when I see one!~ GOTO BothRangers
-
-    IF ~~ THEN
-      REPLY ~Go away.~ GOTO GoAway
+// BEGIN Party Join
+IF ~True()~ THEN BEGIN FirstMeeting
+  SAY @0040
+  ++ @0042 + Greet
+  ++ @0041 + GoAway
 END
 
-IF ~~ THEN
-  BEGIN InquireIrenicus
-    SAY ~Nope, but I can help you look for him. I'm a ranger!~ [uxana00]
-
-    IF ~~ THEN
-      REPLY ~Sure. Join the party~
-        DO ~
-          SetGlobal("ux_in_party_anari","LOCALS",1)
-          JoinParty()
-        ~ EXIT
-
-    IF ~~ THEN
-      REPLY ~Nah, go away.~ EXIT
+IF ~~ THEN BEGIN Greet
+  SAY @0043
+  ++ @0044 DO ~SetGlobal("ux_in_party_anari", "LOCALS", 1)
+               SetGlobal("ux_request_group_join", "GLOBALS", 1)
+               JoinParty()~ EXIT
+  ++ @0047 DO ~SetGlobal("ux_in_party_anari", "LOCALS", 1)
+               SetGlobal("ux_group_join_deny", "GLOBALS", 1)
+               JoinParty()~ EXIT
+  ++ @0045 + GoAway
 END
 
-IF ~~ THEN
-  BEGIN Greet
-    SAY ~So, you need a ranger in your group?~ [uxana00]
-
-    IF ~~ THEN
-      REPLY ~Yes, as a matter of fact we do.~
-        DO ~
-          SetGlobal("ux_in_party_anari","LOCALS",1)
-          JoinParty()
-        ~ EXIT
-
-    IF ~~ THEN
-      REPLY ~Nah, go away.~ EXIT
-END
-
-IF ~~ THEN
-  BEGIN BothRangers
-    SAY ~Another ranger! Hail and well met brother. Let us journey together and smite evil.~ [uxana00]
-
-    IF ~~ THEN
-      REPLY ~Sounds like a plan.~
-      DO ~
-        SetGlobal("ux_in_party_anari","LOCALS",1)
-        JoinParty()
-      ~ EXIT
-
-     IF ~~ THEN
-       REPLY ~Nah, go away.~ EXIT
-END
-
-IF ~~ THEN
-  BEGIN GoAway
-    SAY ~Very well my <LADYLORD>, I will await the day when you return, so that we might smite evil!~ [uxana00]
-
+IF ~~ THEN BEGIN GoAway
+  SAY @0046
   IF ~~ THEN EXIT
 END
+// END Party Join

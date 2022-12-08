@@ -1,75 +1,34 @@
 BEGIN uxath
 
+
+// BEGIN Prelude segment
 IF ~!Global("ux_prelude_athar", "GLOBALS", 1)~ THEN BEGIN prelude
   SAY @0006
   IF ~~ THEN EXIT
 END
+// END Prelude segment
 
-IF ~True()~ THEN
-  BEGIN FirstMeeting
-    SAY ~You there, hero. I'm Athar and I seek your assistance~ [uxath01]
 
-    IF ~GlobalLT("Chapter","GLOBAL",3)~ THEN
-      REPLY ~Hey Athar, you seen Irenicus around here?~ GOTO InquireIrenicus
-
-    IF ~~ THEN
-      REPLY ~Heya.~ GOTO Greet
-
-    IF ~Class(Player1,PALADIN)~ THEN
-      REPLY ~I know a paladin when I see one!~ GOTO BothPaladins
-
-    IF ~~ THEN
-      REPLY ~Go away.~ GOTO GoAway
+// BEGIN Party Join
+IF ~True()~ THEN BEGIN FirstMeeting
+  SAY @0050
+  ++ @0052 + Greet
+  ++ @0051 + GoAway
 END
 
-IF ~~ THEN
-  BEGIN InquireIrenicus
-    SAY ~Nope, but I can help you look for him. I'm a paladin!~ [uxath00]
-
-    IF ~~ THEN
-      REPLY ~Sure. Join the party~
-        DO ~
-          SetGlobal("Ux_in_party_athar","LOCALS",1)
-          JoinParty()
-        ~ EXIT
-
-    IF ~~ THEN
-      REPLY ~Nah, go away.~ EXIT
+IF ~~ THEN BEGIN Greet
+  SAY @0053
+  ++ @0054 DO ~SetGlobal("ux_in_party_athar", "LOCALS", 1)
+               SetGlobal("ux_request_group_join", "GLOBALS", 1)
+               JoinParty()~ EXIT
+  ++ @0057 DO ~SetGlobal("ux_in_party_athar", "LOCALS", 1)
+               SetGlobal("ux_group_join_deny", "GLOBALS", 1)
+               JoinParty()~ EXIT
+  ++ @0055 + GoAway
 END
 
-IF ~~ THEN
-  BEGIN Greet
-    SAY ~So, you need a paladin in your group?~ [uxath00]
-
-    IF ~~ THEN
-      REPLY ~Yes, as a matter of fact we do.~
-        DO ~
-          SetGlobal("Ux_in_party_athar","LOCALS",1)
-          JoinParty()
-        ~ EXIT
-
-    IF ~~ THEN
-      REPLY ~Nah, go away.~ EXIT
-END
-
-IF ~~ THEN
-  BEGIN BothPaladins
-    SAY ~Another paladin! Hail and well met brother. Let us journey together and smite evil.~ [uxath00]
-
-    IF ~~ THEN
-      REPLY ~Sounds like a plan.~
-      DO ~
-        SetGlobal("Ux_in_party_athar","LOCALS",1)
-        JoinParty()
-      ~ EXIT
-
-     IF ~~ THEN
-       REPLY ~Nah, go away.~ EXIT
-END
-
-IF ~~ THEN
-  BEGIN GoAway
-    SAY ~Very well my <LADYLORD>, I will await the day when you return, so that we might smite evil!~ [uxath00]
-
+IF ~~ THEN BEGIN GoAway
+  SAY @0056
   IF ~~ THEN EXIT
 END
+// END Party Join
