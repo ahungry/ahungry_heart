@@ -28,7 +28,8 @@ END
 
 IF ~~ THEN BEGIN Greet
   SAY @0023
-  ++ @0024 DO ~SetGlobal("ux_in_party_olrun", "LOCALS", 1)
+  IF ~!Global("ux_group_join_deny", "GLOBALS", 1)~ THEN
+  REPLY @0024 DO ~SetGlobal("ux_in_party_olrun", "LOCALS", 1)
                SetGlobal("ux_request_group_join", "GLOBALS", 1)
                JoinParty()~ EXIT
   ++ @0027 DO ~SetGlobal("ux_in_party_olrun", "LOCALS", 1)

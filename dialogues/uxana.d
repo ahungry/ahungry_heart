@@ -18,7 +18,8 @@ END
 
 IF ~~ THEN BEGIN Greet
   SAY @0043
-  ++ @0044 DO ~SetGlobal("ux_in_party_anari", "LOCALS", 1)
+  IF ~!Global("ux_group_join_deny", "GLOBALS", 1)~ THEN
+  REPLY @0044 DO ~SetGlobal("ux_in_party_anari", "LOCALS", 1)
                SetGlobal("ux_request_group_join", "GLOBALS", 1)
                JoinParty()~ EXIT
   ++ @0047 DO ~SetGlobal("ux_in_party_anari", "LOCALS", 1)
