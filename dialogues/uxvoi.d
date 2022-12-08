@@ -1,6 +1,6 @@
 BEGIN uxvoi
 
-IF ~!Global("uxvoicePrelude", "GLOBALS", 1)~ THEN BEGIN prelude
+IF ~!Global("ux_prelude_voice", "GLOBALS", 1)~ THEN BEGIN prelude
   SAY @0008
   IF ~~ THEN EXIT
 END
@@ -29,7 +29,7 @@ IF ~~ THEN
     IF ~~ THEN
       REPLY ~Sure. Join the party~
         DO ~
-          SetGlobal("VoiceJoined","LOCALS",1)
+          SetGlobal("ux_in_party_voice","LOCALS",1)
           JoinParty()
         ~ EXIT
 
@@ -44,7 +44,7 @@ IF ~~ THEN
     IF ~~ THEN
       REPLY ~Yes, as a matter of fact we do.~
         DO ~
-          SetGlobal("VoiceJoined","LOCALS",1)
+          SetGlobal("ux_in_party_voice","LOCALS",1)
           JoinParty()
         ~ EXIT
 
@@ -59,7 +59,7 @@ IF ~~ THEN
     IF ~~ THEN
       REPLY ~Sounds like a plan.~
       DO ~
-        SetGlobal("VoiceJoined","LOCALS",1)
+        SetGlobal("ux_in_party_voice","LOCALS",1)
         JoinParty()
       ~ EXIT
 

@@ -3,7 +3,7 @@
 // IF
 // See([PC])
 // NumTimesTalkedTo(0)
-// !Global("AnariJoined","LOCALS",1)
+// !Global("ux_in_party_anari","LOCALS",1)
 // THEN
 // RESPONSE #100
 // Dialogue(Nearest([PC]))
@@ -12,31 +12,31 @@
 IF
 See([PC])
 Global("uxolrunPrelude", "GLOBALS", 1)
-!Global("uxatharPrelude","GLOBALS",1)
+!Global("ux_prelude_athar","GLOBALS",1)
 THEN
 RESPONSE #100
 Dialogue(Nearest([PC]))
-SetGlobal("uxatharPrelude","GLOBALS",1)
+SetGlobal("ux_prelude_athar","GLOBALS",1)
 END
 
 IF
 See([PC])
-Global("uxanariPrelude", "GLOBALS", 1)
-!Global("uxPreludeDone","GLOBALS",1)
+Global("ux_prelude_anari", "GLOBALS", 1)
+!Global("ux_prelude_done","GLOBALS",1)
 THEN
 RESPONSE #100
 //EscapeAreaMove()
-SetGlobal("uxPreludeDone","GLOBALS",1)
+SetGlobal("ux_prelude_done","GLOBALS",1)
 END
 
 IF
 See([PC])
-Global("uxPreludeDone","GLOBALS",1)
-Global("uxGroupJoin","GLOBALS", 1)
-!Global("AtharJoined", "LOCALS", 1)
-!Global("AtharJoinedOnce", "LOCALS", 1)
+Global("ux_prelude_done","GLOBALS",1)
+Global("ux_request_group_join","GLOBALS", 1)
+!Global("Ux_in_party_athar", "LOCALS", 1)
+!Global("Ux_in_party_once_athar", "LOCALS", 1)
 THEN RESPONSE #100
-SetGlobal("AtharJoined", "LOCALS", 1)
-SetGlobal("AtharJoinedOnce", "LOCALS", 1)
+SetGlobal("Ux_in_party_athar", "LOCALS", 1)
+SetGlobal("Ux_in_party_once_athar", "LOCALS", 1)
 JoinParty()
 END

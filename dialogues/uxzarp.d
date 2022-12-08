@@ -1,6 +1,6 @@
 BEGIN uxzarp
 
-IF ~Global("ZarielJoined","LOCALS",1)~ THEN
+IF ~Global("Ux_in_party_zariel","LOCALS",1)~ THEN
   BEGIN KickOut
     SAY ~You are now kicking me out.~
 
@@ -13,18 +13,18 @@ IF ~Global("ZarielJoined","LOCALS",1)~ THEN
     IF ~~ THEN
       REPLY ~That's right, I don't want you in the party.~
         DO ~
-          SetGlobal("ZarielJoined","LOCALS",0)
+          SetGlobal("Ux_in_party_zariel","LOCALS",0)
         ~ EXIT
 END
 
-IF ~Global("ZarielJoined","LOCALS",0)~ THEN
+IF ~Global("Ux_in_party_zariel","LOCALS",0)~ THEN
   BEGIN Rejoin
     SAY ~You want me to rejoin?~
 
     IF ~~ THEN
       REPLY ~That's right Zariel, get back in formation.~
       DO ~
-        SetGlobal("ZarielJoined","LOCALS",1)
+        SetGlobal("Ux_in_party_zariel","LOCALS",1)
         JoinParty()
       ~ EXIT
 

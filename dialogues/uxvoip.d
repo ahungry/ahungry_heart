@@ -1,6 +1,6 @@
 BEGIN uxvoip
 
-IF ~Global("VoiceJoined","LOCALS",1)~ THEN
+IF ~Global("ux_in_party_voice","LOCALS",1)~ THEN
   BEGIN KickOut
     SAY ~You are now kicking me out.~
 
@@ -13,18 +13,18 @@ IF ~Global("VoiceJoined","LOCALS",1)~ THEN
     IF ~~ THEN
       REPLY ~That's right, I don't want you in the party.~
         DO ~
-          SetGlobal("VoiceJoined","LOCALS",0)
+          SetGlobal("ux_in_party_voice","LOCALS",0)
         ~ EXIT
 END
 
-IF ~Global("VoiceJoined","LOCALS",0)~ THEN
+IF ~Global("ux_in_party_voice","LOCALS",0)~ THEN
   BEGIN Rejoin
     SAY ~You want me to rejoin?~
 
     IF ~~ THEN
       REPLY ~That's right Voice, get back in formation.~
       DO ~
-        SetGlobal("VoiceJoined","LOCALS",1)
+        SetGlobal("ux_in_party_voice","LOCALS",1)
         JoinParty()
       ~ EXIT
 

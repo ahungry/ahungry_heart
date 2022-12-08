@@ -41,7 +41,7 @@ IF ~~ THEN
     IF ~~ THEN
       REPLY ~Sure. Join the party~
         DO ~
-          SetGlobal("OlrunJoined","LOCALS",1)
+          SetGlobal("Ux_in_party_olrun","LOCALS",1)
           JoinParty()
         ~ EXIT
 
@@ -56,7 +56,7 @@ IF ~~ THEN
     IF ~~ THEN
       REPLY ~Yes, as a matter of fact we do.~
         DO ~
-          SetGlobal("OlrunJoined","LOCALS",1)
+          SetGlobal("Ux_in_party_olrun","LOCALS",1)
           JoinParty()
         ~ EXIT
 
@@ -71,7 +71,7 @@ IF ~~ THEN
     IF ~~ THEN
       REPLY ~Sounds like a plan.~
       DO ~
-        SetGlobal("OlrunJoined","LOCALS",1)
+        SetGlobal("Ux_in_party_olrun","LOCALS",1)
         JoinParty()
       ~ EXIT
 

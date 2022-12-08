@@ -14,3 +14,14 @@
 @0008 = ~May he rest among the Gods.~ [uxbad00]
 // Anari
 @0009 = ~We were on our way here to discuss a matter of utmost urgency with Gorion, however it seems we're on our own.  Take care traveller, and may you never cross paths with those who struggle for The Heart of Baldur's Gate.~ [uxbad00]
+
+// First interactions post prelude
+// Zariel
+@0010 = ~Hmm, you look interesting.  I am Zariel, lend me your ear.~ [uxzar01]
+  @0012 = ~Sure, what's up?~
+  @0011 = ~Sorry Zariel, I can't at the moment.~
+@0013 = ~My friends and I are on a quest at the moment, pertaining to The Heart of Baldur's Gate.  Care to join us?  I know that you and Gorion were close, and he would no doubt appreciate us keeping an eye on you.~
+  @0014 = "I would love to join your group. (note: this option recruits all 5)"
+  @0017 = "I can't join your quest, but I would love to have you along on mine."
+  @0015 = "Sorry Zariel, I'm on my own adventure at the moment."
+@0016 = "That's fine, should you change your mind, you'll find us around."

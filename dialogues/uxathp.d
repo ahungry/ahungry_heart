@@ -1,6 +1,6 @@
 BEGIN uxathp
 
-IF ~Global("AtharJoined","LOCALS",1)~ THEN
+IF ~Global("Ux_in_party_athar","LOCALS",1)~ THEN
   BEGIN KickOut
     SAY ~You are now kicking me out.~
 
@@ -13,18 +13,18 @@ IF ~Global("AtharJoined","LOCALS",1)~ THEN
     IF ~~ THEN
       REPLY ~That's right, I don't want you in the party.~
         DO ~
-          SetGlobal("AtharJoined","LOCALS",0)
+          SetGlobal("Ux_in_party_athar","LOCALS",0)
         ~ EXIT
 END
 
-IF ~Global("AtharJoined","LOCALS",0)~ THEN
+IF ~Global("Ux_in_party_athar","LOCALS",0)~ THEN
   BEGIN Rejoin
     SAY ~You want me to rejoin?~
 
     IF ~~ THEN
       REPLY ~That's right Athar, get back in formation.~
       DO ~
-        SetGlobal("AtharJoined","LOCALS",1)
+        SetGlobal("Ux_in_party_athar","LOCALS",1)
         JoinParty()
       ~ EXIT
 

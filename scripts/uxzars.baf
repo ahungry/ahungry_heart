@@ -1,7 +1,7 @@
 // IF
 // See([PC])
 // NumTimesTalkedTo(0)
-// !Global("ZarielJoined","LOCALS",1)
+// !Global("ux_in_party_zariel","LOCALS",1)
 // THEN
 // RESPONSE #100
 // Dialogue(Nearest([PC]))
@@ -9,32 +9,32 @@
 
 IF
 See([PC])
-Global("uxatharPrelude", "GLOBALS", 1)
-!Global("uxzarielPrelude","GLOBALS",1)
+Global("ux_prelude_athar", "GLOBALS", 1)
+!Global("ux_prelude_zariel","GLOBALS",1)
 THEN
 RESPONSE #100
 Dialogue(Nearest([PC]))
-SetGlobal("uxzarielPrelude","GLOBALS",1)
+SetGlobal("ux_prelude_zariel","GLOBALS",1)
 END
 
 IF
 See([PC])
-Global("uxanariPrelude", "GLOBALS", 1)
-!Global("uxPreludeDone","GLOBALS",1)
+Global("ux_prelude_anari", "GLOBALS", 1)
+!Global("ux_prelude_done","GLOBALS",1)
 THEN
 RESPONSE #100
 //EscapeAreaMove()
-SetGlobal("uxPreludeDone","GLOBALS",1)
+SetGlobal("ux_prelude_done","GLOBALS",1)
 END
 
 IF
 See([PC])
-Global("uxPreludeDone","GLOBALS",1)
-Global("uxGroupJoin","GLOBALS", 1)
-!Global("ZarielJoined", "LOCALS", 1)
-!Global("ZarielJoinedOnce", "LOCALS", 1)
+Global("ux_prelude_done","GLOBALS",1)
+Global("ux_request_group_join","GLOBALS", 1)
+!Global("ux_in_party_zariel", "LOCALS", 1)
+!Global("ux_in_party_once_zariel", "LOCALS", 1)
 THEN RESPONSE #100
-SetGlobal("ZarielJoined", "LOCALS", 1)
-SetGlobal("ZarielJoinedOnce", "LOCALS", 1)
+SetGlobal("ux_in_party_zariel", "LOCALS", 1)
+SetGlobal("ux_in_party_once_zariel", "LOCALS", 1)
 JoinParty()
 END
