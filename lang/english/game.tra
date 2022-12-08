@@ -25,6 +25,8 @@
   @0017 = "I can't join your quest, but I would love to have you along on mine."
   @0015 = "Sorry Zariel, I'm on my own adventure at the moment."
 @0016 = "That's fine, should you change your mind, you'll find us around."
+@0018 = "So, you're pickin' and choosin' who will come?  Care to include me?"
+@0019 = "So, what'll it be?"
 
 // Olrun
 @0020 = ~Hail friend, it is I, Olrun.  Have you a moment?~ [uxolr01]

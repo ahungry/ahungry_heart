@@ -11,12 +11,25 @@ END
 // BEGIN Party Join
 IF ~True()~ THEN BEGIN FirstMeeting
   SAY @0010
-  ++ @0012 + Greet
+  IF ~!Global("ux_group_join_deny", "GLOBALS", 1)~ THEN
+  REPLY @0012 + BigGreet
+  IF ~Global("ux_group_join_deny", "GLOBALS", 1)~ THEN
+  REPLY @0012 + Greet
   ++ @0011 + GoAway
 END
 
-IF ~~ THEN BEGIN Greet
+IF ~~ THEN BEGIN BigGreet
   SAY @0013
+  IF ~~ THEN GOTO Recruit
+END
+
+IF ~~ THEN BEGIN Greet
+  SAY @0018
+  IF ~~ THEN GOTO Recruit
+END
+
+IF ~~ THEN BEGIN Recruit
+  SAY @0019
   IF ~!Global("ux_group_join_deny", "GLOBALS", 1)~ THEN
   REPLY @0014 DO ~SetGlobal("ux_in_party_zariel", "LOCALS", 1)
                SetGlobal("ux_request_group_join", "GLOBALS", 1)
