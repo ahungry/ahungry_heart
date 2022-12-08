@@ -1,7 +1,7 @@
 BEGIN uxolr
 
 // BEGIN Prelude segment
-IF ~!Global("uxolrunPrelude", "GLOBAL", 1)~ THEN BEGIN prelude
+IF ~!Global("ux_prelude_olrun", "GLOBAL", 1)~ THEN BEGIN prelude
   SAY @0001
   ++ @0002 + prelude2
   ++ @0003 + prelude3

@@ -12,7 +12,7 @@
 // Open up initial dialogue and then leave until later
 IF
 See([PC])
-Global("uxolrunPrelude", "GLOBAL", 1)
+Global("ux_prelude_olrun", "GLOBAL", 1)
 !Global("ux_prelude_athar","GLOBAL",1)
 THEN
 RESPONSE #100
