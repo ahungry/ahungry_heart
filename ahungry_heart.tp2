@@ -41,7 +41,7 @@ PRINT ~The folder is %MOD_FOLDER%~
 COPY ~%MOD_FOLDER%/audio/%LANGUAGE%~ ~override~ // All audio files
 COPY ~%MOD_FOLDER%/audio/blank.mus~ ~override~ // The blank file
 
-INCLUDE "%MOD_FOLDER%/tpa/dialog_tables.tpa"
+INCLUDE "%MOD_FOLDER%/tpa/util.tpa"
 INCLUDE "%MOD_FOLDER%/tpa/items.tpa"
 INCLUDE "%MOD_FOLDER%/tpa/anari.tpa"
 INCLUDE "%MOD_FOLDER%/tpa/zariel.tpa"
