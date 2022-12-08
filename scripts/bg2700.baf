@@ -9,7 +9,7 @@ CreateCreature("uxANA",[3160.1400],13)
 CreateCreature("uxVOI",[3135.1365],13)
 CreateCreature("uxOLR",[3030.1340],13)
 CreateCreature("uxZAR",[3080.1440],13)
-CreateCreature("uxATH",[3090.1376],13)
+CreateCreature("uxATH",[3020.1390],13)
 SetGlobal("Ux_spawn","GLOBAL",1)
 Continue()
 END

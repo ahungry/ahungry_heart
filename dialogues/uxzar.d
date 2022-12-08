@@ -9,6 +9,12 @@ END
 
 
 // BEGIN Party Join
+IF ~!Global("ux_awaken_zariel", "LOCALS", 1)~ THEN BEGIN WakeUp
+  SAY @1010
+  ++ @1011 DO ~SetGlobal("ux_awaken_zariel", "LOCALS", 1)~ EXIT
+  ++ @1012 EXIT
+END
+
 IF ~True()~ THEN BEGIN FirstMeeting
   SAY @0010
   IF ~!Global("ux_group_join_deny", "GLOBALS", 1)~ THEN

@@ -63,6 +63,7 @@ LAF olrun END
 // EXTEND_TOP ~BG2600.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
 
 EXTEND_TOP ~BG2700.bcs~ ~%MOD_FOLDER%/scripts/bg2700.baf~
+EXTEND_TOP ~BG2300.bcs~ ~%MOD_FOLDER%/scripts/bg2300.baf~
 
 // EXTEND_TOP ~BG2616.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
 // EXTEND_BOTTOM ~BG2616.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~

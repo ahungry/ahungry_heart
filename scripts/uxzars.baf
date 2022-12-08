@@ -39,5 +39,14 @@ Global("ux_request_group_join","GLOBALS", 1)
 THEN RESPONSE #100
 SetGlobal("ux_in_party_zariel", "LOCALS", 1)
 SetGlobal("ux_in_party_once_zariel", "LOCALS", 1)
+SetGlobal("ux_awaken_zariel", "LOCALS", 1)
 JoinParty()
+END
+
+IF
+Global("ux_prelude_done", "GLOBALS", 1)
+!Global("ux_awaken_zariel", "LOCALS", 1)
+!Global("ux_in_party_zariel", "LOCALS", 1)
+THEN RESPONSE #100
+PlayDead(10000)
 END
