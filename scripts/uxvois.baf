@@ -7,6 +7,7 @@
 // Dialogue(Nearest([PC]))
 // END
 
+// Open up initial dialogue and then leave until later
 IF
 See([PC])
 Global("ux_prelude_zariel", "GLOBALS", 1)
@@ -27,8 +28,10 @@ RESPONSE #100
 SetGlobal("ux_prelude_done","GLOBALS",1)
 END
 
+// Be on standby for a group join
 IF
 See([PC])
+!Global("ux_group_join_deny", "GLOBALS", 1)
 Global("ux_prelude_done","GLOBALS",1)
 Global("ux_request_group_join","GLOBALS", 1)
 !Global("ux_in_party_voice", "LOCALS", 1)

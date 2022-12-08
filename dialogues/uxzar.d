@@ -17,6 +17,7 @@ IF ~~ THEN BEGIN Greet
                SetGlobal("ux_request_group_join", "GLOBALS", 1)
                JoinParty()~ EXIT
   ++ @0017 DO ~SetGlobal("ux_in_party_zariel", "LOCALS", 1)
+               SetGlobal("ux_group_join_deny", "GLOBALS", 1)
                JoinParty()~ EXIT
   ++ @0015 + GoAway
 END
