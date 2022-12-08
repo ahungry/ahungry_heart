@@ -7,13 +7,13 @@
   @0003 = ~...~
     @0005 = "Cat got yer tongue my <LADYLORD>?  Well, I don't blame ya." [uxbad00]
 // Athar
-@0006 = "I am sorry for your misfortune.  Had I been able, I would have helped." [uxbad00]
+@0006 = "I am sorry for your misfortune.  Had I been able, I would have helped."
 // Zariel
-@0007 = "Such a bummer - based on what's left of the body, this was clearly the work of a powerful entity." [uxbad00]
+@0007 = "Such a bummer - based on what's left of the body, this was clearly the work of a powerful entity."
 // Voice
-@0008 = ~May he rest among the Gods.~ [uxbad00]
+@0008 = ~May he rest among the Gods.~
 // Anari
-@0009 = ~We were on our way here to discuss a matter of utmost urgency with Gorion, however it seems we're on our own.  Take care traveller, and may you never cross paths with those who struggle for The Heart of Baldur's Gate.~ [uxbad00]
+@0009 = ~We were on our way here to discuss a matter of utmost urgency with Gorion, however it seems we're on our own.  Take care traveller, and may you never cross paths with those who struggle for The Heart of Baldur's Gate.~
 
 // Party Join - First interactions post prelude
 // Zariel
@@ -37,6 +37,8 @@
   @0027 = "I can't join your quest, but I would love to have you along on mine."
   @0025 = "Sorry Olrun, I'm on my own adventure at the moment."
 @0026 = "That's fine, should you change your mind, you'll find us around."
+@0028 = "So, you're pickin' and choosin' who will come?  Care to include me?"
+@0029 = "So, what'll it be?"
 
 // Voice
 @0030 = ~Some call me The Voice, you may call me friend.  Well met traveller.~ [uxvoi01]
@@ -47,6 +49,8 @@
   @0037 = "I can't join your quest, but I would love to have you along on mine."
   @0035 = ~Sorry "friend", I'm on my own adventure at the moment.~
 @0036 = "That's fine, should you change your mind, you'll find us around."
+@0038 = "So, you're pickin' and choosin' who will come?  Care to include me?"
+@0039 = "So, what'll it be?"
 
 // Anari
 @0040 = ~You there, hero.  I have an important message for you.  I'm Anari and I seek your assistance~ [uxana01]
@@ -57,6 +61,8 @@
   @0047 = "I can't join your quest, but I would love to have you along on mine."
   @0045 = "Sorry Anari, I'm on my own adventure at the moment."
 @0046 = "That's fine, should you change your mind, you'll find us around."
+@0048 = "So, you're pickin' and choosin' who will come?  Care to include me?"
+@0049 = "So, what'll it be?"
 
 // Athar
 @0050 = ~You there, hero. I'm Athar and I seek your assistance~ [uxath01]
