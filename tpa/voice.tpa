@@ -237,34 +237,7 @@ LAF ux_cre_compile STR_VAR name = "voice25" code = "voi25" END
 
 END // and here ends ToB content
 
-LAF dialog_tables STR_VAR code = "voi" END
-
-// EET related code
-ACTION_IF GAME_IS ~eet~ BEGIN //only true if game is detected as Enhanced Edition Trilogy (mod for BG2:EE)
-  INCLUDE ~EET/other/EET_functions.tph~ //declaration of external EET functions used below. This is part of the EET package the player has in his install so don't worry about it
-  LAF ~EET_NPC_TRANSITION~ //function used to automatically implement EET continuity system. This deals with the transition to ToB and automatically creates all the needed script blocks and dialogue entries for e.g. the calling of the SoA Branwen the player left somewhere via the fate spirit, the disabling of the fate spirit calling if Branwen is in the party upon transition etc. The function will be executed upon installation of the mod. What follows is all entries we need for our Branwen:
-    INT_VAR
-      type = 3 //informs the function that this is BG2 NPC without BG1 content (because the mod doesn't add to BG1)
-      default_ToB = 1 //NPC available as summonable NPC when the game is started in ToB (= new ToB game)
-      clean_ToB = 1 //forces function to clean old BG1 Branwen code that exists in AR4000.BCS and FATESP.DLG (i.e. no entry for the original BG1 Branwen if this mod is installed)
-    STR_VAR
-      dv = "uxvoi" //Branwen Death Variable (script name)
-      override_BG1 = "uxvois" //Branwen SoA Override script
-      override_SoD = "uxvois" //Branwen SoA Override script
-      override_SoA = "uxvois" //Branwen SoA Override script
-      override_ToB = "uxvoi25s" //Branwen ToB Override script
-      dialog_ToB = "uxvoi25" //Branwen ToB dialogue file
-      cre_ToB = "uxvoi25" //Branwen ToB CRE filename
-      traFile = EVAL "%MOD_FOLDER%/tra/%LANGUAGE%/fatesp.tra"
-      string = "@0" //from the TRA file specified via traFile
-      stringPosDV = "Cernd" //Branwen will be appended right above Cernd
-      clean_ToB_DV = "The Voice" //death variable of BG1 Branwen (see clean_ToB comment)
-  END
-END ELSE BEGIN //we use different Fate Spirit dialogue patching for any other platform than EET
-  ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN // Just add the fate stuff if we are on tob
-  BEGIN
-    COMPILE ~%MOD_FOLDER%/dialogues/fatesp.d~ USING "%MOD_FOLDER%/tra/%LANGUAGE%/fatesp.tra"
-  END
-END
+LAF ux_dialog_tables STR_VAR code = "voi" END
+LAF ux_eet_setup STR_VAR name = "The Voice" code = "voi" END
 
 END

@@ -7,7 +7,7 @@
 // TODO: I may want a check here, so if this mod comes after EET_End, I
 // can test and make sure all is well - and perhaps use the not eet game
 // segment to allow EET_End to "properly" close up the dialog (or just keep the latter)
-DEFINE_ACTION_FUNCTION dialog_tables STR_VAR code = "xxx" BEGIN
+DEFINE_ACTION_FUNCTION ux_dialog_tables STR_VAR code = "xxx" BEGIN
 
 // https://www.gibberlings3.net/forums/topic/15833-dialog-files-and-how-they-are-referenced/
 // First block runs if uxvoi isn't present, and we are NOT using a TOB entry
@@ -93,4 +93,39 @@ COMPILE EVALUATE_BUFFER
 COPY_EXISTING ~ux_main_%name%.bcs~  ~override/ux%code%s.bcs~
 COPY_EXISTING ~ux_dream_%name%.bcs~ ~override/ux%code%d.bcs~
 COPY_EXISTING ~ux_fix_%name%.bcs~   ~override/ux%code%f.bcs~
+END
+
+// Try to just include this once - not sure if that feature is natively supported or not
+ACTION_IF GAME_IS ~eet~ BEGIN //only true if game is detected as Enhanced Edition Trilogy (mod for BG2:EE)
+  INCLUDE ~EET/other/EET_functions.tph~ //declaration of external EET functions used below. This is part of the EET package the player has in his install so don't worry about it
+END
+
+DEFINE_ACTION_FUNCTION ux_eet_setup STR_VAR name = "xxxxx" code = "xxx" BEGIN
+// EET related code
+ACTION_IF GAME_IS ~eet~ BEGIN //only true if game is detected as Enhanced Edition Trilogy (mod for BG2:EE)
+  LAF ~EET_NPC_TRANSITION~ //function used to automatically implement EET continuity system. This deals with the transition to ToB and automatically creates all the needed script blocks and dialogue entries for e.g. the calling of the SoA Branwen the player left somewhere via the fate spirit, the disabling of the fate spirit calling if Branwen is in the party upon transition etc. The function will be executed upon installation of the mod. What follows is all entries we need for our Branwen:
+    INT_VAR
+      type = 3 //informs the function that this is BG2 NPC without BG1 content (because the mod doesn't add to BG1)
+      default_ToB = 1 //NPC available as summonable NPC when the game is started in ToB (= new ToB game)
+      clean_ToB = 1 //forces function to clean old BG1 Branwen code that exists in AR4000.BCS and FATESP.DLG (i.e. no entry for the original BG1 Branwen if this mod is installed)
+    STR_VAR
+      dv = EVAL "ux%code%" //Branwen Death Variable (script name)
+      override_BG1 = EVAL "ux%code%s" //Branwen SoA Override script
+      override_SoD = EVAL "ux%code%s" //Branwen SoA Override script
+      override_SoA = EVAL "ux%code%s" //Branwen SoA Override script
+      override_ToB = EVAL "ux%code%25s" //Branwen ToB Override script
+      dialog_ToB = EVAL "ux%code%25" //Branwen ToB dialogue file
+      cre_ToB = EVAL "ux%code%25" //Branwen ToB CRE filename
+      traFile = EVAL "%MOD_FOLDER%/tra/%LANGUAGE%/fatesp.tra"
+      string = "@0" //from the TRA file specified via traFile
+      stringPosDV = "Cernd" //Branwen will be appended right above Cernd
+      clean_ToB_DV = EVAL "%name%" //death variable of BG1 Branwen (see clean_ToB comment)
+  END
+END ELSE BEGIN //we use different Fate Spirit dialogue patching for any other platform than EET
+  ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN // Just add the fate stuff if we are on tob
+  BEGIN
+    COMPILE ~%MOD_FOLDER%/dialogues/fatesp.d~ USING "%MOD_FOLDER%/tra/%LANGUAGE%/fatesp.tra"
+  END
+END
+
 END
