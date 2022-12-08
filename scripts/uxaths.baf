@@ -26,7 +26,7 @@ Global("ux_prelude_anari", "GLOBALS", 1)
 !Global("ux_prelude_done","GLOBALS",1)
 THEN
 RESPONSE #100
-//EscapeAreaMove()
+EscapeAreaMove()
 SetGlobal("ux_prelude_done","GLOBALS",1)
 END
 

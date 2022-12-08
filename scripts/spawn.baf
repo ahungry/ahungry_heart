@@ -4,7 +4,7 @@
 // Don't forget Continue() at the end. It's needed when you add to the top(EXTEND_TOP in Setup-Branwen.tp2) of the script.
 
 IF
-Global("Uxspawn","GLOBAL",0)
+Global("Ux_spawn","GLOBAL",0)
 THEN
 RESPONSE #100
 // CreateCreature("Uxana",[1175.663],13)  // To choose your own coordinates, choose a spot in the game and press CTRL-X
@@ -13,7 +13,7 @@ CreateCreature("uxVOI",[1130.650],13)
 CreateCreature("uxOLR",[1030.670],13)
 CreateCreature("uxZAR",[1030.800],13)
 CreateCreature("uxATH",[1005.735],13)
-SetGlobal("Uxspawn","GLOBAL",1)
+SetGlobal("Ux_spawn","GLOBAL",1)
 Continue()
 END
 

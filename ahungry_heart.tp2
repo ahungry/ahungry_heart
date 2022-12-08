@@ -57,8 +57,13 @@ LAF olrun END
 
 // The following is appending what we wrote in AR1000.baf to the bottom of
 // AR1000.bcs
-EXTEND_TOP ~AR2600.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
-EXTEND_TOP ~BG2600.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
+
+// DEBUG Lines to make the party present at game start
+// EXTEND_TOP ~AR2600.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
+// EXTEND_TOP ~BG2600.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
+
+EXTEND_TOP ~BG2700.bcs~ ~%MOD_FOLDER%/scripts/bg2700.baf~
+
 // EXTEND_TOP ~BG2616.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
 // EXTEND_BOTTOM ~BG2616.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
 
