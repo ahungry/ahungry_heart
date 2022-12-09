@@ -1,6 +1,22 @@
 BEGIN uxvoij
 
-IF ~IsGabber(Player1)~ uxVoiPID
+// This is where main dialogue after joining the party belongs
+// This includes PIDS + NIDS (npc initiated dialogue)
+
+IF ~Global("ux_voice_is_bantering", "GLOBAL", 1)
+    Global("ux_voice_banter_id", "GLOBAL", 1)~ THEN BEGIN voice_banter1
+SAY ~This is our first banter~
+++ ~Cool!~ EXIT
+END
+
+IF ~Global("ux_voice_is_bantering", "GLOBAL", 1)
+    Global("ux_voice_banter_id", "GLOBAL", 2)~ THEN BEGIN voice_banter1
+SAY ~This is second first banter~
+++ ~Oooh, neat!~ EXIT
+END
+
+IF ~IsGabber(Player1)
+   !Global("ux_voice_is_bantering", "GLOBAL", 1)~ uxVoiPID
   SAY ~What's up?~
   ++ ~The Voice, what brings you to our quest?~ + quest
   ++ ~Nevermind~ EXIT

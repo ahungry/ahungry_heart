@@ -1,3 +1,3 @@
 BEGIN uxbvoi
 
-// What goes here, hmm
+// Banter with core game npcs that doesn't rely on other team members goes here

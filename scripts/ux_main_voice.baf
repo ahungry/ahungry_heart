@@ -9,5 +9,27 @@ Global("ux_request_group_join","GLOBAL", 1)
 THEN RESPONSE #100
 SetGlobal("ux_in_party_voice", "LOCALS", 1)
 SetGlobal("ux_in_party_once_voice", "LOCALS", 1)
+RealSetGlobalTimer("ux_voice_banter_timer", "GLOBAL", 20)
 JoinParty()
+END
+
+
+IF
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+RealGlobalTimerExpired("ux_voice_banter_timer","GLOBAL")
+OR(2)
+Global("ux_voice_banter_id", "GLOBAL", 0)
+Global("ux_voice_banter_id", "GLOBAL", 1)
+THEN
+RESPONSE #100
+PlaySong(165)
+SetGlobal("ux_voice_is_bantering", "GLOBAL", 1)
+IncrementGlobal("ux_voice_banter_id", "GLOBAL", 1)
+RealSetGlobalTimer("ux_voice_banter_timer", "GLOBAL", 20)
+StartDialogueNoSet(Player1)
 END
