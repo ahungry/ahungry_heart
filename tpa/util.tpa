@@ -74,9 +74,6 @@ ACTION_IF GAME_IS ~eet~ BEGIN
   IF ~25FILE~
 
   // Another EET special - more areas for banter.
-  // 25banter.2da
-  // bdbanter.2da
-  // bgbanter.2da
   APPEND ~bgbanter.2da~ ~ux%code%     uxb%code%~ UNLESS ~ux%code%~
   APPEND ~25banter.2da~ ~ux%code%     uxb%code%~ UNLESS ~ux%code%~
   APPEND ~bdbanter.2da~ ~ux%code%     uxb%code%~ UNLESS ~ux%code%~
