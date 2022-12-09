@@ -41,4 +41,17 @@ SetGlobal("ux_zariel_is_bantering", "GLOBAL", 1)
 IncrementGlobal("ux_zariel_banter_id", "GLOBAL", 1)
 RealSetGlobalTimer("ux_zariel_banter_timer", "GLOBAL", 5)
 StartDialogueNoSet(Player1)
+SetGlobal("ux_zariel_is_bantering", "GLOBAL", 0)
+END
+
+// Pid stuff
+IF
+Global("ux_zariel_wishes_to_pid", "GLOBAL", 1)
+THEN
+RESPONSE #100
+PlaySong(166)
+SetGlobal("ux_zariel_wishes_to_pid", "GLOBAL", 0)
+SetGlobal("ux_zariel_is_pidding", "GLOBAL", 1)
+StartDialogueNoSet(Player1)
+SetGlobal("ux_zariel_is_pidding", "GLOBAL", 0)
 END

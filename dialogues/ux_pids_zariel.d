@@ -4,20 +4,27 @@ BEGIN uxzarj
 // This includes PIDS + NIDS (npc initiated dialogue)
 
 IF ~Global("ux_zariel_is_bantering", "GLOBAL", 1)
-    Global("ux_zariel_banter_id", "GLOBAL", 1)~ THEN BEGIN zariel_banter1
+    Global("ux_zariel_banter_id", "GLOBAL", 1)~ zb1 // THEN BEGIN zariel_banter1
 SAY ~This is our first banter~
 ++ ~Cool!~ EXIT
 END
 
 IF ~Global("ux_zariel_is_bantering", "GLOBAL", 1)
-    Global("ux_zariel_banter_id", "GLOBAL", 2)~ THEN BEGIN zariel_banter1
+    Global("ux_zariel_banter_id", "GLOBAL", 2)~ zb2 // THEN BEGIN zariel_banter1
 SAY ~This is second first banter~
 ++ ~Oooh, neat!~ EXIT
 END
 
 IF ~IsGabber(Player1)
-   !Global("ux_zariel_is_bantering", "GLOBAL", 1)~ uxZarPID
-  SAY ~What's up?~
+   !Global("ux_zariel_is_pidding", "GLOBAL", 1)
+   !Global("ux_zariel_is_bantering", "GLOBAL", 1)~ zpid0
+  SAY ~Yes?~ [uxar23]
+  IF ~True()~ DO ~SetGlobal("ux_zariel_wishes_to_pid", "GLOBAL", 1)~ EXIT
+END
+
+IF ~IsGabber(Player1)
+   !Global("ux_zariel_is_bantering", "GLOBAL", 1)~ zpid1
+  SAY ~Havin fun gettin a poke?~ [uxzar24]
   ++ ~Zariel, what brings you to our quest?~ + quest
   ++ ~Nevermind~ EXIT
 END
