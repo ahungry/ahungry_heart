@@ -1,13 +1,5 @@
 BEGIN uxzar
 
-// BEGIN Prelude segment
-// IF ~!Global("ux_prelude_zariel", "GLOBAL", 1)~ THEN BEGIN prelude
-//   SAY @0007
-//   IF ~~ THEN EXIT
-// END
-// END Prelude segment
-
-
 // BEGIN Party Join
 IF ~!Global("ux_awaken_zariel", "LOCALS", 1)~ THEN BEGIN WakeUp
   SAY @1010
@@ -15,7 +7,7 @@ IF ~!Global("ux_awaken_zariel", "LOCALS", 1)~ THEN BEGIN WakeUp
   ++ @1012 EXIT
 END
 
-IF ~Global("ux_prelude_zariel", "GLOBAL", 1)~ THEN BEGIN FirstMeeting
+IF ~Global("ux_prelude_done", "GLOBAL", 1)~ THEN BEGIN FirstMeeting
   SAY @0010
   IF ~!Global("ux_group_join_deny", "GLOBAL", 1)~ THEN
   REPLY @0012 + BigGreet

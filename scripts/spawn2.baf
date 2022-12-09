@@ -1,14 +1,14 @@
 IF
 Global("ux_prelude_done", "GLOBAL", 1)
-!Global("ux_spawn_fai", "GLOBAL", 1)
+!Global("ux_spawn_feld", "GLOBAL", 1)
 THEN
 RESPONSE #100
 // CreateCreature("Uxana",[1175.663],13)  // To choose your own coordinates, choose a spot in the game and press CTRL-X
 CreateCreature("uxANA",[385.420],13)
 CreateCreature("uxVOI",[385.420],13)
 CreateCreature("uxOLR",[385.420],13)
-CreateCreature("uxZAR",[385.420],13)
+//CreateCreature("uxZAR",[385.420],13)
 CreateCreature("uxATH",[385.420],13)
-SetGlobal("ux_spawn_fai", "GLOBAL", 1)
+SetGlobal("ux_spawn_feld", "GLOBAL", 1)
 Continue()
 END

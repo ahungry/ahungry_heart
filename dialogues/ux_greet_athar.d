@@ -1,16 +1,7 @@
 BEGIN uxath
 
-
-// BEGIN Prelude segment
-// IF ~!Global("ux_prelude_athar", "GLOBAL", 1)~ THEN BEGIN prelude
-//   SAY @0006
-//   IF ~~ THEN EXIT
-// END
-// END Prelude segment
-
-
 // BEGIN Party Join
-IF ~Global("ux_prelude_athar", "GLOBAL", 1)~ THEN BEGIN FirstMeeting
+IF ~Global("ux_prelude_done", "GLOBAL", 1)~ THEN BEGIN FirstMeeting
   SAY @0050
   IF ~!Global("ux_group_join_deny", "GLOBAL", 1)~ THEN
   REPLY @0052 + BigGreet

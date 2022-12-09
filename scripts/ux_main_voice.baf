@@ -1,13 +1,3 @@
-// Exit prelude
-IF
-Global("ux_prelude_done","GLOBAL",1)
-!Global("ux_prelude_exit_voice", "GLOBAL", 1)
-THEN
-RESPONSE #100
-SetGlobal("ux_prelude_exit_voice", "GLOBAL", 1)
-EscapeArea()
-END
-
 // Be on standby for a group join
 IF
 See([PC])

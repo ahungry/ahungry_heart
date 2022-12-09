@@ -4,7 +4,7 @@ IF
 Global("ux_spawn","GLOBAL",0)
 THEN
 RESPONSE #100
-// CreateCreature("Uxana",[1175.663],13)  // To choose your own coordinates, choose a spot in the game and press CTRL-X
+// To choose your own coordinates, choose a spot in the game and press CTRL-X
 CreateCreature("uxANA",[3160.1400],13)
 CreateCreature("uxVOI",[3135.1365],13)
 CreateCreature("uxOLR",[3030.1340],13)
