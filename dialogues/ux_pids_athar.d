@@ -24,7 +24,7 @@ END
 
 IF ~IsGabber(Player1)
    !Global("ux_athar_is_bantering", "GLOBAL", 1)~ apid1
-  SAY ~What can I do for you?~ [uxath56]
+  SAY ~What is it you require?~ [uxath56]
   ++ ~Athar, what brings you to our quest?~ + quest
   ++ ~Nevermind~ EXIT
 END

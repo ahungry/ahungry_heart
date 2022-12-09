@@ -1,7 +1,30 @@
 BEGIN uxolrj
 
-IF ~IsGabber(Player1)~ uxOlrPID
-  SAY ~What's up?~
+// This is where main dialogue after joining the party belongs
+// This includes PIDS + NIDS (npc initiated dialogue)
+
+IF ~Global("ux_olrun_is_bantering", "GLOBAL", 1)
+    Global("ux_olrun_banter_id", "GLOBAL", 1)~ olrun_banter1 // THEN BEGIN olrun_banter1
+SAY ~This is our first banter~
+++ ~Cool!~ EXIT
+END
+
+IF ~Global("ux_olrun_is_bantering", "GLOBAL", 1)
+    Global("ux_olrun_banter_id", "GLOBAL", 2)~ olrun_banter2 // THEN BEGIN olrun_banter1
+SAY ~This is second first banter~
+++ ~Oooh, neat!~ EXIT
+END
+
+IF ~IsGabber(Player1)
+   !Global("ux_olrun_is_pidding", "GLOBAL", 1)
+   !Global("ux_olrun_is_bantering", "GLOBAL", 1)~ apid0
+  SAY ~( Olrun turns to you )~
+  IF ~True()~ DO ~SetGlobal("ux_olrun_wishes_to_pid", "GLOBAL", 1)~ EXIT
+END
+
+IF ~IsGabber(Player1)
+   !Global("ux_olrun_is_bantering", "GLOBAL", 1)~ apid1
+  SAY ~What kin I do fer you?~ [uxolr56]
   ++ ~Olrun, what brings you to our quest?~ + quest
   ++ ~Nevermind~ EXIT
 END

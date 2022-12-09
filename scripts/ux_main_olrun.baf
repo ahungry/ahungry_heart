@@ -19,5 +19,40 @@ Global("ux_request_group_join","GLOBAL", 1)
 THEN RESPONSE #100
 SetGlobal("Ux_in_party_olrun", "LOCALS", 1)
 SetGlobal("Ux_in_party_once_olrun", "LOCALS", 1)
+RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 5)
 JoinParty()
+END
+
+// Try to initiate some chit chat
+IF
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+RealGlobalTimerExpired("ux_olrun_banter_timer","GLOBAL")
+OR(2)
+Global("ux_olrun_banter_id", "GLOBAL", 0)
+Global("ux_olrun_banter_id", "GLOBAL", 1)
+THEN
+RESPONSE #100
+PlaySong(166)
+SetGlobal("ux_olrun_is_bantering", "GLOBAL", 1)
+IncrementGlobal("ux_olrun_banter_id", "GLOBAL", 1)
+RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 5)
+StartDialogueNoSet(Player1)
+SetGlobal("ux_olrun_is_bantering", "GLOBAL", 0)
+END
+
+// Pid stuff
+IF
+Global("ux_olrun_wishes_to_pid", "GLOBAL", 1)
+THEN
+RESPONSE #100
+PlaySong(166)
+SetGlobal("ux_olrun_wishes_to_pid", "GLOBAL", 0)
+SetGlobal("ux_olrun_is_pidding", "GLOBAL", 1)
+StartDialogueNoSet(Player1)
+SetGlobal("ux_olrun_is_pidding", "GLOBAL", 0)
 END
