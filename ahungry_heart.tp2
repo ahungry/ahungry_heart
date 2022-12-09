@@ -61,8 +61,10 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/ux_prelude_chain.d~
 // AR1000.bcs
 
 // DEBUG Lines to make the party present at game start
-// EXTEND_TOP ~AR2600.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
-// EXTEND_TOP ~BG2600.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
+EXTEND_TOP ~AR2600.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
+EXTEND_TOP ~BG2600.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
+// Spawn at Feldeposts
+EXTEND_TOP ~BG2616.bcs~ ~%MOD_FOLDER%/scripts/spawn2.baf~
 
 EXTEND_TOP ~BG2700.bcs~ ~%MOD_FOLDER%/scripts/bg2700.baf~
 EXTEND_TOP ~BG2300.bcs~ ~%MOD_FOLDER%/scripts/bg2300.baf~

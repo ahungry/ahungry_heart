@@ -9,11 +9,19 @@ END
 
 IF ~~ THEN BEGIN prelude2
   SAY @0004
-  IF ~~ THEN EXIT
+  IF ~~ THEN GOTO prelude4
+  // IF ~~ THEN EXIT
 END
 
 IF ~~ THEN BEGIN prelude3
   SAY @0005
+  IF ~~ THEN GOTO prelude4
+  // IF ~~ THEN EXIT
+END
+
+// Stub for INTERJECT_COPY_TRANS to be inserted
+IF ~~ THEN BEGIN prelude4
+  SAY @0060
   IF ~~ THEN EXIT
 END
 // END Prelude segment
