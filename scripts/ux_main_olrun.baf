@@ -4,6 +4,7 @@ See([PC])
 !Global("ux_prelude_done", "GLOBAL", 1)
 THEN
 RESPONSE #100
+PlaySong(164) // See override/songlist.2da
 Dialogue(Nearest([PC]))
 END
 
