@@ -67,10 +67,19 @@ ACTION_IF GAME_IS ~eet~ BEGIN
   UNLESS ~ux%code%~
   IF ~25POST~ // if we do have tob tables
 
+  // This is usually the area for banter
   APPEND ~interdia.2da~
   ~ux%code%     uxb%code%    ***~
   UNLESS ~ux%code%~
   IF ~25FILE~
+
+  // Another EET special - more areas for banter.
+  // 25banter.2da
+  // bdbanter.2da
+  // bgbanter.2da
+  APPEND ~bgbanter.2da~ ~ux%code%     uxb%code%~ UNLESS ~ux%code%~
+  APPEND ~25banter.2da~ ~ux%code%     uxb%code%~ UNLESS ~ux%code%~
+  APPEND ~bdbanter.2da~ ~ux%code%     uxb%code%~ UNLESS ~ux%code%~
 END
 END
 

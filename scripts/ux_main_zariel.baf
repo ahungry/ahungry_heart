@@ -20,3 +20,9 @@ Global("ux_prelude_done", "GLOBAL", 1)
 THEN RESPONSE #100
 PlayDead(10000)
 END
+
+// IF
+// Global("ux_awaken_zariel", "LOCALS", 1)
+// THEN RESPONSE #100
+// StartDialogueNoSet("uxolr")
+// END

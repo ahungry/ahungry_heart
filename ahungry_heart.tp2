@@ -71,6 +71,8 @@ ACTION_IF GAME_IS ~eet~ BEGIN
   COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/ux_prelude_chain.d~
 END
 
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/ux_party_banters.d~
+
 // The following is appending what we wrote in AR1000.baf to the bottom of
 // AR1000.bcs
 
