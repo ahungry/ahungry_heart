@@ -25,9 +25,11 @@ IF ~~ THEN BEGIN Recruit
   IF ~!Global("ux_group_join_deny", "GLOBAL", 1)~ THEN
   REPLY @0044 DO ~SetGlobal("ux_in_party_anari", "LOCALS", 1)
                SetGlobal("ux_request_group_join", "GLOBAL", 1)
+               SetGlobal("ux_anari_banter_timer", "GLOBAL", 5)
                JoinParty()~ EXIT
   ++ @0047 DO ~SetGlobal("ux_in_party_anari", "LOCALS", 1)
                SetGlobal("ux_group_join_deny", "GLOBAL", 1)
+               SetGlobal("ux_anari_banter_timer", "GLOBAL", 5)
                JoinParty()~ EXIT
   ++ @0045 + GoAway
 END
