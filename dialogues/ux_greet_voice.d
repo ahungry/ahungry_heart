@@ -33,11 +33,11 @@ IF ~~ THEN BEGIN Recruit
   IF ~!Global("ux_group_join_deny", "GLOBAL", 1)~ THEN
   REPLY @0034 DO ~SetGlobal("ux_in_party_voice", "LOCALS", 1)
                SetGlobal("ux_request_group_join", "GLOBAL", 1)
-               RealSetGlobalTimer("ux_voice_banter_timer", "GLOBAL", 20)
+               RealSetGlobalTimer("ux_voice_banter_timer", "GLOBAL", 5)
                JoinParty()~ EXIT
   ++ @0037 DO ~SetGlobal("ux_in_party_voice", "LOCALS", 1)
                SetGlobal("ux_group_join_deny", "GLOBAL", 1)
-               RealSetGlobalTimer("ux_voice_banter_timer", "GLOBAL", 20)
+               RealSetGlobalTimer("ux_voice_banter_timer", "GLOBAL", 5)
                JoinParty()~ EXIT
   ++ @0035 + GoAway
 END

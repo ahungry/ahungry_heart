@@ -9,7 +9,7 @@ Global("ux_request_group_join","GLOBAL", 1)
 THEN RESPONSE #100
 SetGlobal("ux_in_party_voice", "LOCALS", 1)
 SetGlobal("ux_in_party_once_voice", "LOCALS", 1)
-RealSetGlobalTimer("ux_voice_banter_timer", "GLOBAL", 20)
+RealSetGlobalTimer("ux_voice_banter_timer", "GLOBAL", 5)
 JoinParty()
 END
 
@@ -30,6 +30,19 @@ RESPONSE #100
 PlaySong(165)
 SetGlobal("ux_voice_is_bantering", "GLOBAL", 1)
 IncrementGlobal("ux_voice_banter_id", "GLOBAL", 1)
-RealSetGlobalTimer("ux_voice_banter_timer", "GLOBAL", 20)
+RealSetGlobalTimer("ux_voice_banter_timer", "GLOBAL", 5)
 StartDialogueNoSet(Player1)
+SetGlobal("ux_voice_is_bantering", "GLOBAL", 0)
+END
+
+// Pid stuff
+IF
+Global("ux_voice_wishes_to_pid", "GLOBAL", 1)
+THEN
+RESPONSE #100
+PlaySong(165)
+SetGlobal("ux_voice_wishes_to_pid", "GLOBAL", 0)
+SetGlobal("ux_voice_is_pidding", "GLOBAL", 1)
+StartDialogueNoSet(Player1)
+SetGlobal("ux_voice_is_pidding", "GLOBAL", 0)
 END

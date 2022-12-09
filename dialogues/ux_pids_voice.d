@@ -16,8 +16,15 @@ SAY ~This is second first banter~
 END
 
 IF ~IsGabber(Player1)
-   !Global("ux_voice_is_bantering", "GLOBAL", 1)~ uxVoiPID
-  SAY ~What's up?~
+   !Global("ux_voice_is_pidding", "GLOBAL", 1)
+   !Global("ux_voice_is_bantering", "GLOBAL", 1)~ vpid0
+  SAY ~( The Voice turns to you )~
+  IF ~True()~ DO ~SetGlobal("ux_voice_wishes_to_pid", "GLOBAL", 1)~ EXIT
+END
+
+IF ~IsGabber(Player1)
+   !Global("ux_voice_is_bantering", "GLOBAL", 1)~ vpid1
+  SAY ~What is it you seek?~ [uxvoi56]
   ++ ~The Voice, what brings you to our quest?~ + quest
   ++ ~Nevermind~ EXIT
 END
