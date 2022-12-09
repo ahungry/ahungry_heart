@@ -1,9 +1,9 @@
 BEGIN uxzar
 
 // BEGIN Party Join
-IF ~!Global("ux_awaken_zariel", "LOCALS", 1)~ THEN BEGIN WakeUp
+IF ~Global("ux_zariel_sleeping", "LOCALS", 1)~ THEN BEGIN WakeUp
   SAY @1010
-  ++ @1011 DO ~SetGlobal("ux_awaken_zariel", "LOCALS", 1)~ EXIT
+  ++ @1011 DO ~SetGlobal("ux_zariel_sleeping", "LOCALS", 0)~ EXIT
   ++ @1012 EXIT
 END
 
@@ -31,9 +31,11 @@ IF ~~ THEN BEGIN Recruit
   IF ~!Global("ux_group_join_deny", "GLOBAL", 1)~ THEN
   REPLY @0014 DO ~SetGlobal("ux_in_party_zariel", "LOCALS", 1)
                SetGlobal("ux_request_group_join", "GLOBAL", 1)
+               SetGlobal("ux_zariel_banter_timer", "GLOBAL", 5)
                JoinParty()~ EXIT
   ++ @0017 DO ~SetGlobal("ux_in_party_zariel", "LOCALS", 1)
                SetGlobal("ux_group_join_deny", "GLOBAL", 1)
+               SetGlobal("ux_zariel_banter_timer", "GLOBAL", 5)
                JoinParty()~ EXIT
   ++ @0015 + GoAway
 END

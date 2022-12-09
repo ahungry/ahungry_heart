@@ -9,20 +9,36 @@ Global("ux_request_group_join","GLOBAL", 1)
 THEN RESPONSE #100
 SetGlobal("ux_in_party_zariel", "LOCALS", 1)
 SetGlobal("ux_in_party_once_zariel", "LOCALS", 1)
-SetGlobal("ux_awaken_zariel", "LOCALS", 1)
+SetGlobal("ux_zariel_sleeping", "LOCALS", 0)
+RealSetGlobalTimer("ux_zariel_banter_timer", "GLOBAL", 5)
 JoinParty()
 END
 
 IF
 Global("ux_prelude_done", "GLOBAL", 1)
-!Global("ux_awaken_zariel", "LOCALS", 1)
+Global("ux_zariel_sleeping", "LOCALS", 1)
 !Global("ux_in_party_zariel", "LOCALS", 1)
 THEN RESPONSE #100
 PlayDead(10000)
 END
 
-// IF
-// Global("ux_awaken_zariel", "LOCALS", 1)
-// THEN RESPONSE #100
-// StartDialogueNoSet("uxolr")
-// END
+// Try to initiate some chit chat
+IF
+InParty(Myself)
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+CombatCounter(0)
+!See([ENEMY])
+RealGlobalTimerExpired("ux_zariel_banter_timer","GLOBAL")
+OR(2)
+Global("ux_zariel_banter_id", "GLOBAL", 0)
+Global("ux_zariel_banter_id", "GLOBAL", 1)
+THEN
+RESPONSE #100
+PlaySong(166)
+SetGlobal("ux_zariel_is_bantering", "GLOBAL", 1)
+IncrementGlobal("ux_zariel_banter_id", "GLOBAL", 1)
+RealSetGlobalTimer("ux_zariel_banter_timer", "GLOBAL", 5)
+StartDialogueNoSet(Player1)
+END

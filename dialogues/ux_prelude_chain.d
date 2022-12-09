@@ -19,6 +19,7 @@ INTERJECT_COPY_TRANS uxolr 3 prelude_chain
   == uxana @0009 DO ~
       // Move them to the next area (the name value is garbage)
       SetGlobal("ux_prelude_done", "GLOBAL", 1)
+      ActionOverride("uxzar", SetGlobal("ux_zariel_sleeping", "LOCALS", 1))
       // DEBUG - comment/uncomment as needed to change location after first meet
       // ActionOverride("uxana", EscapeAreaObjectMove("%BG_PRE%2300", "North", 1105, 3300, 5))
       // ActionOverride("uxvoi", EscapeAreaObjectMove("%BG_PRE%2300", "North", 1060, 3280, 14))

@@ -13,7 +13,7 @@ RealSetGlobalTimer("ux_voice_banter_timer", "GLOBAL", 20)
 JoinParty()
 END
 
-
+// Try to initiate some chit chat
 IF
 InParty(Myself)
 See(Player1)
