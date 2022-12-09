@@ -29,7 +29,6 @@ THEN
 RESPONSE #100
 PlaySong(167)
 SetGlobal("ux_anari_is_bantering", "GLOBAL", 1)
-IncrementGlobal("ux_anari_banter_id", "GLOBAL", 1)
 RealSetGlobalTimer("ux_anari_banter_timer", "GLOBAL", 5)
 StartDialogueNoSet(Player1)
 SetGlobal("ux_anari_is_bantering", "GLOBAL", 0)
