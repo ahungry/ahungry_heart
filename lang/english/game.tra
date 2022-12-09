@@ -1,13 +1,20 @@
-// Prelude segment
+// Generic (reused) things (usually dialogue options)
+@990001 = ~Just a few minutes, I'm working on something.~
+@990002 = ~I have more important tasks to focus on - give me a few hours.~
+@990003 = ~Sorry, that was a mistake, I do have time.~
+@990004 = ~Fine, how much alone time do you need?~
+@990005 = ~Fine.~
+@990006 = ~So anyways...~
 
+// Prelude segment
 // Olrun
-@0001 = ~Noooo, we were too late!~ [uxolr52]
-  @0002 = ~Did...did you see that?~
-    @0004 = "Only the aftermath - we just arrived in the wee hours of the morn." [uxolr53]
-  @0003 = ~...~
-    @0005 = "Cat got yer tongue?  Well, I don't blame ya. We just arrived in the wee hours of the morn, just in time to see the aftermath." [uxolr54]
+@110001 = ~Noooo, we were too late!~ [uxolr52]
+  @980002 = ~Did...did you see that?~
+    @110004 = "Only the aftermath - we just arrived in the wee hours of the morn." [uxolr53]
+  @980003 = ~...~
+    @110005 = "Cat got yer tongue?  Well, I don't blame ya. We just arrived in the wee hours of the morn, just in time to see the aftermath." [uxolr54]
 // Olrun
-@0060 = ~Going down in the glory of battle!  I'd have it no other way.~ [uxolr16]
+@110060 = ~Going down in the glory of battle!  I'd have it no other way.~ [uxolr16]
 // Athar
 @0006 = "I am sorry for your misfortune.  Had I been able, I would have helped." [uxath52]
 // Zariel
@@ -35,9 +42,9 @@
 @0019 = "Well?"
 
 // Olrun
-@0020 = ~Hail friend, it is I, Olrun.  Have you a moment?~ [uxolr01]
-  @0022 = ~Sure Olrun, what's up?~
-  @0021 = ~Sorry Olrun, I can't at the moment.~
+@110020 = ~Hail friend, it is I, Olrun.  Have you a moment?~ [uxolr01]
+  @980022 = ~Sure Olrun, what's up?~
+  @980021 = ~Sorry Olrun, I can't at the moment.~
 @0023 = ~My friends and I are on an important quest, pertaining to The Heart of Baldur's Gate.  Care to join us?  I know that you and Gorion were close, and he would no doubt appreciate us keeping an eye on you.~
   @0024 = "I would love to join your group. ( NOTE: This option recruits all 5 at once, and will skip some join dialogue )"
   @0027 = "I can't join your group, but I would love to have you join mine."

@@ -2,26 +2,26 @@ BEGIN uxolr
 
 // BEGIN Prelude segment
 IF ~!Global("ux_prelude_done", "GLOBAL", 1)~ THEN BEGIN prelude
-  SAY @0001
-  ++ @0002 + prelude2
-  ++ @0003 + prelude3
+  SAY @110001
+  ++ @980002 + prelude2
+  ++ @980003 + prelude3
 END
 
 IF ~~ THEN BEGIN prelude2
-  SAY @0004
+  SAY @110004
   IF ~~ THEN GOTO prelude4
   // IF ~~ THEN EXIT
 END
 
 IF ~~ THEN BEGIN prelude3
-  SAY @0005
+  SAY @110005
   IF ~~ THEN GOTO prelude4
   // IF ~~ THEN EXIT
 END
 
 // Stub for INTERJECT_COPY_TRANS to be inserted
 IF ~~ THEN BEGIN prelude4
-  SAY @0060
+  SAY @110060
   IF ~~ THEN EXIT
 END
 // END Prelude segment
@@ -29,12 +29,12 @@ END
 
 // BEGIN Party Join
 IF ~True()~ THEN BEGIN FirstMeeting
-  SAY @0020
+  SAY @110020
   IF ~!Global("ux_group_join_deny", "GLOBAL", 1)~ THEN
-  REPLY @0022 + BigGreet
+  REPLY @980022 + BigGreet
   IF ~Global("ux_group_join_deny", "GLOBAL", 1)~ THEN
-  REPLY @0022 + Greet
-  ++ @0021 + GoAway
+  REPLY @980022 + Greet
+  ++ @980021 + GoAway
 END
 
 IF ~~ THEN BEGIN BigGreet

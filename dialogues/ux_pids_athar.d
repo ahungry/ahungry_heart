@@ -42,23 +42,23 @@ IF ~~ quest2
 END
 
 IF ~~ npc_mute
-  SAY ~Fine.  How much alone time do you need?~
-  ++ ~Just a few minutes, I'm working on something.~ + npc_mute_short
-  ++ ~I have more important tasks to focus on - give me a few hours.~ + npc_mute_long
-  ++ ~Sorry, that was a mistake, I do have time.~ + npc_mute_undo
+  SAY @990004
+  ++ @990001 + npc_mute_short
+  ++ @990002 + npc_mute_long
+  ++ @990003 + npc_mute_undo
 END
 
 IF ~~ npc_mute_short
-  SAY ~Fine.~
+  SAY @990005
   IF ~~ DO ~RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 10)~ EXIT
 END
 
 IF ~~ npc_mute_long
-  SAY ~Fine.~
+  SAY @990005
   IF ~~ DO ~RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 30)~ EXIT
 END
 
 IF ~~ npc_mute_undo
-  SAY ~Ok, so anyways...~
+  SAY @990006
   IF ~~ DO ~RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 1)~ EXIT
 END
