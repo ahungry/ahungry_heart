@@ -37,7 +37,7 @@ Global("ux_olrun_banter_id", "GLOBAL", 0)
 Global("ux_olrun_banter_id", "GLOBAL", 1)
 THEN
 RESPONSE #100
-PlaySong(166)
+PlaySong(168)
 SetGlobal("ux_olrun_is_bantering", "GLOBAL", 1)
 IncrementGlobal("ux_olrun_banter_id", "GLOBAL", 1)
 RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 5)
@@ -50,7 +50,7 @@ IF
 Global("ux_olrun_wishes_to_pid", "GLOBAL", 1)
 THEN
 RESPONSE #100
-PlaySong(166)
+PlaySong(168)
 SetGlobal("ux_olrun_wishes_to_pid", "GLOBAL", 0)
 SetGlobal("ux_olrun_is_pidding", "GLOBAL", 1)
 StartDialogueNoSet(Player1)

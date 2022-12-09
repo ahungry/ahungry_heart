@@ -27,7 +27,7 @@ Global("ux_anari_banter_id", "GLOBAL", 0)
 Global("ux_anari_banter_id", "GLOBAL", 1)
 THEN
 RESPONSE #100
-PlaySong(166)
+PlaySong(167)
 SetGlobal("ux_anari_is_bantering", "GLOBAL", 1)
 IncrementGlobal("ux_anari_banter_id", "GLOBAL", 1)
 RealSetGlobalTimer("ux_anari_banter_timer", "GLOBAL", 5)
@@ -40,7 +40,7 @@ IF
 Global("ux_anari_wishes_to_pid", "GLOBAL", 1)
 THEN
 RESPONSE #100
-PlaySong(166)
+PlaySong(167)
 SetGlobal("ux_anari_wishes_to_pid", "GLOBAL", 0)
 SetGlobal("ux_anari_is_pidding", "GLOBAL", 1)
 StartDialogueNoSet(Player1)

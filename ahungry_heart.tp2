@@ -43,10 +43,22 @@ COPY ~%MOD_FOLDER%/audio/blank.mus~ ~override~ // The blank file
 
 COPY ~%MOD_FOLDER%/audio/uxtheme.mus~ ~music~
 COPY ~%MOD_FOLDER%/audio/uxtheme~ ~music/uxtheme~
+
 COPY ~%MOD_FOLDER%/audio/uxvoit.mus~ ~music~
 COPY ~%MOD_FOLDER%/audio/uxvoit~ ~music/uxvoit~
+
 COPY ~%MOD_FOLDER%/audio/uxzart.mus~ ~music~
 COPY ~%MOD_FOLDER%/audio/uxzart~ ~music/uxzart~
+
+COPY ~%MOD_FOLDER%/audio/uxanat.mus~ ~music~
+COPY ~%MOD_FOLDER%/audio/uxanat~ ~music/uxanat~
+
+COPY ~%MOD_FOLDER%/audio/uxatht.mus~ ~music~
+COPY ~%MOD_FOLDER%/audio/uxatht~ ~music/uxatht~
+
+COPY ~%MOD_FOLDER%/audio/uxolrt.mus~ ~music~
+COPY ~%MOD_FOLDER%/audio/uxolrt~ ~music/uxolrt~
+
 
 INCLUDE "%MOD_FOLDER%/tpa/util.tpa"
 INCLUDE "%MOD_FOLDER%/tpa/items.tpa"
@@ -105,4 +117,7 @@ COPY_EXISTING ~songlist.2da~ ~override~
 APPEND ~songlist.2da~
 ~164         Xxxxxx      uxtheme.mus
 165         Xxxxxx      uxvoit.mus
-166         Xxxxxx      uxzart.mus~
+166         Xxxxxx      uxzart.mus
+167         Xxxxxx      uxanat.mus
+168         Xxxxxx      uxolrt.mus
+169         Xxxxxx      uxatht.mus~
