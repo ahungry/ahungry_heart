@@ -31,7 +31,6 @@
 (defn rep [val-or-meta & val-or-next]
   (def val (if (= :string (type val-or-meta)) val-or-meta (get val-or-next 0)))
   (def next (if (= :string (type val-or-meta)) (get val-or-next 0) (get val-or-next 1)))
-  (pp next)
   (def meta (if (= :string (type val-or-meta)) nil val-or-meta))
   @{:type "rep"
     :next next
