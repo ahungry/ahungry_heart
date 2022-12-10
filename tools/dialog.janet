@@ -63,8 +63,13 @@
         (string/format "~%s~ %s" txt song))
     (string/format "~%s~" s)))
 
+(defn fix-problem-chars [s]
+  (->> s
+       (string/replace-all "\n" " ")
+       (string/replace-all "~" " ")))
+
 (defn traify [ss]
-  (let [s (fix-sound ss)]
+  (let [s (-> ss fix-problem-chars fix-sound)]
     (string/format
      "@%d"
      (if (get tras s)
@@ -115,10 +120,10 @@
   )
 
 (defn build-tras []
-  (var result "")
+  (var result @[])
   (each k (keys tras)
-    (set result (string/format "%s\n@%d = %s" result (get tras k) k)))
-  result)
+    (array/push result (string/format "@%d = %s" (get tras k) k)))
+  (-> (sort result) (string/join "\n")))
 
 (defn build-dialog [tree]
   (set results @[])
