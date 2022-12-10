@@ -10,8 +10,11 @@
   (++ goto-id))
 
 (defn say [val-or-meta & val-or-next]
-  (def val (if (= :string (type val-or-meta)) val-or-meta) (get 0 next))
-  (def next (if (= :string (type val-or-meta)) val-or-next) (array/slice next 1))
+  (def val (if (= :string (type val-or-meta)) val-or-meta (get val-or-next 0)))
+  (pp "FIND ME HERE ")
+  (pp val-or-next)
+  (pp val)
+  (def next (if (= :string (type val-or-meta)) val-or-next (array/slice val-or-next 1)))
   (def meta (if (= :string (type val-or-meta)) nil val-or-meta))
   @{:type "say"
     :next next
@@ -20,8 +23,8 @@
     :val val})
 
 (defn rep [val-or-meta &opt val-or-next]
-  (def val (if (= :string (type val-or-meta)) val-or-meta) (get 0 next))
-  (def next (if (= :string (type val-or-meta)) val-or-next) (array/slice next 1))
+  (def val (if (= :string (type val-or-meta)) val-or-meta (get next 0)))
+  (def next (if (= :string (type val-or-meta)) val-or-next (array/slice next 1)))
   (def meta (if (= :string (type val-or-meta)) nil val-or-meta))
   @{:type "rep"
     :next next
@@ -32,7 +35,7 @@
 (var
  tree
  (say
-  # {:cond [(g "ux_prelude_done")]}
+  {:cond [(g "ux_prelude_done")]}
   "What's your name?"
   (rep "Matt"
        (say "Nice to meet you Matt, how old are you?"
@@ -51,19 +54,23 @@
 
 (var results @[])
 
+(defn maybe-render-cond [meta]
+  (pp (get meta :cond))
+  (if (get meta :cond)
+    (string/join (get meta :cond))
+    "NOTHING"))
+
 (defn main [m]
   (or
     (case (get m :type)
-      "ifs" (string/format "IF ~%s~ THEN %s END"
-                           (string/join (get m :val))
-                           (string/join (map (fn [node] (main node)) (get m :next))))
       "rep" (do
               (def next-say (get m :next))
               (array/push results (main next-say))
               (string/format "\n  ++ ~%s~ + label_%d"
                              (get m :val)
                              (get next-say :id)))
-      "say" (string/format "\n\nIF ~~ THEN BEGIN label_%d\n  SAY ~%s~%s\nEND"
+      "say" (string/format "\n\nIF ~%s~ THEN BEGIN label_%d\n  SAY ~%s~%s\nEND"
+                           (maybe-render-cond (get m :meta))
                            (get m :id)
                            (get m :val)
                            (if (> (length (get m :next)) 0)
@@ -74,5 +81,4 @@
   )
 
 (array/push results (main tree))
-#(pp results)
 (print (string/join (reverse results)))
