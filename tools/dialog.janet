@@ -60,7 +60,12 @@
                            (get m :id)
                            (traify (get m :val))
                            (if (> (length (get m :next)) 0)
-                             (string/join (map (fn [node] (main node)) (get m :next)))
+                             (string/join (map (fn [node]
+                                                 (if (= "say" (get node :type))
+                                                   (string/format " GOTO label_%d"
+                                                                  (get node :id)
+                                                                  (array/push results (main node)))
+                                                   (main node))) (get m :next)))
                              "\n  IF ~~ THEN EXIT"))
       )
     "oof")
