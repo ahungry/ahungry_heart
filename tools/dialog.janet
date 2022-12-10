@@ -117,7 +117,10 @@
     (set result (string/format "%s\n@%d = %s" result (get tras k) k)))
   result)
 
-(defn build-dialog []
+(defn build-dialog [tree]
+  (set results @[])
+  (set goto-id 0)
+  (array/push results (main tree))
   (string/join (reverse results)))
 
 (defn clear []
@@ -125,11 +128,8 @@
   (set tra-counter 333000))
 
 (defn build [tree]
-  (set results @[])
-  (set goto-id 0)
-  (array/push results (main tree))
   {:tras (build-tras)
-   :dialog (build-dialog)})
+   :dialog (build-dialog tree)})
 
 (var
  tree

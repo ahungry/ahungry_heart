@@ -1,0 +1,2 @@
+all:
+	janet ./main.janet
