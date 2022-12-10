@@ -1,17 +1,20 @@
 (defn ng [s &opt i]
-  (string/format "!Global(~%s~, ~GLOBAL~, %d)" s (or i 1)))
+  (string/format "!Global(\"%s\", \"GLOBAL\", %d)" s (or i 1)))
 
 (defn g [s &opt i]
-  (string/format "Global(~%s~, ~GLOBAL~, %d)" s (or i 1)))
+  (string/format "Global(\"%s\", \"GLOBAL\", %d)" s (or i 1)))
 
 (defn l [s &opt i]
-  (string/format "Global(~%s~, ~LOCALS~, %d)" s (or i 1)))
+  (string/format "Global(\"%s\", \"LOCALS\", %d)" s (or i 1)))
 
 (defn sg [s &opt i]
-  (string/format "SetGlobal(~%s~, ~GLOBAL~, %d)" s (or i 1)))
+  (string/format "SetGlobal(\"%s\", \"GLOBAL\", %d)" s (or i 1)))
 
 (defn sl [s &opt i]
-  (string/format "SetGlobal(~%s~, ~LOCALS~, %d)" s (or i 1)))
+  (string/format "SetGlobal(\"%s\", \"LOCALS\", %d)" s (or i 1)))
+
+(defn jp []
+  "JoinParty()")
 
 (var goto-id 0)
 
@@ -45,19 +48,30 @@
 
 (var results @[])
 (var tras @{})
-(var tra-counter 0)
+(var tra-counter 333000)
 
-(defn traify [s]
-  (string/format
-   "@%d"
-   (if (get tras s)
-     (get tras s)
-     (do (put tras s (++ tra-counter))
-         (get tras s)))))
+(defn fix-sound [s]
+  (if (= (- (length s) 1)
+         (string/find "]" (string/trim s)))
+    (let
+        [idx (string/find "[" s)
+         song (string/slice s idx)
+        txt (string/slice s 0 (-  idx 1))]
+        (string/format "~%s~ %s" txt song))
+    (string/format "~%s~" s)))
+
+(defn traify [ss]
+  (let [s (fix-sound ss)]
+    (string/format
+     "@%d"
+     (if (get tras s)
+       (get tras s)
+       (do (put tras s (++ tra-counter))
+           (get tras s))))))
 
 (defn maybe-render-code [m]
   (if (get m :code)
-    (string/format "~%s~ EXIT" (string/join (get m :code) " "))
+    (string/format "DO ~%s~ EXIT" (string/join (get m :code) " "))
     ""))
 
 (defn main [m]
@@ -100,16 +114,19 @@
 (defn build-tras []
   (var result "")
   (each k (keys tras)
-    (set result (string/format "%s\n@%d = ~%s~" result (get tras k) k)))
+    (set result (string/format "%s\n@%d = %s" result (get tras k) k)))
   result)
 
 (defn build-dialog []
   (string/join (reverse results)))
 
+(defn clear []
+  (set tras @{})
+  (set tra-counter 333000))
+
 (defn build [tree]
   (set results @[])
-  (set tras @{})
-  (set tra-counter 0)
+  (set goto-id 0)
   (array/push results (main tree))
   {:tras (build-tras)
    :dialog (build-dialog)})
