@@ -1,3 +1,6 @@
+(defn ng [s &opt i]
+  (string/format "!Global(~%s~, ~GLOBAL~, %d)" s (or i 1)))
+
 (defn g [s &opt i]
   (string/format "Global(~%s~, ~GLOBAL~, %d)" s (or i 1)))
 
@@ -19,9 +22,10 @@
     :id (get-id)
     :val val})
 
-(defn rep [val-or-meta &opt val-or-next]
-  (def val (if (= :string (type val-or-meta)) val-or-meta (get next 0)))
-  (def next (if (= :string (type val-or-meta)) val-or-next (array/slice next 1)))
+(defn rep [val-or-meta & val-or-next]
+  (def val (if (= :string (type val-or-meta)) val-or-meta (get val-or-next 0)))
+  (def next (if (= :string (type val-or-meta)) (get val-or-next 0) (get val-or-next 1)))
+  (pp next)
   (def meta (if (= :string (type val-or-meta)) nil val-or-meta))
   @{:type "rep"
     :next next
@@ -62,7 +66,7 @@
                            (if (> (length (get m :next)) 0)
                              (string/join (map (fn [node]
                                                  (if (= "say" (get node :type))
-                                                   (string/format " GOTO label_%d"
+                                                   (string/format "\n  IF ~~ THEN GOTO label_%d"
                                                                   (get node :id)
                                                                   (array/push results (main node)))
                                                    (main node))) (get m :next)))
