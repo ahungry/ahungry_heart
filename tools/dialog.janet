@@ -11,9 +11,6 @@
 
 (defn say [val-or-meta & val-or-next]
   (def val (if (= :string (type val-or-meta)) val-or-meta (get val-or-next 0)))
-  (pp "FIND ME HERE ")
-  (pp val-or-next)
-  (pp val)
   (def next (if (= :string (type val-or-meta)) val-or-next (array/slice val-or-next 1)))
   (def meta (if (= :string (type val-or-meta)) nil val-or-meta))
   @{:type "say"
@@ -32,6 +29,60 @@
     :id 0
     :val val})
 
+(defn maybe-render-cond [meta]
+  (if (get meta :cond)
+    (string/join (get meta :cond))
+    ""))
+
+(var results @[])
+(var tras @{})
+(var tra-counter 0)
+
+(defn traify [s]
+  (string/format
+   "@%d"
+   (if (get tras s)
+     (get tras s)
+     (do (put tras s (++ tra-counter))
+         (get tras s)))))
+
+(defn main [m]
+  (or
+    (case (get m :type)
+      "rep" (do
+              (def next-say (get m :next))
+              (array/push results (main next-say))
+              (string/format "\n  ++ %s + label_%d"
+                             (traify (get m :val))
+                             (get next-say :id)))
+      "say" (string/format "\n\nIF ~%s~ THEN BEGIN label_%d\n  SAY %s%s\nEND"
+                           (maybe-render-cond (get m :meta))
+                           (get m :id)
+                           (traify (get m :val))
+                           (if (> (length (get m :next)) 0)
+                             (string/join (map (fn [node] (main node)) (get m :next)))
+                             "\n  IF ~~ THEN EXIT"))
+      )
+    "oof")
+  )
+
+(defn build-tras []
+  (var result "")
+  (each k (keys tras)
+    (set result (string/format "%s\n@%d = ~%s~" result (get tras k) k)))
+  result)
+
+(defn build-dialog []
+  (string/join (reverse results)))
+
+(defn build [tree]
+  (set results @[])
+  (set tras @{})
+  (set tra-counter 0)
+  (array/push results (main tree))
+  {:tras (build-tras)
+   :dialog (build-dialog)})
+
 (var
  tree
  (say
@@ -43,42 +94,6 @@
   (rep "Leave me alone!"
        (say "Fine!!"))))
 
-(defn get-node-id [] 123)
-(defn terminal-say [m]
-  (put m :id (get-node-id)))
-(defn render-terminal [m]
-  (case (get m :type)
-    "say" (terminal-say m)
-    "rep" (pp "found a reply")
-    "ifs" (pp "found an ifs")))
-
-(var results @[])
-
-(defn maybe-render-cond [meta]
-  (pp (get meta :cond))
-  (if (get meta :cond)
-    (string/join (get meta :cond))
-    "NOTHING"))
-
-(defn main [m]
-  (or
-    (case (get m :type)
-      "rep" (do
-              (def next-say (get m :next))
-              (array/push results (main next-say))
-              (string/format "\n  ++ ~%s~ + label_%d"
-                             (get m :val)
-                             (get next-say :id)))
-      "say" (string/format "\n\nIF ~%s~ THEN BEGIN label_%d\n  SAY ~%s~%s\nEND"
-                           (maybe-render-cond (get m :meta))
-                           (get m :id)
-                           (get m :val)
-                           (if (> (length (get m :next)) 0)
-                             (string/join (map (fn [node] (main node)) (get m :next)))
-                             "\n  IF ~~ THEN EXIT"))
-      )
-    "oof")
-  )
-
-(array/push results (main tree))
-(print (string/join (reverse results)))
+(var sample (build tree))
+# (print (get sample :tras))
+# (print (get sample :dialog))
