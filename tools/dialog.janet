@@ -13,6 +13,9 @@
 (defn sl [s &opt i]
   (string/format "SetGlobal(\"%s\", \"LOCALS\", %d)" s (or i 1)))
 
+(defn ao [who s]
+  (string/format "ActionOverride(\"%s\", %s)" (string who) s))
+
 (defn jp []
   "JoinParty()")
 
