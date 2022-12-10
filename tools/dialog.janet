@@ -7,6 +7,12 @@
 (defn l [s &opt i]
   (string/format "Global(~%s~, ~LOCALS~, %d)" s (or i 1)))
 
+(defn sg [s &opt i]
+  (string/format "SetGlobal(~%s~, ~GLOBAL~, %d)" s (or i 1)))
+
+(defn sl [s &opt i]
+  (string/format "SetGlobal(~%s~, ~LOCALS~, %d)" s (or i 1)))
+
 (var goto-id 0)
 
 (defn get-id []
@@ -35,7 +41,7 @@
 
 (defn maybe-render-cond [meta]
   (if (get meta :cond)
-    (string/join (get meta :cond))
+    (string/join (get meta :cond) " ")
     ""))
 
 (var results @[])
@@ -50,15 +56,32 @@
      (do (put tras s (++ tra-counter))
          (get tras s)))))
 
+(defn maybe-render-code [m]
+  (if (get m :code)
+    (string/format "~%s~ EXIT" (string/join (get m :code) " "))
+    ""))
+
 (defn main [m]
   (or
     (case (get m :type)
       "rep" (do
               (def next-say (get m :next))
               (array/push results (main next-say))
-              (string/format "\n  ++ %s + label_%d"
-                             (traify (get m :val))
-                             (get next-say :id)))
+              (if (get m :meta)
+                (string/format "\n  %s %s %s %s"
+                               (if (get (get m :meta) :cond)
+                                 (string/format
+                                  "IF ~%s~ THEN\n  REPLY"
+                                  (maybe-render-cond (get m :meta)))
+                                 "++ ")
+                               (traify (get m :val))
+                               (maybe-render-code (get m :meta))
+                               (if (get next-say :id)
+                                 (string/format " + label_%d" (get next-say :id))
+                                 ""))
+                (string/format "\n  ++ %s + label_%d"
+                               (traify (get m :val))
+                               (get next-say :id))))
       "say" (string/format "\n\nIF ~%s~ THEN BEGIN label_%d\n  SAY %s%s\nEND"
                            (maybe-render-cond (get m :meta))
                            (get m :id)
@@ -72,7 +95,7 @@
                                                    (main node))) (get m :next)))
                              "\n  IF ~~ THEN EXIT"))
       )
-    "oof")
+    "")
   )
 
 (defn build-tras []

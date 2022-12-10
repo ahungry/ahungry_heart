@@ -20,7 +20,19 @@
       (rep {:cond [(ng "ux_group_join_deny")]}
            "Sure Olrun, what's up?"
            (say "My friends and I are on an important quest, pertaining to The Heart of Baldur's Gate.  Care to join us?  I know that you and Gorion were close, and he would no doubt appreciate us keeping an eye on you.~"
-                (say "So?")))
+                (say "So?"
+                     (rep {:code [(sl "ux_in_party_olrun")
+                                  (sg "ux_request_group_join")
+                                  (sg "ux_olrun_banter_timer" 5)]}
+                          "I would love to join your group. ( NOTE: This option recruits all 5 at once, and will skip some join dialogue )"
+                          )
+                     (rep {:code [(sl "ux_in_party_olrun")
+                                  (sg "ux_group_join_deny")
+                                  (sg "ux_olrun_banter_timer" 5)]}
+                          "I can't join your group, but I would love to have you join mine.")
+                     (rep "Sorry Olrun, I'm on my own adventure at the moment."
+                          (say "That's fine, should you change your mind, you'll find us around."))
+                     )))
       (rep {:cond [(g "ux_group_join_deny")]}
            "Sure Olrun, what's up?"
            (say "Breakin apart a lifelong team just like that?  Well, may as well bring me along."
