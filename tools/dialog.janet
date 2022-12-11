@@ -78,7 +78,6 @@
        (string/replace-all "~" " ")))
 
 (defn traify [ss]
-  (pp ss)
   (let [s (-> ss fix-problem-chars fix-sound)]
     (string/format
      "@%d"
