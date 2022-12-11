@@ -5,23 +5,21 @@
  party-tree
  (say {:cond [(g "ux_prelude_done")]}
 
-      "You there, hero.  I have an important message for you.
- I'm Anari and I seek your assistance. [uxana01]"
+      "Some call me The Voice, you may call me friend.  Well met traveler. [uxvoi01]"
 
       (rep {:cond [(ng "ux_group_join_deny")]}
-           "What is it I can do to assist you Anari?"
+           "Well met \"friend\", what is it you need of me?"
            (say "My friends and I are on an important quest, pertaining to The Heart of Baldur's Gate.  Care to join us?  I know that you and Gorion were close, and he would no doubt appreciate us keeping an eye on you."
-                (party-member-join-block "anari" "Anari")))
+                (party-member-join-block "voice" "Voice")))
 
       (rep {:cond [(g "ux_group_join_deny")]}
-           "What is it I can do to assist you Anari?"
-           (say "If our group is to separate, it will surely be temporary.
- For now, I offer you my aid."
-                (party-member-join-block "anari" "Anari")))
+           "Well met \"friend\", what is it you need of me?"
+           (say "I do not believe it wise to separate us, but allow me to offer my aid to you."
+                (party-member-join-block "voice" "Voice")))
 
-      (rep "Sorry Anari, I can't at the moment."
+      (rep "Sorry Voice, I don't wish to speak with you."
            (say "That's fine, should you change your mind, you'll find us around."))))
 
 (defn main [& args]
   (var party (build-dialog party-tree))
-  (string/format "BEGIN uxana\n%s" party))
+  (string/format "BEGIN uxvoi\n%s" party))
