@@ -35,12 +35,3 @@
   (var prelude (build-dialog prelude-tree))
   (var party (build-dialog party-tree))
   (string/format "BEGIN uxolr\n%s%s" prelude party))
-# (clear)
-# (var sample (build prelude-tree))
-# #(eprin (get sample :tras))
-# (print "\n\nBEGIN uxolr")
-# (print (get sample :dialog))
-
-# (var sample2 (build party-tree))
-# (eprin (get sample2 :tras))
-# (print (get sample2 :dialog))
