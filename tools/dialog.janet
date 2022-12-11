@@ -183,3 +183,6 @@
   (string/format
    "INTERJECT_COPY_TRANS %s %d label_%s\n%sEND"
    (string who) scene-id "fake" (string/join rest)))
+
+(def r rep)
+(def s say)
