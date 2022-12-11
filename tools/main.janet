@@ -12,15 +12,15 @@
 (import ./ux_prelude_chain :as prelude-chain)
 
 (defn main [& args]
-  (spit "./ux_greet_olrun.d" (greet-olrun/main))
-  (spit "./ux_greet_anari.d" (greet-anari/main))
-  (spit "./ux_greet_voice.d" (greet-voice/main))
-  (spit "./ux_greet_zariel.d" (greet-zariel/main))
-  (spit "./ux_greet_athar.d" (greet-athar/main))
+  (spit "/tmp/thobg/ux_greet_olrun.d" (greet-olrun/main))
+  (spit "/tmp/thobg/ux_greet_anari.d" (greet-anari/main))
+  (spit "/tmp/thobg/ux_greet_voice.d" (greet-voice/main))
+  (spit "/tmp/thobg/ux_greet_zariel.d" (greet-zariel/main))
+  (spit "/tmp/thobg/ux_greet_athar.d" (greet-athar/main))
 
-  (spit "./ux_kick_zariel.d" (kick-zariel/main))
+  (spit "/tmp/thobg/ux_kick_zariel.d" (kick-zariel/main))
 
-  (spit "./ux_prelude_chain.d" (prelude-chain/main ))
-  (spit "./maingen.tra" (string/format "%s\n" (build-tras)))
+  (spit "/tmp/thobg/ux_prelude_chain.d" (prelude-chain/main ))
+  (spit "/tmp/thobg/maingen.tra" (string/format "%s\n" (build-tras)))
 
   (print "All done"))
