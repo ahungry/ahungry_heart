@@ -20,3 +20,15 @@
 
        (rep (string/format "Sorry %s, I'm on my own adventure at the moment." name)
              (say "That's fine, should you change your mind, you'll find us around."))))
+
+(defn mute [who]
+  (say "Fine, how much alone time do you need?"
+       (rep "Just a few minutes, I'm working on something."
+            (say {:code [(rsgt (string/format "ux_%s_banter_timer" (string who)) 10)]}
+                 "Fine."))
+       (rep "I have more important tasks to focus on - give me a few hours."
+            (say {:code [(rsgt (string/format "ux_%s_banter_timer" (string who)) 30)]}
+                 "Fine."))
+       (rep "Sorry, that was a mistake, I do have time."
+            (say {:code [(rsgt (string/format "ux_%s_banter_timer" (string who)) 1)]}
+                 "Fine."))))

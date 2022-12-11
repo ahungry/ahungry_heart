@@ -7,8 +7,17 @@
 (defn l [s &opt i]
   (string/format "Global(\"%s\", \"LOCALS\", %d)" s (or i 1)))
 
+(defn rsgt [s &opt i]
+  (string/format "RealSetGlobalTimer(\"%s\", \"GLOBAL\", %d)" s (or i 1)))
+
 (defn sg [s &opt i]
   (string/format "SetGlobal(\"%s\", \"GLOBAL\", %d)" s (or i 1)))
+
+(defn ig [s &opt i]
+  (string/format "IncrementGlobal(\"%s\", \"GLOBAL\", %d)" s (or i 1)))
+
+(defn il [s &opt i]
+  (string/format "IncrementGlobal(\"%s\", \"LOCALS\", %d)" s (or i 1)))
 
 (defn sl [s &opt i]
   (string/format "SetGlobal(\"%s\", \"LOCALS\", %d)" s (or i 1)))
@@ -69,6 +78,7 @@
        (string/replace-all "~" " ")))
 
 (defn traify [ss]
+  (pp ss)
   (let [s (-> ss fix-problem-chars fix-sound)]
     (string/format
      "@%d"
@@ -116,7 +126,11 @@
                                                                   (get node :id)
                                                                   (array/push results (main node)))
                                                    (main node))) (get m :next)))
-                             "\n  IF ~~ THEN EXIT"))
+                             (if (and (get m :meta)
+                                      (get (get m :meta) :code))
+                               (string/format "\n  IF ~True()~ DO ~%s~ EXIT"
+                                              (string/join (get (get m :meta) :code) " "))
+                               "\n  IF ~~ THEN EXIT")))
       )
     "")
   )

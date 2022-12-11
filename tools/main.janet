@@ -13,6 +13,8 @@
 (import ./ux_kick_olrun :as kick-olrun)
 (import ./ux_kick_anari :as kick-anari)
 
+(import ./ux_pids_zariel :as pids-zariel)
+
 (import ./ux_prelude_chain :as prelude-chain)
 
 (defn main [& args]
@@ -27,6 +29,8 @@
   (spit "/tmp/thobg/ux_kick_athar.d" (kick-athar/main))
   (spit "/tmp/thobg/ux_kick_olrun.d" (kick-olrun/main))
   (spit "/tmp/thobg/ux_kick_anari.d" (kick-anari/main))
+
+  (spit "/tmp/thobg/ux_pids_zariel.d" (pids-zariel/main))
 
   (spit "/tmp/thobg/ux_prelude_chain.d" (prelude-chain/main ))
   (spit "/tmp/thobg/maingen.tra" (string/format "%s\n" (build-tras)))
