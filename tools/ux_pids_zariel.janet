@@ -40,6 +40,18 @@
  it is comforting to have companions to rely upon.
  I will fight to protect both of you, even in the darkest of times."))))
 
+          (rep {:cond [(in-party :imoen)]}
+               "What do you think of Imoen?"
+               (say "Seems her and I are quite similar."))
+
+          (rep {:cond [(in-party :uxana)]}
+               "What do you think of Anari?"
+               (say "She's pretty cool!"))
+
+          (rep {:cond [(in-party :uxvoi)]}
+               "What do you think of The Voice?"
+               (say "Somewhat unusual..."))
+
           (rep "Nevermind...")))
 
 (defn main [& args]

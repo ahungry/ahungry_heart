@@ -25,6 +25,9 @@
 (defn ao [who s]
   (string/format "ActionOverride(\"%s\", %s)" (string who) s))
 
+(defn in-party [who]
+  (string/format "InParty(\"%s\")" (string who)))
+
 (defn jp []
   "JoinParty()")
 

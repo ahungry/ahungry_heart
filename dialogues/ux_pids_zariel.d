@@ -62,10 +62,31 @@ IF ~IsGabber(Player1) !Global("ux_zariel_is_bantering", "GLOBAL", 1) !Global("ux
   IF ~True()~ DO ~SetGlobal("ux_zariel_wishes_to_pid", "GLOBAL", 1)~ EXIT
 END
 
-IF ~IsGabber(Player1) !Global("ux_zariel_is_bantering", "GLOBAL", 1)~ THEN BEGIN label_90
+IF ~IsGabber(Player1) !Global("ux_zariel_is_bantering", "GLOBAL", 1)~ THEN BEGIN label_93
   SAY @333078
   ++ @333082 + label_89
-  ++ @333083 EXIT
+  IF ~InParty("imoen")~ THEN
+  REPLY @333084   + label_90
+  IF ~InParty("uxana")~ THEN
+  REPLY @333086   + label_91
+  IF ~InParty("uxvoi")~ THEN
+  REPLY @333088   + label_92
+  ++ @333089 EXIT
+END
+
+IF ~~ THEN BEGIN label_92
+  SAY @333087
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN label_91
+  SAY @333085
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN label_90
+  SAY @333083
+  IF ~~ THEN EXIT
 END
 
 IF ~~ THEN BEGIN label_89
