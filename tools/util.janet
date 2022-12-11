@@ -2,7 +2,8 @@
 
 (defn party-member-join-block [who name]
   (say "So?"
-       (rep {:code [(sl (string/format "ux_in_party_%s" who))
+       (rep {:cond [(ng "ux_group_join_deny")]
+             :code [(sl (string/format "ux_in_party_%s" who))
                     (sg "ux_request_group_join")
                     (sg (string/format "ux_%s_banter_timer" who) 5)
                     (jp)
