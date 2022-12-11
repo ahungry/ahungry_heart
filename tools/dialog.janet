@@ -79,7 +79,7 @@
 
 (defn maybe-render-code [m]
   (if (get m :code)
-    (string/format "DO ~%s~ EXIT" (string/join (get m :code) " "))
+    (string/format "DO ~%s~ " (string/join (get m :code) " "))
     ""))
 
 (defn main [m]
@@ -87,7 +87,7 @@
     (case (get m :type)
       "rep" (do
               (def next-say (get m :next))
-              (array/push results (main next-say))
+              (when next-say (array/push results (main next-say)))
               (if (get m :meta)
                 (string/format "\n  %s %s %s %s"
                                (if (get (get m :meta) :cond)
@@ -99,10 +99,12 @@
                                (maybe-render-code (get m :meta))
                                (if (get next-say :id)
                                  (string/format " + label_%d" (get next-say :id))
-                                 ""))
-                (string/format "\n  ++ %s + label_%d"
+                                 " EXIT"))
+                (string/format "\n  ++ %s%s"
                                (traify (get m :val))
-                               (get next-say :id))))
+                               (if (get next-say :id)
+                                 (string/format " + label_%d" (get next-say :id))
+                                 " EXIT"))))
       "say" (string/format "\n\nIF ~%s~ THEN BEGIN label_%d\n  SAY %s%s\nEND"
                            (maybe-render-cond (get m :meta))
                            (get m :id)

@@ -48,8 +48,8 @@ END
 
 IF ~~ THEN BEGIN label_10
   SAY @333020
-  ++  @333021 DO ~SetGlobal("ux_in_party_olrun", "LOCALS", 1) SetGlobal("ux_request_group_join", "GLOBAL", 1) SetGlobal("ux_olrun_banter_timer", "GLOBAL", 5) JoinParty()~ EXIT 
-  ++  @333022 DO ~SetGlobal("ux_in_party_olrun", "LOCALS", 1) SetGlobal("ux_group_join_deny", "GLOBAL", 1) SetGlobal("ux_olrun_banter_timer", "GLOBAL", 5) JoinParty()~ EXIT 
+  ++  @333021 DO ~SetGlobal("ux_in_party_olrun", "LOCALS", 1) SetGlobal("ux_request_group_join", "GLOBAL", 1) SetGlobal("ux_olrun_banter_timer", "GLOBAL", 5) JoinParty()~   EXIT
+  ++  @333022 DO ~SetGlobal("ux_in_party_olrun", "LOCALS", 1) SetGlobal("ux_group_join_deny", "GLOBAL", 1) SetGlobal("ux_olrun_banter_timer", "GLOBAL", 5) JoinParty()~   EXIT
   ++ @333024 + label_9
 END
 
@@ -65,8 +65,8 @@ END
 
 IF ~~ THEN BEGIN label_7
   SAY @333020
-  ++  @333021 DO ~SetGlobal("ux_in_party_olrun", "LOCALS", 1) SetGlobal("ux_request_group_join", "GLOBAL", 1) SetGlobal("ux_olrun_banter_timer", "GLOBAL", 5) JoinParty()~ EXIT 
-  ++  @333022 DO ~SetGlobal("ux_in_party_olrun", "LOCALS", 1) SetGlobal("ux_group_join_deny", "GLOBAL", 1) SetGlobal("ux_olrun_banter_timer", "GLOBAL", 5) JoinParty()~ EXIT 
+  ++  @333021 DO ~SetGlobal("ux_in_party_olrun", "LOCALS", 1) SetGlobal("ux_request_group_join", "GLOBAL", 1) SetGlobal("ux_olrun_banter_timer", "GLOBAL", 5) JoinParty()~   EXIT
+  ++  @333022 DO ~SetGlobal("ux_in_party_olrun", "LOCALS", 1) SetGlobal("ux_group_join_deny", "GLOBAL", 1) SetGlobal("ux_olrun_banter_timer", "GLOBAL", 5) JoinParty()~   EXIT
   ++ @333024 + label_6
 END
 
