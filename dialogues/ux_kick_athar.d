@@ -1,33 +1,34 @@
 BEGIN uxathp
 
-IF ~Global("Ux_in_party_athar","LOCALS",1)~ THEN
-  BEGIN KickOut
-    SAY ~You are now kicking me out.~
 
-    IF ~~ THEN
-      REPLY ~Oops, I meant to boot that twit Anomen, not you. Sorry~
-        DO ~
-          JoinParty()
-        ~ EXIT
-
-    IF ~~ THEN
-      REPLY ~That's right, I don't want you in the party.~
-        DO ~
-          SetGlobal("Ux_in_party_athar","LOCALS",0)
-        ~ EXIT
+IF ~Global("ux_in_party_athar", "LOCALS", 1)~ THEN BEGIN label_61
+  SAY @333052
+  ++  @333053 DO ~SetGlobal("ux_in_party_athar", "LOCALS", 0)~   + label_59
+  ++  @333063 DO ~JoinParty()~   + label_60
 END
 
-IF ~Global("Ux_in_party_athar","LOCALS",0)~ THEN
-  BEGIN Rejoin
-    SAY ~You want me to rejoin?~
+IF ~~ THEN BEGIN label_60
+  SAY @333054
+  IF ~~ THEN EXIT
+END
 
-    IF ~~ THEN
-      REPLY ~That's right Athar, get back in formation.~
-      DO ~
-        SetGlobal("Ux_in_party_athar","LOCALS",1)
-        JoinParty()
-      ~ EXIT
+IF ~~ THEN BEGIN label_59
+  SAY @333027
+  IF ~~ THEN EXIT
+END
 
-    IF ~~ THEN
-      REPLY ~That's right, I don't want you in the party.~ EXIT
+IF ~Global("ux_in_party_athar", "LOCALS", 0)~ THEN BEGIN label_64
+  SAY @333056
+  ++  @333064 DO ~SetGlobal("ux_in_party_athar", "LOCALS", 1) JoinParty()~   + label_62
+  ++ @333060 + label_63
+END
+
+IF ~~ THEN BEGIN label_63
+  SAY @333059
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN label_62
+  SAY @333057
+  IF ~~ THEN EXIT
 END

@@ -1,33 +1,34 @@
 BEGIN uxolrp
 
-IF ~Global("Ux_in_party_olrun","LOCALS",1)~ THEN
-  BEGIN KickOut
-    SAY ~You are now kicking me out.~
 
-    IF ~~ THEN
-      REPLY ~Oops, I meant to boot that twit Anomen, not you. Sorry~
-        DO ~
-          JoinParty()
-        ~ EXIT
-
-    IF ~~ THEN
-      REPLY ~That's right, I don't want you in the party.~
-        DO ~
-          SetGlobal("Ux_in_party_olrun","LOCALS",0)
-        ~ EXIT
+IF ~Global("ux_in_party_olrun", "LOCALS", 1)~ THEN BEGIN label_67
+  SAY @333052
+  ++  @333053 DO ~SetGlobal("ux_in_party_olrun", "LOCALS", 0)~   + label_65
+  ++  @333065 DO ~JoinParty()~   + label_66
 END
 
-IF ~Global("Ux_in_party_olrun","LOCALS",0)~ THEN
-  BEGIN Rejoin
-    SAY ~You want me to rejoin?~
+IF ~~ THEN BEGIN label_66
+  SAY @333054
+  IF ~~ THEN EXIT
+END
 
-    IF ~~ THEN
-      REPLY ~That's right Olrun, get back in formation.~
-      DO ~
-        SetGlobal("Ux_in_party_olrun","LOCALS",1)
-        JoinParty()
-      ~ EXIT
+IF ~~ THEN BEGIN label_65
+  SAY @333027
+  IF ~~ THEN EXIT
+END
 
-    IF ~~ THEN
-      REPLY ~That's right, I don't want you in the party.~ EXIT
+IF ~Global("ux_in_party_olrun", "LOCALS", 0)~ THEN BEGIN label_70
+  SAY @333056
+  ++  @333066 DO ~SetGlobal("ux_in_party_olrun", "LOCALS", 1) JoinParty()~   + label_68
+  ++ @333060 + label_69
+END
+
+IF ~~ THEN BEGIN label_69
+  SAY @333059
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN label_68
+  SAY @333057
+  IF ~~ THEN EXIT
 END

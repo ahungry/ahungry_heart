@@ -8,6 +8,10 @@
 (import ./ux_greet_athar :as greet-athar)
 
 (import ./ux_kick_zariel :as kick-zariel)
+(import ./ux_kick_voice :as kick-voice)
+(import ./ux_kick_athar :as kick-athar)
+(import ./ux_kick_olrun :as kick-olrun)
+(import ./ux_kick_anari :as kick-anari)
 
 (import ./ux_prelude_chain :as prelude-chain)
 
@@ -19,6 +23,10 @@
   (spit "/tmp/thobg/ux_greet_athar.d" (greet-athar/main))
 
   (spit "/tmp/thobg/ux_kick_zariel.d" (kick-zariel/main))
+  (spit "/tmp/thobg/ux_kick_voice.d" (kick-voice/main))
+  (spit "/tmp/thobg/ux_kick_athar.d" (kick-athar/main))
+  (spit "/tmp/thobg/ux_kick_olrun.d" (kick-olrun/main))
+  (spit "/tmp/thobg/ux_kick_anari.d" (kick-anari/main))
 
   (spit "/tmp/thobg/ux_prelude_chain.d" (prelude-chain/main ))
   (spit "/tmp/thobg/maingen.tra" (string/format "%s\n" (build-tras)))
