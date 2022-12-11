@@ -1,17 +1,6 @@
 (use ./dialog)
 (use ./util)
 
-(defn == [who s & rest]
-  (string/format "  == %s %s DO ~%s~\n"
-                 (string who)
-                 (traify s)
-                 (string/join rest "\n")))
-
-(defn ict [who scene-id & rest]
-  (string/format
-   "INTERJECT_COPY_TRANS %s %d label_%s\n%sEND"
-   (string who) scene-id "fake" (string/join rest)))
-
 (var
  prelude-chain
  (ict
