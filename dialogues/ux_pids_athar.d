@@ -1,64 +1,79 @@
 BEGIN uxathj
 
-// This is where main dialogue after joining the party belongs
-// This includes PIDS + NIDS (npc initiated dialogue)
 
-IF ~Global("ux_athar_is_bantering", "GLOBAL", 1)
-    Global("ux_athar_banter_id", "GLOBAL", 0)~ athar_banter1 // THEN BEGIN athar_banter1
-SAY ~This is our first banter~
-++ ~Cool!~ DO ~IncrementGlobal("ux_athar_banter_id", "GLOBAL", 1)~ EXIT
-++ ~Not now...~ + npc_mute
+IF ~Global("ux_athar_is_bantering", "GLOBAL", 1) Global("ux_athar_banter_id", "GLOBAL", 0)~ THEN BEGIN label_95
+  SAY @333069
+  ++  @333070 DO ~IncrementGlobal("ux_athar_banter_id", "GLOBAL", 1)~   EXIT
+  ++ @333075 + label_94
 END
 
-IF ~Global("ux_athar_is_bantering", "GLOBAL", 1)
-    Global("ux_athar_banter_id", "GLOBAL", 1)~ athar_banter2 // THEN BEGIN athar_banter1
-SAY ~This is second first banter~
-++ ~Yippie!~ DO ~IncrementGlobal("ux_athar_banter_id", "GLOBAL", 1)~ EXIT
-++ ~Not now...~ + npc_mute
+IF ~~ THEN BEGIN label_94
+  SAY @333071
+  ++ @333072 + label_91
+  ++ @333073 + label_92
+  ++ @333074 + label_93
 END
 
-IF ~IsGabber(Player1)
-   !Global("ux_athar_is_pidding", "GLOBAL", 1)
-   !Global("ux_athar_is_bantering", "GLOBAL", 1)~ apid0
-  SAY ~( Athar turns to you )~
+IF ~~ THEN BEGIN label_93
+  SAY @333027
+  IF ~True()~ DO ~RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 1)~ EXIT
+END
+
+IF ~~ THEN BEGIN label_92
+  SAY @333027
+  IF ~True()~ DO ~RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 30)~ EXIT
+END
+
+IF ~~ THEN BEGIN label_91
+  SAY @333027
+  IF ~True()~ DO ~RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 10)~ EXIT
+END
+
+IF ~Global("ux_athar_is_bantering", "GLOBAL", 1) Global("ux_athar_banter_id", "GLOBAL", 1)~ THEN BEGIN label_100
+  SAY @333076
+  ++  @333070 DO ~IncrementGlobal("ux_athar_banter_id", "GLOBAL", 1)~   EXIT
+  ++ @333075 + label_99
+END
+
+IF ~~ THEN BEGIN label_99
+  SAY @333071
+  ++ @333072 + label_96
+  ++ @333073 + label_97
+  ++ @333074 + label_98
+END
+
+IF ~~ THEN BEGIN label_98
+  SAY @333027
+  IF ~True()~ DO ~RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 1)~ EXIT
+END
+
+IF ~~ THEN BEGIN label_97
+  SAY @333027
+  IF ~True()~ DO ~RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 30)~ EXIT
+END
+
+IF ~~ THEN BEGIN label_96
+  SAY @333027
+  IF ~True()~ DO ~RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 10)~ EXIT
+END
+
+IF ~IsGabber(Player1) !Global("ux_athar_is_bantering", "GLOBAL", 1) !Global("ux_athar_is_pidding", "GLOBAL", 1)~ THEN BEGIN label_101
+  SAY @333084
   IF ~True()~ DO ~SetGlobal("ux_athar_wishes_to_pid", "GLOBAL", 1)~ EXIT
 END
 
-IF ~IsGabber(Player1)
-   !Global("ux_athar_is_bantering", "GLOBAL", 1)~ apid1
-  SAY ~What is it you require?~ [uxath56]
-  ++ ~Athar, what brings you to our quest?~ + quest
-  ++ ~Nevermind~ EXIT
+IF ~IsGabber(Player1) !Global("ux_athar_is_bantering", "GLOBAL", 1)~ THEN BEGIN label_104
+  SAY @333085
+  ++ @333086 + label_103
+  ++ @333083 EXIT
 END
 
-IF ~~ quest
-  SAY ~I have come to join your party on this noble mission. I have long been defending Baldur’s Gate and its surrounding forests against the forces of evil, and I do not intend to waiver in my dedication now.~
-  ++ ~We are fortunate to have you with us.~ + quest2
+IF ~~ THEN BEGIN label_103
+  SAY @333079
+  ++ @333081 + label_102
 END
 
-IF ~~ quest2
-  SAY ~It is my pleasure. In the face of such danger, it is comforting to have companions to rely upon. I will fight to protect both of you, even in the darkest of times.~
-  IF ~~ EXIT
-END
-
-IF ~~ npc_mute
-  SAY @990004
-  ++ @990001 + npc_mute_short
-  ++ @990002 + npc_mute_long
-  ++ @990003 + npc_mute_undo
-END
-
-IF ~~ npc_mute_short
-  SAY @990005
-  IF ~~ DO ~RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 10)~ EXIT
-END
-
-IF ~~ npc_mute_long
-  SAY @990005
-  IF ~~ DO ~RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 30)~ EXIT
-END
-
-IF ~~ npc_mute_undo
-  SAY @990006
-  IF ~~ DO ~RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 1)~ EXIT
+IF ~~ THEN BEGIN label_102
+  SAY @333080
+  IF ~~ THEN EXIT
 END

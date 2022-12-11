@@ -14,6 +14,10 @@
 (import ./ux_kick_anari :as kick-anari)
 
 (import ./ux_pids_zariel :as pids-zariel)
+(import ./ux_pids_athar :as pids-athar)
+(import ./ux_pids_voice :as pids-voice)
+(import ./ux_pids_anari :as pids-anari)
+(import ./ux_pids_olrun :as pids-olrun)
 
 (import ./ux_prelude_chain :as prelude-chain)
 
@@ -31,6 +35,10 @@
   (spit "/tmp/thobg/ux_kick_anari.d" (kick-anari/main))
 
   (spit "/tmp/thobg/ux_pids_zariel.d" (pids-zariel/main))
+  (spit "/tmp/thobg/ux_pids_athar.d" (pids-athar/main))
+  (spit "/tmp/thobg/ux_pids_voice.d" (pids-voice/main))
+  (spit "/tmp/thobg/ux_pids_anari.d" (pids-anari/main))
+  (spit "/tmp/thobg/ux_pids_olrun.d" (pids-olrun/main))
 
   (spit "/tmp/thobg/ux_prelude_chain.d" (prelude-chain/main ))
   (spit "/tmp/thobg/maingen.tra" (string/format "%s\n" (build-tras)))

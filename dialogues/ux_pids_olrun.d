@@ -1,64 +1,79 @@
 BEGIN uxolrj
 
-// This is where main dialogue after joining the party belongs
-// This includes PIDS + NIDS (npc initiated dialogue)
 
-IF ~Global("ux_olrun_is_bantering", "GLOBAL", 1)
-    Global("ux_olrun_banter_id", "GLOBAL", 0)~ olrun_banter1 // THEN BEGIN olrun_banter1
-SAY ~This is our first banter~
-++ ~Cool!~ DO ~IncrementGlobal("ux_olrun_banter_id", "GLOBAL", 1)~ EXIT
-++ ~Not now...~ + npc_mute
+IF ~Global("ux_olrun_is_bantering", "GLOBAL", 1) Global("ux_olrun_banter_id", "GLOBAL", 0)~ THEN BEGIN label_137
+  SAY @333069
+  ++  @333070 DO ~IncrementGlobal("ux_olrun_banter_id", "GLOBAL", 1)~   EXIT
+  ++ @333075 + label_136
 END
 
-IF ~Global("ux_olrun_is_bantering", "GLOBAL", 1)
-    Global("ux_olrun_banter_id", "GLOBAL", 1)~ olrun_banter2 // THEN BEGIN olrun_banter1
-SAY ~This is second first banter~
-++ ~Cool!~ DO ~IncrementGlobal("ux_olrun_banter_id", "GLOBAL", 1)~ EXIT
-++ ~Not now...~ + npc_mute
+IF ~~ THEN BEGIN label_136
+  SAY @333071
+  ++ @333072 + label_133
+  ++ @333073 + label_134
+  ++ @333074 + label_135
 END
 
-IF ~IsGabber(Player1)
-   !Global("ux_olrun_is_pidding", "GLOBAL", 1)
-   !Global("ux_olrun_is_bantering", "GLOBAL", 1)~ apid0
-  SAY ~( Olrun turns to you )~
+IF ~~ THEN BEGIN label_135
+  SAY @333027
+  IF ~True()~ DO ~RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 1)~ EXIT
+END
+
+IF ~~ THEN BEGIN label_134
+  SAY @333027
+  IF ~True()~ DO ~RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 30)~ EXIT
+END
+
+IF ~~ THEN BEGIN label_133
+  SAY @333027
+  IF ~True()~ DO ~RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 10)~ EXIT
+END
+
+IF ~Global("ux_olrun_is_bantering", "GLOBAL", 1) Global("ux_olrun_banter_id", "GLOBAL", 1)~ THEN BEGIN label_142
+  SAY @333076
+  ++  @333070 DO ~IncrementGlobal("ux_olrun_banter_id", "GLOBAL", 1)~   EXIT
+  ++ @333075 + label_141
+END
+
+IF ~~ THEN BEGIN label_141
+  SAY @333071
+  ++ @333072 + label_138
+  ++ @333073 + label_139
+  ++ @333074 + label_140
+END
+
+IF ~~ THEN BEGIN label_140
+  SAY @333027
+  IF ~True()~ DO ~RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 1)~ EXIT
+END
+
+IF ~~ THEN BEGIN label_139
+  SAY @333027
+  IF ~True()~ DO ~RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 30)~ EXIT
+END
+
+IF ~~ THEN BEGIN label_138
+  SAY @333027
+  IF ~True()~ DO ~RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 10)~ EXIT
+END
+
+IF ~IsGabber(Player1) !Global("ux_olrun_is_bantering", "GLOBAL", 1) !Global("ux_olrun_is_pidding", "GLOBAL", 1)~ THEN BEGIN label_143
+  SAY @333093
   IF ~True()~ DO ~SetGlobal("ux_olrun_wishes_to_pid", "GLOBAL", 1)~ EXIT
 END
 
-IF ~IsGabber(Player1)
-   !Global("ux_olrun_is_bantering", "GLOBAL", 1)~ apid1
-  SAY ~What kin I do fer you?~ [uxolr56]
-  ++ ~Olrun, what brings you to our quest?~ + quest
-  ++ ~Nevermind~ EXIT
+IF ~IsGabber(Player1) !Global("ux_olrun_is_bantering", "GLOBAL", 1)~ THEN BEGIN label_146
+  SAY @333094
+  ++ @333095 + label_145
+  ++ @333083 EXIT
 END
 
-IF ~~ quest
-  SAY ~I have come to join your party on this noble mission. I have long been defending Baldur’s Gate and its surrounding forests against the forces of evil, and I do not intend to waiver in my dedication now.~
-  ++ ~We are fortunate to have you with us.~ + quest2
+IF ~~ THEN BEGIN label_145
+  SAY @333079
+  ++ @333081 + label_144
 END
 
-IF ~~ quest2
-  SAY ~It is my pleasure. In the face of such danger, it is comforting to have companions to rely upon. I will fight to protect both of you, even in the darkest of times.~
-  IF ~~ EXIT
-END
-
-IF ~~ npc_mute
-  SAY @990004
-  ++ @990001 + npc_mute_short
-  ++ @990002 + npc_mute_long
-  ++ @990003 + npc_mute_undo
-END
-
-IF ~~ npc_mute_short
-  SAY @990005
-  IF ~~ DO ~RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 10)~ EXIT
-END
-
-IF ~~ npc_mute_long
-  SAY @990005
-  IF ~~ DO ~RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 30)~ EXIT
-END
-
-IF ~~ npc_mute_undo
-  SAY @990006
-  IF ~~ DO ~RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 1)~ EXIT
+IF ~~ THEN BEGIN label_144
+  SAY @333080
+  IF ~~ THEN EXIT
 END
