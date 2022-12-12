@@ -1,8 +1,8 @@
 (use ./dialog)
 (use ./util)
 
-(defmacro olrun-glory []
-  ~(say "Going down in the glory of battle!  I'd have it no other way. [uxolr16]"))
+(defn olrun-glory []
+  (say "Going down in the glory of battle!  I'd have it no other way. [uxolr16]"))
 
 (var
  prelude-tree
