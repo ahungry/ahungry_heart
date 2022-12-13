@@ -79,7 +79,6 @@
         tra-int (scan-number tra-ref)
         ]
     (when (and tra-int (> tra-int tra-counter))
-      (pp tra-int)
       (set tra-counter (+ 1 tra-int)))
     (put tras string-key tra-ref)))
 
