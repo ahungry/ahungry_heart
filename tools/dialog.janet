@@ -65,13 +65,29 @@
 (var tras @{})
 (var tra-counter 333000)
 
+(defn tra->int
+  "Take something like @333094 and produce 333094"
+  [tra-id]
+  (-> (string/replace-all "@" "" tra-id) scan-number))
+
+(defn push-tra
+  "For reproducibility, we want to store already defined entries in here."
+  [entry]
+  (let [sides (string/split " = " entry)]
+    (put tras (get sides 1) (tra->int (get sides 0)))))
+
+(defn populate-tras-from-file [f]
+  (->>
+   (string/split "\n" (slurp f))
+   (map push-tra)))
+
 (defn fix-sound [s]
   (if (= (- (length s) 1)
          (string/find "]" (string/trim s)))
     (let
         [idx (string/find "[" s)
          song (string/slice s idx)
-        txt (string/slice s 0 (-  idx 1))]
+         txt (string/slice s 0 (-  idx 1))]
         (string/format "~%s~ %s" txt song))
     (string/format "~%s~" s)))
 
@@ -159,21 +175,6 @@
 (defn build [tree]
   {:tras (build-tras)
    :dialog (build-dialog tree)})
-
-(var
- tree
- (say
-  {:cond [(g "ux_prelude_done")]}
-  "What's your name?"
-  (rep "Matt"
-       (say "Nice to meet you Matt, how old are you?"
-            (rep "I am 40" (say "Wow! You are old!"))))
-  (rep "Leave me alone!"
-       (say "Fine!!"))))
-
-(var sample (build tree))
-# (print (get sample :tras))
-# (print (get sample :dialog))
 
 # Stuff related to INTERJECT_COPY_TRANS
 (defn == [who s & rest]

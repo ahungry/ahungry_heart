@@ -25,6 +25,8 @@
 (import ./ux_prelude_chain :as prelude-chain)
 
 (defn main [& args]
+  (populate-tras-from-file "../lang/english/game.tra")
+
   (spit "/tmp/thobg/ux_greet_olrun.d" (greet-olrun/main))
   (spit "/tmp/thobg/ux_greet_anari.d" (greet-anari/main))
   (spit "/tmp/thobg/ux_greet_voice.d" (greet-voice/main))
