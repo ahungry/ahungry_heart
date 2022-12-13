@@ -67,12 +67,14 @@ INCLUDE "%MOD_FOLDER%/tpa/zariel.tpa"
 INCLUDE "%MOD_FOLDER%/tpa/olrun.tpa"
 INCLUDE "%MOD_FOLDER%/tpa/voice.tpa"
 INCLUDE "%MOD_FOLDER%/tpa/athar.tpa"
+INCLUDE "%MOD_FOLDER%/tpa/peasant.tpa"
 LAF items END
 LAF anari END
 LAF zariel END
 LAF voice END
 LAF athar END
 LAF olrun END
+LAF peasant END
 
 // OUTER_SET imoen_hello = STATE_WHICH_SAYS 1203 IN ~ahungry_silent_hero/lang/%s/game.tra~ FROM ~imoen2j~
 
@@ -95,9 +97,9 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/ux_party_banters.d~
 LAF HANDLE_AUDIO INT_VAR music = 1 END
 
 // DEBUG Lines to make the party present at game start
-// EXTEND_TOP ~AR2600.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
-// EXTEND_TOP ~BG2600.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
-// // Spawn at Feldeposts
+EXTEND_TOP ~AR2600.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
+EXTEND_TOP ~BG2600.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
+// Spawn at Feldeposts
 // EXTEND_TOP ~BG2616.bcs~ ~%MOD_FOLDER%/scripts/spawn2.baf~
 
 EXTEND_TOP ~BG2700.bcs~ ~%MOD_FOLDER%/scripts/bg2700.baf~

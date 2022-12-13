@@ -1,0 +1,7 @@
+// Be on standby for a group join
+IF
+See([PC])
+Global("ux_prelude_done","GLOBAL",1)
+THEN RESPONSE #100
+StartDialogueNoSet(Player1)
+END

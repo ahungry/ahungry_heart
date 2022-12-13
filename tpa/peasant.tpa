@@ -1,0 +1,69 @@
+DEFINE_ACTION_FUNCTION ~peasant~ BEGIN
+
+// The following is the copying of Peasant's .cre file, as well as assigning his sound-set.
+// See the file sndslot.ids for a listing of sounds you can add.
+COPY ~%MOD_FOLDER%/cre/uxpea.cre~ ~override/uxpea.cre~
+
+SAY NAME1 ~Peasant~
+SAY NAME2 ~Peasant~
+SAY BIO ~A history of Peasant will appear here.~
+
+WRITE_LONG  0x10 0x0           // clear all flags
+WRITE_ASCII 0x248 ~uxpeas~ #8  // override script where you put all the commands for lovetalks and such.
+WRITE_ASCII 0x2cc ~uxpea~  #8  // dialogue file where we'll put Branwen's greeting dialogue.
+WRITE_ASCII 0x280 ~uxpea~  #32 // death variable - when we want to refer to Branwen in the game, we'll call her O#Bran. For example, InParty("O#Bran") means that Branwen is in party.
+WRITE_ASCII 0x250 ~~ 	    #8 // class script
+WRITE_ASCII 0x258 ~~ 	    #8 // race script
+WRITE_ASCII 0x260 ~~ 	    #8 // general script
+WRITE_ASCII 0x268 ~~	    #8 // default script
+WRITE_ASCII 0X34  ~uxpeas~ #8  // small portrait
+WRITE_ASCII 0x3c  ~uxpeam~ #8  // medium portrait
+
+// WRITE_LONG 0x28  0x6100     // FIGHTER_MALE_HUMAN (https://gibberlings3.github.io/iesdp/files/ids/bgee/animate.htm)
+// WRITE_BYTE 0x272 0x1        // Human (https://gibberlings3.github.io/iesdp/files/ids/bg2/race.htm)
+// WRITE_BYTE 0x273 6          // Paladin (https://gibberlings3.github.io/iesdp/files/ids/bg2/class.htm)
+// WRITE_BYTE 0x275 0x1        // Male (https://gibberlings3.github.io/iesdp/files/ids/bg2/gender.htm)
+// WRITE_LONG 0x244 0x40040000 // Kit Cavalier (https://gibberlings3.github.io/iesdp/file_formats/ie_formats/cre_v1.htm)
+// WRITE_BYTE 0x270 128 // Neutral (https://gibberlings3.github.io/iesdp/files/ids/bg2/ea.htm)
+
+// Use eekeeper to see the codes, looks like a color index
+WRITE_BYTE 0x2c  0x4a // Metal Colour
+WRITE_BYTE 0x2d  0x4a // Minor Colour
+WRITE_BYTE 0x2e  0x4a // Major Colour
+WRITE_BYTE 0x2f  0x4a // skin Colour
+WRITE_BYTE 0x30  0x4a // Leather Colour
+WRITE_BYTE 0x31  0x4a // Armor Colour
+WRITE_BYTE 0x32  0x4a // Hair Colour
+
+LAF ux_cre_compile STR_VAR name = "peasant" code = "pea" END
+
+
+// Now we are going to add Branwen content for the Throne of Bhaal. You need one more cre file, or you could use the same one twice.
+ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN // It means that the Throne of Bhaal is installed. If not, this part is not added to the game. This check also works for BG2:EE games.
+BEGIN // you WILL need an END below.
+
+COPY ~%MOD_FOLDER%/cre/uxpea25.cre~ ~override/uxpea25.cre~
+SAY NAME1 ~Peasant~
+SAY NAME2 ~Peasant~
+
+WRITE_LONG  0x10 0x0 // clear all flags
+WRITE_ASCII 0x248 ~uxpeas~ #8  // override script where you put all the commands for lovetalks and such.
+WRITE_ASCII 0x2cc ~uxpea~  #8  // dialogue file where we'll put Branwen's greeting dialogue.
+WRITE_ASCII 0x280 ~uxpea~  #32 // depea variable - when we want to refer to Branwen in the game, we'll call her O#Bran. For example, InParty("O#Bran") means that Branwen is in party.
+WRITE_ASCII 0x250 ~~ 	    #8  // class script
+WRITE_ASCII 0x258 ~~ 	    #8  // race script
+WRITE_ASCII 0x260 ~~ 	    #8  // general script
+WRITE_ASCII 0x268 ~~	    #8	// default script
+WRITE_ASCII 0X34  ~peasants~ #8  // small portrait
+WRITE_ASCII 0x3c  ~peasantm~ #8  // medium portrait
+
+
+LAF ux_cre_compile STR_VAR name = "peasant25" code = "pea25" END
+
+END // and here ends ToB content
+
+
+LAF ux_dialog_tables STR_VAR code = "pea" END
+LAF ux_eet_setup STR_VAR name = "Peasant" code = "pea" END
+
+END

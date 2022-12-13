@@ -1,12 +1,6 @@
 (use ./dialog)
 (use ./util)
 
-# -      // ActionOverride("uxana", EscapeAreaObjectMove("%BG_PRE%2300", "North", 1105, 3300, 5))
-# -      // ActionOverride("uxvoi", EscapeAreaObjectMove("%BG_PRE%2300", "North", 1060, 3280, 14))
-# -      // ActionOverride("uxolr", EscapeAreaObjectMove("%BG_PRE%2300", "North", 1220, 3265, 3))
-# -      // ActionOverride("uxzar", EscapeAreaObjectMove("%BG_PRE%2300", "North", 1180, 3280, 13))
-# -      // ActionOverride("uxath", EscapeAreaObjectMove("%BG_PRE%2300", "North", 1067, 3312, 9))
-
 (defn prelude-chain [slot]
  (ict
   :uxolr slot
@@ -24,11 +18,12 @@
  who struggle for The Heart of Baldur's Gate. [uxana52]"
       (sg "ux_prelude_done")
       (ao :uxzar (sl "ux_zariel_sleeping"))
-      (ao :uxana "EscapeAreaObjectMove(\"%BG_PRE%2300\", \"North\", 1105, 3300, 5)")
-      (ao :uxvoi "EscapeAreaObjectMove(\"%BG_PRE%2300\", \"North\", 1060, 3280, 14)")
-      (ao :uxolr "EscapeAreaObjectMove(\"%BG_PRE%2300\", \"North\", 1220, 3265, 3)")
-      (ao :uxzar "EscapeAreaObjectMove(\"%BG_PRE%2300\", \"North\", 1180, 3280, 13)")
-      (ao :uxath "EscapeAreaObjectMove(\"%BG_PRE%2300\", \"North\", 1067, 3312, 9)"))
+      # (ao :uxana "EscapeAreaObjectMove(\"%BG_PRE%2300\", \"North\", 1105, 3300, 5)")
+      # (ao :uxvoi "EscapeAreaObjectMove(\"%BG_PRE%2300\", \"North\", 1060, 3280, 14)")
+      # (ao :uxolr "EscapeAreaObjectMove(\"%BG_PRE%2300\", \"North\", 1220, 3265, 3)")
+      # (ao :uxzar "EscapeAreaObjectMove(\"%BG_PRE%2300\", \"North\", 1180, 3280, 13)")
+      # (ao :uxath "EscapeAreaObjectMove(\"%BG_PRE%2300\", \"North\", 1067, 3312, 9)")
+      )
   ))
 
 (defn main [& args]

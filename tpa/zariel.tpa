@@ -112,8 +112,8 @@ Weight: 1
 SAY UNIDENTIFIED_DESC ~Zariel's "Right Hand"~
 WRITE_ASCII 0x0022 ~S3~ #2
 WRITE_BYTE  0x0034 0            // Price
-// WRITE_ASCII 0x003a ~ISW1H55~ // Inv icon
-WRITE_ASCII 0x003a ~IBDS1H01~   // Inv icon
+WRITE_ASCII 0x003a ~ISW1H55~ // Inv icon
+// WRITE_ASCII 0x003a ~IBDS1H01~   // Inv icon
 // Adjust the dice/thac0 etc.
 LPF ALTER_ITEM_HEADER INT_VAR header_type=1
   speed = 2
@@ -124,10 +124,10 @@ LPF ALTER_ITEM_HEADER INT_VAR header_type=1
 END
 LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x7 END
 LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x8 END
-// Red Color
 LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x4b parameter2=16 target=1 timing=2 END
-// LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x4a parameter2=21 target=1 timing=2 END
-LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0xc6 parameter2=21 target=1 timing=2 END
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x4a parameter2=21 target=1 timing=2 END
+// Red Color
+// LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0xc6 parameter2=21 target=1 timing=2 END
 
 // The following is the copying of Zariel's .cre file, as well as assigning his sound-set.
 // See the file sndslot.ids for a listing of sounds you can add.
