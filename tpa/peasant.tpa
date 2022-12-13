@@ -2,7 +2,7 @@ DEFINE_ACTION_FUNCTION ~peasant~ BEGIN
 
 // The following is the copying of Peasant's .cre file, as well as assigning his sound-set.
 // See the file sndslot.ids for a listing of sounds you can add.
-COPY ~%MOD_FOLDER%/cre/uxpea.cre~ ~override/uxpea.cre~
+COPY ~%MOD_FOLDER%/cre/uxath.cre~ ~override/uxpea.cre~
 
 SAY NAME1 ~Peasant~
 SAY NAME2 ~Peasant~
@@ -19,12 +19,13 @@ WRITE_ASCII 0x268 ~~	    #8 // default script
 WRITE_ASCII 0X34  ~uxpeas~ #8  // small portrait
 WRITE_ASCII 0x3c  ~uxpeam~ #8  // medium portrait
 
+WRITE_LONG 0x28  0x6402 // Monk (https://gibberlings3.github.io/iesdp/files/ids/bgee/animate.htm)
 // WRITE_LONG 0x28  0x6100     // FIGHTER_MALE_HUMAN (https://gibberlings3.github.io/iesdp/files/ids/bgee/animate.htm)
 // WRITE_BYTE 0x272 0x1        // Human (https://gibberlings3.github.io/iesdp/files/ids/bg2/race.htm)
 // WRITE_BYTE 0x273 6          // Paladin (https://gibberlings3.github.io/iesdp/files/ids/bg2/class.htm)
 // WRITE_BYTE 0x275 0x1        // Male (https://gibberlings3.github.io/iesdp/files/ids/bg2/gender.htm)
 // WRITE_LONG 0x244 0x40040000 // Kit Cavalier (https://gibberlings3.github.io/iesdp/file_formats/ie_formats/cre_v1.htm)
-// WRITE_BYTE 0x270 128 // Neutral (https://gibberlings3.github.io/iesdp/files/ids/bg2/ea.htm)
+WRITE_BYTE 0x270 128 // Neutral (https://gibberlings3.github.io/iesdp/files/ids/bg2/ea.htm)
 
 // Use eekeeper to see the codes, looks like a color index
 WRITE_BYTE 0x2c  0x4a // Metal Colour

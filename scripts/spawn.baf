@@ -17,6 +17,21 @@ SetGlobal("Ux_spawn","GLOBAL",1)
 Continue()
 END
 
+IF
+!Global("ux_urgent_spawn", "GLOBAL", 1)
+OR(5)
+InParty("uxana")
+InParty("uxath")
+InParty("uxvoi")
+InParty("uxzar")
+InParty("uxolr")
+THEN
+RESPONSE #100
+CreateCreatureObjectOffScreen("uxpea",Player1,0,0,0)
+SetGlobal("ux_urgent_spawn", "GLOBAL", 1)
+Continue()
+END
+
 // // These blocks are adding experience to Branwen - only once, when she's in party. It's also possible to add these blocks to Branwen's script UxanaS.baf, if you prefer.
 // // When Branwen joins, if PC's experience is less, than 280000, then Branwen's experience will be at 161000.
 // // For PC between 280001 and 600000 points of experience, Branwen's experience is going to become 400000.

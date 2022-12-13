@@ -7,7 +7,6 @@
                     (sg "ux_request_group_join")
                     (sg (string/format "ux_%s_banter_timer" who) 5)
                     (jp)
-                    "CreateCreature(\"uxpea\")"
                     ]}
             "I would love to join your group.
  ( NOTE: This option recruits all 5 at once, and will skip some join dialogue )")
@@ -16,7 +15,6 @@
                     (sg "ux_group_join_deny")
                     (sg (string/format "ux_%s_banter_timer" who) 5)
                     (jp)
-                    "CreateCreature(\"uxpea\")"
                    ]}
             "I can't join your group, but I would love to have you join mine.")
 

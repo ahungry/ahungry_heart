@@ -2,16 +2,16 @@ BEGIN uxolrj
 
 
 IF ~Global("ux_olrun_is_bantering", "GLOBAL", 1) Global("ux_olrun_banter_id", "GLOBAL", 0)~ THEN BEGIN label_144
-  SAY @333066
-  ++  @333067 DO ~IncrementGlobal("ux_olrun_banter_id", "GLOBAL", 1)~   EXIT
-  ++ @333072 + label_143
+  SAY @333067
+  ++  @333068 DO ~IncrementGlobal("ux_olrun_banter_id", "GLOBAL", 1)~   EXIT
+  ++ @333073 + label_143
 END
 
 IF ~~ THEN BEGIN label_143
-  SAY @333068
-  ++ @333069 + label_140
-  ++ @333070 + label_141
-  ++ @333071 + label_142
+  SAY @333069
+  ++ @333070 + label_140
+  ++ @333071 + label_141
+  ++ @333072 + label_142
 END
 
 IF ~~ THEN BEGIN label_142
@@ -30,16 +30,16 @@ IF ~~ THEN BEGIN label_140
 END
 
 IF ~Global("ux_olrun_is_bantering", "GLOBAL", 1) Global("ux_olrun_banter_id", "GLOBAL", 1)~ THEN BEGIN label_149
-  SAY @333073
-  ++  @333067 DO ~IncrementGlobal("ux_olrun_banter_id", "GLOBAL", 1)~   EXIT
-  ++ @333072 + label_148
+  SAY @333074
+  ++  @333068 DO ~IncrementGlobal("ux_olrun_banter_id", "GLOBAL", 1)~   EXIT
+  ++ @333073 + label_148
 END
 
 IF ~~ THEN BEGIN label_148
-  SAY @333068
-  ++ @333069 + label_145
-  ++ @333070 + label_146
-  ++ @333071 + label_147
+  SAY @333069
+  ++ @333070 + label_145
+  ++ @333071 + label_146
+  ++ @333072 + label_147
 END
 
 IF ~~ THEN BEGIN label_147
@@ -58,22 +58,22 @@ IF ~~ THEN BEGIN label_145
 END
 
 IF ~IsGabber(Player1) !Global("ux_olrun_is_bantering", "GLOBAL", 1) !Global("ux_olrun_is_pidding", "GLOBAL", 1)~ THEN BEGIN label_150
-  SAY @333100
+  SAY @333101
   IF ~True()~ DO ~SetGlobal("ux_olrun_wishes_to_pid", "GLOBAL", 1)~ EXIT
 END
 
 IF ~IsGabber(Player1) !Global("ux_olrun_is_bantering", "GLOBAL", 1)~ THEN BEGIN label_153
-  SAY @333101
-  ++ @333102 + label_152
-  ++ @333090 EXIT
+  SAY @333102
+  ++ @333103 + label_152
+  ++ @333091 EXIT
 END
 
 IF ~~ THEN BEGIN label_152
-  SAY @333076
-  ++ @333078 + label_151
+  SAY @333077
+  ++ @333079 + label_151
 END
 
 IF ~~ THEN BEGIN label_151
-  SAY @333077
+  SAY @333078
   IF ~~ THEN EXIT
 END
