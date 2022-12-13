@@ -23,6 +23,22 @@ RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 5)
 JoinParty()
 END
 
+// Summon the special messenger
+IF
+!Global("ux_urgent_spawn", "GLOBAL", 1)
+OR(5)
+InParty("uxana")
+InParty("uxath")
+InParty("uxvoi")
+InParty("uxzar")
+InParty("uxolr")
+THEN
+RESPONSE #100
+SetGlobal("ux_urgent_spawn", "GLOBAL", 1)
+CreateCreatureObjectOffScreen("uxpea",Player1,0,0,0)
+Continue()
+END
+
 // Try to initiate some chit chat
 IF
 InParty(Myself)
