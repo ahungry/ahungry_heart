@@ -68,7 +68,7 @@
 (defn tra->int
   "Take something like @333094 and produce 333094"
   [tra-id]
-  (-> (string/replace-all "@" "" tra-id) scan-number))
+  (string/replace-all "@" "" tra-id))
 
 (defn push-tra
   "For reproducibility, we want to store already defined entries in here."
