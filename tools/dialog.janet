@@ -65,7 +65,7 @@
 (var tras @{})
 (var tra-counter 0)
 
-(defn tra->int
+(defn tra->id
   "Take something like @333094 and produce 333094"
   [tra-id]
   (string/replace-all "@" "" tra-id))
@@ -73,8 +73,15 @@
 (defn push-tra
   "For reproducibility, we want to store already defined entries in here."
   [entry]
-  (let [sides (string/split " = " entry)]
-    (put tras (get sides 1) (tra->int (get sides 0)))))
+  (let [sides (string/split " = " entry)
+        string-key (get sides 1)
+        tra-ref (tra->id (get sides 0))
+        tra-int (scan-number tra-ref)
+        ]
+    (when (and tra-int (> tra-int tra-counter))
+      (pp tra-int)
+      (set tra-counter (+ 1 tra-int)))
+    (put tras string-key tra-ref)))
 
 (defn populate-tras-from-file [f]
   (->>
