@@ -63,7 +63,7 @@
 
 (var results @[])
 (var tras @{})
-(var tra-counter 333000)
+(var tra-counter 0)
 
 (defn tra->int
   "Take something like @333094 and produce 333094"
@@ -99,10 +99,10 @@
 (defn traify [ss]
   (let [s (-> ss fix-problem-chars fix-sound)]
     (string/format
-     "@%d"
+     "@%s"
      (if (get tras s)
        (get tras s)
-       (do (put tras s (++ tra-counter))
+       (do (put tras s (string/format "%0.6d" (++ tra-counter)))
            (get tras s))))))
 
 (defn maybe-render-code [m]
@@ -156,7 +156,7 @@
 (defn build-tras []
   (var result @[])
   (each k (keys tras)
-    (array/push result (string/format "@%d = %s" (get tras k) k)))
+    (array/push result (string/format "@%s = %s" (get tras k) k)))
   (-> (sort result) (string/join "\n")))
 
 (defn build-dialog [tree]
@@ -170,7 +170,7 @@
 (defn clear []
   (set tras @{})
   (set ict-counter 0)
-  (set tra-counter 333000))
+  (set tra-counter 0))
 
 (defn build [tree]
   {:tras (build-tras)
