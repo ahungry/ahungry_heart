@@ -1,11 +1,13 @@
 (use ./dialog)
 
+(def banter-timer 300)
+
 (defn party-member-join-block [who name]
   (say "So?"
        (rep {:cond [(ng "ux_group_join_deny")]
              :code [(sl (string/format "ux_in_party_%s" who))
                     (sg "ux_request_group_join")
-                    (sg (string/format "ux_%s_banter_timer" who) 5)
+                    (rsgt (string/format "ux_%s_banter_timer" who) banter-timer)
                     (jp)
                     ]}
             "I would love to join your group.
@@ -13,7 +15,7 @@
 
        (rep {:code [(sl (string/format "ux_in_party_%s" who))
                     (sg "ux_group_join_deny")
-                    (sg (string/format "ux_%s_banter_timer" who) 5)
+                    (rsgt (string/format "ux_%s_banter_timer" who) banter-timer)
                     (jp)
                    ]}
             "I can't join your group, but I would love to have you join mine.")
@@ -24,10 +26,10 @@
 (defn mute [who]
   (say "Fine, how much alone time do you need?"
        (rep "Just a few minutes, I'm working on something."
-            (say {:code [(rsgt (string/format "ux_%s_banter_timer" (string who)) 10)]}
+            (say {:code [(rsgt (string/format "ux_%s_banter_timer" (string who)) 180)]}
                  "Fine."))
        (rep "I have more important tasks to focus on - give me a few hours."
-            (say {:code [(rsgt (string/format "ux_%s_banter_timer" (string who)) 30)]}
+            (say {:code [(rsgt (string/format "ux_%s_banter_timer" (string who)) 3600)]}
                  "Fine."))
        (rep "Sorry, that was a mistake, I do have time."
             (say {:code [(rsgt (string/format "ux_%s_banter_timer" (string who)) 1)]}

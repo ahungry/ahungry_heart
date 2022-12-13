@@ -26,6 +26,22 @@
       )
   ))
 
+(defn urgent-chain [slot]
+  (ict2
+   :uxpea slot
+   (== :uxathj "What is it friend?")
+   (== :uxpea "There is an immediate need for your assistance back in Baldur's Gate.
+ Rumor has it that the gates are planned to be shut off due to problems in the
+ surrounding regions.")
+   (== :uxolrj "Blast!  We had matters needing attention back there!")
+   (== :uxanaj "Additionally, we have just extended an invitation to Gorion's Ward.")
+   (== :uxzarj "Some timing...")
+   (== :uxpea "Please, it is urgent that you head there now.")
+   (== :uxathj "<CHARNAME>, I think one of us can remain with you, but the rest must
+ make haste to Baldur's Gate.  Would you choose to have one of us remain and assist
+ you on your quest?")))
+
 (defn main [& args]
   (string/join [(prelude-chain 2)
-                (prelude-chain 4)] "\n"))
+                (prelude-chain 4)
+                (urgent-chain 0)] "\n"))

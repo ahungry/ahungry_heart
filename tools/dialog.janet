@@ -149,8 +149,11 @@
   (array/push results (main tree))
   (string/join (reverse results)))
 
+(var ict-counter 0)
+
 (defn clear []
   (set tras @{})
+  (set ict-counter 0)
   (set tra-counter 333000))
 
 (defn build [tree]
@@ -179,10 +182,16 @@
                  (traify s)
                  (string/join rest "\n")))
 
+
 (defn ict [who scene-id & rest]
   (string/format
-   "INTERJECT_COPY_TRANS %s %d label_%s\n%sEND"
-   (string who) scene-id "fake" (string/join rest)))
+   "INTERJECT_COPY_TRANS %s %d ux_lbl_ict_%d\n%sEND"
+   (string who) scene-id (++ ict-counter) (string/join rest)))
+
+(defn ict2 [who scene-id & rest]
+  (string/format
+   "INTERJECT_COPY_TRANS2 %s %d ux_lbl_ict_%d\n%sEND"
+   (string who) scene-id (++ ict-counter) (string/join rest)))
 
 (def r rep)
 (def s say)

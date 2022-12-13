@@ -9,7 +9,7 @@ Global("ux_request_group_join","GLOBAL", 1)
 THEN RESPONSE #100
 SetGlobal("Ux_in_party_athar", "LOCALS", 1)
 SetGlobal("Ux_in_party_once_athar", "LOCALS", 1)
-RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 5)
+// RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 300)
 JoinParty()
 END
 

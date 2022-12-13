@@ -23,8 +23,8 @@ END
 IF ~~ THEN BEGIN label_43
   SAY @333016
   IF ~!Global("ux_group_join_deny", "GLOBAL", 1)~ THEN
-  REPLY @333017 DO ~SetGlobal("ux_in_party_athar", "LOCALS", 1) SetGlobal("ux_request_group_join", "GLOBAL", 1) SetGlobal("ux_athar_banter_timer", "GLOBAL", 5) JoinParty() CreateCreature("uxpea", [-1.-1], 1)~   EXIT
-  ++  @333018 DO ~SetGlobal("ux_in_party_athar", "LOCALS", 1) SetGlobal("ux_group_join_deny", "GLOBAL", 1) SetGlobal("ux_athar_banter_timer", "GLOBAL", 5) JoinParty() CreateCreature("uxpea", [-1.-1], 1)~   EXIT
+  REPLY @333017 DO ~SetGlobal("ux_in_party_athar", "LOCALS", 1) SetGlobal("ux_request_group_join", "GLOBAL", 1) RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 300) JoinParty()~   EXIT
+  ++  @333018 DO ~SetGlobal("ux_in_party_athar", "LOCALS", 1) SetGlobal("ux_group_join_deny", "GLOBAL", 1) RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 300) JoinParty()~   EXIT
   ++ @333044 + label_42
 END
 
@@ -41,8 +41,8 @@ END
 IF ~~ THEN BEGIN label_40
   SAY @333016
   IF ~!Global("ux_group_join_deny", "GLOBAL", 1)~ THEN
-  REPLY @333017 DO ~SetGlobal("ux_in_party_athar", "LOCALS", 1) SetGlobal("ux_request_group_join", "GLOBAL", 1) SetGlobal("ux_athar_banter_timer", "GLOBAL", 5) JoinParty() CreateCreature("uxpea", [-1.-1], 1)~   EXIT
-  ++  @333018 DO ~SetGlobal("ux_in_party_athar", "LOCALS", 1) SetGlobal("ux_group_join_deny", "GLOBAL", 1) SetGlobal("ux_athar_banter_timer", "GLOBAL", 5) JoinParty() CreateCreature("uxpea", [-1.-1], 1)~   EXIT
+  REPLY @333017 DO ~SetGlobal("ux_in_party_athar", "LOCALS", 1) SetGlobal("ux_request_group_join", "GLOBAL", 1) RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 300) JoinParty()~   EXIT
+  ++  @333018 DO ~SetGlobal("ux_in_party_athar", "LOCALS", 1) SetGlobal("ux_group_join_deny", "GLOBAL", 1) RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 300) JoinParty()~   EXIT
   ++ @333044 + label_39
 END
 
