@@ -15,4 +15,4 @@ Full hero team was invited, or an individual was.
 A message arrives, breaking up the team (maybe never even do initial invite)
 
 * ux_state_50
-One hero is allowed to join
+One hero is allowed to join, the urgent messenger has left at this point.

@@ -49,8 +49,18 @@
 (defn state<= [n]
   (ggt "ux_state" (+ n 1)))
 
-(defn jp []
-  "JoinParty()")
+(defn lp [&opt who]
+  (if who
+    (ao who "LeaveParty()")
+    "LeaveParty()"))
+
+(defn jp [&opt who]
+  (if who
+    (string/format
+     "%s %s"
+     (ao who "JoinParty()")
+     (sg (string/format "ux_in_party_%s" (string who))))
+    "JoinParty()"))
 
 (var goto-id 0)
 

@@ -2,9 +2,9 @@
 (use ./util)
 
 (var kick-tree
-     (say {:cond [(l "ux_in_party_anari")]}
+     (say {:cond [(g "ux_in_party_uxana")]}
           "Kicking me out, just like that huh?"
-          (rep {:code [(sl "ux_in_party_anari" 0)]}
+          (rep {:code [(sg "ux_in_party_uxana" 0)]}
                "Yup, take a hike."
                (say "Fine."))
           (rep {:code [(jp)]}
@@ -12,9 +12,9 @@
                (say "Lucky me."))))
 
 (var rejoin-tree
-     (say {:cond [(l "ux_in_party_anari" 0)]}
+     (say {:cond [(g "ux_in_party_uxana" 0)]}
           "Oh, letting me come back, how sweet."
-          (rep {:code [(sl "ux_in_party_anari" 1) (jp)]}
+          (rep {:code [(sg "ux_in_party_uxana" 1) (jp)]}
                "That's right Anari, we missed you."
                (say "Wish I could say the same."))
           (rep "No, not yet - maybe later."
