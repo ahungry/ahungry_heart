@@ -3,11 +3,10 @@
 
 (var
  urgent-message
- (say {:cond [(ng "ux_urgent_message")]
-       :code [(sg "ux_urgent_message") "EscapeArea()"]}
+ (say {:cond [(state 40)]}
       "Excuse me, are you the party of Athar?"
-      (r "Athar")
-      (r "Zariel")))
+      (r {:code [(++state) "EscapeArea()"]} "Athar")
+      (r {:code [(++state) "EscapeArea()"]} "Zariel")))
 
 
 (defn main [& args]

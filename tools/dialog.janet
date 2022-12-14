@@ -171,6 +171,7 @@
                                                                   (get node :id)
                                                                   (array/push results (main node)))
                                                    (main node))) (get m :next)))
+                             # Dead end code block to place before exit
                              (if (and (get m :meta)
                                       (get (get m :meta) :code))
                                (string/format "\n  IF ~True()~ DO ~%s~ EXIT"

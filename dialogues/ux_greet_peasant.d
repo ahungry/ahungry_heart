@@ -1,8 +1,8 @@
 BEGIN uxpea
 
 
-IF ~!Global("ux_urgent_message", "GLOBAL", 1)~ THEN BEGIN label_51
+IF ~Global("ux_state", "GLOBAL", 40)~ THEN BEGIN label_51
   SAY @000041
-  ++ @000042 EXIT
-  ++ @000043 EXIT
+  ++  @000042 DO ~IncrementGlobal("ux_state", "GLOBAL", 10) EscapeArea()~   EXIT
+  ++  @000043 DO ~IncrementGlobal("ux_state", "GLOBAL", 10) EscapeArea()~   EXIT
 END
