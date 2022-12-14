@@ -28,6 +28,27 @@
 (defn in-party [who]
   (string/format "InParty(\"%s\")" (string who)))
 
+(defn glt [s &opt i]
+  (string/format "GlobalLT(\"%s\", \"GLOBAL\", %d)" s (or i 1)))
+
+(defn ggt [s &opt i]
+  (string/format "GlobalGT(\"%s\", \"GLOBAL\", %d)" s (or i 1)))
+
+(defn state-not [i]
+  (string/format "!Global(\"ux_state\", \"GLOBAL\", %d)" i))
+
+(defn state [i]
+  (string/format "Global(\"ux_state\", \"GLOBAL\", %d)" i))
+
+(defn ++state []
+  (ig "ux_state" 10))
+
+(defn state>= [n]
+  (ggt "ux_state" (- n 1)))
+
+(defn state<= [n]
+  (ggt "ux_state" (+ n 1)))
+
 (defn jp []
   "JoinParty()")
 

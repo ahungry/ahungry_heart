@@ -1,0 +1,18 @@
+* ux_state_0
+This is the beginning of the game - basically the prelude.
+
+* ux_state_10
+This is after the intro conversation - Zariel will end up asleep.
+
+* ux_state_20
+Someone woke her up, now we may or may not invite all heros (only once
+a check).
+
+* ux_state_30
+Full hero team was invited, or an individual was.
+
+* ux_state_40
+A message arrives, breaking up the team (maybe never even do initial invite)
+
+* ux_state_50
+One hero is allowed to join

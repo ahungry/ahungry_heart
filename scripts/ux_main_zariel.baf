@@ -1,23 +1,21 @@
-// Be on standby for a group join
-IF
-See([PC])
-!Global("ux_group_join_deny", "GLOBAL", 1)
-Global("ux_prelude_done","GLOBAL",1)
-Global("ux_request_group_join","GLOBAL", 1)
-!Global("ux_in_party_zariel", "LOCALS", 1)
-!Global("ux_in_party_once_zariel", "LOCALS", 1)
-THEN RESPONSE #100
-SetGlobal("ux_in_party_zariel", "LOCALS", 1)
-SetGlobal("ux_in_party_once_zariel", "LOCALS", 1)
-SetGlobal("ux_zariel_sleeping", "LOCALS", 0)
-//RealSetGlobalTimer("ux_zariel_banter_timer", "GLOBAL", 300)
-JoinParty()
-END
+// // Be on standby for a group join
+// IF
+// See([PC])
+// !Global("ux_group_join_deny", "GLOBAL", 1)
+// Global("ux_prelude_done","GLOBAL",1)
+// Global("ux_request_group_join","GLOBAL", 1)
+// !Global("ux_in_party_zariel", "LOCALS", 1)
+// !Global("ux_in_party_once_zariel", "LOCALS", 1)
+// THEN RESPONSE #100
+// SetGlobal("ux_in_party_zariel", "LOCALS", 1)
+// SetGlobal("ux_in_party_once_zariel", "LOCALS", 1)
+// SetGlobal("ux_zariel_sleeping", "LOCALS", 0)
+// //RealSetGlobalTimer("ux_zariel_banter_timer", "GLOBAL", 300)
+// JoinParty()
+// END
 
 IF
-Global("ux_prelude_done", "GLOBAL", 1)
-Global("ux_zariel_sleeping", "LOCALS", 1)
-!Global("ux_in_party_zariel", "LOCALS", 1)
+Global("ux_state", "GLOBAL", 10)
 THEN RESPONSE #100
 PlayDead(10000)
 END

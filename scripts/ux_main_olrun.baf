@@ -1,27 +1,29 @@
 // Open up initial dialogue and then leave until later
 IF
 See([PC])
-!Global("ux_prelude_done", "GLOBAL", 1)
+Global("ux_state", "GLOBAL", 0)
+// !Global("ux_prelude_done", "GLOBAL", 1)
 THEN
 RESPONSE #100
 PlaySong(164) // See override/songlist.2da
 Dialogue(Nearest([PC]))
+IncrementGlobal("ux_state", "GLOBAL", 10)
 END
 
-// Be on standby for a group join
-IF
-See([PC])
-!Global("ux_group_join_deny", "GLOBAL", 1)
-Global("ux_prelude_done","GLOBAL",1)
-Global("ux_request_group_join","GLOBAL", 1)
-!Global("Ux_in_party_olrun", "LOCALS", 1)
-!Global("Ux_in_party_once_olrun", "LOCALS", 1)
-THEN RESPONSE #100
-SetGlobal("Ux_in_party_olrun", "LOCALS", 1)
-SetGlobal("Ux_in_party_once_olrun", "LOCALS", 1)
-//RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 300)
-JoinParty()
-END
+// // Be on standby for a group join
+// IF
+// See([PC])
+// !Global("ux_group_join_deny", "GLOBAL", 1)
+// Global("ux_prelude_done","GLOBAL",1)
+// Global("ux_request_group_join","GLOBAL", 1)
+// !Global("Ux_in_party_olrun", "LOCALS", 1)
+// !Global("Ux_in_party_once_olrun", "LOCALS", 1)
+// THEN RESPONSE #100
+// SetGlobal("Ux_in_party_olrun", "LOCALS", 1)
+// SetGlobal("Ux_in_party_once_olrun", "LOCALS", 1)
+// //RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 300)
+// JoinParty()
+// END
 
 // Summon the special messenger
 IF

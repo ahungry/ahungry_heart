@@ -4,19 +4,24 @@
 
 (defn party-member-join-block [who name]
   (say "So?"
-       (rep {:cond [(ng "ux_group_join_deny")]
-             :code [(sl (string/format "ux_in_party_%s" who))
-                    (sg "ux_request_group_join")
-                    (rsgt (string/format "ux_%s_banter_timer" who) banter-timer)
-                    (jp)
+       (rep {:cond [(state 20)]
+             :code [(rsgt "ux_athar_banter_timer" banter-timer)
+                    (rsgt "ux_anari_banter_timer" banter-timer)
+                    (rsgt "ux_voice_banter_timer" banter-timer)
+                    (rsgt "ux_olrun_banter_timer" banter-timer)
+                    (rsgt "ux_zariel_banter_timer" banter-timer)
+                    (ao :uxana (jp))
+                    (ao :uxath (jp))
+                    (ao :uxzar (jp))
+                    (ao :uxolr (jp))
+                    (ao :uxvoi (jp))
+                    (++state)
                     ]}
-            "I would love to join your group.
- ( NOTE: This option recruits all 5 at once, and will skip some join dialogue )")
+            "I would love to join your group.")
 
-       (rep {:code [(sl (string/format "ux_in_party_%s" who))
-                    (sg "ux_group_join_deny")
-                    (rsgt (string/format "ux_%s_banter_timer" who) banter-timer)
+       (rep {:code [(rsgt (string/format "ux_%s_banter_timer" who) banter-timer)
                     (jp)
+                    (++state)
                    ]}
             "I can't join your group, but I would love to have you join mine.")
 

@@ -1,52 +1,58 @@
 BEGIN uxath
 
 
-IF ~Global("ux_prelude_done", "GLOBAL", 1)~ THEN BEGIN label_46
+IF ~Global("ux_state", "GLOBAL", 10)~ THEN BEGIN label_42
+  SAY @000113
+  IF ~~ THEN EXIT
+END
+
+
+IF ~GlobalGT("ux_state", "GLOBAL", 19)~ THEN BEGIN label_50
   SAY @000036
-  IF ~!Global("ux_group_join_deny", "GLOBAL", 1)~ THEN
-  REPLY @000038   + label_41
-  IF ~Global("ux_group_join_deny", "GLOBAL", 1)~ THEN
-  REPLY @000038   + label_44
-  ++ @000040 + label_45
+  IF ~Global("ux_state", "GLOBAL", 20)~ THEN
+  REPLY @000038   + label_45
+  IF ~!Global("ux_state", "GLOBAL", 20)~ THEN
+  REPLY @000038   + label_48
+  ++ @000040 + label_49
+END
+
+IF ~~ THEN BEGIN label_49
+  SAY @000012
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN label_48
+  SAY @000039
+  IF ~~ THEN GOTO label_47
+END
+
+IF ~~ THEN BEGIN label_47
+  SAY @000009
+  IF ~Global("ux_state", "GLOBAL", 20)~ THEN
+  REPLY @000110 DO ~RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 300) RealSetGlobalTimer("ux_anari_banter_timer", "GLOBAL", 300) RealSetGlobalTimer("ux_voice_banter_timer", "GLOBAL", 300) RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 300) RealSetGlobalTimer("ux_zariel_banter_timer", "GLOBAL", 300) ActionOverride("uxana", JoinParty()) ActionOverride("uxath", JoinParty()) ActionOverride("uxzar", JoinParty()) ActionOverride("uxolr", JoinParty()) ActionOverride("uxvoi", JoinParty()) IncrementGlobal("ux_state", "GLOBAL", 10)~   EXIT
+  ++  @000011 DO ~RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 300) JoinParty() IncrementGlobal("ux_state", "GLOBAL", 10)~   EXIT
+  ++ @000037 + label_46
+END
+
+IF ~~ THEN BEGIN label_46
+  SAY @000012
+  IF ~~ THEN EXIT
 END
 
 IF ~~ THEN BEGIN label_45
-  SAY @000012
-  IF ~~ THEN EXIT
+  SAY @000008
+  IF ~~ THEN GOTO label_44
 END
 
 IF ~~ THEN BEGIN label_44
-  SAY @000039
-  IF ~~ THEN GOTO label_43
+  SAY @000009
+  IF ~Global("ux_state", "GLOBAL", 20)~ THEN
+  REPLY @000110 DO ~RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 300) RealSetGlobalTimer("ux_anari_banter_timer", "GLOBAL", 300) RealSetGlobalTimer("ux_voice_banter_timer", "GLOBAL", 300) RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 300) RealSetGlobalTimer("ux_zariel_banter_timer", "GLOBAL", 300) ActionOverride("uxana", JoinParty()) ActionOverride("uxath", JoinParty()) ActionOverride("uxzar", JoinParty()) ActionOverride("uxolr", JoinParty()) ActionOverride("uxvoi", JoinParty()) IncrementGlobal("ux_state", "GLOBAL", 10)~   EXIT
+  ++  @000011 DO ~RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 300) JoinParty() IncrementGlobal("ux_state", "GLOBAL", 10)~   EXIT
+  ++ @000037 + label_43
 END
 
 IF ~~ THEN BEGIN label_43
-  SAY @000009
-  IF ~!Global("ux_group_join_deny", "GLOBAL", 1)~ THEN
-  REPLY @000010 DO ~SetGlobal("ux_in_party_athar", "LOCALS", 1) SetGlobal("ux_request_group_join", "GLOBAL", 1) RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 300) JoinParty()~   EXIT
-  ++  @000011 DO ~SetGlobal("ux_in_party_athar", "LOCALS", 1) SetGlobal("ux_group_join_deny", "GLOBAL", 1) RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 300) JoinParty()~   EXIT
-  ++ @000037 + label_42
-END
-
-IF ~~ THEN BEGIN label_42
-  SAY @000012
-  IF ~~ THEN EXIT
-END
-
-IF ~~ THEN BEGIN label_41
-  SAY @000008
-  IF ~~ THEN GOTO label_40
-END
-
-IF ~~ THEN BEGIN label_40
-  SAY @000009
-  IF ~!Global("ux_group_join_deny", "GLOBAL", 1)~ THEN
-  REPLY @000010 DO ~SetGlobal("ux_in_party_athar", "LOCALS", 1) SetGlobal("ux_request_group_join", "GLOBAL", 1) RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 300) JoinParty()~   EXIT
-  ++  @000011 DO ~SetGlobal("ux_in_party_athar", "LOCALS", 1) SetGlobal("ux_group_join_deny", "GLOBAL", 1) RealSetGlobalTimer("ux_athar_banter_timer", "GLOBAL", 300) JoinParty()~   EXIT
-  ++ @000037 + label_39
-END
-
-IF ~~ THEN BEGIN label_39
   SAY @000012
   IF ~~ THEN EXIT
 END
