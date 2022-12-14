@@ -187,11 +187,17 @@
     (array/push result (string/format "@%s = %s" (get tras k) k)))
   (-> (sort result) (string/join "\n")))
 
+(defn uniq [xs]
+  (def res @[])
+  (each x xs
+    (unless (index-of x res) (array/push res x)))
+  res)
+
 (defn build-dialog [tree]
   (set results @[])
   (set goto-id 0)
   (array/push results (main tree))
-  (string/join (reverse results)))
+  (string/join (reverse (uniq results))))
 
 (var ict-counter 0)
 
