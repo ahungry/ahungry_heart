@@ -42,9 +42,16 @@ ChangeAIScript("",DEFAULT)
 SetLeavePartyDialogFile()
 LeaveParty()
 // Actually go find Ajantis
-EscapeAreaObjectMove("%BG_PRE%1400", "North", 1520, 3147, 5)
+EscapeAreaObjectMove("%BG_PRE%1400", "North", 1520, 3147, E)
 END
 
+// At this point, each member has reliably left, and we bump to state 60, more open ended
+IF
+Global("ux_state", "GLOBAL", 54)
+THEN
+RESPONSE #100
+SetGlobal("ux_state", "GLOBAL", 60)
+END
 
 // Try to initiate some chit chat
 IF
