@@ -51,6 +51,7 @@ SetLeavePartyDialogFile()
 LeaveParty()
 // Actually go to Nashkel Carnival and stare at the spinning wheel
 EscapeAreaObjectMove("%BG_PRE%4904", "North", 448, 227, N)
+Continue()
 END
 
 // At this point, each member has reliably left, and we bump to state 60, more open ended
@@ -59,6 +60,7 @@ Global("ux_state", "GLOBAL", 54)
 THEN
 RESPONSE #100
 SetGlobal("ux_state", "GLOBAL", 60)
+Continue()
 END
 
 // Try to initiate some chit chat
@@ -80,6 +82,7 @@ SetGlobal("ux_zariel_is_bantering", "GLOBAL", 1)
 RealSetGlobalTimer("ux_zariel_banter_timer", "GLOBAL", 5)
 StartDialogueNoSet(Player1)
 SetGlobal("ux_zariel_is_bantering", "GLOBAL", 0)
+Continue()
 END
 
 // Pid stuff
@@ -92,4 +95,5 @@ SetGlobal("ux_zariel_wishes_to_pid", "GLOBAL", 0)
 SetGlobal("ux_zariel_is_pidding", "GLOBAL", 1)
 StartDialogueNoSet(Player1)
 SetGlobal("ux_zariel_is_pidding", "GLOBAL", 0)
+Continue()
 END

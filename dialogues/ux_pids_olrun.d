@@ -1,79 +1,79 @@
 BEGIN uxolrj
 
 
-IF ~Global("ux_olrun_is_bantering", "GLOBAL", 1) Global("ux_olrun_banter_id", "GLOBAL", 0)~ THEN BEGIN label_160
+IF ~Global("ux_olrun_is_bantering", "GLOBAL", 1) Global("ux_olrun_banter_id", "GLOBAL", 0)~ THEN BEGIN label_187
   SAY @000061
   ++  @000062 DO ~IncrementGlobal("ux_olrun_banter_id", "GLOBAL", 1)~   EXIT
-  ++ @000067 + label_159
+  ++ @000067 + label_186
 END
 
-IF ~~ THEN BEGIN label_159
+IF ~~ THEN BEGIN label_186
   SAY @000063
-  ++ @000064 + label_156
-  ++ @000065 + label_157
-  ++ @000066 + label_158
+  ++ @000064 + label_183
+  ++ @000065 + label_184
+  ++ @000066 + label_185
 END
 
-IF ~~ THEN BEGIN label_158
+IF ~~ THEN BEGIN label_185
   SAY @000016
   IF ~True()~ DO ~RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 1)~ EXIT
 END
 
-IF ~~ THEN BEGIN label_157
+IF ~~ THEN BEGIN label_184
   SAY @000016
   IF ~True()~ DO ~RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 3600)~ EXIT
 END
 
-IF ~~ THEN BEGIN label_156
+IF ~~ THEN BEGIN label_183
   SAY @000016
   IF ~True()~ DO ~RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 180)~ EXIT
 END
 
-IF ~Global("ux_olrun_is_bantering", "GLOBAL", 1) Global("ux_olrun_banter_id", "GLOBAL", 1)~ THEN BEGIN label_165
+IF ~Global("ux_olrun_is_bantering", "GLOBAL", 1) Global("ux_olrun_banter_id", "GLOBAL", 1)~ THEN BEGIN label_192
   SAY @000068
   ++  @000062 DO ~IncrementGlobal("ux_olrun_banter_id", "GLOBAL", 1)~   EXIT
-  ++ @000067 + label_164
+  ++ @000067 + label_191
 END
 
-IF ~~ THEN BEGIN label_164
+IF ~~ THEN BEGIN label_191
   SAY @000063
-  ++ @000064 + label_161
-  ++ @000065 + label_162
-  ++ @000066 + label_163
+  ++ @000064 + label_188
+  ++ @000065 + label_189
+  ++ @000066 + label_190
 END
 
-IF ~~ THEN BEGIN label_163
+IF ~~ THEN BEGIN label_190
   SAY @000016
   IF ~True()~ DO ~RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 1)~ EXIT
 END
 
-IF ~~ THEN BEGIN label_162
+IF ~~ THEN BEGIN label_189
   SAY @000016
   IF ~True()~ DO ~RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 3600)~ EXIT
 END
 
-IF ~~ THEN BEGIN label_161
+IF ~~ THEN BEGIN label_188
   SAY @000016
   IF ~True()~ DO ~RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 180)~ EXIT
 END
 
-IF ~IsGabber(Player1) !Global("ux_olrun_is_bantering", "GLOBAL", 1) !Global("ux_olrun_is_pidding", "GLOBAL", 1)~ THEN BEGIN label_166
+IF ~IsGabber(Player1) !Global("ux_olrun_is_bantering", "GLOBAL", 1) !Global("ux_olrun_is_pidding", "GLOBAL", 1)~ THEN BEGIN label_193
   SAY @000095
   IF ~True()~ DO ~SetGlobal("ux_olrun_wishes_to_pid", "GLOBAL", 1)~ EXIT
 END
 
-IF ~IsGabber(Player1) !Global("ux_olrun_is_bantering", "GLOBAL", 1)~ THEN BEGIN label_169
+IF ~IsGabber(Player1) !Global("ux_olrun_is_bantering", "GLOBAL", 1)~ THEN BEGIN label_196
   SAY @000096
-  ++ @000097 + label_168
+  ++ @000097 + label_195
   ++ @000085 EXIT
 END
 
-IF ~~ THEN BEGIN label_168
+IF ~~ THEN BEGIN label_195
   SAY @000071
-  ++ @000073 + label_167
+  ++ @000073 + label_194
 END
 
-IF ~~ THEN BEGIN label_167
+IF ~~ THEN BEGIN label_194
   SAY @000072
   IF ~~ THEN EXIT
 END

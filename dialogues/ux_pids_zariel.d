@@ -62,34 +62,105 @@ IF ~IsGabber(Player1) !Global("ux_zariel_is_bantering", "GLOBAL", 1) !Global("ux
   IF ~True()~ DO ~SetGlobal("ux_zariel_wishes_to_pid", "GLOBAL", 1)~ EXIT
 END
 
-IF ~IsGabber(Player1) !Global("ux_zariel_is_bantering", "GLOBAL", 1)~ THEN BEGIN label_113
+IF ~IsGabber(Player1) !Global("ux_zariel_is_bantering", "GLOBAL", 1)~ THEN BEGIN label_124
   SAY @000070
   ++ @000074 + label_106
-  ++ @000084 + label_112
+  ++ @000163 + label_123
   ++ @000085 EXIT
 END
 
-IF ~~ THEN BEGIN label_112
+IF ~~ THEN BEGIN label_123
   SAY @000075
+  ++ @000142 + label_107
   IF ~OR(2) InParty("imoen2") InParty("imoen1")~ THEN
-  REPLY @000077   + label_107
+  REPLY @000077   + label_108
   IF ~InParty("imoen2")~ THEN
-  REPLY @000078   + label_108
+  REPLY @000078   + label_109
   IF ~InParty("imoen1")~ THEN
-  REPLY @000079   + label_109
+  REPLY @000079   + label_110
+  IF ~!InParty("uxana")~ THEN
+  REPLY @000146   + label_111
+  IF ~!InParty("uxath")~ THEN
+  REPLY @000148   + label_112
+  IF ~!InParty("uxolr")~ THEN
+  REPLY @000150   + label_113
+  IF ~!InParty("uxvoi")~ THEN
+  REPLY @000153   + label_115
+  IF ~InParty("uxath")~ THEN
+  REPLY @000158   + label_116
   IF ~InParty("uxana")~ THEN
-  REPLY @000081   + label_110
+  REPLY @000081   + label_117
+  IF ~InParty("uxolr")~ THEN
+  REPLY @000156   + label_119
   IF ~InParty("uxvoi")~ THEN
-  REPLY @000083   + label_111
+  REPLY @000083   + label_120
+  IF ~InParty("uxzar")~ THEN
+  REPLY @000166   + label_121
+  ++ @000085 + label_122
+END
+
+IF ~~ THEN BEGIN label_122
+  SAY @000162
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN label_121
+  SAY @000165
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN label_120
+  SAY @000160
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN label_119
+  SAY @000154
+  IF ~~ THEN GOTO label_118
+END
+
+IF ~~ THEN BEGIN label_118
+  SAY @000155
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN label_117
+  SAY @000159
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN label_116
+  SAY @000157
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN label_115
+  SAY @000151
+  IF ~~ THEN GOTO label_114
+END
+
+IF ~~ THEN BEGIN label_114
+  SAY @000152
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN label_113
+  SAY @000149
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN label_112
+  SAY @000147
+  IF ~~ THEN EXIT
 END
 
 IF ~~ THEN BEGIN label_111
-  SAY @000082
+  SAY @000145
   IF ~~ THEN EXIT
 END
 
 IF ~~ THEN BEGIN label_110
-  SAY @000080
+  SAY @000076
   IF ~~ THEN EXIT
 END
 
@@ -104,7 +175,7 @@ IF ~~ THEN BEGIN label_108
 END
 
 IF ~~ THEN BEGIN label_107
-  SAY @000076
+  SAY @000141
   IF ~~ THEN EXIT
 END
 

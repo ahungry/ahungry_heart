@@ -7,6 +7,16 @@
                "EscapeArea()"]}
        "Let us depart."))
 
+(defn end-intro-no-leave []
+  (say {:code [(sg "ux_state" 60) # Just skip 50 events entirely
+               (sg "ux_keep_uxana" 1)
+               (sg "ux_keep_uxath" 1)
+               (sg "ux_keep_uxolr" 1)
+               (sg "ux_keep_uxvoi" 1)
+               (sg "ux_keep_uxzar" 1)
+               "EscapeArea()"]}
+       "As you wish."))
+
 (var
  urgent-message
  (say {:cond [(state 40)
@@ -22,8 +32,8 @@
       (r "Olrun" (end-intro :uxolr))
       (r "The Voice" (end-intro :uxvoi))
       (r "Zariel" (end-intro :uxzar))
-      (r "I'll catch up to you guys another time." (end-intro))
-      (r "Get lost, I don't want anything to do with the lot of you." (end-intro))
+      (r "You can all leave - I'll catch up to you guys another time." (end-intro))
+      (r "Get lost messenger! No one can leave, I'm on an urgent quest!" (end-intro-no-leave))
       ))
 
 (defn urgent-message-for [who name]

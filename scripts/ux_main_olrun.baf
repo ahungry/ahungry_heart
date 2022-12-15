@@ -56,6 +56,7 @@ SetLeavePartyDialogFile()
 LeaveParty()
 // Actually go to Durlag's Tower and admire it (You can use NWW )
 EscapeAreaObjectMove("%BG_PRE%0500", "North", 850, 280, SE)
+Continue()
 END
 
 // At this point, each member has reliably left, and we bump to state 60, more open ended
@@ -64,6 +65,7 @@ Global("ux_state", "GLOBAL", 54)
 THEN
 RESPONSE #100
 SetGlobal("ux_state", "GLOBAL", 60)
+Continue()
 END
 
 // Try to initiate some chit chat
@@ -85,6 +87,7 @@ SetGlobal("ux_olrun_is_bantering", "GLOBAL", 1)
 RealSetGlobalTimer("ux_olrun_banter_timer", "GLOBAL", 5)
 StartDialogueNoSet(Player1)
 SetGlobal("ux_olrun_is_bantering", "GLOBAL", 0)
+Continue()
 END
 
 // Pid stuff
@@ -97,4 +100,5 @@ SetGlobal("ux_olrun_wishes_to_pid", "GLOBAL", 0)
 SetGlobal("ux_olrun_is_pidding", "GLOBAL", 1)
 StartDialogueNoSet(Player1)
 SetGlobal("ux_olrun_is_pidding", "GLOBAL", 0)
+Continue()
 END

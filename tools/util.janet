@@ -6,7 +6,7 @@
   (say "So?"
        (rep {:cond [(state 20)]
              :code [
-                    (++state)
+                    (sg "ux_state" 30)
                     (rsgt "ux_athar_banter_timer" banter-timer)
                     (rsgt "ux_anari_banter_timer" banter-timer)
                     (rsgt "ux_voice_banter_timer" banter-timer)
@@ -22,7 +22,7 @@
             "I would love to join your group.")
 
        (rep {:code [
-                    (++state)
+                    (sg "ux_state" 30)
                     (rsgt (string/format "ux_%s_banter_timer" who) banter-timer)
                     (rsgt "ux_urgent_timer" 3)
                     (jp)
