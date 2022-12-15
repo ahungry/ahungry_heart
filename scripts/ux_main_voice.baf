@@ -16,6 +16,7 @@ END
 // Summon the special messenger
 IF
 Global("ux_state", "GLOBAL", 30)
+RealGlobalTimerExpired("ux_urgent_timer","GLOBAL")
 OR(5)
 InParty("uxana")
 InParty("uxath")
