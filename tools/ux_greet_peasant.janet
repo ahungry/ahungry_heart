@@ -3,12 +3,7 @@
 
 (defn end-intro [&opt who]
   (say {:code [(++state)
-               (lp :uxana)
-               (lp :uxath)
-               (lp :uxolr)
-               (lp :uxvoi)
-               (lp :uxzar)
-               (if who (jp who) "")
+               (sg (string/format "ux_keep_%s" (string who)))
                "EscapeArea()"]}
        "Let us depart."))
 

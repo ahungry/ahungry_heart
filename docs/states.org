@@ -16,3 +16,7 @@ A message arrives, breaking up the team (maybe never even do initial invite)
 
 * ux_state_50
 One hero is allowed to join, the urgent messenger has left at this point.
+
+We need to trigger 4 leave events at a minimum - probably handle
+single increments in the script file - then when the 5th one sees 4
+before it, it'll bump the counter up to 60.

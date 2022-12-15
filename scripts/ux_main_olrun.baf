@@ -41,6 +41,22 @@ CreateCreatureObjectOffScreen("uxpea",Player1,0,0,0)
 Continue()
 END
 
+// Split apart to head back to Baldur's Gate
+IF
+GlobalGT("ux_state", "GLOBAL", 49)
+GlobalLT("ux_state", "GLOBAL", 60)
+!Global("ux_keep_uxolr", "GLOBAL", 1)
+THEN
+RESPONSE #100
+IncrementGlobal("ux_state", "GLOBAL", 1)
+SetGlobal("ux_in_party_uxolr", "GLOBAL", 0)
+ChangeAIScript("",DEFAULT)
+SetLeavePartyDialogFile()
+LeaveParty()
+// Actually go to Durlag's Tower and admire it
+EscapeAreaObjectMove("%BG_PRE%0500", "North", 850, 280, 5)
+END
+
 // Try to initiate some chit chat
 IF
 InParty(Myself)

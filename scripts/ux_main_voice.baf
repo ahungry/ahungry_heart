@@ -29,6 +29,22 @@ CreateCreatureObjectOffScreen("uxpea",Player1,0,0,0)
 Continue()
 END
 
+// Split apart to head back to Baldur's Gate
+IF
+GlobalGT("ux_state", "GLOBAL", 49)
+GlobalLT("ux_state", "GLOBAL", 60)
+!Global("ux_keep_uxvoi", "GLOBAL", 1)
+THEN
+RESPONSE #100
+IncrementGlobal("ux_state", "GLOBAL", 1)
+SetGlobal("ux_in_party_uxvoi", "GLOBAL", 0)
+ChangeAIScript("",DEFAULT)
+SetLeavePartyDialogFile()
+LeaveParty()
+// Actually go Ulcaster School
+EscapeAreaObjectMove("%BG_PRE%3900", "North", 2440, 848, 5)
+END
+
 // Try to initiate some chit chat
 IF
 InParty(Myself)

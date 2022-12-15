@@ -29,6 +29,22 @@ CreateCreatureObjectOffScreen("uxpea",Player1,0,0,0)
 Continue()
 END
 
+// Split apart to head back to Baldur's Gate
+IF
+GlobalGT("ux_state", "GLOBAL", 49)
+GlobalLT("ux_state", "GLOBAL", 60)
+!Global("ux_keep_uxana", "GLOBAL", 1)
+THEN
+RESPONSE #100
+IncrementGlobal("ux_state", "GLOBAL", 1)
+SetGlobal("ux_in_party_uxana", "GLOBAL", 0)
+ChangeAIScript("",DEFAULT)
+SetLeavePartyDialogFile()
+LeaveParty()
+// Actually go to Kivan
+EscapeAreaObjectMove("%BG_PRE%3200", "North", 3712, 1474, 5)
+END
+
 // Try to initiate some chit chat
 IF
 InParty(Myself)
