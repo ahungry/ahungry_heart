@@ -1,8 +1,17 @@
 (use ./dialog)
 (use ./util)
 
+# Go view Durlag's Tower and admire it
+(var urgent-kick
+     (say {:cond [(state<= 50) (g "ux_in_party_uxolr")]
+           :code [(sg "ux_in_party_uxolr" 0)
+                  "EscapeAreaObjectMove(\"%BG_PRE%0500\", \"North\", 850, 280, 5)"
+                   ]}
+          "And that, as we say, is that."
+          ))
+
 (var kick-tree
-     (say {:cond [(g "ux_in_party_uxolr")]}
+     (say {:cond [(state> 50) (g "ux_in_party_uxolr")]}
           "Kicking me out, just like that huh?"
           (rep {:code [(sg "ux_in_party_uxolr" 0)]}
                "Yup, take a hike."
@@ -12,7 +21,7 @@
                (say "Lucky me."))))
 
 (var rejoin-tree
-     (say {:cond [(g "ux_in_party_uxolr" 0)]}
+     (say {:cond [(state> 50) (g "ux_in_party_uxolr" 0)]}
           "Oh, letting me come back, how sweet."
           (rep {:code [(sg "ux_in_party_uxolr" 1) (jp)]}
                "That's right Olrun, we missed you."

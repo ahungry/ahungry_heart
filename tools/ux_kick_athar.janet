@@ -1,8 +1,17 @@
 (use ./dialog)
 (use ./util)
 
+# Go meet up with Ajantis
+(var urgent-kick
+     (say {:cond [(state<= 50) (g "ux_in_party_uxath")]
+           :code [(sg "ux_in_party_uxath" 0)
+                  "EscapeAreaObjectMove(\"%BG_PRE%1400\", \"North\", 1520, 3147, 5)"
+                   ]}
+          "And that, as we say, is that."
+          ))
+
 (var kick-tree
-     (say {:cond [(g "ux_in_party_uxath")]}
+     (say {:cond [(state> 50) (g "ux_in_party_uxath")]}
           "Kicking me out, just like that huh?"
           (rep {:code [(sg "ux_in_party_uxath" 0)]}
                "Yup, take a hike."
@@ -12,7 +21,7 @@
                (say "Lucky me."))))
 
 (var rejoin-tree
-     (say {:cond [(g "ux_in_party_uxath" 0)]}
+     (say {:cond [(state> 50) (g "ux_in_party_uxath" 0)]}
           "Oh, letting me come back, how sweet."
           (rep {:code [(sg "ux_in_party_uxath" 1) (jp)]}
                "That's right Athar, we missed you."
@@ -21,6 +30,11 @@
                (say "Aw shucks."))))
 
 (defn main [& args]
-  (var kick (build-dialog kick-tree))
-  (var rejoin (build-dialog rejoin-tree))
-  (string/format "BEGIN uxathp\n%s%s" kick rejoin))
+  (string/format
+   "BEGIN uxathp\n%s"
+   (string/join
+    [
+     (build-dialog urgent-kick)
+     (build-dialog kick-tree)
+     (build-dialog rejoin-tree)
+    ] "\n")))

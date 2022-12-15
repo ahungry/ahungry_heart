@@ -43,11 +43,17 @@
 (defn ++state []
   (ig "ux_state" 10))
 
+(defn state> [n]
+  (ggt "ux_state" n))
+
+(defn state< [n]
+  (glt "ux_state" n))
+
 (defn state>= [n]
   (ggt "ux_state" (- n 1)))
 
 (defn state<= [n]
-  (ggt "ux_state" (+ n 1)))
+  (glt "ux_state" (+ n 1)))
 
 (defn lp [&opt who]
   (if who
