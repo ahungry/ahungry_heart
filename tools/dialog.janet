@@ -211,7 +211,7 @@
 
 (defn build-dialog [tree]
   (set results @[])
-  (set goto-id 0)
+  #(set goto-id 0)
   (array/push results (main tree))
   (string/join (reverse (uniq results))))
 

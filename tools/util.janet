@@ -12,7 +12,7 @@
                     (rsgt "ux_voice_banter_timer" banter-timer)
                     (rsgt "ux_olrun_banter_timer" banter-timer)
                     (rsgt "ux_zariel_banter_timer" banter-timer)
-                    (rsgt "ux_urgent_timer" 5)
+                    (rsgt "ux_urgent_timer" 3)
                     (jp :uxana)
                     (jp :uxath)
                     (jp :uxzar)
@@ -24,7 +24,7 @@
        (rep {:code [
                     (++state)
                     (rsgt (string/format "ux_%s_banter_timer" who) banter-timer)
-                    (rsgt "ux_urgent_timer" 30)
+                    (rsgt "ux_urgent_timer" 3)
                     (jp)
                     ]}
             "I can't join your group, but I would love to have you join mine.")

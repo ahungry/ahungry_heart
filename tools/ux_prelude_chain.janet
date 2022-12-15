@@ -36,12 +36,36 @@
    (== :uxolrj "Blast!  We had matters needing attention back there!")
    (== :uxanaj "Additionally, we have just extended an invitation to Gorion's Ward.")
    (== :uxzarj "Some timing...")
+   (== :uxvoij "Let us hear him out.")
    (== :uxpea "Please, it is urgent that you head there now.")
    (== :uxathj "<CHARNAME>, I think one of us can remain with you, but the rest must
  make haste to Baldur's Gate.  Would you choose to have one of us remain and assist
  you on your quest?")))
 
+(defn urgent-chain-bland [slot who]
+  (ict
+   :uxpea slot
+   (== who "What is it friend?")
+   (== :uxpea "There is an immediate need for your assistance back in Baldur's Gate.
+ Rumor has it that the gates are planned to be shut off due to problems in the
+ surrounding regions.")
+   (== who "Blast!  We had matters needing attention back there!")
+   (== who "Additionally, we have just extended an invitation to Gorion's Ward.")
+   (== :uxpea "Please, it is urgent that you head there now.")
+   (== who "<CHARNAME>, I think one of us can remain with you, but the rest must
+ make haste to Baldur's Gate.  Would you choose to have one of us remain and assist
+ you on your quest?")))
+
 (defn main [& args]
-  (string/join [(prelude-chain 2)
-                (prelude-chain 4)
-                (urgent-chain 0)] "\n"))
+  (string/join
+   [
+    (prelude-chain 2)
+    (prelude-chain 4)
+    (urgent-chain 0)
+    # Check via decompiled 'weidu uxpea.dlg' post install
+    (urgent-chain-bland 8 :uxanaj)
+    (urgent-chain-bland 16 :uxathj)
+    (urgent-chain-bland 24 :uxolrj)
+    (urgent-chain-bland 32 :uxvoij)
+    (urgent-chain-bland 40 :uxzarj)
+   ] "\n"))
