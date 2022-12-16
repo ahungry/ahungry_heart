@@ -97,8 +97,8 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/ux_party_banters.d~
 LAF HANDLE_AUDIO INT_VAR music = 1 END
 
 // DEBUG Lines to make the party present at game start
-EXTEND_TOP ~AR2600.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
-EXTEND_TOP ~BG2600.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
+// EXTEND_TOP ~AR2600.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
+// EXTEND_TOP ~BG2600.bcs~ ~%MOD_FOLDER%/scripts/spawn.baf~
 // Spawn at Feldeposts
 // EXTEND_TOP ~BG2616.bcs~ ~%MOD_FOLDER%/scripts/spawn2.baf~
 

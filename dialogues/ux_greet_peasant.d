@@ -60,13 +60,13 @@ IF ~Global("ux_state", "GLOBAL", 40) InParty("uxana")~ THEN BEGIN label_204
   REPLY @000123   + label_200
   IF ~InParty("uxzar")~ THEN
   REPLY @000043   + label_201
-  ++ @000126 + label_202
-  ++ @000127 + label_203
+  ++ @000179 + label_202
+  ++ @000181 + label_203
 END
 
 IF ~~ THEN BEGIN label_203
-  SAY @000125
-  IF ~True()~ DO ~IncrementGlobal("ux_state", "GLOBAL", 10) SetGlobal("ux_keep_", "GLOBAL", 1) EscapeArea()~ EXIT
+  SAY @000180
+  IF ~True()~ DO ~SetGlobal("ux_state", "GLOBAL", 60) SetGlobal("ux_keep_uxana", "GLOBAL", 1) SetGlobal("ux_keep_uxath", "GLOBAL", 1) SetGlobal("ux_keep_uxolr", "GLOBAL", 1) SetGlobal("ux_keep_uxvoi", "GLOBAL", 1) SetGlobal("ux_keep_uxzar", "GLOBAL", 1) EscapeArea()~ EXIT
 END
 
 IF ~~ THEN BEGIN label_202
@@ -112,13 +112,13 @@ IF ~Global("ux_state", "GLOBAL", 40) InParty("uxath")~ THEN BEGIN label_212
   REPLY @000123   + label_208
   IF ~InParty("uxzar")~ THEN
   REPLY @000043   + label_209
-  ++ @000126 + label_210
-  ++ @000127 + label_211
+  ++ @000179 + label_210
+  ++ @000181 + label_211
 END
 
 IF ~~ THEN BEGIN label_211
-  SAY @000125
-  IF ~True()~ DO ~IncrementGlobal("ux_state", "GLOBAL", 10) SetGlobal("ux_keep_", "GLOBAL", 1) EscapeArea()~ EXIT
+  SAY @000180
+  IF ~True()~ DO ~SetGlobal("ux_state", "GLOBAL", 60) SetGlobal("ux_keep_uxana", "GLOBAL", 1) SetGlobal("ux_keep_uxath", "GLOBAL", 1) SetGlobal("ux_keep_uxolr", "GLOBAL", 1) SetGlobal("ux_keep_uxvoi", "GLOBAL", 1) SetGlobal("ux_keep_uxzar", "GLOBAL", 1) EscapeArea()~ EXIT
 END
 
 IF ~~ THEN BEGIN label_210
@@ -164,13 +164,13 @@ IF ~Global("ux_state", "GLOBAL", 40) InParty("uxolr")~ THEN BEGIN label_220
   REPLY @000123   + label_216
   IF ~InParty("uxzar")~ THEN
   REPLY @000043   + label_217
-  ++ @000126 + label_218
-  ++ @000127 + label_219
+  ++ @000179 + label_218
+  ++ @000181 + label_219
 END
 
 IF ~~ THEN BEGIN label_219
-  SAY @000125
-  IF ~True()~ DO ~IncrementGlobal("ux_state", "GLOBAL", 10) SetGlobal("ux_keep_", "GLOBAL", 1) EscapeArea()~ EXIT
+  SAY @000180
+  IF ~True()~ DO ~SetGlobal("ux_state", "GLOBAL", 60) SetGlobal("ux_keep_uxana", "GLOBAL", 1) SetGlobal("ux_keep_uxath", "GLOBAL", 1) SetGlobal("ux_keep_uxolr", "GLOBAL", 1) SetGlobal("ux_keep_uxvoi", "GLOBAL", 1) SetGlobal("ux_keep_uxzar", "GLOBAL", 1) EscapeArea()~ EXIT
 END
 
 IF ~~ THEN BEGIN label_218
@@ -216,13 +216,13 @@ IF ~Global("ux_state", "GLOBAL", 40) InParty("uxvoi")~ THEN BEGIN label_228
   REPLY @000123   + label_224
   IF ~InParty("uxzar")~ THEN
   REPLY @000043   + label_225
-  ++ @000126 + label_226
-  ++ @000127 + label_227
+  ++ @000179 + label_226
+  ++ @000181 + label_227
 END
 
 IF ~~ THEN BEGIN label_227
-  SAY @000125
-  IF ~True()~ DO ~IncrementGlobal("ux_state", "GLOBAL", 10) SetGlobal("ux_keep_", "GLOBAL", 1) EscapeArea()~ EXIT
+  SAY @000180
+  IF ~True()~ DO ~SetGlobal("ux_state", "GLOBAL", 60) SetGlobal("ux_keep_uxana", "GLOBAL", 1) SetGlobal("ux_keep_uxath", "GLOBAL", 1) SetGlobal("ux_keep_uxolr", "GLOBAL", 1) SetGlobal("ux_keep_uxvoi", "GLOBAL", 1) SetGlobal("ux_keep_uxzar", "GLOBAL", 1) EscapeArea()~ EXIT
 END
 
 IF ~~ THEN BEGIN label_226
@@ -268,13 +268,13 @@ IF ~Global("ux_state", "GLOBAL", 40) InParty("uxzar")~ THEN BEGIN label_236
   REPLY @000123   + label_232
   IF ~InParty("uxzar")~ THEN
   REPLY @000043   + label_233
-  ++ @000126 + label_234
-  ++ @000127 + label_235
+  ++ @000179 + label_234
+  ++ @000181 + label_235
 END
 
 IF ~~ THEN BEGIN label_235
-  SAY @000125
-  IF ~True()~ DO ~IncrementGlobal("ux_state", "GLOBAL", 10) SetGlobal("ux_keep_", "GLOBAL", 1) EscapeArea()~ EXIT
+  SAY @000180
+  IF ~True()~ DO ~SetGlobal("ux_state", "GLOBAL", 60) SetGlobal("ux_keep_uxana", "GLOBAL", 1) SetGlobal("ux_keep_uxath", "GLOBAL", 1) SetGlobal("ux_keep_uxolr", "GLOBAL", 1) SetGlobal("ux_keep_uxvoi", "GLOBAL", 1) SetGlobal("ux_keep_uxzar", "GLOBAL", 1) EscapeArea()~ EXIT
 END
 
 IF ~~ THEN BEGIN label_234

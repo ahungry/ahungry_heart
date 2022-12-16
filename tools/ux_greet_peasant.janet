@@ -47,8 +47,8 @@
       (r {:cond [(in-party :uxolr)]} "Olrun" (end-intro :uxolr))
       (r {:cond [(in-party :uxvoi)]} "The Voice" (end-intro :uxvoi))
       (r {:cond [(in-party :uxzar)]} "Zariel" (end-intro :uxzar))
-      (r "I'll catch up to you guys another time." (end-intro))
-      (r "Get lost, I don't want anything to do with the lot of you." (end-intro))
+      (r "You can all leave - I'll catch up to you guys another time." (end-intro))
+      (r "Get lost messenger! No one can leave, I'm on an urgent quest!" (end-intro-no-leave))
       ))
 
 (defn main [& args]
