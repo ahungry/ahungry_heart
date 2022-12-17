@@ -1,0 +1,3 @@
+[submodule "dialogues"]
+	path = dialogues
+	url = git@github.com:ahungry/ahungry_heart_dialogues.git
