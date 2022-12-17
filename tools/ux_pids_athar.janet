@@ -40,6 +40,36 @@
  it is comforting to have companions to rely upon.
  I will fight to protect both of you, even in the darkest of times."))))
 
+          (r {:cond [(state>= 80)
+                   "OR(5)"
+                   (not-in-party :uxana)
+                   (not-in-party :uxath)
+                   (not-in-party :uxolr)
+                   (not-in-party :uxvoi)
+                   (not-in-party :uxzar)
+                   ]}
+           "Where do you think your previous groupmates are?"
+           (s "Which one?"
+              (r {:cond [(not-in-party :uxana)]}
+                 "What do you think Anari is up to?"
+                 (s "Last I heard from her, she had plans to look south of where
+ we first met."))
+
+              (r {:cond [(not-in-party :uxolr)]}
+                 "What do you think Olrun is up to?"
+                 (s "Olrun has a strong sense of adventure - anywhere that's
+ extremely trap-laden and dangerous, that's where I would guess."))
+
+              (r {:cond [(not-in-party :uxvoi)]}
+                 "What do you think The Voice is up to?"
+                 (s "I believe they would be with those of a similar demeanor - probably
+ those of the ghostly sort."))
+
+              (r {:cond [(not-in-party :uxzar)]}
+                 "What do you think Zariel is up to?"
+                 (s "She can be pretty young at heart - what kind of things do kids like?"))
+            ))
+
          (r "What do you think of our peers?"
            (s "Which one in particular?"
               (r "How about me?"
@@ -49,34 +79,13 @@
                  "What do you think of Imoen?"
                  (s "Hmm"))
 
-              (r {:cond [(in-party :imoen2)]}
-                 "What do you think of Imoen2?"
-                 (s "Hmm"))
+              # (r {:cond [(in-party :imoen2)]}
+              #    "What do you think of Imoen2?"
+              #    (s "Hmm"))
 
-              (r {:cond [(in-party :imoen1)]}
-                 "What do you think of Imoen1?"
-                 (s "Hmm"))
-
-              # BEGIN: Find friends dialogue
-              (r {:cond [(state>= 80) (not-in-party :uxana)]}
-                 "What do you think Anari is up to?"
-                 (s "Last I heard from her, she had plans to look south of where
- we first met."))
-
-              (r {:cond [(state>= 80) (not-in-party :uxolr)]}
-                 "What do you think Olrun is up to?"
-                 (s "Olrun has a strong sense of adventure - anywhere that's
- extremely trap-laden and dangerous, that's where I would guess."))
-
-              (r {:cond [(state>= 80) (not-in-party :uxvoi)]}
-                 "What do you think The Voice is up to?"
-                 (s "I believe they would be with those of a similar demeanor - probably
- those of the ghostly sort."))
-
-              (r {:cond [(state>= 80) (not-in-party :uxzar)]}
-                 "What do you think Zariel is up to?"
-                 (s "She can be pretty young at heart - what kind of things do kids like?"))
-              # END: Find friends dialogue
+              # (r {:cond [(in-party :imoen1)]}
+              #    "What do you think of Imoen1?"
+              #    (s "Hmm"))
 
               # BEGIN: Core friends
               (r {:cond [(in-party :uxath)]}
