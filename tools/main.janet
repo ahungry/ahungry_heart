@@ -1,5 +1,5 @@
 (use ./dialog)
-(use ./util)
+(load-imports)
 
 (import ./ux_greet_olrun :as greet-olrun)
 (import ./ux_greet_anari :as greet-anari)

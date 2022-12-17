@@ -1,5 +1,5 @@
-(use ./lib/actions)
 (use ./dialog)
+(use ./lib/actions)
 
 (def banter-timer 300)
 
