@@ -12,6 +12,11 @@
 (defn rsgt [s &opt i]
   (string/format "RealSetGlobalTimer(\"%s\", \"GLOBAL\", %d)" s (or i 1)))
 
+# See: https://gibberlings3.github.io/iesdp/files/ids/bgee/gtimes.htm
+# Use something like SEVEN_HOURS
+(defn sgt [s i]
+  (string/format "SetGlobalTimer(\"%s\", \"GLOBAL\", %s)" s i))
+
 (defn sg [s &opt i]
   (string/format "SetGlobal(\"%s\", \"GLOBAL\", %d)" s (or i 1)))
 

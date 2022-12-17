@@ -58,22 +58,22 @@
                  (s "Hmm"))
 
               # BEGIN: Find friends dialogue
-              (r {:cond [(state>= 70) (not-in-party :uxana)]}
+              (r {:cond [(state>= 80) (not-in-party :uxana)]}
                  "What do you think Anari is up to?"
                  (s "Last I heard from her, she had plans to look south of where
  we first met."))
 
-              (r {:cond [(state>= 70) (not-in-party :uxolr)]}
+              (r {:cond [(state>= 80) (not-in-party :uxolr)]}
                  "What do you think Olrun is up to?"
                  (s "Olrun has a strong sense of adventure - anywhere that's
  extremely trap-laden and dangerous, that's where I would guess."))
 
-              (r {:cond [(state>= 70) (not-in-party :uxvoi)]}
+              (r {:cond [(state>= 80) (not-in-party :uxvoi)]}
                  "What do you think The Voice is up to?"
                  (s "I believe they would be with those of a similar demeanor - probably
  those of the ghostly sort."))
 
-              (r {:cond [(state>= 70) (not-in-party :uxzar)]}
+              (r {:cond [(state>= 80) (not-in-party :uxzar)]}
                  "What do you think Zariel is up to?"
                  (s "She can be pretty young at heart - what kind of things do kids like?"))
               # END: Find friends dialogue

@@ -52,6 +52,19 @@ SetGlobal("ux_state", "GLOBAL", 60)
 Continue()
 END
 
+// Summon the special messenger for the second message
+IF
+Global("ux_state", "GLOBAL", 60)
+GlobalTimerExpired("ux_bg_is_closed_timer","GLOBAL")
+!InParty("uxana")
+InParty("uxath")
+THEN
+RESPONSE #100
+IncrementGlobal("ux_state", "GLOBAL", 10)
+CreateCreatureObjectOffScreen("uxpea",Player1,0,0,0)
+Continue()
+END
+
 // Try to initiate some chit chat
 IF
 InParty(Myself)

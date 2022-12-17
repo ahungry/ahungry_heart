@@ -156,4 +156,7 @@
 @000197 = ~Zzz, huh, what?  Who's there?~ [uxzar55]
 @000199 = ~Oh, it's you, I was hoping to see you again!~ [uxzar60]
 @000201 = ~Safe travels.~
-@000203 = ~<CHARNAME>, one of us can remain with you, however the rest must make haste to Baldur's Gate.  Who shall it be?~
+@000205 = ~Hail <CHARNAME>, it is good fortune to find you here. Your friends wanted me to relay a message should we encounter each other again.~
+@000206 = ~When we had reached Baldur's Gate, we were met with bad news.  They had already closed up the city.  Given this, our heroes have taken a much needed break.~
+@000207 = ~Should you seek to reunite, I believe they know each other quite well, and should probably be able to provide you with some clues as to how to find each other once again.~
+@000209 = ~<CHARNAME>, one of us can remain with you, however the rest must make haste to Baldur's Gate.  Who will stay?~

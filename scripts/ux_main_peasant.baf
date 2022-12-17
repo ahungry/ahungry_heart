@@ -9,3 +9,14 @@ StartDialogueNoSet(Player1)
 // EscapeArea()
 // SetInterrupt(TRUE)
 END
+
+IF
+Global("ux_state", "GLOBAL", 70)
+THEN RESPONSE #100
+// StartDialogue("uxpea", [PC])
+// SetInterrupt(FALSE)
+MoveToObjectNoInterrupt(Player1)
+StartDialogueNoSet(Player1)
+// EscapeArea()
+// SetInterrupt(TRUE)
+END

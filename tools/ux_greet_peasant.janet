@@ -4,11 +4,13 @@
 (defn end-intro [&opt who]
   (say {:code [(++state)
                (sg (string/format "ux_keep_%s" (string who)))
+               #(sgt "ux_bg_is_closed_timer" "SEVEN_HOURS")
+               (sgt "ux_bg_is_closed_timer" "ONE_ROUND")
                "EscapeArea()"]}
        "Let us depart."))
 
 (defn end-intro-no-leave []
-  (say {:code [(sg "ux_state" 60) # Just skip 50 events entirely
+  (say {:code [(sg "ux_state" 80) # Just skip 50 (leave) and 60/70 (sleep) events entirely
                (sg "ux_keep_uxana" 1)
                (sg "ux_keep_uxath" 1)
                (sg "ux_keep_uxolr" 1)
@@ -51,6 +53,20 @@
       (r "Get lost messenger! No one can leave, I'm on an urgent quest!" (end-intro-no-leave))
       ))
 
+(var
+ gates-closed
+ (s {:cond [(state 70)]}
+    "Hail <CHARNAME>, it is good fortune to find you here.
+ Your friends wanted me to relay a message should we encounter each
+ other again."
+    (s "When we had reached Baldur's Gate, we were met with bad
+ news.  They had already closed up the city.  Given this, our
+ heroes have taken a much needed break."
+       (s {:code [(++state) "EscapeArea()"]}
+          "Should you seek to reunite, I believe they know each
+ other quite well, and should probably be able to provide you with
+ some clues as to how to find each other once again."))))
+
 (defn main [& args]
   (string/format
    "BEGIN uxpea\n%s"
@@ -60,4 +76,5 @@
                  (build-dialog (urgent-message-for :uxolr "Olrun"))
                  (build-dialog (urgent-message-for :uxvoi "The Voice"))
                  (build-dialog (urgent-message-for :uxzar "Zariel"))
+                 (build-dialog gates-closed)
                 ] "\n")))
