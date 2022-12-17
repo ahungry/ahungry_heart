@@ -62,7 +62,7 @@
     (s "When we had reached Baldur's Gate, we were met with bad
  news.  They had already closed up the city.  Given this, our
  heroes have taken a much needed break."
-       (s {:code [(++state) "EscapeArea()"]}
+       (s {:code [(++state) (++state) "EscapeArea()"]}
           "Should you seek to reunite, I believe they know each
  other quite well, and should probably be able to provide you with
  some clues as to how to find each other once again."))))

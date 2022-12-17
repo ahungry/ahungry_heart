@@ -64,8 +64,9 @@ GlobalTimerExpired("ux_bg_is_closed_timer","GLOBAL")
 InParty("uxvoi")
 THEN
 RESPONSE #100
-IncrementGlobal("ux_state", "GLOBAL", 10)
 CreateCreatureObjectOffScreen("uxpea",Player1,0,0,0)
+// Keep running this till it happens
+SetGlobalTimer("ux_bg_is_closed_timer", "GLOBAL", SEVEN_ROUNDS)
 Continue()
 END
 
