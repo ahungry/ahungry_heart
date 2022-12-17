@@ -6,7 +6,8 @@
  (say {:cond [(state 10)]}
       # uxzar55 has the ZZZ noise
       "*grunts*  [uxzar59]"
-      (rep {:code [(sg "ux_state" 11)]}
+      (rep {:code [(sg "ux_state" 11)
+                   (rsgt "ux_zariel_awaken" 3)]}
            "Hey, wake up!"
            (say "Zzz, huh, what?  Who's there? [uxzar55]"))
       (rep "( let her sleep )")))

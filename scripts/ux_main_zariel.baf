@@ -22,6 +22,7 @@ END
 
 IF
 Global("ux_state", "GLOBAL", 11)
+RealGlobalTimerExpired("ux_zariel_awaken", "GLOBAL")
 THEN RESPONSE #100
 StartDialogueNoSet(Player1)
 END
