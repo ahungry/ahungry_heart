@@ -31,15 +31,18 @@ We need to trigger 4 leave events at a minimum - probably handle
 single increments in the script file - then when the 5th one sees 4
 before it, it'll bump the counter up to 60.
 
-* ux_state_60
+* DONE ux_state_60
 At this point, we want to delay until the player rests, then we'll
 bump the state for the search dialogues at 70.  At 60 the remaining
 npc should just talk about how their friends are OTW to BG.
 
-* ux_state_70
+* DONE ux_state_70
 At 70, the messenger will interrupt the party and bump to 80, which is
 the true open ended segment.
 
-* ux_state_80
+* DONE ux_state_80
 Now the player can do whatever they want (go find their friends)
 Any other quests we add can be ux_state_npc specific
+
+** TODO Ensure if we do not talk to the messenger, npcs still progres...
+Test this by avoiding the messenger's second dialogue.

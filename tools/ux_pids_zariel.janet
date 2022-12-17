@@ -79,14 +79,6 @@
                  "What do you think of Imoen?"
                  (s "Seems her and I are quite similar."))
 
-              # (r {:cond [(in-party :imoen2)]}
-              #    "What do you think of Imoen2?"
-              #    (s "Seems her and I are quite similar."))
-
-              # (r {:cond [(in-party :imoen1)]}
-              #    "What do you think of Imoen1?"
-              #    (s "Seems her and I are quite similar."))
-
               # BEGIN: Core friends
               (r {:cond [(in-party :uxath)]}
                  "What do you think of Athar?"

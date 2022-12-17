@@ -79,14 +79,6 @@
                  "What do you think of Imoen?"
                  (s "Hmm"))
 
-              # (r {:cond [(in-party :imoen2)]}
-              #    "What do you think of Imoen2?"
-              #    (s "Hmm"))
-
-              # (r {:cond [(in-party :imoen1)]}
-              #    "What do you think of Imoen1?"
-              #    (s "Hmm"))
-
               # BEGIN: Core friends
               (r {:cond [(in-party :uxath)]}
                  "What do you think of Athar?"
@@ -100,11 +92,9 @@
 
               (r {:cond [(in-party :uxolr)]}
                  "What do you think of Olrun?"
-                 (s "He's a great friend.  Scooped me up off the streets of
- Baldur's Gate, quite literally."
-                    (s "I had fallen on some rough times, and being of my unique
- nature, random townsfolk are, well...less than helpful.  Luckily Olrun
- came around when he did.")))
+                 (s "Quite a warrior, he revels in the chaos of battle.
+  Unfortunate for our enemies, but quite a boon for us."
+                    ))
 
               (r {:cond [(in-party :uxvoi)]}
                  "What do you think of The Voice?"
