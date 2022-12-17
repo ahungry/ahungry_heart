@@ -1,14 +1,14 @@
-* ux_state_0
+* DONE ux_state_0
 This is the beginning of the game - basically the prelude.
 
-* ux_state_10
+* DONE ux_state_10
 This is after the intro conversation - Zariel will end up asleep.
 
-* ux_state_20
+* DONE ux_state_20
 Someone woke her up, now we may or may not invite all heros (only once
 a check).
 
-* ux_state_30
+* DONE ux_state_30
 Full hero team was invited, or an individual was.  We want to trigger
 the event that pulls in a messenger and bumps us to 40, but do not
 want to end up summoning multiple messengers.  We can probably do it
@@ -21,12 +21,17 @@ else will try to check NOT Anari.  Then NOT Anari and NOT Athar etc.,
 until Zariel herself will summon, but only if none of the other 4 are
 in party (race condition in state increment does not ensure uniqueness).
 
-* ux_state_40
+* DONE ux_state_40
 A message arrives, breaking up the team (maybe never even do initial invite)
 
-* ux_state_50
+* DONE ux_state_50
 One hero is allowed to join, the urgent messenger has left at this point.
 
 We need to trigger 4 leave events at a minimum - probably handle
 single increments in the script file - then when the 5th one sees 4
 before it, it'll bump the counter up to 60.
+
+* ux_state_60
+At this point, we want to delay until the player rests, then we'll
+bump the state for the search dialogues at 70.  At 60 the remaining
+npc should just talk about how their friends are OTW to BG.

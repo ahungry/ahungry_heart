@@ -58,22 +58,22 @@
                  (s "Seems her and I are quite similar."))
 
               # BEGIN: Find friends dialogue
-              (r {:cond [(not-in-party :uxana)]}
+              (r {:cond [(state>= 70) (not-in-party :uxana)]}
                  "What do you think Anari is up to?"
                  (s "She's always been fond of making new friends with her own folk.
  I would probably try looking for her close to one of her own kind."))
 
-              (r {:cond [(not-in-party :uxath)]}
+              (r {:cond [(state>= 70) (not-in-party :uxath)]}
                  "What do you think Athar is up to?"
                  (s "No doubt espousing the virtues of paladin-hood with
  like minded folk."))
 
-              (r {:cond [(not-in-party :uxolr)]}
+              (r {:cond [(state>= 70) (not-in-party :uxolr)]}
                  "What do you think Olrun is up to?"
                  (s "If I know him, he's likely out seeking something or other
  related to dwarf heritage.  You know how they are."))
 
-              (r {:cond [(not-in-party :uxvoi)]}
+              (r {:cond [(state>= 70) (not-in-party :uxvoi)]}
                  "What do you think The Voice is up to?"
                  (s "Hmmm...that's a hard one to guess..."
                     (s "Maybe try looking somewhere mystical and maze-like?")))
