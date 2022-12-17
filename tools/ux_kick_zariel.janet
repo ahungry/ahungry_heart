@@ -5,10 +5,8 @@
 # Go meet up with the spinning wheel at Nashkel Carnival
 (var urgent-kick
      (say {:cond [(state<= 50) (g "ux_in_party_uxzar")]
-           :code [(sg "ux_in_party_uxzar" 0)
-                  "EscapeAreaObjectMove(\"%BG_PRE%4904\", \"North\", 448, 227, 5)"
-                   ]}
-          "And that, as we say, is that."
+           :code [(sg "ux_in_party_uxzar" 0)]}
+          "Aw, too bad."
           ))
 
 (var kick-tree

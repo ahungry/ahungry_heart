@@ -4,10 +4,8 @@
 # Go meet up with Ajantis
 (var urgent-kick
      (say {:cond [(state<= 50) (g "ux_in_party_uxath")]
-           :code [(sg "ux_in_party_uxath" 0)
-                  "EscapeAreaObjectMove(\"%BG_PRE%1400\", \"North\", 1520, 3147, 5)"
-                   ]}
-          "And that, as we say, is that."
+           :code [(sg "ux_in_party_uxath" 0)]}
+          "Safe travels."
           ))
 
 (var kick-tree

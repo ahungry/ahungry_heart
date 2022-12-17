@@ -38,9 +38,8 @@
    (== :uxzarj "Some timing...")
    (== :uxvoij "Let us hear him out.")
    (== :uxpea "Please, it is urgent that you head there now.")
-   (== :uxathj "<CHARNAME>, I think one of us can remain with you, but the rest must
- make haste to Baldur's Gate.  Would you choose to have one of us remain and assist
- you on your quest?")))
+   (== :uxathj "<CHARNAME>, one of us can remain with you, however the rest must
+ make haste to Baldur's Gate.  Who shall it be?")))
 
 (defn urgent-chain-bland [slot who]
   (ict
@@ -52,9 +51,8 @@
    (== who "Blast!  We had matters needing attention back there!")
    (== who "Additionally, we have just extended an invitation to Gorion's Ward.")
    (== :uxpea "Please, it is urgent that you head there now.")
-   (== who "<CHARNAME>, I think one of us can remain with you, but the rest must
- make haste to Baldur's Gate.  Would you choose to have one of us remain and assist
- you on your quest?")))
+   (== who "<CHARNAME>, one of us can remain with you, however the rest must
+ make haste to Baldur's Gate.  Who shall it be?")))
 
 (defn main [& args]
   (string/join

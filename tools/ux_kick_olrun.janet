@@ -4,10 +4,8 @@
 # Go view Durlag's Tower and admire it
 (var urgent-kick
      (say {:cond [(state<= 50) (g "ux_in_party_uxolr")]
-           :code [(sg "ux_in_party_uxolr" 0)
-                  "EscapeAreaObjectMove(\"%BG_PRE%0500\", \"North\", 850, 280, 5)"
-                   ]}
-          "And that, as we say, is that."
+           :code [(sg "ux_in_party_uxolr" 0)]}
+          "It was brief, but it was fun."
           ))
 
 (var kick-tree

@@ -4,10 +4,8 @@
 # Go observe Ulcaster School
 (var urgent-kick
      (say {:cond [(state<= 50) (g "ux_in_party_uxvoi")]
-           :code [(sg "ux_in_party_uxvoi" 0)
-                  "EscapeAreaObjectMove(\"%BG_PRE%3900\", \"North\", 2440, 848, 5)"
-                   ]}
-          "And that, as we say, is that."
+           :code [(sg "ux_in_party_uxvoi" 0)]}
+          "As you wish."
           ))
 
 (var kick-tree

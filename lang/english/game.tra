@@ -100,13 +100,11 @@
 @000105 = ~Additionally, we have just extended an invitation to Gorion's Ward.~
 @000106 = ~Some timing...~
 @000107 = ~Please, it is urgent that you head there now.~
-@000108 = ~<CHARNAME>, I think one of us can remain with you, but the rest must make haste to Baldur's Gate.  Would you choose to have one of us remain and assist you on your quest?~
 @000110 = ~I would love to join your group.~
 @000121 = ~Anari~
 @000122 = ~Olrun~
 @000123 = ~The Voice~
 @000125 = ~Let us depart.~
-@000129 = ~And that, as we say, is that.~
 @000132 = ~Let us hear him out.~
 @000135 = ~Excuse me, are you the party of Anari?  Yes, yes, I believe you are.~
 @000136 = ~Excuse me, are you the party of Athar?  Yes, yes, I believe you are.~
@@ -157,3 +155,5 @@
 @000191 = ~*grunts* ~ [uxzar59]
 @000197 = ~Zzz, huh, what?  Who's there?~ [uxzar55]
 @000199 = ~Oh, it's you, I was hoping to see you again!~ [uxzar60]
+@000201 = ~Safe travels.~
+@000203 = ~<CHARNAME>, one of us can remain with you, however the rest must make haste to Baldur's Gate.  Who shall it be?~
