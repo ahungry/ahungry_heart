@@ -1,5 +1,5 @@
 (use ./dialog)
-(use ./util)
+(load-imports)
 
 # Go observe Ulcaster School
 (var urgent-kick

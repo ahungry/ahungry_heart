@@ -1,5 +1,5 @@
 (use ./dialog)
-(use ./util)
+(load-imports)
 
 (defn end-intro [&opt who]
   (say {:code [(++state)

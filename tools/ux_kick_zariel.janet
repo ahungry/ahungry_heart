@@ -1,3 +1,4 @@
+(use ./lib/actions)
 (use ./dialog)
 (use ./util)
 

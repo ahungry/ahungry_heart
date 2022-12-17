@@ -1,5 +1,5 @@
 (use ./dialog)
-(use ./util)
+(load-imports)
 
 (defn olrun-glory []
   (say "Going down in the glory of battle!  I'd have it no other way. [uxolr16]"))

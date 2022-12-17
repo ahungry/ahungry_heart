@@ -1,5 +1,5 @@
 (use ./dialog)
-(use ./util)
+(load-imports)
 
 # Go meet up with Ajantis
 (var urgent-kick

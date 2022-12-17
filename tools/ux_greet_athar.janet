@@ -1,5 +1,5 @@
 (use ./dialog)
-(use ./util)
+(load-imports)
 
 (var sleepy-tree (say {:cond [(state 10)]} "Sorry, I'm busy at the moment."))
 

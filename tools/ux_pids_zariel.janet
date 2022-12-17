@@ -1,5 +1,5 @@
 (use ./dialog)
-(use ./util)
+(load-imports)
 
 (var banter-1-tree
      (s {:cond [(g "ux_zariel_is_bantering")

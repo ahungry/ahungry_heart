@@ -1,5 +1,5 @@
 (use ./dialog)
-(use ./util)
+(load-imports)
 
 # Go view Durlag's Tower and admire it
 (var urgent-kick
