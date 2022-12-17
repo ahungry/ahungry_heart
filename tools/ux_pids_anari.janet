@@ -63,7 +63,7 @@
               (r {:cond [(not-in-party :uxvoi)]}
                  "What do you think The Voice is up to?"
                  (s "The Voice has always shown an interest in areas
- of historical interest.  I would check firewine, ulcaster, or those types."))
+ of historical interest.  I would check Firewine, Ulcaster, or those types."))
 
               (r {:cond [(not-in-party :uxzar)]}
                  "What do you think Zariel is up to?"
@@ -81,32 +81,31 @@
 
               # BEGIN: Core friends
               (r {:cond [(in-party :uxath)]}
-                 "What do you think of Athar?"
+                 "What do you think of Anari?"
                  (s "Surely you jest."))
 
               (r {:cond [(in-party :uxana)]}
-                 "What do you think of Anari?"
-                 (s "Anari is a long time friend.  She's lived in the areas
- surrounding Baldur's Gate for quite awhile.  More of the nomadic type than
- the settle-down type.  We've often traveled together."))
+                 "What do you think of Athar?"
+                 (s "Athar is a virtuous soul.  While some of his profession
+ tend to fall into a holier-than-thou mindset, he remains quite grounded.
+ I believe that's why our friendship has persisted for as long as it has."))
 
               (r {:cond [(in-party :uxolr)]}
                  "What do you think of Olrun?"
-                 (s "Quite a warrior, he revels in the chaos of battle.
-  Unfortunate for our enemies, but quite a boon for us."
-                    ))
+                 (s "He's a wild one.  A gentle soul, although he keeps
+ that side to himself for the most part.  He's responsible for Zariel being
+ who she is today."))
 
               (r {:cond [(in-party :uxvoi)]}
                  "What do you think of The Voice?"
-                 (s "The Voice speaks with a lot of wisdom and sense.  They're
- the lynchpin that keeps our group grounded and together."))
+                 (s "The Voice lives up to their name.  They are definitely
+ a voice of reason among our adventures."))
 
               (r {:cond [(in-party :uxzar)]}
                  "What do you think of Zariel?"
-                 (s "Despite fate working against her, I believe she has
- a good nature at her core.  You can't really be \"good\" in the traditional
- sense when of her heritage - at least not without true conviction, but
- she's not the murderous sort - just the mischievous sort."))
+                 (s "Zariel is quite a fun character.  I've enjoyed having
+ her along.  Had it not been for Olrun, who knows what cage she might be
+ rotting in."))
               # END: Core friends
 
               (r "Nevermind..."

@@ -81,32 +81,33 @@
 
               # BEGIN: Core friends
               (r {:cond [(in-party :uxath)]}
-                 "What do you think of Athar?"
-                 (s "Surely you jest."))
+                 "What do you think of Olrun?"
+                 (s "Hah, good one <CHARNAME>, good one!  Are you a counselor?"))
 
               (r {:cond [(in-party :uxana)]}
                  "What do you think of Anari?"
-                 (s "Anari is a long time friend.  She's lived in the areas
- surrounding Baldur's Gate for quite awhile.  More of the nomadic type than
- the settle-down type.  We've often traveled together."))
+                 (s "She's got the sharpest aim with that bow ofhers.  I'd hate
+ to be on the receiving end.  Her calm demeanor and temperament is paramount
+ to our team's cohesiveness."))
 
               (r {:cond [(in-party :uxolr)]}
-                 "What do you think of Olrun?"
-                 (s "Quite a warrior, he revels in the chaos of battle.
-  Unfortunate for our enemies, but quite a boon for us."
-                    ))
+                 "What do you think of Athar?"
+                 (s "He's one of the good ones.  I enjoy clubbing some baddies
+ with him at the front lines."))
 
               (r {:cond [(in-party :uxvoi)]}
                  "What do you think of The Voice?"
-                 (s "The Voice speaks with a lot of wisdom and sense.  They're
- the lynchpin that keeps our group grounded and together."))
+                 (s "Without them, I'd have been dead ten times over!
+ You won't find much about their personal history though, they've always
+ been an enigma."))
 
               (r {:cond [(in-party :uxzar)]}
                  "What do you think of Zariel?"
-                 (s "Despite fate working against her, I believe she has
- a good nature at her core.  You can't really be \"good\" in the traditional
- sense when of her heritage - at least not without true conviction, but
- she's not the murderous sort - just the mischievous sort."))
+                 (s "Zariel is like a daughter to me.  I found her messing about
+ in the shadows in Baldur's Gate - luckily talked some sense into her and her ways
+ before she had gotten into any real trouble."
+                    (s "A lot won't even give her a fair chance, being of her
+ heritage and \"career\", but I'm certainly happy that I did.")))
               # END: Core friends
 
           (rep "Nevermind...")))))
