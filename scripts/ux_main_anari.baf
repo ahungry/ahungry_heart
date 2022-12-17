@@ -60,7 +60,7 @@ THEN
 RESPONSE #100
 CreateCreatureObjectOffScreen("uxpea",Player1,0,0,0)
 // Keep running this till it happens
-SetGlobalTimer("ux_bg_is_closed_timer", "GLOBAL", SEVEN_ROUNDS)
+SetGlobalTimer("ux_bg_is_closed_timer", "GLOBAL", SEVEN_HOURS)
 Continue()
 END
 
@@ -81,7 +81,7 @@ THEN
 RESPONSE #100
 PlaySong(167)
 SetGlobal("ux_anari_is_bantering", "GLOBAL", 1)
-RealSetGlobalTimer("ux_anari_banter_timer", "GLOBAL", 5)
+RealSetGlobalTimer("ux_anari_banter_timer", "GLOBAL", 300)
 StartDialogueNoSet(Player1)
 SetGlobal("ux_anari_is_bantering", "GLOBAL", 0)
 Continue()

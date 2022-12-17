@@ -4,8 +4,8 @@
 (defn end-intro [&opt who]
   (say {:code [(++state)
                (sg (string/format "ux_keep_%s" (string who)))
-               #(sgt "ux_bg_is_closed_timer" "SEVEN_HOURS")
-               (sgt "ux_bg_is_closed_timer" "ONE_ROUND")
+               (sgt "ux_bg_is_closed_timer" "SEVEN_HOURS")
+               # (sgt "ux_bg_is_closed_timer" "ONE_ROUND")
                "EscapeArea()"]}
        "Let us depart."))
 
