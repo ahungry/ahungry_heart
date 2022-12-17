@@ -54,7 +54,7 @@
                                  (string/format
                                   "IF ~%s~ THEN\n  REPLY"
                                   (maybe-render-cond (get m :meta)))
-                                 "++ ")
+                                 "++")
                                (traify (get m :val))
                                (maybe-render-code (get m :meta))
                                (if (get next-say :id)
