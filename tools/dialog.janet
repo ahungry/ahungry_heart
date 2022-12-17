@@ -142,14 +142,18 @@
        (string/replace-all "\n" " ")
        (string/replace-all "~" " ")))
 
+(var used-tras @[])
+
 (defn traify [ss]
-  (let [s (-> ss fix-problem-chars fix-sound)]
-    (string/format
-     "@%s"
-     (if (get tras s)
-       (get tras s)
-       (do (put tras s (string/format "%0.6d" (++ tra-counter)))
-           (get tras s))))))
+  (let [s (-> ss fix-problem-chars fix-sound)
+        padded-tra-id (if (get tras s)
+                        (get tras s)
+                        (do (put tras s (string/format "%0.6d" (++ tra-counter)))
+                            (get tras s)))]
+    (pp padded-tra-id)
+    (pp used-tras)
+    (array/push used-tras padded-tra-id)
+    (string/format "@%s" padded-tra-id)))
 
 (defn maybe-render-code [m]
   (if (get m :code)
@@ -200,10 +204,14 @@
     "")
   )
 
+(defn is-used-tra? [key]
+  (index-of key used-tras))
+
 (defn build-tras []
   (var result @[])
   (each k (keys tras)
-    (array/push result (string/format "@%s = %s" (get tras k) k)))
+    (when (is-used-tra? (get tras k))
+      (array/push result (string/format "@%s = %s" (get tras k) k))))
   (-> (sort result) (string/join "\n")))
 
 (defn uniq [xs]
