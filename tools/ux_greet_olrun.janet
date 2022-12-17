@@ -16,7 +16,9 @@
        (say "Cat got yer tongue?  Well, I don't blame ya.  We just arrived in the wee hours of the morn, just in time to see the aftermath. [uxolr54]"
             (olrun-glory)))))
 
-(var sleepy-tree (say {:cond [(state 10)]} "Do me a little favor, wake up Zariel would ya?"))
+(var sleepy-tree
+     (say {:cond [(state 10)]}
+          "Do me a favor, wake up Zariel would ya? [uxolr58]"))
 
 (var
  party-tree

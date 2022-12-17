@@ -1,7 +1,10 @@
 (use ./dialog)
 (load-imports)
 
-(var sleepy-tree (say {:cond [(state 10)]} "Sorry, I'm busy at the moment."))
+(var sleepy-tree
+     (say {:cond [(state 10)]}
+          "Sorry, I'm busy at the moment.
+  Zariel was hoping to see you again, why not check in with her? [uxath58]"))
 
 (var
  party-tree

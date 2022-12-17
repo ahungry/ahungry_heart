@@ -4,10 +4,18 @@
 (var
  sleepy-tree
  (say {:cond [(state 10)]}
-      "Zzz, huh, what?  Who's there? [uxzar55]"
-      (rep {:code [(++state)]}
-           "Hey, wake up!")
+      # uxzar55 has the ZZZ noise
+      "*grunts*  [uxzar59]"
+      (rep {:code [(sg "ux_state" 11)]}
+           "Hey, wake up!"
+           (say "Zzz, huh, what?  Who's there? [uxzar55]"))
       (rep "( let her sleep )")))
+
+(var
+ sleepy-tree2
+ (say {:cond [(state 11)]
+       :code [(sg "ux_state" 20)]}
+      "Oh, it's you, I was hoping to see you again! [uxzar60]"))
 
 (var
  party-tree
@@ -32,6 +40,11 @@
            (say "That's fine, should you change your mind, you'll find us around."))))
 
 (defn main [& args]
-  (var sleepy (build-dialog sleepy-tree))
-  (var party (build-dialog party-tree))
-  (string/format "BEGIN uxzar\n%s%s" sleepy party))
+  (string/format
+   "BEGIN uxzar\n%s"
+   (string/join
+    [
+     (build-dialog sleepy-tree)
+     (build-dialog sleepy-tree2)
+     (build-dialog party-tree)
+     ])))

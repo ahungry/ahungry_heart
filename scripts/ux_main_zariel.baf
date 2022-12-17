@@ -20,6 +20,12 @@ THEN RESPONSE #100
 PlayDead(10000)
 END
 
+IF
+Global("ux_state", "GLOBAL", 11)
+THEN RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
 // Summon the special messenger
 IF
 Global("ux_state", "GLOBAL", 30)

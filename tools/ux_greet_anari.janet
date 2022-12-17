@@ -3,7 +3,7 @@
 
 (var sleepy-tree
      (say {:cond [(state 10)]}
-          "Give me a moment <charname> - why don't you see what Zariel is up to?"))
+          "Give me a moment - why don't you see what Zariel is up to? [uxana58]"))
 
 (var
  party-tree

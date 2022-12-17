@@ -1,7 +1,9 @@
 (use ./dialog)
 (load-imports)
 
-(var sleepy-tree (say {:cond [(state 10)]} "I think Olrun was looking for you."))
+(var sleepy-tree
+     (say {:cond [(state 10)]}
+          "A pleasure to see you again.  Olrun was looking for you. [uxvoi58]"))
 
 (var
  party-tree

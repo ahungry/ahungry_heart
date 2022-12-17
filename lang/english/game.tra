@@ -24,7 +24,6 @@
 @000025 = ~Well met "friend", what is it you need of me?~
 @000026 = ~I do not believe it wise to separate us, but allow me to offer my aid to you.~
 @000027 = ~Sorry Voice, I don't wish to speak with you.~
-@000028 = ~Zzz, huh, what?  Who's there?~ [uxzar55]
 @000029 = ~Hey, wake up!~
 @000030 = ~( let her sleep )~
 @000031 = ~Hmm, you look interesting.  I am Zariel, lend me your ear.~ [uxzar01]
@@ -102,11 +101,7 @@
 @000106 = ~Some timing...~
 @000107 = ~Please, it is urgent that you head there now.~
 @000108 = ~<CHARNAME>, I think one of us can remain with you, but the rest must make haste to Baldur's Gate.  Would you choose to have one of us remain and assist you on your quest?~
-@000109 = ~Do me a little favor, wake up Zariel would ya?~
 @000110 = ~I would love to join your group.~
-@000111 = ~Give me a moment <charname> - why don't you see what Zariel is up to?~
-@000112 = ~I think Olrun was looking for you.~
-@000113 = ~Sorry, I'm busy at the moment.~
 @000121 = ~Anari~
 @000122 = ~Olrun~
 @000123 = ~The Voice~
@@ -155,3 +150,10 @@
 @000180 = ~As you wish.~
 @000181 = ~Get lost messenger! No one can leave, I'm on an urgent quest!~
 @000183 = ~Please come along with us.~
+@000185 = ~Do me a favor, wake up Zariel would ya?~ [uxolr58]
+@000186 = ~Give me a moment - why don't you see what Zariel is up to?~ [uxana58]
+@000187 = ~A pleasure to see you again.  Olrun was looking for you.~ [uxvoi58]
+@000189 = ~Sorry, I'm busy at the moment.  Zariel was hoping to see you again, why not check in with her?~ [uxath58]
+@000191 = ~*grunts* ~ [uxzar59]
+@000197 = ~Zzz, huh, what?  Who's there?~ [uxzar55]
+@000199 = ~Oh, it's you, I was hoping to see you again!~ [uxzar60]

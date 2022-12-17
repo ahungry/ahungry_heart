@@ -62,7 +62,7 @@
     (prelude-chain 2)
     (prelude-chain 4)
     (urgent-chain 0)
-    # Check via decompiled 'weidu uxpea.dlg' post install
+    # NOTE: Check via decompiled 'weidu uxpea.dlg' post install
     (urgent-chain-bland 8 :uxanaj)
     (urgent-chain-bland 16 :uxathj)
     (urgent-chain-bland 24 :uxolrj)
