@@ -10,7 +10,7 @@
        "Let us depart."))
 
 (defn end-intro-no-leave []
-  (say {:code [(sg "ux_state" 80) # Just skip 50 (leave) and 60/70 (sleep) events entirely
+  (say {:code [(sg "ux_state" 70) # Just skip 50 (leave) and 60 (sleep) events entirely
                (sg "ux_keep_uxana" 1)
                (sg "ux_keep_uxath" 1)
                (sg "ux_keep_uxolr" 1)
@@ -55,14 +55,14 @@
 
 (var
  gates-closed
- (s {:cond [(state 70)]}
+ (s {:cond [(state 60)]}
     "Hail <CHARNAME>, it is good fortune to find you here.
  Your friends wanted me to relay a message should we encounter each
  other again."
     (s "When we had reached Baldur's Gate, we were met with bad
  news.  They had already closed up the city.  Given this, our
  heroes have taken a much needed break."
-       (s {:code [(++state) (++state) "EscapeArea()"]}
+       (s {:code [(++state) "EscapeArea()"]}
           "Should you seek to reunite, I believe they know each
  other quite well, and should probably be able to provide you with
  some clues as to how to find each other once again."))))

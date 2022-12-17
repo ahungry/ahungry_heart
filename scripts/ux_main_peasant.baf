@@ -21,12 +21,10 @@ StartDialogueNoSet(Player1)
 // SetInterrupt(TRUE)
 END
 
-// If our 60 to 80 transition gets multiple guys, soon as one
+// If our 60 to 70 transition gets multiple guys, soon as one
 // bumps up past 60 via dialogue, send the others away.
 IF
-OR(2)
-GlobalGT("ux_state", "GLOBAL", 60)
-GlobalLT("ux_state", "GLOBAL", 81)
+Global("ux_state", "GLOBAL", 70)
 THEN RESPONSE #100
 EscapeArea()
 END

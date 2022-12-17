@@ -40,7 +40,7 @@
  it is comforting to have companions to rely upon.
  I will fight to protect both of you, even in the darkest of times."))))
 
-        (r {:cond [(state>= 80)
+        (r {:cond [(state>= 70)
                    "OR(5)"
                    (not-in-party :uxana)
                    (not-in-party :uxath)
