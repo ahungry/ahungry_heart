@@ -80,7 +80,7 @@
                  (s "Hmm"))
 
               # BEGIN: Core friends
-              (r {:cond [(in-party :uxath)]}
+              (r {:cond [(in-party :uxolr)]}
                  "What do you think of Olrun?"
                  (s "Hah, good one <CHARNAME>, good one!  Are you a counselor?"))
 
@@ -90,7 +90,7 @@
  to be on the receiving end.  Her calm demeanor and temperament is paramount
  to our team's cohesiveness."))
 
-              (r {:cond [(in-party :uxolr)]}
+              (r {:cond [(in-party :uxath)]}
                  "What do you think of Athar?"
                  (s "He's one of the good ones.  I enjoy clubbing some baddies
  with him at the front lines."))

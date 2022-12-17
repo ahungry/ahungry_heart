@@ -80,11 +80,11 @@
                  (s "Hmm"))
 
               # BEGIN: Core friends
-              (r {:cond [(in-party :uxath)]}
+              (r {:cond [(in-party :uxana)]}
                  "What do you think of Anari?"
                  (s "Surely you jest."))
 
-              (r {:cond [(in-party :uxana)]}
+              (r {:cond [(in-party :uxath)]}
                  "What do you think of Athar?"
                  (s "Athar is a virtuous soul.  While some of his profession
  tend to fall into a holier-than-thou mindset, he remains quite grounded.
