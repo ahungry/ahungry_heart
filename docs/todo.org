@@ -1,0 +1,4 @@
+* TODO Add alternate RESPONSE blocks for the EscapeAreaObjectMove relocation
+This could make it somewhat interesting for players, if the npcs
+walked off to random spots from a set of potential locs, vs going to
+the same one every time.
