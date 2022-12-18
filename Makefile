@@ -1,6 +1,9 @@
 build:
 	make -C tools
 
+regen:
+	make -C tools regen
+
 clean:
 	-rm -fr dialogues
 
