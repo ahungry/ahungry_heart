@@ -8,6 +8,7 @@
 (var goto-id 0)
 (var results @[])
 (var ict-counter 0)
+(var banter-counter 0)
 
 (defn get-id []
   (++ goto-id))
@@ -101,6 +102,7 @@
 (defn clear []
   (set tras @{})
   (set ict-counter 0)
+  (set banter-counter 0)
   (set tra-counter 0))
 
 (defn build [tree]
@@ -126,14 +128,19 @@
    (string who) scene-id (++ ict-counter) (string/join rest)))
 
 (defn chain [conds who line1 codes & rest]
-  (string/format
-   "CHAIN IF ~%s~ THEN %s ux_lbl_chain_%d\n%s\nDO ~%s~\n%sEXIT"
-   (string/join conds " ")
-   (string who)
-   (++ ict-counter)
-   (traify line1)
-   (string/join codes " ")
-   (string/join rest)))
+  (let [local-id (++ banter-counter)]
+    (string/format
+     "CHAIN IF ~Global(\"ux_banter_%d\", \"GLOBAL\", 0) %s~ THEN %s ux_lbl_chain_%d\n
+%s DO ~SetGlobal(\"ux_banter_%d\", \"GLOBAL\", 1) %s~\n
+%sEXIT\n"
+     local-id
+     (string/join conds " ")
+     (string who)
+     local-id
+     (traify line1)
+     local-id
+     (string/join codes " ")
+     (string/join rest))))
 
 (def r rep)
 (def s say)

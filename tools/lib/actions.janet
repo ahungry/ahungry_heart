@@ -77,3 +77,21 @@
      (ao who "JoinParty()")
      (sg (string/format "ux_in_party_%s" (string who))))
     "JoinParty()"))
+
+(defn see [who]
+  (string/format "See(\"%s\")" who))
+
+(defn state-check [who state]
+  (string/format "StateCheck(\"%s\", %s)" who state))
+
+(defn not-state-check [who state]
+  (string/format "!StateCheck(\"%s\", %s)" who state))
+
+# Convenience function for including all checks related to party member banter reqs
+(defn bin-party [who]
+  (string/join
+   [
+    (in-party who)
+    (see who)
+    (not-state-check who "CD_STATE_NOTVALID")
+    ] " "))
