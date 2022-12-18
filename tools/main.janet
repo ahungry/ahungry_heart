@@ -23,6 +23,7 @@
 (import ./ux_pids_peasant :as pids-peasant)
 
 (import ./ux_prelude_chain :as prelude-chain)
+(import ./ux_party_banters :as party-banters)
 
 (defn main [& args]
   (populate-tras-from-file "../lang/english/game.tra")
@@ -49,6 +50,8 @@
   (spit "/tmp/thobg/ux_pids_peasant.d" (pids-peasant/main))
 
   (spit "/tmp/thobg/ux_prelude_chain.d" (prelude-chain/main ))
+  (spit "/tmp/thobg/ux_party_banters.d" (party-banters/main))
+
   (spit "/tmp/thobg/maingen.tra" (string/format "%s\n" (build-tras)))
 
   (print "All done"))

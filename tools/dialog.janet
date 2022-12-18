@@ -125,5 +125,15 @@
    "INTERJECT_COPY_TRANS2 %s %d ux_lbl_ict_%d\n%sEND"
    (string who) scene-id (++ ict-counter) (string/join rest)))
 
+(defn chain [conds who line1 codes & rest]
+  (string/format
+   "CHAIN IF ~%s~ THEN %s ux_lbl_chain_%d\n%s\nDO ~%s~\n%sEXIT"
+   (string/join conds " ")
+   (string who)
+   (++ ict-counter)
+   (traify line1)
+   (string/join codes " ")
+   (string/join rest)))
+
 (def r rep)
 (def s say)
