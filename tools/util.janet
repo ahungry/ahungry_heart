@@ -87,7 +87,6 @@
 (defn dialogue->== [xs]
   (string/join (map (fn [[k & v]] (== (get-uxb k) ;v)) xs) ""))
 
-# TODO: Add support to pass code/cond in as first arg to the dialogue seq
 (defn chainm [& dialogue-raw]
   (var conds [])
   (var codes [])

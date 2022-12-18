@@ -110,6 +110,8 @@
    :dialog (build-dialog tree)})
 
 # Stuff related to INTERJECT_COPY_TRANS
+# TODO: Add IsValidForPartyDialogue as a default IF clause on the ICT participants
+# It may not hurt to have it present for the standard chains leveraging == either
 (defn == [who s & rest]
   (string/format "  == %s %s DO ~%s~\n"
                  (string who)
