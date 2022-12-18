@@ -85,8 +85,9 @@
   (uniq (map (fn [[k v]] k) xs)))
 
 (defn dialogue->== [xs]
-  (string/join (map (fn [[k v]] (== (get-uxb k) v)) xs) ""))
+  (string/join (map (fn [[k & v]] (== (get-uxb k) ;v)) xs) ""))
 
+# TODO: Add support to pass code/cond in as first arg to the dialogue seq
 (defn chainm [dialogue]
   (chain [(can-talk (get-ux (get-speaker dialogue)))
           ;(map (fn [p] (bin-party (get-ux p))) (get-participants dialogue))]
