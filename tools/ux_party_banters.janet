@@ -3,6 +3,11 @@
 
 (defn build-chains []
   [
+   (chainm
+    [[zariel "This is a test of the simple dialogue chain."]
+     [anari "You know we're still testing right?"]
+     [olrun "Yes, truly, there is a lot of testing going on."]])
+
    (chain
     [(can-talk :uxzar)
      (bin-party :uxana)
@@ -110,7 +115,7 @@
      (bin-party :uxana)
      (bin-party :uxolr)
      (bin-party :uxzar)
-    ]
+     ]
     :uxbvoi "Alright everyone, I think it's time we discussed our plan.
  What do you all think will be our best course of action?"
     []
@@ -124,7 +129,7 @@
     (== :uxbzar "We could also make use of our combined knowledge and skills.
  By working together,")
     )
-  ]
+   ]
   )
 
 (defn main [& args]

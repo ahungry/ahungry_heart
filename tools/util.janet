@@ -51,3 +51,45 @@
        (rep "Sorry, that was a mistake, I do have time."
             (say {:code [(rsgt (string/format "ux_%s_banter_timer" (string who)) 1)]}
                  "Fine."))))
+
+# Some convenience stuff for the function chaining blocks to reduce boilerplate
+(def olrun :olrun)
+(def anari :anari)
+(def voice :voice)
+(def athar :athar)
+(def zariel :zariel)
+
+(defn get-ux [kw]
+  (case kw
+    :anari :uxana
+    :zariel :uxzar
+    :olrun :uxolr
+    :voice :uxvoi
+    :athar :uxath kw))
+
+(defn get-uxb [kw]
+  (case kw
+    :anari :uxbana
+    :zariel :uxbzar
+    :olrun :uxbolr
+    :voice :uxbvoi
+    :athar :uxbath kw))
+
+(defn get-intro [xs]
+  (get (first xs) 1))
+
+(defn get-speaker [xs]
+  (first (first xs)))
+
+(defn get-participants [xs]
+  (uniq (map (fn [[k v]] k) xs)))
+
+(defn dialogue->== [xs]
+  (string/join (map (fn [[k v]] (== (get-uxb k) v)) xs) ""))
+
+(defn chainm [dialogue]
+  (chain [(can-talk (get-ux (get-speaker dialogue)))
+          ;(map (fn [p] (bin-party (get-ux p))) (get-participants dialogue))]
+         (get-uxb (get-speaker dialogue)) (get-intro dialogue) []
+         (dialogue->== dialogue)
+         ))
