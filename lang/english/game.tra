@@ -6,7 +6,10 @@
 @000006 = ~...~
 @000007 = ~Hail friend, it is I, Olrun.  Have you a moment?~ [uxolr01]
 @000008 = ~My friends and I are on an important quest, pertaining to The Heart of Baldur's Gate.  Care to join us?  I know that you and Gorion were close, and he would no doubt appreciate us keeping an eye on you.~
+@000009 = ~My family is part of the noble class in Baldur's Gate.  We have long been involved in the political happenings of late.  While I tend to foray into adventure more often than my relatives, we all contribute in our own ways.~
 @000009 = ~So?~
+@000010 = ~That was enlightening, I appreciate your being direct Athar.~
+@000011 = ~Athar, tell me about your family.~
 @000011 = ~I can't join your group, but I would love to have you join mine.~
 @000012 = ~That's fine, should you change your mind, you'll find us around.~
 @000013 = ~Sorry Olrun, I'm on my own adventure at the moment.~
@@ -168,13 +171,6 @@
 @000241 = ~Athar shows a strong reverence to the Gods, and that isa mindset I am agreeable to.~
 @000242 = ~Well, that is myself, and I believe you are making a quip.~
 @000243 = ~She does not lean heavily into her nature, but rather maintains a more neutral outlook.  It is invigorating to feel her youthful nature.~
-@000249 = ~Oh, you know me, I can't complain.~
-@000250 = ~I would agree, things are going quite well.  Thank you for asking Zariel.~
-@000251 = ~Woohoo!~
-@000252 = ~So, how is it going everyone?~
-@000253 = ~wow, that sounds neat!~
-@000254 = ~Hahha it sure is~
-@000255 = ~Hello there~
 @000258 = ~I'm just doing my duty, but thank you for the compliment.~
 @000259 = ~That's quite brave of you.~
 @000260 = ~So Athar, what brings you to this dangerous quest?~
