@@ -88,9 +88,17 @@
   (string/join (map (fn [[k & v]] (== (get-uxb k) ;v)) xs) ""))
 
 # TODO: Add support to pass code/cond in as first arg to the dialogue seq
-(defn chainm [dialogue]
+(defn chainm [& dialogue-raw]
+  (var conds [])
+  (var codes [])
+  (var dialogue (first dialogue-raw))
+  (when (= :struct (type (first dialogue-raw)))
+    (set conds (or (get (first dialogue-raw) :cond) []))
+    (set codes (or (get (first dialogue-raw) :code) []))
+    (set dialogue (get dialogue-raw 1)))
   (chain [(can-talk (get-ux (get-speaker dialogue)))
-          ;(map (fn [p] (bin-party (get-ux p))) (get-participants dialogue))]
-         (get-uxb (get-speaker dialogue)) (get-intro dialogue) []
+          ;(map (fn [p] (bin-party (get-ux p))) (get-participants dialogue))
+          ;conds]
+         (get-uxb (get-speaker dialogue)) (get-intro dialogue) codes
          (dialogue->== dialogue)
          ))

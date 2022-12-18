@@ -3,8 +3,8 @@
 
 (defn build-chains []
   [
-   (chainm
-    [[zariel "This is a test of the simple dialogue chain."]
+   (chainm {:cond [(ng "ux_test")] :code [(sg "ux_test")]}
+    [[zariel "This is a test of the simple dialogue chain." (sg "ux_test")]
      [anari "You know we're still testing right?"]
      [olrun "Yes, truly, there is a lot of testing going on."]])
 
