@@ -79,13 +79,16 @@
     "JoinParty()"))
 
 (defn see [who]
-  (string/format "See(\"%s\")" who))
+  (string/format "See(\"%s\")" (string who)))
 
 (defn state-check [who state]
-  (string/format "StateCheck(\"%s\", %s)" who state))
+  (string/format "StateCheck(\"%s\", %s)" (string who) state))
 
 (defn not-state-check [who state]
-  (string/format "!StateCheck(\"%s\", %s)" who state))
+  (string/format "!StateCheck(\"%s\", %s)" (string who) state))
+
+(defn can-talk [who]
+  (not-state-check who "CD_STATE_NOTVALID"))
 
 # Convenience function for including all checks related to party member banter reqs
 (defn bin-party [who]
@@ -93,5 +96,5 @@
    [
     (in-party who)
     (see who)
-    (not-state-check who "CD_STATE_NOTVALID")
+    (can-talk who)
     ] " "))
