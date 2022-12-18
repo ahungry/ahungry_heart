@@ -38,7 +38,7 @@
                     (rep "We are fortunate to have you with us."
                          (say "It is my pleasure. In the face of such danger,
  it is comforting to have companions to rely upon.
- I will fight to protect both of you, even in the darkest of times."))))
+ I will fight to protect all of you, even in the darkest of times."))))
 
           (r {:cond [(state>= 70)
                    "OR(5)"
