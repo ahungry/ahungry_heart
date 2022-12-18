@@ -27,6 +27,10 @@
 (defn fix-problem-chars [s]
   (->> s
        (string/replace-all "\n" " ")
+       (string/replace-all "  " " ")
+       (string/replace-all ". " ".  ")
+       (string/replace-all "! " "!  ")
+       (string/replace-all "? " "?  ")
        (string/replace-all "~" " ")))
 
 (defn fix-sound [s]
@@ -36,7 +40,7 @@
         [idx (string/find "[" s)
          song (string/slice s idx)
          txt (string/slice s 0 (-  idx 1))]
-        (string/format "~%s~ %s" txt song))
+        (string/format "~%s~ %s" (string/trim txt) (string/trim song)))
     (string/format "~%s~" s)))
 
 (defn traify [ss]
