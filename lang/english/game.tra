@@ -213,10 +213,6 @@
 @000213 = ~Let us hear him out.~
 @000214 = ~Please, it is urgent that you head there now.~
 @000215 = ~<CHARNAME>, one of us can remain with you, however the rest must make haste to Baldur's Gate.  Who will stay?~
-@000216 = ~Oh, you know me, I can't complain.~
-@000217 = ~I would agree, things are going quite well.  Thank you for asking Zariel.~
-@000218 = ~Woohoo!~
-@000219 = ~So, how is it going everyone?~
 @000220 = ~I think it's going well.  We've made some progress and I'm confident that we'll be able to complete our task.~
 @000221 = ~So Anari, what do you think of our mission so far?~
 @000222 = ~From what I've seen and heard, I believe that we have a good chance of succeeding.  I'm sure we can handle whatever obstacles come our way.~
@@ -247,3 +243,8 @@
 @000248 = ~We should not underestimate the power of our enemies.  We must rely on each other's strength if we are to succeed in this mission.~
 @000249 = ~We could also make use of our combined knowledge and skills.  By working together,~
 @000250 = ~Alright everyone, I think it's time we discussed our plan.  What do you all think will be our best course of action?~
+@000251 = ~Zariel, show some manners.  If Athar and I are having a conversation that you aren't privy to, that's no reason to have a fit.~
+@000252 = ~Cut her a little slack, you know she's not a fan of gossip.~
+@000253 = ~I don't need you to defend me Athar, I'll have you know I'm quite self sufficient.~
+@000254 = ~Yes, yes, we know.  Shall we get back to the party now?~
+@000255 = ~Athar, Anari - could you two quit gabbing the entire time?~
