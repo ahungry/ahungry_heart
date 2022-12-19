@@ -3,10 +3,16 @@
 
 (defn build-chains []
   [
-   (chainm {:cond [(ng "ux_test")] :code [(sg "ux_test")]}
-    [[zariel "This is a test of the simple dialogue chain." (sg "ux_test")]
-     [anari "You know we're still testing right?"]
-     [olrun "Yes, truly, there is a lot of testing going on."]])
+   (chainm
+    [[zariel "Hey Olrun, do you remember that time at the Sorcerous Sundries?"]
+     [olrun "Hah, what a time it was.  We had just gotten back from pillaging
+ that horde of treasure from the back of the goblin's cave.  Had a shiny utensil
+ that we thought was some valuable artifact."]
+     [zariel "Yup, sure did - only it wasn't.  Remember what it was?"]
+     [olrun "How could I forget!  A noble's special toiletry, long ago stolen by the little
+ buggers, and subject to so much wear and tear."]
+    [zariel "Yup! And the look on old Halbazzer's face when he took a closer look to appraise it,
+ the stuff of legend!"] ])
 
    (chain
     [(can-talk :uxzar)
@@ -129,6 +135,13 @@
     (== :uxbzar "We could also make use of our combined knowledge and skills.
  By working together,")
     )
+
+   (chainm
+    {:cond [(ng "ux_test")] :code [(sg "ux_test")]}
+    [[zariel "This is a test of the simple dialogue chain." (sg "ux_test")]
+     [anari "You know we're still testing right?"]
+     [olrun "Yes, truly, there is a lot of testing going on."]])
+
    ]
   )
 
