@@ -229,7 +229,6 @@
 @000233 = ~Don't give <HIMHER> too much razzing Athar!~
 @000234 = ~Haha, yes, sorry.  Having a bit of fun.  As you know <CHARNAME>, Anari and I, we've long been acquaintances.~
 @000235 = ~So Anari, where are you from, originally?~
-@000237 = ~Haha, yes, sorry.  Having a bit of fun.  As you know <CHARNAME>, Anari and I, we've long been acquaintances.  We were having a bit of fun.~
 @000238 = ~I'm feeling quite positive about it.  I think it's great that we have such a diverse mix of people, and I'm glad that we are all looking out for each other.~
 @000239 = ~I agree.  I'm sure the two of us can offer this group a unique perspective, being the only two females with past history together here.~
 @000240 = ~Absolutely.  We may be outnumbered, but I'm sure we can both hold our own and make our mark on this quest!~
@@ -285,9 +284,7 @@
 @000298 = ~Zariel, you seem extra cheerful today.  Any particular reason why?~
 @000299 = ~Wow, that obvious huh?~
 @000300 = ~A bit, you've been grinning ear to ear all morning.~
-@000301 = ~Well, I had an especially great dream last night.~
 @000302 = ~Really?  About what?~
-@000303 = ~Just some pleasant thoughts about <CHARNAME>.~
 @000304 = ~Anari, what do you think of our place in the world?~
 @000305 = ~What do you mean?~
 @000306 = ~Well, we were appointed and gathered for a quest by The Voice, although we had previous history between each other.~
@@ -297,3 +294,10 @@
 @000310 = ~I suppose it could go either way.  Are we controlling our own future, or are we simply reacting to stimuli?  Are we mindless automatons?  That much, I doubt.~
 @000311 = ~That wasn't much of an answer at all!~
 @000312 = ~Zariel, I try to be mindful and reflective, but this level of deep philosophy may be a better conversation to have with The Voice.~
+@000314 = ~Well, I had an especially amusing dream last night.~
+@000315 = ~Well, in this dream, I was a fish.~
+@000316 = ~Uh huh...~
+@000317 = ~And you were as well.  Well, all of you were.~
+@000318 = ~Right...~
+@000319 = ~So anyways, we were going through the ocean, and...~
+@000320 = ~Hold that thought Zariel, we've gotta get back to the group.~

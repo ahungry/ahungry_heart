@@ -47,9 +47,15 @@
     [[anari "Zariel, you seem extra cheerful today.  Any particular reason why?"]
      [zariel "Wow, that obvious huh?"]
      [anari "A bit, you've been grinning ear to ear all morning."]
-     [zariel "Well, I had an especially great dream last night." ]
+     [zariel "Well, I had an especially amusing dream last night."]
      [anari "Really?  About what?"]
-     [zariel "Just some pleasant thoughts about <CHARNAME>."]])
+     [zariel "Well, in this dream, I was a fish."]
+     [anari "Uh huh..."]
+     [zariel "And you were as well.  Well, all of you were."]
+     [anari "Right..."]
+     [zariel "So anyways, we were going through the ocean, and..."]
+     [anari "Hold that thought Zariel, we've gotta get back to the group."]
+     ])
 
    (chainm
     [[zariel "Anari, what do you think of our place in the world?"]
