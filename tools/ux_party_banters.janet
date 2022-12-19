@@ -149,6 +149,7 @@
      [olrun "Hah!  I'm not so bruised and battered to be needin' you to kiss my boo-boos yet."]
      [athar "There's no shame in requesting aid when needed Olrun."]
      [olrun "No, nothing shameful, but The Voice has much less calloused hands than you."]
+     [athar "Oh, is that so?"]
      [olrun "I prefer their touch to yers - no offense."]
      [athar "None taken friend, none taken."]
      ])
@@ -165,6 +166,7 @@
      [olrun "Even an evil one such as Abbathor can have some interesting ideas.  A little greed
  can be good and go a long way towards enriching the lives of oneself and those they care about.
  As long as it doesn't get to be too fanatical."]
+     [athar "Being able to see the good in evil is a trait few possess."]
      [olrun "That goes for the good Gods as well.  You've gotta find a good balance in all things.
  Too much food, you'll get fat.  Too much rest, muscles will atrophy.  Too much recreation, your mind
  will rot."]
