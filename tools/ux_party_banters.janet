@@ -143,6 +143,23 @@
      ])
 
    (chainm
+    [
+     [athar "Olrun, I've been meaning to ask you - what Gods are you particularly fond of?"]
+     [olrun "I find some interesting tenets among all of them.  Berronar Truesilver,
+ Moradin, Sharindlar, ..."]
+     [athar "But certainly not an evil one like Abbathor?"]
+     [olrun "Hah!  Are you trying to play devil's advocate?  A bit ironic coming from you."]
+     [athar "Well..."]
+     [olrun "Even an evil one such as Abbathor can have some interesting ideas.  A little greed
+ can be good and go a long way towards enriching the lives of oneself and those they care about.
+ As long as it doesn't get to be too fanatical."]
+     [olrun "That goes for the good Gods as well.  You've gotta find a good balance in all things.
+ Too much food, you'll get fat.  Too much rest, muscles will atrophy.  Too much recreation, your mind
+ will rot."]
+     [athar "Those are some good points friend.  I try to keep a bit moderate myself."]
+     ])
+
+   (chainm
     [[anari "Zariel, you're looking quite nice today."]
      [zariel "Thanks Anari!  I would say the same about you as well!"]
      [olrun "Oh, no love for my handsome face and chiseled chin?"]
