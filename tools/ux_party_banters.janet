@@ -3,6 +3,7 @@
 
 (defn build-chains []
   [
+   # part: zariel olrun
    (chainm
     [[zariel "Hey Olrun, do you remember that time at the Sorcerous Sundries?"]
      [olrun "Hah, what a time it was.  We had just gotten back from pillaging
@@ -14,6 +15,7 @@
      [zariel "Yup! And the look on old Halbazzer's face when he took a closer look to appraise it,
  the stuff of legend!"] ])
 
+   # part: zariel olrun
    (chainm
     [[zariel "Yeck!  This is nasty!"]
      [olrun "What's the matter Zariel?"]
@@ -22,6 +24,7 @@
      [olrun "That's gonna take some scuffing to clean out!"]
      [zariel "Ain't that the truth."]])
 
+   # part: zariel athar
    (chainm
     [[zariel "Athar, has anyone told you how nice your sword and shield ornaments are?"]
      [athar "I've heard it once or twice - coming from a noble lineage, it shouldn't be a great
@@ -30,6 +33,7 @@
  combat is one thing, but looking good while doing it, that's an entire strategy in of itself."]
      [athar "Thanks Zariel, I think."]])
 
+   # part: zariel athar
    (chainm
     [[zariel "Blah.  Hmph.  *sigh*"]
      [athar "What's wrong Zariel?  Usually you're always so chipper and upbeat."]
@@ -43,6 +47,7 @@
      [zariel "Yea, I can't see myself turning to being a devout paladin or cleric, but I appreciate
  the thought Athar."]])
 
+   # part: zariel anari
    (chainm
     [[anari "Zariel, you seem extra cheerful today.  Any particular reason why?"]
      [zariel "Wow, that obvious huh?"]
@@ -57,6 +62,7 @@
      [anari "Hold that thought Zariel, we've gotta get back to the group."]
      ])
 
+   # part: zariel anari
    (chainm
     [[zariel "Anari, what do you think of our place in the world?"]
      [anari "What do you mean?"]
@@ -73,6 +79,7 @@
      [anari "Zariel, I try to be mindful and reflective, but this level of deep philosophy
  may be a better conversation to have with The Voice."]])
 
+   # part: zariel voice
    (chainm
     [
      [voice "Zariel, how have you been?  Have things been well?"]
@@ -84,6 +91,7 @@
      [zariel "Well, that's re-assuring, I guess."]
      ])
 
+   # part: zariel voice
    (chainm
     [
      [zariel "I'm famished! Does anyone have an extra ration?"]
@@ -97,6 +105,7 @@
      [zariel "I sure hope so!"]
      ])
 
+   # part: athar anari
    (chainm
     [
      [athar "Tell me Anari, what kind of music are you most fond of?"]
@@ -115,6 +124,7 @@
  long term faith and sense of justice, the constant exposure."]
      ])
 
+   # part: athar anari
    (chainm
     [
      [anari "Athar, how have you been?  It has been too long since we've had any breaks
@@ -129,6 +139,7 @@
      [anari "When you state it as so, it's a bit more palatable."]
      ])
 
+   # part: athar olrun
    (chainm
     [
      [olrun "Athar!  Over here!  Have you ever seen a bruise this color before?"]
@@ -142,6 +153,7 @@
      [athar "None taken friend, none taken."]
      ])
 
+   # part: athar olrun
    (chainm
     [
      [athar "Olrun, I've been meaning to ask you - what Gods are you particularly fond of?"]
@@ -159,6 +171,16 @@
      [athar "Those are some good points friend.  I try to keep a bit moderate myself."]
      ])
 
+   # TODO part: athar voice
+   # TODO part: athar voice
+   # TODO part: anari voice
+   # TODO part: anari voice
+   # TODO part: anari olrun
+   # TODO part: anari olrun
+   # TODO part: olrun voice
+   # TODO part: olrun voice
+
+   # part: zariel anari olrun
    (chainm
     [[anari "Zariel, you're looking quite nice today."]
      [zariel "Thanks Anari!  I would say the same about you as well!"]
@@ -171,6 +193,7 @@
      [anari "The guardian of gorgeous, the avatar of appeal."]
      [olrun "Alright, alright, I think I hear <CHARNAME> calling for us."]])
 
+   # part: zariel anari athar
    (chain
     [(can-talk :uxzar)
      (bin-party :uxana)
@@ -184,6 +207,7 @@
  quite self sufficient.")
     (== :uxbana "Yes, yes, we know.  Shall we get back to the party now?"))
 
+   # part: athar anari
    (chain
     [(can-talk :uxath)
      (bin-party :uxana)]
@@ -192,6 +216,7 @@
     (== :uxbana "I think it's going well. We've made some progress and
  I'm confident that we'll be able to complete our task."))
 
+   # part: olrun zariel
    (chain
     [(can-talk :uxolr)
      (bin-party :uxzar)]
@@ -200,6 +225,7 @@
     (== :uxbzar "From what I've seen and heard, I believe that we have a
   good chance of succeeding. I'm sure we can handle whatever obstacles come our way."))
 
+   # part: athar voice
    (chain
     [(can-talk :uxvoi)
      (bin-party :uxath)]
@@ -211,6 +237,7 @@
  in our own ways.")
     (== :uxbvoi "That was enlightening, I appreciate your being direct Athar."))
 
+   # part: athar anari
    (chain
     [(can-talk :uxath)
      (bin-party :uxana)]
@@ -231,6 +258,7 @@
     (== :uxbath "Haha, yes, sorry.  Having a bit of fun.  As you know <CHARNAME>,
  Anari and I, we've long been acquaintances."))
 
+   # part: anari zariel
    (chain
     [(can-talk :uxana)
      (bin-party :uxzar)]
@@ -245,6 +273,7 @@
  own and make our mark on this quest!")
     )
 
+   # part: athar olrun
    (chain
     [(can-talk :uxath)
      (bin-party :uxolr)]
@@ -259,6 +288,7 @@
  innocent and uphold justice. I am glad to stand beside you in this quest.")
     )
 
+   # part: athar anari olrun voice zariel
    (chain
     [(can-talk :uxvoi)
      (bin-party :uxath)
@@ -280,6 +310,7 @@
  By working together,")
     )
 
+   # part: zariel anari olrun
    (chainm
     {:cond [(ng "ux_test")] :code [(sg "ux_test")]}
     [[zariel "This is a test of the simple dialogue chain." (sg "ux_test")]
