@@ -17,7 +17,7 @@
    (chainm
     [[zariel "Yeck!  This is nasty!"]
      [olrun "What's the matter Zariel?"]
-     [zariel "I think I stepped in something in our last fight...yep, that's some sort of
+     [zariel "I think I stepped in something during our last fight...yep, that's some sort of
  entrail stuck to my boot.  Well, maybe it's an eye - I'm not totally sure."]
      [olrun "That's gonna take some scuffing to clean out!"]
      [zariel "Ain't that the truth."]])
@@ -42,6 +42,30 @@
  to my faith.  It's never steered me wrong, and serves as a solid backbone."]
      [zariel "Yea, I can't see myself turning to being a devout paladin or cleric, but I appreciate
  the thought Athar."]])
+
+   (chainm
+    [[anari "Zariel, you seem extra cheerful today.  Any particular reason why?"]
+     [zariel "Wow, that obvious huh?"]
+     [anari "A bit, you've been grinning ear to ear all morning."]
+     [zariel "Well, I had an especially great dream last night." ]
+     [anari "Really?  About what?"]
+     [zariel "Just some pleasant thoughts about <CHARNAME>."]])
+
+   (chainm
+    [[zariel "Anari, what do you think of our place in the world?"]
+     [anari "What do you mean?"]
+     [zariel "Well, we were appointed and gathered for a quest by The Voice, although we had
+ previous history between each other."]
+     [zariel "Then we were interrupted and now travel with <CHARNAME>, for what may
+ be a much more important endeavor, as the Heart rumors may or may not have been grounded
+ in reality."]
+     [anari "I'm trying to understand where you're going with this?"]
+     [zariel "Do you think this is fate or destiny, or just lucky coincidence?"]
+     [anari "I suppose it could go either way.  Are we controlling our own future, or
+ are we simply reacting to stimuli?  Are we mindless automatons?  That much, I doubt."]
+     [zariel "That wasn't much of an answer at all!"]
+     [anari "Zariel, I try to be mindful and reflective, but this level of deep philosophy
+ may be a better conversation to have with The Voice."]])
 
    (chainm
     [[anari "Zariel, you're looking quite nice today."]
@@ -114,19 +138,6 @@
     (== :uxbana "Don't give <HIMHER> too much razzing Athar!")
     (== :uxbath "Haha, yes, sorry.  Having a bit of fun.  As you know <CHARNAME>,
  Anari and I, we've long been acquaintances."))
-
-   (chain
-    [(can-talk :uxath)
-     (bin-party :uxana)]
-    :uxbath "So Anari, where are you from, originally?"
-    []
-    (== :uxbana "I hail from the forests of Baldur's Gate. I am a wild elf born
- and raised in the wilds, and I have been protecting my home for many years.")
-    (== :uxbath "So <CHARNAME>, what do you think of our acting?  Was it
- a good display of camaraderie?")
-    (== :uxbana "Don't give <HIMHER> too much razzing Athar!")
-    (== :uxbath "Haha, yes, sorry.  Having a bit of fun.  As you know <CHARNAME>,
- Anari and I, we've long been acquaintances.  We were having a bit of fun."))
 
    (chain
     [(can-talk :uxana)
