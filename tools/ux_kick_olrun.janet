@@ -1,4 +1,4 @@
-(use ./dialog)
+(use ./lib/dialog)
 (load-imports)
 
 # Go view Durlag's Tower and admire it

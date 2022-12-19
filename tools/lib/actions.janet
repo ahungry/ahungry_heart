@@ -1,4 +1,5 @@
 # Custom actions that expand to valid Weidu bcs/baf actions/dialog utilities
+(use ./settings)
 
 (defn ng [s &opt i]
   (string/format "!Global(\"%s\", \"GLOBAL\", %d)" s (or i 1)))

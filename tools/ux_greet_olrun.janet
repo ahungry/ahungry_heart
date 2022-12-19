@@ -1,4 +1,4 @@
-(use ./dialog)
+(use ./lib/dialog)
 (load-imports)
 
 (defn olrun-glory []

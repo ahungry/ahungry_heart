@@ -1,4 +1,4 @@
-(use ./dialog)
+(use ./lib/dialog)
 (load-imports)
 
 (import ./ux_greet_olrun :as greet-olrun)

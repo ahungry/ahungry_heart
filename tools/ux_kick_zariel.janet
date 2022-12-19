@@ -1,6 +1,5 @@
-(use ./lib/actions)
-(use ./dialog)
-(use ./util)
+(use ./lib/dialog)
+(load-imports)
 
 # Go meet up with the spinning wheel at Nashkel Carnival
 (var urgent-kick
