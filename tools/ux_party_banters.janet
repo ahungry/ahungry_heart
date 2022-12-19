@@ -98,6 +98,51 @@
      ])
 
    (chainm
+    [
+     [athar "Tell me Anari, what kind of music are you most fond of?"]
+     [anari "I prefer any rousing melody with the woodwinds as the primary backing instrument.
+ Sometimes when the harmonics are just right, it reminds me of my tree top home as a child."]
+     [athar "I should be so lucky to join you in revisiting it one day."]
+     [anari "I certainly hope so.  There are few I'd rather have along my side for such an
+ endeavor than you Athar."]
+     [athar "Thank you Anari, I am honored."]
+     [anari "Tell me Athar, what songs inspire you?"]
+     [athar "The sound of a strong chorus that you'll oft hear throughout the realm's temples
+ brings joy to my ears."]
+     [anari "I can understand that, I'm sure it was quite common in your childhood as well?"]
+     [athar "Absolutely.  While my family attended quite regularly, I believe it was primarily
+ to uphold appearances in our social circle.  However, this is largely responsible for my
+ long term faith and sense of justice, the constant exposure."]
+     ])
+
+   (chainm
+    [
+     [anari "Athar, how have you been?  It has been too long since we've had any breaks
+ in our adventuring."]
+     [athar "Certainly, the life of an adventurer is never dull."]
+     [anari "Yes, but it should not be all encompassing either.  When you think of it, we've been
+ out in the wild and fighting day and night, for months at a time, nary a break in between.
+ Tis not natural."]
+     [athar "That's true, but sometimes circumstances dictate our decisions more than what's
+ \"fair\".  Were our heroic actions not necessary to ensure the safety of those we care about,
+ there would be plenty of time for revelry."]
+     [anari "When you state it as so, it's a bit more palatable."]
+     ])
+
+   (chainm
+    [
+     [olrun "Athar!  Over here!  Have you ever seen a bruise this color before?"]
+     [athar "Oh, that does not seem natural at all.  What happened?"]
+     [olrun "The other day, when we were crushin' some skulls, I took almost as much as I gave."]
+     [athar "Do you require aid?  I can lay my hands upon you if you feel it's necessary?"]
+     [olrun "Hah!  I'm not so bruised and battered to be needin' you to kiss my boo-boos yet."]
+     [athar "There's no shame in requesting aid when needed Olrun."]
+     [olrun "No, nothing shameful, but The Voice has much less calloused hands than you."]
+     [olrun "I prefer their touch to yers - no offense."]
+     [athar "None taken friend, none taken."]
+     ])
+
+   (chainm
     [[anari "Zariel, you're looking quite nice today."]
      [zariel "Thanks Anari!  I would say the same about you as well!"]
      [olrun "Oh, no love for my handsome face and chiseled chin?"]
