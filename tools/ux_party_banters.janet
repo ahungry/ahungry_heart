@@ -74,6 +74,30 @@
  may be a better conversation to have with The Voice."]])
 
    (chainm
+    [
+     [voice "Zariel, how have you been?  Have things been well?"]
+     [zariel "Not bad, thanks for checking in Voice.  What about yourself?"]
+     [voice "While our situation is always dire, my outlook is not.  I foresee
+ success and victory in our future."]
+     [zariel "How can you be so certain?  I mean, are you certain?"]
+     [voice "Nothing can be certain Zariel, but I do think that we'll be fine."]
+     [zariel "Well, that's re-assuring, I guess."]
+     ])
+
+   (chainm
+    [
+     [zariel "I'm famished! Does anyone have an extra ration?"]
+     [voice "I do, a few nuts and berries that I scavenged in our last trek through the forest."]
+     [zariel "I said I was famished, not peckish."]
+     [voice "Zariel, you'll find that irregardless of your state of malnourishment,
+ the rations I've offered should be more than adequate."]
+     [zariel "In your opinion."]
+     [voice "No, it is more of a fact.  Although I'm sure <CHARNAME> would be happy to
+ stop by a tavern on the next opportunity we have to do so."]
+     [zariel "I sure hope so!"]
+     ])
+
+   (chainm
     [[anari "Zariel, you're looking quite nice today."]
      [zariel "Thanks Anari!  I would say the same about you as well!"]
      [olrun "Oh, no love for my handsome face and chiseled chin?"]
