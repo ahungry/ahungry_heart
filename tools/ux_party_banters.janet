@@ -11,8 +11,49 @@
      [zariel "Yup, sure did - only it wasn't.  Remember what it was?"]
      [olrun "How could I forget!  A noble's special toiletry, long ago stolen by the little
  buggers, and subject to so much wear and tear."]
-    [zariel "Yup! And the look on old Halbazzer's face when he took a closer look to appraise it,
+     [zariel "Yup! And the look on old Halbazzer's face when he took a closer look to appraise it,
  the stuff of legend!"] ])
+
+   (chainm
+    [[zariel "Yeck!  This is nasty!"]
+     [olrun "What's the matter Zariel?"]
+     [zariel "I think I stepped in something in our last fight...yep, that's some sort of
+ entrail stuck to my boot.  Well, maybe it's an eye - I'm not totally sure."]
+     [olrun "That's gonna take some scuffing to clean out!"]
+     [zariel "Ain't that the truth."]])
+
+   (chainm
+    [[zariel "Athar, has anyone told you how nice your sword and shield ornaments are?"]
+     [athar "I've heard it once or twice - coming from a noble lineage, it shouldn't be a great
+ surprise that they were designed with an eye for aesthetics."]
+     [zariel "Still, I've gotta say, it's such an appealing color scheme.  Being efficient in
+ combat is one thing, but looking good while doing it, that's an entire strategy in of itself."]
+     [athar "Thanks Zariel, I think."]])
+
+   (chainm
+    [[zariel "Blah.  Hmph.  *sigh*"]
+     [athar "What's wrong Zariel?  Usually you're always so chipper and upbeat."]
+     [zariel "I'm just thinking, we've seen so much killing and chaos, after awhile it
+ can wear on you.  I mean, I'm not squeamish of it, in fact I quite enjoy it, at times."]
+     [athar "Then what's the matter?"]
+     [zariel "I think I've just got a case of the blues.  It's been too long since we've
+ enjoyed some downtime for awhile."]
+     [athar "Zariel, I understand you have your own beliefs, but when I'm feeling down, I turn
+ to my faith.  It's never steered me wrong, and serves as a solid backbone."]
+     [zariel "Yea, I can't see myself turning to being a devout paladin or cleric, but I appreciate
+ the thought Athar."]])
+
+   (chainm
+    [[anari "Zariel, you're looking quite nice today."]
+     [zariel "Thanks Anari!  I would say the same about you as well!"]
+     [olrun "Oh, no love for my handsome face and chiseled chin?"]
+     [anari "Come now Olrun, you know we all think you're the epitome of beauty."]
+     [zariel "Truly, my knees are quivering with excitement in the presence of such grace."]
+     [anari "In all the realms, never has a more handsome being existed."]
+     [olrun "Ok, ok, now you two are laying it on a little thick."]
+     [zariel "Olrun the Ostensible, the bastion of beauty, the herald of handsome."]
+     [anari "The guardian of gorgeous, the avatar of appeal."]
+     [olrun "Alright, alright, I think I hear <CHARNAME> calling for us."]])
 
    (chain
     [(can-talk :uxzar)
