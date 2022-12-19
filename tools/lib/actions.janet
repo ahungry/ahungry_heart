@@ -79,6 +79,9 @@
      (sg (string/format "ux_in_party_%s" (string who))))
     "JoinParty()"))
 
+(defn is-valid-for-party-dialogue [who]
+  (string/format "IsValidForPartyDialogue(\"%s\")" (string who)))
+
 (defn see [who]
   (string/format "See(\"%s\")" (string who)))
 

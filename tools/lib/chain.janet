@@ -38,6 +38,15 @@
                  (traify s)
                  (string/join rest "\n")))
 
+# Like the == variation, but requires an is-valid-for-party-dialogue and allows extra ifs
+(defn === [who s ifs & rest]
+  (string/format "  == %s IF ~%s %s~ THEN %s DO ~%s~\n"
+                 (string who)
+                 (is-valid-for-party-dialogue who)
+                 ifs
+                 (traify s)
+                 (string/join rest "\n")))
+
 
 (defn ict [who scene-id & rest]
   (string/format
