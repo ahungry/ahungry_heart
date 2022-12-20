@@ -182,7 +182,7 @@
      [voice "That's interesting, it's certainly a less common choice among non-elves."]
      [athar "I won't deny that Anari may have had some influence on my ideas."]
      [voice "Really?  I know you two have long been acquainted, but just how long have you known each other?"]
-     [athar "Honestly, as long as I can remember.  When I was young, I would go
+     [athar "Honestly, as long as I can remember.  When I was a teen, I would go
  about into the forests surrounding the city looking for excitement.  One of those times, I
  encountered Anari, and from there, our friendship bloomed into what it is today."]
      [athar "Back to the original topic - how about yourself Voice?  Granted, you do not
@@ -222,9 +222,69 @@
      [voice "Indeed."]
      ])
 
-   # TODO part: anari voice
-   # TODO part: anari olrun
-   # TODO part: anari olrun
+   # part: anari voice
+   (chainm
+    [
+     [voice "Anari?"]
+     [anari "Yes Voice?"]
+     [voice "Do you hear that?"]
+     [anari "Hold a moment..."]
+     [anari "Yes, it sounds like a haunting melody as the wind moves through the leaves."]
+     [anari "Any reason in particular that you ask?"]
+     [voice "I feel it's important to take a pause and enjoy a momentary reprise
+ once in awhile.  I'm sure <CHARNAME> would tend to agree."]
+     [anari "I don't disagree, however I'm not sure it's always prudent to take one in such
+ a sudden manner.  You know, we were in the middle of a task."]
+     [voice "Yet we are still ok, despite that sudden break?"]
+     [anari "Yes, that's true."]
+     [voice "Then we shouldn't worry ourselves, even when something sudden and unexpected
+ occurs, would you not agree?"]
+     [anari "Yes, I suppose you're correct.  Thanks for sharing those thoughts with me Voice."]
+     [voice "Anytime Anari."]
+     ])
+
+   # part: anari olrun
+   (chainm
+    [
+     [anari "Olrun, tell me about your hammer."]
+     [olrun "Well, for starters, it's blue."]
+     [anari "No, I..."]
+     [olrun "It's a bit round on the end o'er here, and has a nice shaft to complement it."]
+     [anari "You know what I meant!"]
+     [olrun "Well, I wish I could tell you it was handed down from some noble lineage.
+ It's nothing that melodramatic or full of lore."]
+     [anari "No story of acquisition?  Where did you get it?"]
+     [olrun "Hah! Where else, from the forge.  Well, I'm being a bit indirect ain't I?"]
+     [olrun "I had some rare blue hued metals from melting down a different weapon I had
+ found during another dungeon excursion.  Well, you know, it being molten and all, I didn't
+ really \"have\" the metals, as much as that they were in a state of flux, being melted down and all."]
+     [anari "Ahh, quite a bit of effort did go into the hammer then."]
+     [olrun "Oh yea, I don't think I mentioned it was effortless, far from it.  Just nothing
+ quite story worthy, but this seemed to make a fine enough exemplum."]
+     [anari "Absolutely!"]
+     ])
+
+   # part: anari olrun
+   (chainm
+    [
+     [olrun "Anari, I've been meaning to get your thoughts on something."]
+     [anari "What is it Olrun?"]
+     [olrun "Zariel's birthday is coming soon - trying to think of something to get her."]
+     [anari "Hmm..."]
+     [olrun "I figured, well, you know - being a lady and all, you might have some insights
+ on a nice gift, beyond the sort I usually pass along to her."]
+     [anari "You mean, as opposed to battle armaments and garments."]
+     [olrun "Exactly."]
+     [anari "What about some type of jewelry?  I think they had some amulets at the last
+ town we were in."]
+     [olrun "Hah! Not a bad idea.  Sometimes thinking through something too much can really
+ complicate the matter more than it needs to be."]
+     [anari "Exactly - a little impulsivity goes a long way."]
+     [olrun "Usually I would be doling out that advice, not being subject to it!"]
+     [anari "Likewise, err, you know what I mean."]
+     [olrun "Yep!  Thanks for your advice Anari."]
+     ])
+
    # TODO part: olrun voice
    # TODO part: olrun voice
 
