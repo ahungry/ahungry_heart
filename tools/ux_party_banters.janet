@@ -210,7 +210,18 @@
      [voice "Quite consider of you, thank you Athar."]
      ])
 
-   # TODO part: anari voice
+   # part: anari voice
+   (chainm
+    [
+     [anari "*yawn*"]
+     [voice "Feeling alright Anari?"]
+     [anari "I don't think I got enough rest last night.  Someone (motions towards <CHARNAME>) was a
+ bit heavy winded while sleeping."]
+     [voice "You mean they were snoring?"]
+     [anari "I guess that's a more concise way to phrase that."]
+     [voice "Indeed."]
+     ])
+
    # TODO part: anari voice
    # TODO part: anari olrun
    # TODO part: anari olrun
