@@ -285,8 +285,40 @@
      [olrun "Yep!  Thanks for your advice Anari."]
      ])
 
-   # TODO part: olrun voice
-   # TODO part: olrun voice
+   # part: olrun voice
+   (chainm
+    [
+     [olrun "Tell me The Voice, do you have The Mouth, The Face, and The Head to go with?"]
+     [voice "You're in an extra jovial mood today Olrun."]
+     [olrun "Haha, certainly - just havin' a wee bit o' fun."]
+     [voice "I can see"]
+     [olrun "So, as I was saying, if you've got that much, surely you've got The Neck,
+ The Body, and The Limbs?"]
+     [voice "No doubt."]
+     [olrun "What was left, oh right - do you have The..."]
+     [voice "The Wit?  The Cunning?  The Sly?  Yes, I think I have all of those things.
+ Thank you for asking."]
+     [olrun "No, I was going to say, The..."]
+     [voice "The Mystery?  The Shrewdness?"]
+     [olrun "Ok, ok, so anyways, how about that weather?"]
+     ])
+
+   # part: olrun voice
+   (chainm
+    [
+     [voice "Olrun, you're looking quite marvelous today."]
+     [olrun "Oh no, don't tell me you're in on it too."]
+     [voice "In on what?"]
+     [olrun "Zariel and Anari's little recurring jest."]
+     [voice "Whatever do you mean Olrun the Ostentatious?"]
+     [olrun "Gah!  They got to you!"]
+     [voice "You are looking quite sheen however..."]
+     [olrun "Thank..."]
+     [voice "Your head that is.  In the sunlight."]
+     [olrun "Blast!"]
+     [voice "*nudges Olrun and walks off smiling*"]
+     ]
+    )
 
    # part: zariel anari olrun
    (chainm
@@ -297,7 +329,8 @@
      [zariel "Truly, my knees are quivering with excitement in the presence of such grace."]
      [anari "In all the realms, never has a more handsome being existed."]
      [olrun "Ok, ok, now you two are laying it on a little thick."]
-     [zariel "Olrun the Ostensible, the bastion of beauty, the herald of handsome."]
+     [zariel "Olrun the Ostensible purveyor of Ostentatiousness,
+ the bastion of beauty, the herald of handsome."]
      [anari "The guardian of gorgeous, the avatar of appeal."]
      [olrun "Alright, alright, I think I hear <CHARNAME> calling for us."]])
 
