@@ -173,8 +173,43 @@
      [athar "Those are some good points friend.  I try to keep a bit moderate myself."]
      ])
 
-   # TODO part: athar voice
-   # TODO part: athar voice
+   # part: athar voice
+   (chainm
+    [
+     [voice "So Athar, which oath do you most relate to?"]
+     [athar "While I don't staunchly prescribe to a single oath, I most relate to the
+ Oath of the Ancients."]
+     [voice "That's interesting, it's certainly a less common choice among non-elves."]
+     [athar "I won't deny that Anari may have had some influence on my ideas."]
+     [voice "Really?  I know you two have long been acquainted, but just how long have you known each other?"]
+     [athar "Honestly, as long as I can remember.  When I was young, I would go
+ about into the forests surrounding the city looking for excitement.  One of those times, I
+ encountered Anari, and from there, our friendship bloomed into what it is today."]
+     [athar "Back to the original topic - how about yourself Voice?  Granted, you do not
+ have a reason to follow a particular oath, but what God do you serve?"]
+     [voice "Athar, you know me well enough to know I will not answer that."]
+     [athar "It was worth a shot, after all, you initiated the topic."]
+     [voice "Indeed I did."]
+     ])
+
+   # part: athar voice
+   (chainm
+    [
+     [athar "Voice, what do you aim for in life?"]
+     [voice "My duty binds me to assist in keeping the realm safe.  My conviction
+ ensures that I remain loyal to my duty.  This is the root of my aim and purpose in life."]
+     [athar "But surely you must wish for more?  We've known each other for awhile, but
+ many of your traits remain veiled in mystery."]
+     [voice "That's part of the fun Athar, the mystery can be a game in and of itself."]
+     [voice "However, it's not all duty and conviction.  I find serenity in nature, among
+ the forest at night.  At the canyon's edge at dawn, and while I prefer to remain in the
+ shadows within the city, that doesn't preclude me from conversing with the common folk,
+ I just prefer remaining out of the stoplight."]
+     [athar "That's wonderful to hear, the next time we're at the tavern,
+ I'll save you a seat in the corner."]
+     [voice "Quite consider of you, thank you Athar."]
+     ])
+
    # TODO part: anari voice
    # TODO part: anari voice
    # TODO part: anari olrun
@@ -185,7 +220,7 @@
    # part: zariel anari olrun
    (chainm
     [[anari "Zariel, you're looking quite nice today."]
-     [zariel "Thanks Anari!  I would say the same about you as well!"]
+     [zariel "Thanks Anari!  I could say the same about you as well!"]
      [olrun "Oh, no love for my handsome face and chiseled chin?"]
      [anari "Come now Olrun, you know we all think you're the epitome of beauty."]
      [zariel "Truly, my knees are quivering with excitement in the presence of such grace."]
