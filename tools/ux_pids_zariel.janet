@@ -1,36 +1,51 @@
 (use ./lib/dialog)
 (load-imports)
 
-(var banter-1-tree
-     (s {:cond [(g "ux_zariel_is_bantering")
-                (g "ux_zariel_banter_id" 0)]}
-        "Hey <CHARNAME>, have a moment?"
-        (r {:code [(ig "ux_zariel_banter_id")]}
-           "Sure, what's up?"
-           (s "Just wondering how you were doing?  It seems a lot has happened to you recently."
-              (r "I'm doing great, I've suffered some loss but it won't get me down."
-                 (s "I feel that you aren't grasping your situation, or you're putting on a
+(var
+ banters-to-player
+ [
+  (s {:cond [(g "ux_zariel_is_bantering")
+             (g "ux_zariel_banter_id" 0)]}
+     "Hey <CHARNAME>, have a moment?"
+     (r {:code [(ig "ux_zariel_banter_id")]}
+        "Sure, what's up?"
+        (s "Just wondering how you were doing?  It seems a lot has happened to you recently."
+           (r "I'm doing great, I've suffered some loss but it won't get me down."
+              (s "I feel that you aren't grasping your situation, or you're putting on a
  fake demeanor."
-                    (r "Hah, no, really!  Why let that which can't be changed ruin my future which
+                 (r "Hah, no, really!  Why let that which can't be changed ruin my future which
  still can be?"
-                       (s "That's not such a bad outlook afterall.  I suppose."))
-                    (r "Well, I don't give a damn what you think.")))
-              (r "I'm neither great or terrible.  I've definitely had some better times, but
+                    (s "That's not such a bad outlook afterall.  I suppose."))
+                 (r "Well, I don't give a damn what you think.")))
+           (r "I'm neither great or terrible.  I've definitely had some better times, but
  I won't let it control my personality or actions."
-                 (s "That's a really strong mindset to hold to, I've had some of my own struggles
+              (s "That's a really strong mindset to hold to, I've had some of my own struggles
  in the past, and it's nice to see one who keeps rational about it."))
-              (r "Absolutely terrible.  My foster father is dead, I've got assassins after me,
+           (r "Absolutely terrible.  My foster father is dead, I've got assassins after me,
  and I have an annoyingly chatty teammate who keeps trying to banter with me, named Zariel."
-                 (s "Well, I'm GLAD you're having a bad time!"))))
-        (r "Not now..." (mute :zariel))))
+              (s "Well, I'm GLAD you're having a bad time!"))))
+     (r "Not now..." (mute :zariel)))
 
-(var banter-2-tree
-     (s {:cond [(g "ux_zariel_is_bantering")
-                (g "ux_zariel_banter_id" 1)]}
-        "This is our second banter"
-        (r {:code [(ig "ux_zariel_banter_id")]}
-           "Cool!")
-        (r "Not now..." (mute :zariel))))
+  (s {:cond [(g "ux_zariel_is_bantering")
+             (g "ux_zariel_banter_id" 1)]}
+     "So, <CHARNAME>, I was thinking..."
+     (r {:code [(ig "ux_zariel_banter_id")]}
+        "About what?"
+        (s "What's your opinion on helping the needy?"
+           (r "My beliefs and moral compass hold me to the mindset that I should always do what I can do to assist."
+              (s "What about when assisting one person may cause harm to more than one?  Or when that one person
+ is someone that's more special to you?"
+                 (r "While I would always like to help, I'll always put those close to me first."
+                    (s "I'm glad to hear you say that."))
+                 (r "I think it has to be decided on a case by case basis, a blanket answer would never work here."
+                    (s "Sounds like a non-answer to me!"))
+                 (r "I believe in utilitarianism, the needs of the many outweigh the needs of the few."
+                    (s "Well, aren't you virtuous."))))
+           (r "They should help themselves, I have no desire to assist those who cannot make due on their own."
+              (s "Well, that's one philosophy..."))))
+     (r "Not now..." (mute :zariel)))
+
+  ])
 
 (var pid-1-tree
      (s {:cond ["IsGabber(Player1)"
@@ -178,8 +193,7 @@
     (r "Nevermind...")))
 
 (defn main [& args]
-  (var b1 (build-dialog banter-1-tree))
-  (var b2 (build-dialog banter-2-tree))
+  (var b1 (string/join (map build-dialog banters-to-player) "\n"))
   (var p1 (build-dialog pid-1-tree))
   (var p2 (build-dialog pid-2-tree))
-  (string/format "BEGIN uxzarj\n%s" (string/join [b1 b2 p1 p2])))
+  (string/format "BEGIN uxzarj\n%s" (string/join [b1 p1 p2])))

@@ -18,6 +18,9 @@
 (defn sgt [s i]
   (string/format "SetGlobalTimer(\"%s\", \"GLOBAL\", %s)" s i))
 
+(defn sgtr [s min max]
+  (string/format "SetGlobalTimerRandom(\"%s\", \"GLOBAL\", %s, %s)" s min max))
+
 (defn sg [s &opt i]
   (string/format "SetGlobal(\"%s\", \"GLOBAL\", %d)" s (or i 1)))
 
