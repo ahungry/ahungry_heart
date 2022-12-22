@@ -4,9 +4,24 @@
 (var banter-1-tree
      (s {:cond [(g "ux_zariel_is_bantering")
                 (g "ux_zariel_banter_id" 0)]}
-        "This is our first banter"
+        "Hey <CHARNAME>, have a moment?"
         (r {:code [(ig "ux_zariel_banter_id")]}
-           "Cool!")
+           "Sure, what's up?"
+           (s "Just wondering how you were doing?  It seems a lot has happened to you recently."
+              (r "I'm doing great, I've suffered some loss but it won't get me down."
+                 (s "I feel that you aren't grasping your situation, or you're putting on a
+ fake demeanor."
+                    (r "Hah, no, really!  Why let that which can't be changed ruin my future which
+ still can be?"
+                       (s "That's not such a bad outlook afterall.  I suppose."))
+                    (r "Well, I don't give a damn what you think.")))
+              (r "I'm neither great or terrible.  I've definitely had some better times, but
+ I won't let it control my personality or actions."
+                 (s "That's a really strong mindset to hold to, I've had some of my own struggles
+ in the past, and it's nice to see one who keeps rational about it."))
+              (r "Absolutely terrible.  My foster father is dead, I've got assassins after me,
+ and I have an annoyingly chatty teammate who keeps trying to banter with me, named Zariel."
+                 (s "Well, I'm GLAD you're having a bad time!"))))
         (r "Not now..." (mute :zariel))))
 
 (var banter-2-tree
@@ -44,6 +59,47 @@
           (r "I don't care about your desire for adventure, when you're in
  this party, you will recognize me as your absolute leader."
              (s "For your sake, I hope you're joking."))))
+
+    (r "Can you tell me a bit about yourself?"
+       (s "What did you want to know?"
+
+          (r "What was your early life like?"
+             (s "Well, I grew up in Baldur's Gate.  My family was quite poor, but my parents always made
+ sure I had what was necessary to survive.  Well, they did while they were around anyways..."
+                (r "What happened to your parents?"
+                   (s "Well, they weren't always the most ethical of sorts.  Like I said, they'd
+ do what was required to make sure I was provided for.  However, very few people are looking to
+ employ a couple of tieflings.  Eventually they fell on the wrong side of the law, and in their
+ attempt to avoid imprisonment, were unjustly slain in battle. "
+                      (r "Oh no, that's horrible."
+                         (s "Yea, I had a growing resentment of the \"good\" parts of society bred
+ out of jealousy and hunger when they were around.  That started to get a lot worse when they weren't.
+ I'm very lucky that Olrun found me when he did and helped me to get off that dark path."))
+                      (r "Serves them right." (s "Wow, aren't you judgmental?")))
+                   )
+                (r "That's enough about that topic." (s "Fine."))))
+
+          (r "What types of things do you enjoy?"
+             (s "Well, you may have heard from the others by now, I'm a real sucker for anything
+ some may consider childish.  Thanks to my companions, I've learned not to take things too seriously.
+ Overall this has really helped me keep my chin up."
+                (r "You didn't really answer the question.  What in particular?"
+                   (s "Hah, true enough.  From what I hear, I'm not quite the prankster your
+ friend Imoen is, although I enjoy a good laugh.  I'm a huge fan of the gambling games and other
+ games of chance.  I love a good roll of the dice."))
+                (r "Ok, thanks for sharing." (s "Glad to!"))))
+
+          (r "What do you look for in a friend?"
+             (s "You know, I don't think people tend to actively seek a particular friend type, I think it
+ just happens on it's own, usually based on proximity and shared events.  I think the qualities that
+ make a good friend are pretty general - someone who is fun to be around, caring, reliable, all that."
+                (r "I agree, do you think that could be us some day?"
+                   (s "If you agree, and understand what I'm saying, you wouldn't even ask that."))
+                (r "I disagree, you can be very specific."
+                   (s "Well, I don't agree - you can't order a friend like you can order a meal."))))
+
+          (r "I changed my mind." (s "Fine."))
+          ))
 
     (r {:cond [(state>= 70)
                "OR(5)"
