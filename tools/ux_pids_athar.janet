@@ -1,21 +1,59 @@
 (use ./lib/dialog)
 (load-imports)
 
-(var banter-1-tree
-     (say {:cond [(g "ux_athar_is_bantering")
-                  (g "ux_athar_banter_id" 0)]}
-          "This is our first banter"
-          (rep {:code [(ig "ux_athar_banter_id")]}
-               "Cool!")
-          (rep "Not now..." (mute :athar))))
+(var
+ banters-to-player
+ [
+  (s {:cond [(g "ux_athar_is_bantering")
+             (g "ux_athar_banter_id" 0)]}
+     "<CHARNAME>, might I have a moment of your time?"
+     (r {:code [(ig "ux_athar_banter_id")]}
+        "What is it Athar?!"
+        (s "How have you been holding up?  It must be difficult being subject to so much
+ change so rapidly."
+           (r "I'm doing great, I've suffered some loss, but it won't get me down!"
+              (s "That's a strong minded outlook.  Sometimes it is alright to show
+ some weakness in one's demeanor.  Are you certain you're alright?"
+                 (r "Athar, I thank you for your concern, but I'm fine.  I am not letting
+ our current situation get to me."
+                    (s "I'm happy to hear that <CHARNAME>."))
+                 (r "Actually... I have been having a tough time dealing with it.
+ Do you have any advice?"
+                    (s "Focus on the \"now\", and not the past or future <CHARNAME>.
+ We are incapable of changing the past, and we know not what the future holds, so it is
+ most prudent to focus on where we are at this moment."))))
+           (r "I'd say I'm pretty desensitized to all of it.  I don't have a strong feeling
+ one way or the other."
+              (s "That can be a dangerous path to tread <CHARNAME>.  While it can be
+ a helpful coping mechanism, we must not regulate our emotions to that of a rock.  Those
+ emotions can be a powerful strength to draw upon, and we need not lose them."))
+           (r "I'm doing horrible!  Thanks for asking...NOT!"
+              (s "Well, at least you haven't lost your emotion, although  you clearly
+ need to practice a bit of mindfulness to keep it in check."))))
 
-(var banter-2-tree
-     (say {:cond [(g "ux_athar_is_bantering")
-                  (g "ux_athar_banter_id" 1)]}
-          "This is our second banter"
-          (rep {:code [(ig "ux_athar_banter_id")]}
-               "Cool!")
-          (rep "Not now..." (mute :athar))))
+     (r "Not now..." (mute :athar)))
+
+  (s {:cond [(g "ux_athar_is_bantering")
+             (g "ux_athar_banter_id" 1)]}
+     "I have a matter that I've been meaning to ask you about <CHARNAME>."
+     (r {:code [(ig "ux_athar_banter_id")]}
+        "What did you want to ask me about?"
+        (s "As a paladin, I'm sworn to an Oath as part of my duties and belief system.
+ What do you believe in?"
+           (r "I believe that I make my own destiny and do not need anyone else."
+              (s "That's certainly a cynical outlook on life, if not one that attempts
+ to retain control of one's situation."))
+           (r "I believe in relying on those I travel with, so that I can protect
+ those I care about, and those that deserve protection."
+              (s "I believe as much as well.  We must strive to protect others, and
+ one of our greatest assets in doing is is to trust in and rely on those we surround
+ ourselves with."))
+           (r "I believe in using those around me as a means to an end.  An end
+ that enriches my own wellbeing and riches."
+              (s "That's a rather cynical view of things."))))
+
+     (r "Not now..." (mute :athar)))
+ ])
 
 (var pid-1-tree
      (say {:cond ["IsGabber(Player1)"
@@ -51,6 +89,44 @@
  sworn to keep them confidential. "
           (s "But I am sure our mission will bring us closer to uncovering
  the truth behind this powerful artifact.")))
+
+    (r "Athar, can we talk about you for a bit?"
+       (s "Certainly <CHARNAME>, about what?"
+
+          (r "What was your early life like?"
+             (s "My family is from the noble caste.  I'm originally from Baldur's Gate myself, although my
+ parents traveled there soon after getting married.  They still reside there, although I'm rarely home
+ due to all my adventuring."
+                (r "Are you close to your parents?"
+                   (s "Absolutely.  They were a bit pre-occupied with appearances as we made our rounds
+ through the various social circles, but they always gave me the love and support a child needs as they grow."
+                      (r "What's it like being a noble?"
+                         (s "Well, while some may carry it as a badge of honor, it is rarely of
+ significance in my day to day life - afterall, a gibberling doesn't care who your bloodline can
+ be traced back to."))
+                      (r "You sound like a stuck up twit." (s "Quite rude."))))
+                (r "That's enough about that topic." (s "As you wish."))))
+
+          (r "What types of things do you enjoy?"
+             (s "I'm quite fond of music.  I've been trying to get better at playing
+ a lute, although I'm far from a bard."
+                (r "So, a paladin by career, and a bard by hobby?"
+                   (s "Oh yes.  I'll be lulling our enemies with an enchanting melody
+ in no time.  Although if that doesn't work, I will not hesitate to put them in a lull with
+ a good whack of my shield."))
+                (r "Ok, thanks for sharing." (s "Absolutely."))))
+
+          (r "What do you look for in a friend?"
+             (s "I believe in having a strong sense of virtue.  One must be pure of heart and
+ mind, or at least be attempting to better oneself into doing so. A moderate demeanor is also
+ important - fanatacism can be quite troublesome."
+                (r "Wow, those are all the traits I look for and possess myself.  Do you think
+ we could be friends some day?"
+                   (s "I thought we already were?"))
+                (r "I'm sorry I asked."
+                   (s "I'm sorry you're sorry."))))
+
+          (r "I changed my mind." (s "Fine."))))
 
     (r {:cond [(state>= 70)
                "OR(5)"
@@ -128,8 +204,7 @@
     (rep "Nevermind...")))
 
 (defn main [& args]
-  (var b1 (build-dialog banter-1-tree))
-  (var b2 (build-dialog banter-2-tree))
+  (var b1 (string/join (map build-dialog banters-to-player) "\n"))
   (var p1 (build-dialog pid-1-tree))
   (var p2 (build-dialog pid-2-tree))
-  (string/format "BEGIN uxathj\n%s" (string/join [b1 b2 p1 p2])))
+  (string/format "BEGIN uxathj\n%s" (string/join [b1 p1 p2])))

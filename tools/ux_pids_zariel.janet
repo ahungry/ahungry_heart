@@ -10,7 +10,7 @@
      (r {:code [(ig "ux_zariel_banter_id")]}
         "Sure, what's up?"
         (s "Just wondering how you were doing?  It seems a lot has happened to you recently."
-           (r "I'm doing great, I've suffered some loss but it won't get me down."
+           (r "I'm doing great, I've suffered some loss, but it won't get me down!"
               (s "I feel that you aren't grasping your situation, or you're putting on a
  fake demeanor."
                  (r "Hah, no, really!  Why let that which can't be changed ruin my future which
@@ -44,6 +44,9 @@
            (r "They should help themselves, I have no desire to assist those who cannot make due on their own."
               (s "Well, that's one philosophy..."))))
      (r "Not now..." (mute :zariel)))
+
+  # TODO Add a banter chain following up about helping the needy, related to
+  # something like thievery when needy must help themselves
 
   ])
 
