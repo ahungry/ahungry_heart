@@ -95,7 +95,7 @@
 
           (r "What was your early life like?"
              (s "My family is from the noble caste.  I'm originally from Baldur's Gate myself, although my
- parents traveled there soon after getting married.  They still reside there, although I'm rarely home
+ parents traveled there soon after getting married.  They still reside there, however I'm rarely home
  due to all my adventuring."
                 (r "Are you close to your parents?"
                    (s "Absolutely.  They were a bit pre-occupied with appearances as we made our rounds
@@ -109,7 +109,7 @@
 
           (r "What types of things do you enjoy?"
              (s "I'm quite fond of music.  I've been trying to get better at playing
- a lute, although I'm far from a bard."
+ a lute, though I'm far from a bard."
                 (r "So, a paladin by career, and a bard by hobby?"
                    (s "Oh yes.  I'll be lulling our enemies with an enchanting melody
  in no time.  Although if that doesn't work, I will not hesitate to put them in a lull with
