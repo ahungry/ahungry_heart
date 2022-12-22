@@ -1,21 +1,59 @@
 (use ./lib/dialog)
 (load-imports)
 
-(var banter-1-tree
-     (say {:cond [(g "ux_voice_is_bantering")
-                  (g "ux_voice_banter_id" 0)]}
-          "This is our first banter"
-          (rep {:code [(ig "ux_voice_banter_id")]}
-               "Cool!")
-          (rep "Not now..." (mute :voice))))
+(var
+ banters-to-player
+ [
+  (s {:cond [(g "ux_voice_is_bantering")
+             (g "ux_voice_banter_id" 0)]}
+     "Pardon me <CHARNAME>, care to chat for a moment?"
+     (r {:code [(ig "ux_voice_banter_id")]}
+        "Sure Voice, what is it?"
+        (s "You have been subjected to cruel conditions, those that one so young should
+ need not endure.  Are you well?"
+           (r "I'm absolutely splendid!  I have no problems to speak of."
+              (s "That's commendable, I would not be so cavalier myself, were I under
+ a similar set of conditions.  Are you certain that you do not need someone to share
+ your problems with?"
+                 (r "Thank you for your concern.  I assure you, I am doing fine."
+                    (s "That's good to hear."))))
+           (r "I feel fine.  I'm not under duress of any sort.  While my scenario is
+ unfortunate, I don't feel that it's effected me in any meaningful way."
+              (s "I am surprised to hear that <CHARNAME>, I would expect that the
+ death of your foster father, combined with your constant battles since, would have, at the
+ very least, caused you some mental hardships."
+                 (r "Well, it hasn't.  I'm lucky I guess."
+                    (s "I guess so."))
+                 (r "..." (s "Regardless, hang in there."))))
+           (r "Voice, I wish I could say I am well, however I am far from it.  I suffer
+ constantly from the sadness of loss."
+              (s "It brings me pain to hear that, however I hope that I am able to help
+ you move beyond the loss, and retain those memories that contributed to happiness, while
+ letting go and moving on from those that cause you to suffer."))))
+     (r "Not now..." (mute :voice)))
 
-(var banter-2-tree
-     (say {:cond [(g "ux_voice_is_bantering")
-                  (g "ux_voice_banter_id" 1)]}
-          "This is our second banter"
-          (rep {:code [(ig "ux_voice_banter_id")]}
-               "Cool!")
-          (rep "Not now..." (mute :voice))))
+  (s {:cond [(g "ux_voice_is_bantering")
+             (g "ux_voice_banter_id" 1)]}
+     "<CHARNAME>, I require your attention."
+     (r {:code [(ig "ux_voice_banter_id")]}
+        "What is it that I can help you with?"
+        (s "What are your thoughts on the arcane?  Magic, mysticism and the divine arts."
+           (r "I feel that it's an interesting topic, they seem to greatly assist me and
+ I use them in my adventures whenever I am able."
+              (s "I am grateful to hear you say that.  I've long been a practitioner of such,
+ and it has served me well in protecting the city of Baldur's Gate."))
+           (r "Honestly, I've never given it much thought.  When practitioners use it
+ and it works out for me, great."
+              (s "That's a pretty simple mindset.  Do you not pause and think
+ about the world around us?  Such a blase attitude is to put oneself on the level
+ of a bird."))
+           (r "I don't give a damn about the divine and arcane.  I just know those who use it
+ tend to be a lot squishier when I'm killing 'em!"
+              (s "Well, that's an interesting thought..."))
+           )
+        )
+     (r "Not now..." (mute :voice)))
+  ])
 
 (var pid-1-tree
      (say {:cond ["IsGabber(Player1)"
@@ -111,8 +149,7 @@ a mindset I am agreeable to."))
             (rep "Nevermind...")))))
 
 (defn main [& args]
-  (var b1 (build-dialog banter-1-tree))
-  (var b2 (build-dialog banter-2-tree))
+  (var b1 (string/join (map build-dialog banters-to-player) "\n"))
   (var p1 (build-dialog pid-1-tree))
   (var p2 (build-dialog pid-2-tree))
-  (string/format "BEGIN uxvoij\n%s" (string/join [b1 b2 p1 p2])))
+  (string/format "BEGIN uxvoij\n%s" (string/join [b1 p1 p2])))
