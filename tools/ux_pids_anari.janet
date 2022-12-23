@@ -42,9 +42,26 @@
 
   (s {:cond [(g "ux_anari_is_bantering")
              (g "ux_anari_banter_id" 1)]}
-     "This is our second banter"
+     "Dear <CHARNAME>, come, walk beside me and share some words."
      (r {:code [(ig "ux_anari_banter_id")]}
-        "Cool!")
+        "I would be happy to Anari.  What are you thinking?"
+        (s "Amazing wonders are all around us.  From the natural to the supernatural.
+  What do you find to be beautiful?  Things like a sunset, a perfect color scheme..."
+           (r "I enjoy the lush greens of the forest.  The way the trees blend into
+ a backdrop of green, and the other parts of outdoors are a kaleidoscope of shapes and
+ color, quite enjoyable."
+              (s "You have a way with words <CHARNAME>."))
+           (r "I find a mental ecstasy in the lush reds of blood splatter from
+ those who would stand in my way.  Watching their skin rip and tear into pieces
+ is absolute bliss.."
+              (s "Err... I better get going."))
+           (r "I find you beautiful Anari."
+              (s "Oh my...that's quite forward of you!"
+                 (r "I was just kidding, don't take it seriously."
+                    (s "Sure you were *smile*."))
+                 (r "I just speak the truth."
+                    (s "*smile*"))))))
+
      (r "Not now..." (mute :anari)))
   ])
 
