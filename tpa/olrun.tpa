@@ -8,14 +8,14 @@ COPY ~%MOD_FOLDER%/portraits/olrun.pngs.bmp~ ~override/uxolrs.bmp~
 
 // Add the items
 COPY ~%MOD_FOLDER%/items/uxham01.itm~ ~override~
-SAY NAME1 ~Olrun's Hammer of Smithing~
-SAY NAME2 ~Olrun's Hammer of Smithing~
+SAY NAME1 ~Olrun's Hammer of Smithing + 1~
+SAY NAME2 ~Olrun's Hammer of Smithing + 1~
 SAY DESC ~This is Olrun's "Hammer of Smithing".
 The 'h' is silent.
 
 STATISTICS:
 
-Damage: 1d4+3 (crushing)
+Damage: 2d3+3 (crushing)
 Speed Factor: 2
 Proficiency Type: Hammers
 Type: One-handed
@@ -24,7 +24,16 @@ Requires:
 
 Weight: 3
 ~
-SAY UNIDENTIFIED_DESC ~The Hammer of Smithing~
+SAY UNIDENTIFIED_DESC ~The Hammer of Smithing + 1~
+// Adjust the dice/thac0 etc.
+LPF ALTER_ITEM_HEADER INT_VAR header_type=1
+  speed = 2
+  thac0_bonus = 1
+  damage_bonus = 3
+  dicesize = 3
+  dicenumber = 2
+END
+WRITE_LONG 0x0060 1 // Enchantment level
 // WRITE_ASCII 0x0022 ~S3~ #2
 LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x7 END
 LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x8 END
@@ -33,22 +42,46 @@ LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x60 parameter2=16 
 LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x3a parameter2=21 target=1 timing=2 END
 
 COPY ~%MOD_FOLDER%/items/uxlea02.itm~ ~override~
-SAY NAME1 ~Olrun's Armor~
-SAY NAME2 ~Olrun's Armor~
+SAY NAME1 ~Olrun's Armor +2~
+SAY NAME2 ~Olrun's Armor +2~
 SAY DESC ~This is Olrun's personal armor.
 When he's wearing this, he is ready to rage.
 
 STATISTICS:
 
-Armor Class: 3 (1 vs piercing, 2 vs missile)
+Armor Class: 5 (3 vs piercing, 4 vs missile)
 
 Requires:
  Olrun
 
 Weight: 3
 ~
-SAY UNIDENTIFIED_DESC ~Olrun's Armor~
+SAY UNIDENTIFIED_DESC ~Olrun's Armor +2~
 WRITE_ASCII 0x0022 ~3a~ #2
+WRITE_LONG 0x0060 2 // Enchantment level
+
+LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 END
+LPF ADD_ITEM_EQEFFECT
+  INT_VAR silent=1
+          opcode=0x0    // AC
+          parameter1=6  // Same base as hide
+          parameter2=16 // Base Armor class
+          target=1
+          timing=2
+END
+// Bonus vs pierce
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x0 parameter1=2 parameter2=4 target=1 timing=2 END
+// Bonus vs missile
+LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x0 parameter1=1 parameter2=2 target=1 timing=2 END
+LPF ADD_ITEM_EQEFFECT
+  INT_VAR silent=1
+          opcode=0x0   // Armor class
+          parameter1=2 // +2 ac
+          parameter2=0 // All types
+          target=1
+          timing=2
+END
+
 LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x7 END
 LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x8 END
 

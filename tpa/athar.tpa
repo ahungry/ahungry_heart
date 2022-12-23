@@ -36,6 +36,7 @@ LPF ALTER_ITEM_HEADER INT_VAR header_type=1
   dicesize = 6
   dicenumber = 1
 END
+WRITE_LONG 0x0060 1 // Enchantment level
 // Cap it at 0.5 APR at this level
 LPF ALTER_EFFECT INT_VAR silent=1
   match_opcode=0x1

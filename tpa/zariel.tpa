@@ -85,6 +85,7 @@ LPF ALTER_ITEM_HEADER INT_VAR header_type=1
   dicesize = 4
   dicenumber = 1
 END
+WRITE_LONG 0x0060 0 // Enchantment level
 LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x7 END
 LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x8 END
 // Weapon Color
@@ -109,7 +110,7 @@ Requires:
 
 Weight: 1
 ~
-SAY UNIDENTIFIED_DESC ~Zariel's "Right Hand"~
+SAY UNIDENTIFIED_DESC ~Zariel's "Right Hand" + 1~
 WRITE_ASCII 0x0022 ~S3~ #2
 WRITE_BYTE  0x0034 0            // Price
 WRITE_ASCII 0x003a ~ISW1H55~ // Inv icon
@@ -122,6 +123,7 @@ LPF ALTER_ITEM_HEADER INT_VAR header_type=1
   dicesize = 4
   dicenumber = 1
 END
+WRITE_LONG 0x0060 1 // Enchantment level
 LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x7 END
 LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x8 END
 LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x4b parameter2=16 target=1 timing=2 END
