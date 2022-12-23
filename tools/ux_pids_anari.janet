@@ -92,11 +92,38 @@
     (r "Anari, may I have your attention for a bit?"
        (s "Absolutely <CHARNAME>, what is it you need?"
           (r "What was your early life like?"
-             (s "SAY SOMETHING HERE"))
+             (s "Oh, the stories I could tell!  I grew up in the outskirts of Baldur's Gate, off
+ in the surrounding forests.  Some refer to them as the Cloakwood, although being from a nomadic
+ family, we were never in one area for a particularly long time, but tended to roam around.  I
+ grew up surrounded by caring comrades and family.  We basked in the melodic tunes of our woodwinds
+ quite often, complemented by the natural sounds of the actual wind, as it blew through the branches."
+                (r "Sounds like the stuff of fairy tales to me."
+                   (s "Well, I am an elf, not a fairy, but we are both quite magical."))
+                (r "That was a touching story Anari, thank you for sharing it with me."
+                   (s "I'm happy to have someone to share it with."))))
+
           (r "What types of things do you enjoy?"
-             (s "TODO INFO HERE"))
+             (s "While some might consider it a stereotype or trope, a shopping spree can be
+ a quick way to my heart.  I suppose that's not really a hobby or activity, but I do enjoy it.
+ If I had to pick an actual hobby, I'm fond of crafting, whether it's assembling some ornamental
+ jewelry, or customizing a new bow."
+                (r "What kind of bow?  A bow, or a bow?"
+                   (s "Oh, definitely a bow.  The kind that shoots arrows.  Although the kind for
+ my hair isn't bad either."))
+                (r "I'm a fan of shopping myself, we should go together the next time we're in
+ town with some downtime."
+                   (s "I would like that."))
+                ))
+
           (r "What do you look for in a friend?"
-             (s "TODO INFO HERE"))))
+             (s "I think a strong sense of empathy is very important.  If you can't relate to
+ the person you're potentially trusting your life with, how can you consider them a friend?
+ There can be comaraderie and a common purpose, but I don't think that's the same as friendship."
+                (r "I don't find those qualities important at all.  I wouldn't want to be your friend."
+                   (s "Well, I wouldn't want to go against your wishes."))
+                (r "I value those same qualities, I hope we grow to be close friends as well."
+                   (s "Likewise <CHARNAME>."))
+                ))))
 
     (r {:cond [(state>= 70)
                  "OR(5)"

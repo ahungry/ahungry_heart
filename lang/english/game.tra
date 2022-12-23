@@ -595,8 +595,6 @@
 @000633 = ~Violence?  Eww...  I prefer to solve my problems with songs or diplomacy.~
 @000634 = ~I never say no to a gold or two, what's up Olrun?~
 @000635 = ~Absolutely <CHARNAME>, what is it you need?~
-@000636 = ~SAY SOMETHING HERE~
-@000637 = ~TODO INFO HERE~
 @000638 = ~Anari, may I have your attention for a bit?~
 @000639 = ~Sure <CHARNAME>, what did ya wanna know?~
 @000640 = ~Olrun, let's talk about you for a moment.~
@@ -649,3 +647,18 @@
 @000689 = ~I just speak the truth.~
 @000690 = ~I find you beautiful Anari.~
 @000691 = ~I would be happy to Anari.  What are you thinking?~
+@000693 = ~Oh, the stories I could tell!  I grew up in the outskirts of Baldur's Gate, off in the surrounding forests.  Some refer to them as the Cloakwood, although being from a nomadic family, we were never in one area for a particularly long time, but tended to roam around.  I grew up surrounded by caring comrades and family.  We basked in the melodic tunes of our woodwinds quite often, complemented by the natural sounds of the actual wind, as it blew through the branches.~
+@000694 = ~Well, I am an elf, not a fairy, but we are both quite magical.~
+@000695 = ~Sounds like the stuff of fairy tales to me.~
+@000696 = ~I'm happy to have someone to share it with.~
+@000697 = ~That was a touching story Anari, thank you for sharing it with me.~
+@000698 = ~While some might consider it a stereotype or trope, a shopping spree can be a quick way to my heart.  I suppose that's not really a hobby or activity, but I do enjoy it.  If I had to pick an actual hobby, I'm fond of crafting, whether it's assembling some ornamental jewelry, or customizing a new bow.~
+@000699 = ~Oh, definitely a bow.  The kind that shoots arrows.  Although the kind for my hair isn't bad either.~
+@000700 = ~What kind of bow?  A bow, or a bow?~
+@000701 = ~I would like that.~
+@000702 = ~I'm a fan of shopping myself, we should go together the next time we're in town with some downtime.~
+@000703 = ~I think a strong sense of empathy is very important.  If you can't relate to the person you're potentially trusting your life with, how can you consider them a friend?  There can be comaraderie and a common purpose, but I don't think that's the same as friendship.~
+@000704 = ~Well, I wouldn't want to go against your wishes.~
+@000705 = ~I don't find those qualities important at all.  I wouldn't want to be your friend.~
+@000706 = ~Likewise <CHARNAME>.~
+@000707 = ~I value those same qualities, I hope we grow to be close friends as well.~
