@@ -40,7 +40,7 @@
 
   (s {:cond [(g "ux_olrun_is_bantering")
              (g "ux_olrun_banter_id" 1)]}
-     "Hey yo, <CHARNAME>, 2 coins for yer ear this time?"
+     "Ho there <CHARNAME>, 2 coins for yer ear this time?"
      (r {:code [(ig "ux_olrun_banter_id") "GiveGoldForce(2)"]}
         "I never say no to a gold or two, what's up Olrun?"
         (s "What's your favorite kind of weapon?"

@@ -115,16 +115,17 @@
  Are you a man or a woman?"
              (s "Well, that's quite straight forward of you.  While my past is somewhat
  mysterious, even to myself, my identity is neutral by choice."))
-          (r "I changed my mind." (s "As you wish."))))
+          (r "I changed my mind." (s "As you wish."))
 
-    (r "What do you look for in a friend?"
-       (s "I find honesty of the utmost importance in a friendship.  If you lose the trust
+          (r "What do you look for in a friend?"
+             (s "I find honesty of the utmost importance in a friendship.  If you lose the trust
  you once had, it can be very difficult to recover that level of bonding in a friendship.
  I find having a similar mindset and appreciation of things of equal importance as well."
-          (r "I'm glad to hear that, I value those things as well."
-             (s "That is pleasing to hear <CHARNAME>."))
-          (r "Sounds like a stupid set of qualities to me."
-             (s "Well, they may not be relevant to us anytime soon with those kinds of replies."))))
+                (r "I'm glad to hear that, I value those things as well."
+                   (s "That is pleasing to hear <CHARNAME>."))
+                (r "Sounds like a stupid set of qualities to me."
+                   (s "Well, they may not be relevant to us anytime soon with
+ those kinds of replies."))))))
 
     (r {:cond [(state>= 70)
                  "OR(5)"
