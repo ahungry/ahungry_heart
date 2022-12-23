@@ -93,11 +93,38 @@
       (r "Olrun, let's talk about you for a moment."
          (s "Sure <CHARNAME>, what did ya wanna know?"
             (r "What was your early life like?"
-               (s "SAY SOMETHING HERE"))
+               (s "Oh boy, lessee... I'm originally from a dwarven community, as if
+ that weren't obvious.  We are a bit of a sub-group in Baldur's Gate, no exotic
+ region or from deep underground or at the top of the mountains or anything like that."
+                  (r "Wow, a dwarf that isn't even from a proper dwarven location,
+ I think I've heard enough."
+                     (s "Hah!  Good, I was done sharing with you anyways."))
+                  (r "That's interesting Olrun, what was it like being part of a
+ smaller community within the large city?"
+                     (s "Thanks were always good, I had a prosperous upbringing, although
+ far from nobility's wealth and riches.  My siblings and I would always set out on an
+ excursion, trained in the ways of adventurin' from my elders."))))
+
             (r "What types of things do you enjoy?"
-               (s "TODO INFO HERE"))
+               (s "I love a good physical challenge, something done for sport and fun.
+ I mean, I love combat and the glory of battle as well, but that's more business than
+ pleasure.  Well, sometimes it's more pleasure than business.  Anyways, there are a lot
+ of activities to best each other that don't involve the loser's skull being crushed."
+                  (s "Wouldn't want that to happen when competing with a friend."
+                     (r "Ugh, I hate physical activities.  Much more of a book worm myself."
+                        (s "Well, whatever suits yourself."))
+                     (r "Now that's a rousing description of enjoyment, I hope to
+ be included in it sometime!"))))
+
             (r "What do you look for in a friend?"
-               (s "TODO INFO HERE"))))
+               (s "When I'm searching for a friend, I look for the most attractive
+ individual I can find, if you get my drift *wink wink, nudge nudge*.  But, more
+ seriously, I don't think I've gone looking for a friend, it just happens when activities
+ are shared with comrades and the bond forms naturally."
+                  (r "What do you think of me?  Would you consider me a friend?"
+                     (s "I don't consider you an enemy, so I'd say you're well on your way there!"))
+                  (r "Sounds pretty lame, I don't think I'd want to be your friend."
+                     (s "Ouch, that's just cold."))))))
 
       (r {:cond [(state>= 70)
                  "OR(5)"
