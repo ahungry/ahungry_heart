@@ -123,7 +123,9 @@
                    (s "Well, I wouldn't want to go against your wishes."))
                 (r "I value those same qualities, I hope we grow to be close friends as well."
                    (s "Likewise <CHARNAME>."))
-                ))))
+                ))
+
+          (r "Actually, I changed my mind..." (s "As you wish."))))
 
     (r {:cond [(state>= 70)
                  "OR(5)"

@@ -74,129 +74,134 @@
 (var
  pid-2-tree
  (s {:cond ["IsGabber(Player1)"
-              (ng "ux_olrun_is_bantering")]}
-      "What's on your mind? [uxolr56]"
+            (ng "ux_olrun_is_bantering")]}
+    "What's on your mind? [uxolr56]"
 
-      (r "Olrun, can you tell me a bit about yourself?"
-         (s "I am a proud Dwarven Barbarian and follower of the gods of my people.
+    (r "Olrun, can you tell me a bit about yourself?"
+       (s "I am a proud Dwarven Barbarian and follower of the gods of my people.
   I have strong convictions, and I will not hesitate to stand up for
   what I believe in."
-            (s " I will join you on your quest, as I believe it is my duty to protect
+          (s " I will join you on your quest, as I believe it is my duty to protect
  our world from those who wish to do it harm."
-               (r "It's great to have you with us."
-                  (s "It is an honour. Let us journey together, and may our courage
+             (r "It's great to have you with us."
+                (s "It is an honour. Let us journey together, and may our courage
  and dedication be rewarded with success!"))
-               (r "I don't care about all of that, when you're in this group,
+             (r "I don't care about all of that, when you're in this group,
  you will do as I say."
-                  (s "Hah, yea...whatever you say, sure.")))))
+                (s "Hah, yea...whatever you say, sure.")))))
 
-      (r "Olrun, let's talk about you for a moment."
-         (s "Sure <CHARNAME>, what did ya wanna know?"
-            (r "What was your early life like?"
-               (s "Oh boy, lessee... I'm originally from a dwarven community, as if
+    (r "Olrun, let's talk about you for a moment."
+       (s "Sure <CHARNAME>, what did ya wanna know?"
+          (r "What was your early life like?"
+             (s "Oh boy, lessee... I'm originally from a dwarven community, as if
  that much wasn't obvious.  We were a bit of a sub-group in Baldur's Gate, no exotic
  region or from deep underground or at the top of the mountains or anything like that."
-                  (r "Wow, a dwarf that isn't even from a proper dwarven location,
+                (r "Wow, a dwarf that isn't even from a proper dwarven location,
  I think I've heard enough."
-                     (s "Hah!  Good, I was done sharing with you anyways."))
-                  (r "That's interesting Olrun, what was it like being part of a
+                   (s "Hah!  Good, I was done sharing with you anyways."))
+                (r "That's interesting Olrun, what was it like being part of a
  smaller community within the large city?"
-                     (s "Things were good.  I had a prosperous upbringing, though
+                   (s "Things were good.  I had a prosperous upbringing, though
  far from nobility's wealth and riches.  My siblings and I would often set out on an
  excursion, trained in the ways of adventurin' from my elders."))))
 
-            (r "What types of things do you enjoy?"
-               (s "I love a good physical challenge, something done for sport and fun.
+          (r "What types of things do you enjoy?"
+             (s "I love a good physical challenge, something done for sport and fun.
  I mean, I love combat and the glory of battle as well, but that's more business than
  pleasure.  Well, sometimes it's more pleasure than business.  Anyways, there are a lot
  of activities to best each other that don't involve the loser's skull being crushed."
-                  (s "Wouldn't want that to happen when competing with a friend."
-                     (r "Ugh, I hate physical activities.  Much more of a book worm myself."
-                        (s "Well, whatever suits yourself."))
-                     (r "Now that's a rousing description of enjoyment, I hope to
+                (s "Wouldn't want that to happen when competing with a friend."
+                   (r "Ugh, I hate physical activities.  Much more of a book worm myself."
+                      (s "Well, whatever suits yourself."))
+                   (r "Now that's a rousing description of enjoyment, I hope to
  be included in it sometime!"))))
 
-            (r "What do you look for in a friend?"
-               (s "When I'm searching for a friend, I look for the most attractive
+          (r "What do you look for in a friend?"
+             (s "When I'm searching for a friend, I look for the most attractive
  individual I can find, if you get my drift *wink wink, nudge nudge*.  But, more
  seriously, I don't think I've gone looking for a friend, it just happens when activities
  are shared with comrades and the bond forms naturally."
-                  (r "What do you think of me?  Would you consider me a friend?"
-                     (s "I don't consider you an enemy, so I'd say you're well on your way there!"))
-                  (r "Sounds pretty lame, I don't think I'd want to be your friend."
-                     (s "Ouch, that's just cold."))))))
+                (r "What do you think of me?  Would you consider me a friend?"
+                   (s "I don't consider you an enemy, so I'd say you're well on your way there!"))
+                (r "Sounds pretty lame, I don't think I'd want to be your friend."
+                   (s "Ouch, that's just cold."))))
 
-      (r {:cond [(state>= 70)
-                 "OR(5)"
-                 (not-in-party :uxana)
-                 (not-in-party :uxath)
-                 (not-in-party :uxolr)
-                 (not-in-party :uxvoi)
-                 (not-in-party :uxzar)
-                 ]}
-         "Where do you think your previous groupmates are?"
-         (s "Which one?"
-            (r {:cond [(not-in-party :uxath)]}
-               "What do you think Athar is up to?"
-               (s "Could be groveling before his Gods.
+          (r "I changed my mind." (s "Fine."))))
+
+    (r {:cond [(state>= 70)
+               "OR(5)"
+               (not-in-party :uxana)
+               (not-in-party :uxath)
+               (not-in-party :uxolr)
+               (not-in-party :uxvoi)
+               (not-in-party :uxzar)
+               ]}
+       "Where do you think your previous groupmates are?"
+       (s "Which one?"
+          (r {:cond [(not-in-party :uxath)]}
+             "What do you think Athar is up to?"
+             (s "Could be groveling before his Gods.
  Quite a common behavior of those representing the faith."))
 
-            (r {:cond [(not-in-party :uxana)]}
-               "What do you think Anari is up to?"
-               (s "Hmm, stick to any dense forest areas, that
+          (r {:cond [(not-in-party :uxana)]}
+             "What do you think Anari is up to?"
+             (s "Hmm, stick to any dense forest areas, that
  would be my guess."))
 
-            (r {:cond [(not-in-party :uxvoi)]}
-               "What do you think The Voice is up to?"
-               (s "They are more at home in the shadows and areas
+          (r {:cond [(not-in-party :uxvoi)]}
+             "What do you think The Voice is up to?"
+             (s "They are more at home in the shadows and areas
  of darkness.  Try some place friendly to those long past?"))
 
-            (r {:cond [(not-in-party :uxzar)]}
-               "What do you think Zariel is up to?"
-               (s "When we parted, she was headed for the carnival."))
-            ))
+          (r {:cond [(not-in-party :uxzar)]}
+             "What do you think Zariel is up to?"
+             (s "When we parted, she was headed for the carnival."))
+          ))
 
-      (r "What do you think of our peers?"
-         (s "Which one in particular?"
-            (r "How about me?"
-               (s "I'm still undecided on that..."))
+    (r "What do you think of our peers?"
+       (s "Which one in particular?"
+          (r "How about me?"
+             (s "I'm still undecided on that..."))
 
-            (r {:cond ["OR(2)" (in-party :imoen2) (in-party :imoen1)]}
-               "What do you think of Imoen?"
-               (s "Hmm"))
+          (r {:cond ["OR(2)" (in-party :imoen2) (in-party :imoen1)]}
+             "What do you think of Imoen?"
+             (s "Hmm"))
 
-            # BEGIN: Core friends
-            (r {:cond [(in-party :uxolr)]}
-               "What do you think of Olrun?"
-               (s "Hah, good one <CHARNAME>, good one!  Are you a counselor?"))
+          # BEGIN: Core friends
+          (r {:cond [(in-party :uxolr)]}
+             "What do you think of Olrun?"
+             (s "Hah, good one <CHARNAME>, good one!  Are you a counselor?"))
 
-            (r {:cond [(in-party :uxana)]}
-               "What do you think of Anari?"
-               (s "She's got the sharpest aim with that bow ofhers.  I'd hate
+          (r {:cond [(in-party :uxana)]}
+             "What do you think of Anari?"
+             (s "She's got the sharpest aim with that bow ofhers.  I'd hate
  to be on the receiving end.  Her calm demeanor and temperament is paramount
  to our team's cohesiveness."))
 
-            (r {:cond [(in-party :uxath)]}
-               "What do you think of Athar?"
-               (s "He's one of the good ones.  I enjoy clubbing some baddies
+          (r {:cond [(in-party :uxath)]}
+             "What do you think of Athar?"
+             (s "He's one of the good ones.  I enjoy clubbing some baddies
  with him at the front lines."))
 
-            (r {:cond [(in-party :uxvoi)]}
-               "What do you think of The Voice?"
-               (s "Without them, I'd have been dead ten times over!
+          (r {:cond [(in-party :uxvoi)]}
+             "What do you think of The Voice?"
+             (s "Without them, I'd have been dead ten times over!
  You won't find much about their personal history though, they've always
  been an enigma."))
 
-            (r {:cond [(in-party :uxzar)]}
-               "What do you think of Zariel?"
-               (s "Zariel is like a daughter to me.  I found her messing about
+          (r {:cond [(in-party :uxzar)]}
+             "What do you think of Zariel?"
+             (s "Zariel is like a daughter to me.  I found her messing about
  in the shadows in Baldur's Gate - luckily talked some sense into her and her ways
  before she had gotten into any real trouble."
-                  (s "A lot won't even give her a fair chance, being of her
+                (s "A lot won't even give her a fair chance, being of her
  heritage and \"career\", but I'm certainly happy that I did.")))
-            # END: Core friends
+          # END: Core friends
 
-            (rep "Nevermind...")))))
+          (rep "Nevermind...")))
+
+    (r "Nevermind..." (s "Eh, alright."))
+    ))
 
 (defn main [& args]
   (var b1 (string/join (map build-dialog banters-to-player) "\n"))

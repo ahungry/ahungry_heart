@@ -115,8 +115,6 @@
  Are you a man or a woman?"
              (s "Well, that's quite straight forward of you.  While my past is somewhat
  mysterious, even to myself, my identity is neutral by choice."))
-          (r "I changed my mind." (s "As you wish."))
-
           (r "What do you look for in a friend?"
              (s "I find honesty of the utmost importance in a friendship.  If you lose the trust
  you once had, it can be very difficult to recover that level of bonding in a friendship.
@@ -125,71 +123,76 @@
                    (s "That is pleasing to hear <CHARNAME>."))
                 (r "Sounds like a stupid set of qualities to me."
                    (s "Well, they may not be relevant to us anytime soon with
- those kinds of replies."))))))
+ those kinds of replies."))))
+
+          (r "I changed my mind." (s "As you wish."))))
 
     (r {:cond [(state>= 70)
-                 "OR(5)"
-                 (not-in-party :uxana)
-                 (not-in-party :uxath)
-                 (not-in-party :uxolr)
-                 (not-in-party :uxvoi)
-                 (not-in-party :uxzar)
-                 ]}
-         "Where do you think your previous groupmates are?"
-         (s "Which one?"
-            (r {:cond [(not-in-party :uxath)]}
-               "What do you think Athar is up to?"
-               (s "No doubt in the northern regions."))
+               "OR(5)"
+               (not-in-party :uxana)
+               (not-in-party :uxath)
+               (not-in-party :uxolr)
+               (not-in-party :uxvoi)
+               (not-in-party :uxzar)
+               ]}
+       "Where do you think your previous groupmates are?"
+       (s "Which one?"
+          (r {:cond [(not-in-party :uxath)]}
+             "What do you think Athar is up to?"
+             (s "No doubt in the northern regions."))
 
-            (r {:cond [(not-in-party :uxana)]}
-               "What do you think Anari is up to?"
-               (s "It is certain she would be in an area of forestation."))
+          (r {:cond [(not-in-party :uxana)]}
+             "What do you think Anari is up to?"
+             (s "It is certain she would be in an area of forestation."))
 
-            (r {:cond [(not-in-party :uxolr)]}
-               "What do you think Olrun is up to?"
-               (s "It is highly likely that he is seeking the thrill of adventure."))
+          (r {:cond [(not-in-party :uxolr)]}
+             "What do you think Olrun is up to?"
+             (s "It is highly likely that he is seeking the thrill of adventure."))
 
-            (r {:cond [(not-in-party :uxzar)]}
-               "What do you think Zariel is up to?"
-               (s "She would no doubt be in a populated location."))
-            ))
+          (r {:cond [(not-in-party :uxzar)]}
+             "What do you think Zariel is up to?"
+             (s "She would no doubt be in a populated location."))
+          ))
 
-      (r "What do you think of our peers?"
-         (s "Which one in particular?"
-            (r "How about me?"
-               (s "I'm still undecided on that..."))
+    (r "What do you think of our peers?"
+       (s "Which one in particular?"
+          (r "How about me?"
+             (s "I'm still undecided on that..."))
 
-            (r {:cond ["OR(2)" (in-party :imoen2) (in-party :imoen1)]}
-               "What do you think of Imoen?"
-               (s "Hmm"))
+          (r {:cond ["OR(2)" (in-party :imoen2) (in-party :imoen1)]}
+             "What do you think of Imoen?"
+             (s "Hmm"))
 
-            # BEGIN: Core friends
-            (r {:cond [(in-party :uxath)]}
-               "What do you think of Olrun?"
-               (s "He is battle and treasure minded, but despite lacking
+          # BEGIN: Core friends
+          (r {:cond [(in-party :uxath)]}
+             "What do you think of Olrun?"
+             (s "He is battle and treasure minded, but despite lacking
  a devout commitment, he shows appreciate and candor towards those known to him."))
 
-            (r {:cond [(in-party :uxana)]}
-               "What do you think of Anari?"
-               (s "She is very knowledgeable and benevolent.  Our team has
+          (r {:cond [(in-party :uxana)]}
+             "What do you think of Anari?"
+             (s "She is very knowledgeable and benevolent.  Our team has
  been fortunate to have her along through many adventures."))
 
-            (r {:cond [(in-party :uxath)]}
-               "What do you think of Athar?"
-               (s "Athar shows a strong reverence to the Gods, and that is
+          (r {:cond [(in-party :uxath)]}
+             "What do you think of Athar?"
+             (s "Athar shows a strong reverence to the Gods, and that is
 a mindset I am agreeable to."))
 
-            (r {:cond [(in-party :uxvoi)]}
-               "What do you think of The Voice?"
-               (s "Well, that is myself, and I believe you are making a quip."))
+          (r {:cond [(in-party :uxvoi)]}
+             "What do you think of The Voice?"
+             (s "Well, that is myself, and I believe you are making a quip."))
 
-            (r {:cond [(in-party :uxzar)]}
-               "What do you think of Zariel?"
-               (s "She does not lean heavily into her nature, but rather
+          (r {:cond [(in-party :uxzar)]}
+             "What do you think of Zariel?"
+             (s "She does not lean heavily into her nature, but rather
  maintains a more neutral outlook.  It is invigorating to feel her youthful nature."))
-            # END: Core friends
+          # END: Core friends
 
-            (rep "Nevermind...")))))
+          (rep "Nevermind...")))
+
+    (r "Nevermind..." (s "Alright."))
+    ))
 
 (defn main [& args]
   (var b1 (string/join (map build-dialog banters-to-player) "\n"))

@@ -193,7 +193,7 @@
              (say "Heh, alright, I'm here if you change your mind."))
           ))
 
-    (r "Nevermind...")))
+    (r "Nevermind..." (s "Fine."))))
 
 (defn main [& args]
   (var b1 (string/join (map build-dialog banters-to-player) "\n"))
