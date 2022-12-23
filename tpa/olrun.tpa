@@ -8,13 +8,14 @@ COPY ~%MOD_FOLDER%/portraits/olrun.pngs.bmp~ ~override/uxolrs.bmp~
 
 // Add the items
 COPY ~%MOD_FOLDER%/items/uxham01.itm~ ~override~
-SAY NAME1 ~Olrun's Hammer of Smithing + 1~
-SAY NAME2 ~Olrun's Hammer of Smithing + 1~
+SAY NAME1 ~Olrun's Hammer of Smithing +1~
+SAY NAME2 ~Olrun's Hammer of Smithing +1~
 SAY DESC ~This is Olrun's "Hammer of Smithing".
 The 'h' is silent.
 
 STATISTICS:
 
+THAC0: +1
 Damage: 2d3+3 (crushing)
 Speed Factor: 2
 Proficiency Type: Hammers
@@ -24,9 +25,9 @@ Requires:
 
 Weight: 3
 ~
-SAY UNIDENTIFIED_DESC ~The Hammer of Smithing + 1~
+SAY UNIDENTIFIED_DESC ~The Hammer of Smithing +1~
 // Adjust the dice/thac0 etc.
-LPF ALTER_ITEM_HEADER INT_VAR header_type=1
+LPF ALTER_ITEM_HEADER INT_VAR header_type=1 // melee
   speed = 2
   thac0_bonus = 1
   damage_bonus = 3

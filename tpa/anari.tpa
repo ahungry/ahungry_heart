@@ -8,23 +8,32 @@ COPY ~%MOD_FOLDER%/portraits/anari.pngs.bmp~ ~override/uxanas.bmp~
 
 // Add the items
 COPY ~%MOD_FOLDER%/items/uxbow01.itm~ ~override~
-SAY NAME1 ~Anari's Bow of the Wild~
-SAY NAME2 ~Anari's Bow of the Wild~
+SAY NAME1 ~Anari's Bow of the Wild +1~
+SAY NAME2 ~Anari's Bow of the Wild +1~
 SAY DESC ~This weapon has been handed down for generations.
 
 STATISTICS:
 
-THAC0: +3
-Damage: +2
+THAC0: +1
 Speed Factor: 5
 Proficiency Type: Longbow
 Type: Two-handed
 Requires:
- 6 Strength
+ Anari
 
 Weight: 2
 ~
 SAY UNIDENTIFIED_DESC ~Anari's bow.~
+
+// Adjust the dice/thac0 etc.
+LPF ALTER_ITEM_HEADER INT_VAR header_type=4 // launcher
+  speed = 5
+  thac0_bonus = 1
+  damage_bonus = 0
+  dicesize = 6
+  dicenumber = 1
+END
+WRITE_LONG 0x0060 1 // Enchantment level
 
 COPY ~%MOD_FOLDER%/items/uxqui00.itm~ ~override~
 SAY NAME1 ~Wild Arrow Quiver~
