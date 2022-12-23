@@ -50,21 +50,21 @@
 
   ])
 
+(var
+ chillout-tree
+ (s {:cond ["IsGabber(Player1)"
+            (nrgte "ux_zariel_chillout_timer")
+            (ng "ux_zariel_is_bantering")
+            (ng "ux_zariel_is_pidding")]}
+    "That's enough chit-chat, let's go have some fun!"))
+
 (var pid-1-tree
      (s {:cond ["IsGabber(Player1)"
                 (ng "ux_zariel_is_bantering")
                 (ng "ux_zariel_is_pidding")]
          :code [(sg "ux_zariel_wishes_to_pid")]}
         "( Zariel turns to you )"
-        #(r {:cond ["True()"] :code [(sg "ux_zariel_wishes_to_pid")]})
         ))
-
-(var
- chillout-tree
- (s {:cond ["IsGabber(Player1)"
-            (nrgte "ux_zariel_chillout_timer")
-            (ng "ux_zariel_is_bantering")]}
-    "That's enough chit-chat, let's go have some fun!"))
 
 (var
  pid-2-tree
@@ -213,6 +213,6 @@
    "BEGIN uxzarj\n%s"
    (string/join
     [b1
-     p1
      (build-dialog chillout-tree)
+     p1
      p2])))
