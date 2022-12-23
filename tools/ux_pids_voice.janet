@@ -58,6 +58,14 @@
      (r "Not now..." (mute :voice)))
   ])
 
+(var
+ chillout-tree
+ (s {:cond ["IsGabber(Player1)"
+            (nrgte "ux_voice_chillout_timer")
+            (ng "ux_voice_is_bantering")
+            (ng "ux_voice_is_pidding")]}
+    "As much as I enjoy a good philosophical debate, I think we have pressing matters."))
+
 (var pid-1-tree
      (say {:cond ["IsGabber(Player1)"
                   (ng "ux_voice_is_bantering")
@@ -66,13 +74,6 @@
           "( Voice turns to you )"
           #(rep {:cond ["True()"] :code [(sg "ux_voice_wishes_to_pid")]})
           ))
-
-(var
- chillout-tree
- (s {:cond ["IsGabber(Player1)"
-            (nrgte "ux_voice_chillout_timer")
-            (ng "ux_voice_is_bantering")]}
-    "As much as I enjoy a good philosophical debate, I think we have pressing matters."))
 
 (var
  pid-2-tree
@@ -212,6 +213,6 @@ a mindset I am agreeable to."))
    "BEGIN uxvoij\n%s"
    (string/join
     [b1
-     p1
      (build-dialog chillout-tree)
+     p1
      p2])))

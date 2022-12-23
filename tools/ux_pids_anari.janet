@@ -65,6 +65,14 @@
      (r "Not now..." (mute :anari)))
   ])
 
+(var
+ chillout-tree
+ (s {:cond ["IsGabber(Player1)"
+            (nrgte "ux_anari_chillout_timer")
+            (ng "ux_anari_is_bantering")
+            (ng "ux_anari_is_pidding")]}
+    "Don't you think we should be focusing on our mission?  Lets chat in a bit."))
+
 (var pid-1-tree
      (say {:cond ["IsGabber(Player1)"
                   (ng "ux_anari_is_bantering")
@@ -73,13 +81,6 @@
           "( Anari turns to you )"
           #(rep {:cond ["True()"] :code [(sg "ux_anari_wishes_to_pid")]})
           ))
-
-(var
- chillout-tree
- (s {:cond ["IsGabber(Player1)"
-            (nrgte "ux_anari_chillout_timer")
-            (ng "ux_anari_is_bantering")]}
-    "Don't you think we should be focusing on our mission?  Lets chat in a bit."))
 
 (var
  pid-2-tree
@@ -220,7 +221,7 @@
    (string/join
     [
      b1
-     p1
      (build-dialog chillout-tree)
+     p1
      p2
      ])))

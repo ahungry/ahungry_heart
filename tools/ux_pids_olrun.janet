@@ -62,6 +62,14 @@
      (r "Not now..." (mute :olrun)))
  ])
 
+(var
+ chillout-tree
+ (s {:cond ["IsGabber(Player1)"
+            (nrgte "ux_olrun_chillout_timer")
+            (ng "ux_olrun_is_bantering")
+            (ng "ux_olrun_is_pidding")]}
+    "That's enough talkin, let's get to bashin!"))
+
 (var pid-1-tree
      (say {:cond ["IsGabber(Player1)"
                   (ng "ux_olrun_is_bantering")
@@ -70,13 +78,6 @@
           "( Olrun turns to you )"
           #(rep {:cond ["True()"] :code [(sg "ux_olrun_wishes_to_pid")]})
           ))
-
-(var
- chillout-tree
- (s {:cond ["IsGabber(Player1)"
-            (nrgte "ux_olrun_chillout_timer")
-            (ng "ux_olrun_is_bantering")]}
-    "That's enough talkin, let's get to bashin!"))
 
 (var
  pid-2-tree
@@ -222,6 +223,6 @@
    (string/join
     [
      b1
-     p1
      (build-dialog chillout-tree)
+     p1
      p2])))
