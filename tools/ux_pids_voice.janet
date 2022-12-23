@@ -90,10 +90,15 @@
              (s "Oh, that is quite a mystery I'm afraid.  My elusive nature surrounded in
  an unforetold past is not simply my desire to aggravate my peers.  In fact, while I know
  that I am quite a bit older than you are, I don't have any recollection of my early years."
-                (r "Do you think we'll ever be able to recover your memories?"
-                   (s "I would certainly be pleased if so."))
-                (r "I don't believe you."
-                   (s "Well, I have no motive to lie, so that's your perogative."))))
+                (s "I can remember when I began to work in the shadows of Baldur's Gate, as
+ a bit of an information gatherer and relayer, passing along knowledge, often anonymously,
+ to those who could do the most good with it.  This would often times just be gathered by
+ eavesdropping in strategic locations, rather than any explicit efforts of stealth and trickery."
+                   (r "Do you think we'll ever be able to recover your memories?"
+                      (s "I would certainly be pleased if so.  Who knows what untold secrets
+ exist there?"))
+                   (r "I don't believe you."
+                      (s "Well, I have no motive to lie, so that's your perogative.")))))
           (r "What types of things do you enjoy?"
              (s "One of my favorite pastimes is watching animals in their native habitats
  while occupying myself with some basic foraging.  I'm particularly fond of remaining
@@ -108,6 +113,15 @@
              (s "Well, that's quite straight forward of you.  While my past is somewhat
  mysterious, even to myself, my identity is neutral by choice."))
           (r "I changed my mind." (s "As you wish."))))
+
+    (r "What do you look for in a friend?"
+       (s "I find honesty of the utmost importance in a friendship.  If you lose the trust
+ you once had, it can be very difficult to recover that level of bonding in a friendship.
+ I find having a similar mindset and appreciation of things of equal importance as well."
+          (r "I'm glad to hear that, I value those things as well."
+             (s "That is pleasing to hear <CHARNAME>."))
+          (r "Sounds like a stupid set of qualities to me."
+             (s "Well, they may not be relevant to us anytime soon with those kinds of replies."))))
 
     (r {:cond [(state>= 70)
                  "OR(5)"

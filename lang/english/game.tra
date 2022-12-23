@@ -543,7 +543,6 @@
 @000576 = ~What is it that I can help you with?~
 @000578 = ~That is something I will be happy to partake in <CHARNAME> - what about?~
 @000579 = ~Oh, that is quite a mystery I'm afraid.  My elusive nature surrounded in an unforetold past is not simply my desire to aggravate my peers.  In fact, while I know that I am quite a bit older than you are, I don't have any recollection of my early years.~
-@000580 = ~I would certainly be pleased if so.~
 @000581 = ~Do you think we'll ever be able to recover your memories?~
 @000582 = ~Well, I have no motive to lie, so that's your perogative.~
 @000583 = ~I don't believe you.~
@@ -555,3 +554,10 @@
 @000589 = ~Voice, might we talk about you for a bit?~
 @000590 = ~Well, that's quite straight forward of you.  While my past is somewhat mysterious, even to myself, my identity is neutral by choice.~
 @000591 = ~Everyone calls you "The Voice", or refers to you in a neutral manner.  Are you a man or a woman?~
+@000592 = ~I can remember when I began to work in the shadows of Baldur's Gate, as a bit of an information gatherer and relayer, passing along knowledge, often anonymously, to those who could do the most good with it.  This would often times just be gathered by eavesdropping in strategic locations, rather than any explicit efforts of stealth and trickery.~
+@000593 = ~I would certainly be pleased if so.  Who knows what untold secrets exist there?~
+@000594 = ~I find honesty of the utmost importance in a friendship.  If you lose the trust you once had, it can be very difficult to recover that level of bonding in a friendship.  I find having a similar mindset and appreciation of things of equal importance as well.~
+@000595 = ~That is pleasing to hear <CHARNAME>.~
+@000596 = ~I'm glad to hear that, I value those things as well.~
+@000597 = ~Well, they may not be relevant to us anytime soon with those kinds of replies.~
+@000598 = ~Sounds like a stupid set of qualities to me.~
