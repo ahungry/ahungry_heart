@@ -2,3 +2,8 @@
 This could make it somewhat interesting for players, if the npcs
 walked off to random spots from a set of potential locs, vs going to
 the same one every time.
+
+* TODO Faction tracking among individual npcs
+We could allow responses to control how much one likes the charname,
+or just do a more generic dialogue chain, where the player can go into
+a friendship path, or reject it outright.
