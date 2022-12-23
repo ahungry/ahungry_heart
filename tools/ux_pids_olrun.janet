@@ -90,6 +90,15 @@
  you will do as I say."
                   (s "Hah, yea...whatever you say, sure.")))))
 
+      (r "Olrun, let's talk about you for a moment."
+         (s "Sure <CHARNAME>, what did ya wanna know?"
+            (r "What was your early life like?"
+               (s "SAY SOMETHING HERE"))
+            (r "What types of things do you enjoy?"
+               (s "TODO INFO HERE"))
+            (r "What do you look for in a friend?"
+               (s "TODO INFO HERE"))))
+
       (r {:cond [(state>= 70)
                  "OR(5)"
                  (not-in-party :uxana)
