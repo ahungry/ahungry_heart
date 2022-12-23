@@ -68,12 +68,20 @@
           ))
 
 (var
+ chillout-tree
+ (s {:cond ["IsGabber(Player1)"
+            (nrgte "ux_voice_chillout_timer")
+            (ng "ux_voice_is_bantering")]}
+    "As much as I enjoy a good philosophical debate, I think we have pressing matters."))
+
+(var
  pid-2-tree
  (s {:cond ["IsGabber(Player1)"
             (ng "ux_voice_is_bantering")]}
     "What's on your mind? [uxvoi56]"
 
-    (r "Who are you, Voice? What brings you to this quest?"
+    (r {:code [(rsgt "ux_voice_chillout_timer" chillout-timer)]}
+       "Who are you, Voice? What brings you to this quest?"
        (s "I am The Voice, a mysterious entity with unknown origins.
   I am joining your adventure because I believe in the great power of
   the Heart of Baldur's Gate, and I want to make sure it does not fall
@@ -87,45 +95,46 @@
   You'll do as I say when you're in this party."
                 (s "Well, that was rude of you.")))))
 
-    (r "Voice, might we talk about you for a bit?"
-       (s "That is something I will be happy to partake in <CHARNAME> - what about?"
-          (r "What was your early life like?"
-             (s "Oh, that is quite a mystery I'm afraid.  My elusive nature surrounded in
+    (r {:code [(rsgt "ux_voice_chillout_timer" chillout-timer)]}
+     "Voice, might we talk about you for a bit?"
+     (s "That is something I will be happy to partake in <CHARNAME> - what about?"
+        (r "What was your early life like?"
+           (s "Oh, that is quite a mystery I'm afraid.  My elusive nature surrounded in
  an unforetold past is not simply my desire to aggravate my peers.  In fact, while I know
  that I am quite a bit older than you are, I don't have any recollection of my early years."
-                (s "I can remember when I began to work in the shadows of Baldur's Gate, as
+              (s "I can remember when I began to work in the shadows of Baldur's Gate, as
  a bit of an information gatherer and relayer, passing along knowledge, often anonymously,
  to those who could do the most good with it.  This would often times just be gathered by
  eavesdropping in strategic locations, rather than any explicit efforts of stealth and trickery."
-                   (r "Do you think we'll ever be able to recover your memories?"
-                      (s "I would certainly be pleased if so.  Who knows what untold secrets
+                 (r "Do you think we'll ever be able to recover your memories?"
+                    (s "I would certainly be pleased if so.  Who knows what untold secrets
  exist there?"))
-                   (r "I don't believe you."
-                      (s "Well, I have no motive to lie, so that's your perogative.")))))
-          (r "What types of things do you enjoy?"
-             (s "One of my favorite pastimes is watching animals in their native habitats
+                 (r "I don't believe you."
+                    (s "Well, I have no motive to lie, so that's your perogative.")))))
+        (r "What types of things do you enjoy?"
+           (s "One of my favorite pastimes is watching animals in their native habitats
  while occupying myself with some basic foraging.  I'm particularly fond of remaining
  out of the spotlight, and the forest offers me the solitude that I may otherwise find
  difficult to obtain."
-                (r "That's interesting, I love that sort of thing as well."
-                   (s "I'm glad we are of like mind."))
-                (r "I had no idea you were so lame."
-                   (s "Well, that's rather rude of you."))))
-          (r "Everyone calls you \"The Voice\", or refers to you in a neutral manner.
+              (r "That's interesting, I love that sort of thing as well."
+                 (s "I'm glad we are of like mind."))
+              (r "I had no idea you were so lame."
+                 (s "Well, that's rather rude of you."))))
+        (r "Everyone calls you \"The Voice\", or refers to you in a neutral manner.
  Are you a man or a woman?"
-             (s "Well, that's quite straight forward of you.  While my past is somewhat
+           (s "Well, that's quite straight forward of you.  While my past is somewhat
  mysterious, even to myself, my identity is neutral by choice."))
-          (r "What do you look for in a friend?"
-             (s "I find honesty of the utmost importance in a friendship.  If you lose the trust
+        (r "What do you look for in a friend?"
+           (s "I find honesty of the utmost importance in a friendship.  If you lose the trust
  you once had, it can be very difficult to recover that level of bonding in a friendship.
  I find having a similar mindset and appreciation of things of equal importance as well."
-                (r "I'm glad to hear that, I value those things as well."
-                   (s "That is pleasing to hear <CHARNAME>."))
-                (r "Sounds like a stupid set of qualities to me."
-                   (s "Well, they may not be relevant to us anytime soon with
+              (r "I'm glad to hear that, I value those things as well."
+                 (s "That is pleasing to hear <CHARNAME>."))
+              (r "Sounds like a stupid set of qualities to me."
+                 (s "Well, they may not be relevant to us anytime soon with
  those kinds of replies."))))
 
-          (r "I changed my mind." (s "As you wish."))))
+        (r "I changed my mind." (s "As you wish."))))
 
     (r {:cond [(state>= 70)
                "OR(5)"
@@ -154,7 +163,8 @@
              (s "She would no doubt be in a populated location."))
           ))
 
-    (r "What do you think of our peers?"
+    (r {:code [(rsgt "ux_voice_chillout_timer" chillout-timer)]}
+       "What do you think of our peers?"
        (s "Which one in particular?"
           (r "How about me?"
              (s "I'm still undecided on that..."))
@@ -198,4 +208,10 @@ a mindset I am agreeable to."))
   (var b1 (string/join (map build-dialog banters-to-player) "\n"))
   (var p1 (build-dialog pid-1-tree))
   (var p2 (build-dialog pid-2-tree))
-  (string/format "BEGIN uxvoij\n%s" (string/join [b1 p1 p2])))
+  (string/format
+   "BEGIN uxvoij\n%s"
+   (string/join
+    [b1
+     p1
+     (build-dialog chillout-tree)
+     p2])))

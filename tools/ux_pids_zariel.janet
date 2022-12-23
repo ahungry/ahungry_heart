@@ -60,12 +60,20 @@
         ))
 
 (var
+ chillout-tree
+ (s {:cond ["IsGabber(Player1)"
+            (nrgte "ux_zariel_chillout_timer")
+            (ng "ux_zariel_is_bantering")]}
+    "That's enough chit-chat, let's go have some fun!"))
+
+(var
  pid-2-tree
  (s {:cond ["IsGabber(Player1)"
             (ng "ux_zariel_is_bantering")]}
     "What's on your mind? [uxzar56]"
 
-    (r "Zariel, why have you decided to join us on this quest?"
+    (r {:code [(rsgt "ux_zariel_chillout_timer" chillout-timer)]}
+       "Zariel, why have you decided to join us on this quest?"
        (s "I'm in it for the adventure. Growing up on the streets of Baldur's Gate,
   I've seen more than my fair share of excitement. Joining an epic quest
   and stopping the forces of evil from getting their hands on
@@ -78,7 +86,8 @@
  this party, you will recognize me as your absolute leader."
              (s "For your sake, I hope you're joking."))))
 
-    (r "Can you tell me a bit about yourself?"
+    (r {:code [(rsgt "ux_zariel_chillout_timer" chillout-timer)]}
+       "Can you tell me a bit about yourself?"
        (s "What did you want to know?"
 
           (r "What was your early life like?"
@@ -149,7 +158,8 @@
              (s "Hmmm...that's a hard one to guess..."
                 (s "Maybe try looking somewhere mystical and maze-like?")))))
 
-    (r "What do you think of our peers?"
+    (r {:code [(rsgt "ux_zariel_chillout_timer" chillout-timer)]}
+       "What do you think of our peers?"
        (s "Which one in particular?"
           (r "How about me?"
              (s "I'm still undecided on that..."))
@@ -199,4 +209,10 @@
   (var b1 (string/join (map build-dialog banters-to-player) "\n"))
   (var p1 (build-dialog pid-1-tree))
   (var p2 (build-dialog pid-2-tree))
-  (string/format "BEGIN uxzarj\n%s" (string/join [b1 p1 p2])))
+  (string/format
+   "BEGIN uxzarj\n%s"
+   (string/join
+    [b1
+     p1
+     (build-dialog chillout-tree)
+     p2])))

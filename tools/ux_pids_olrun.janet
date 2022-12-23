@@ -72,12 +72,20 @@
           ))
 
 (var
+ chillout-tree
+ (s {:cond ["IsGabber(Player1)"
+            (nrgte "ux_olrun_chillout_timer")
+            (ng "ux_olrun_is_bantering")]}
+    "That's enough talkin, let's get to bashin!"))
+
+(var
  pid-2-tree
  (s {:cond ["IsGabber(Player1)"
             (ng "ux_olrun_is_bantering")]}
     "What's on your mind? [uxolr56]"
 
-    (r "Olrun, can you tell me a bit about yourself?"
+    (r {:code [(rsgt "ux_olrun_chillout_timer" chillout-timer)]}
+       "Olrun, can you tell me a bit about yourself?"
        (s "I am a proud Dwarven Barbarian and follower of the gods of my people.
   I have strong convictions, and I will not hesitate to stand up for
   what I believe in."
@@ -90,7 +98,8 @@
  you will do as I say."
                 (s "Hah, yea...whatever you say, sure.")))))
 
-    (r "Olrun, let's talk about you for a moment."
+    (r {:code [(rsgt "ux_olrun_chillout_timer" chillout-timer)]}
+       "Olrun, let's talk about you for a moment."
        (s "Sure <CHARNAME>, what did ya wanna know?"
           (r "What was your early life like?"
              (s "Oh boy, lessee... I'm originally from a dwarven community, as if
@@ -158,7 +167,8 @@
              (s "When we parted, she was headed for the carnival."))
           ))
 
-    (r "What do you think of our peers?"
+    (r {:code [(rsgt "ux_olrun_chillout_timer" chillout-timer)]}
+       "What do you think of our peers?"
        (s "Which one in particular?"
           (r "How about me?"
              (s "I'm still undecided on that..."))
@@ -207,4 +217,11 @@
   (var b1 (string/join (map build-dialog banters-to-player) "\n"))
   (var p1 (build-dialog pid-1-tree))
   (var p2 (build-dialog pid-2-tree))
-  (string/format "BEGIN uxolrj\n%s" (string/join [b1 p1 p2])))
+  (string/format
+   "BEGIN uxolrj\n%s"
+   (string/join
+    [
+     b1
+     p1
+     (build-dialog chillout-tree)
+     p2])))
