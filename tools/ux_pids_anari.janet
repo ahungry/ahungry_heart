@@ -6,9 +6,38 @@
  [
   (s {:cond [(g "ux_anari_is_bantering")
              (g "ux_anari_banter_id" 0)]}
-     "This is our first banter"
+     "My friend <CHARNAME>, may I speak with you briefly?"
      (r {:code [(ig "ux_anari_banter_id")]}
-        "Cool!")
+        "What is it Anari?"
+        (s "You've suffered some tumultous events recently.  Have you been adversely
+ affected?  Are you doing alright?"
+           (r "I'm wonderful!  Even when the people I care about meet an unexpected end,
+ I don't let it bring me down."
+              (s "I did not expect that response <CHARNAME> - are you laying on some thick
+ sarcasm, or being sincere?"
+                 (r "There is no sarcasm in that response Anari, I don't feel phased at all."
+                    (s "Interesting."))
+                 (r "Sorry Anari, that was a sarcastic outlash.  I'm under a lot of stress
+ lately and it's easier to snap at those that are there for me, than to confront my feelings."
+                    (s "You need not refrain from being vulnerable around me <CHARNAME>, I'm here
+ for you if you need someone to confide in."))
+                 ))
+           (r "Meh, I'm pretty indifferent.  I thought it'd impact my mindset more, but
+ I don't feel that I've even thought about it that much."
+              (s "Are you sure you aren't deflecting, and denying your emotions?"
+                 (r "I'm sure, I guess I have a thicker skin than some are used to."
+                    (s "So thick a needle couldn't pierce it perhaps."))
+                 (r "That may be the case.  I've never been great at opening up to others."
+                    (s "You can let your guard down around me <CHARNAME>.  Feel free to open up."))))
+           (r "I am complete miserable.  Why would you even ask that?  Things have just been hard
+ lately...so very hard."
+              (s "I'm sorry to hear that <CHARNAME>.  I am genuinely sympathetic to your plight,
+ and it is good to see that you are able to share your dismay with me."
+                 (r "I don't need your sympathy!"
+                    (s "Well, pardon me!"))
+                 (r "Thank you Anari, I appreciate your concern."
+                    (s "I am glad to give it."))))))
+
      (r "Not now..." (mute :anari)))
 
   (s {:cond [(g "ux_anari_is_bantering")
