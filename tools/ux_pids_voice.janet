@@ -84,7 +84,31 @@
   You'll do as I say when you're in this party."
                 (s "Well, that was rude of you.")))))
 
-    # TODO: Add some pids towards The Voice
+    (r "Voice, might we talk about you for a bit?"
+       (s "That is something I will be happy to partake in <CHARNAME> - what about?"
+          (r "What was your early life like?"
+             (s "Oh, that is quite a mystery I'm afraid.  My elusive nature surrounded in
+ an unforetold past is not simply my desire to aggravate my peers.  In fact, while I know
+ that I am quite a bit older than you are, I don't have any recollection of my early years."
+                (r "Do you think we'll ever be able to recover your memories?"
+                   (s "I would certainly be pleased if so."))
+                (r "I don't believe you."
+                   (s "Well, I have no motive to lie, so that's your perogative."))))
+          (r "What types of things do you enjoy?"
+             (s "One of my favorite pastimes is watching animals in their native habitats
+ while occupying myself with some basic foraging.  I'm particularly fond of remaining
+ out of the spotlight, and the forest offers me the solitude that I may otherwise find
+ difficult to obtain."
+                (r "That's interesting, I love that sort of thing as well."
+                   (s "I'm glad we are of like mind."))
+                (r "I had no idea you were so lame."
+                   (s "Well, that's rather rude of you."))))
+          (r "Everyone calls you \"The Voice\", or refers to you in a neutral manner.
+ Are you a man or a woman?"
+             (s "Well, that's quite straight forward of you.  While my past is somewhat
+ mysterious, even to myself, my identity is neutral by choice."))
+          (r "I changed my mind." (s "As you wish."))))
+
     (r {:cond [(state>= 70)
                  "OR(5)"
                  (not-in-party :uxana)
