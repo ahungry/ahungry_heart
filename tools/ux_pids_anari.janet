@@ -210,7 +210,7 @@
              (say "Not a problem."))
           ))
 
-    (rep "Nevermind...")))
+    (rep "Nevermind..." (s "As you wish."))))
 
 (defn main [& args]
   (var b1 (string/join (map build-dialog banters-to-player) "\n"))

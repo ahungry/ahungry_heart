@@ -209,7 +209,7 @@
  heritage and \"career\", but I'm certainly happy that I did.")))
           # END: Core friends
 
-          (rep "Nevermind...")))
+          (rep "Nevermind..." (s "Alright, take care."))))
 
     (r "Nevermind..." (s "Eh, alright."))
     ))

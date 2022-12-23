@@ -200,7 +200,7 @@ a mindset I am agreeable to."))
  maintains a more neutral outlook.  It is invigorating to feel her youthful nature."))
           # END: Core friends
 
-          (rep "Nevermind...")))
+          (rep "Nevermind..." (s "Maybe next time."))))
 
     (r "Nevermind..." (s "Alright."))
     ))
