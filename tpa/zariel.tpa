@@ -92,7 +92,7 @@ LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x4a parameter2=16 
 LPF ADD_ITEM_EQEFFECT INT_VAR silent=1 opcode=0x7 parameter1=0x4b parameter2=21 target=1 timing=2 END
 
 COPY ~%MOD_FOLDER%/items/uxdag02.itm~ ~override~
-SAY NAME1 ~Zariel's "Right Hand"~
+SAY NAME1 ~Zariel's "Right Hand" + 1~
 SAY NAME2 ~Zariel's "Right Hand" + 1~
 SAY DESC ~This is Zariel's "Right Hand". An affectionate term she has
 given one of her daggers. As the name would imply, she wields

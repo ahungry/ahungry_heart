@@ -8,17 +8,17 @@ COPY ~%MOD_FOLDER%/portraits/athar.pngs.bmp~ ~override/uxaths.bmp~
 
 // Add the items
 COPY ~%MOD_FOLDER%/items/uxsw101.itm~ ~override~
-SAY NAME1 ~Sword of Justice~
-SAY NAME2 ~Sword of Justice~
+SAY NAME1 ~Sword of Justice + 1~
+SAY NAME2 ~Sword of Justice + 1~
 SAY DESC ~This is Athar's "Sword of Justice".
 He uses it to smite evil.
 
 STATISTICS:
 
 Equipped abilities:
-- +1 Additional Attack
+- +1/2 Additional Attack
 
-Damage: 1d6+2 (slashing)
+Damage: 1d6+1 (slashing)
 Speed Factor: 2
 Proficiency Type: Short Swords
 Type: One-handed
@@ -28,6 +28,20 @@ Requires:
 Weight: 3
 ~
 SAY UNIDENTIFIED_DESC ~The Sword of Justice~
+// Adjust the dice/thac0 etc.
+LPF ALTER_ITEM_HEADER INT_VAR header_type=1
+  speed = 2
+  thac0_bonus = 1
+  damage_bonus = 1
+  dicesize = 6
+  dicenumber = 1
+END
+// Cap it at 0.5 APR at this level
+LPF ALTER_EFFECT INT_VAR silent=1
+  match_opcode=0x1
+  match_parameter2=0
+  parameter1=6
+END
 // WRITE_ASCII 0x0022 ~S3~ #2
 LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x7 END
 LPF DELETE_ITEM_EQEFFECT INT_VAR silent=1 opcode_to_delete=0x8 END
@@ -183,7 +197,7 @@ WRITE_BYTE 0x32  0x29 // Hair Colour
 
 ADD_CRE_ITEM ~uxsw101~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~ EQUIP // TWOHANDED
 ADD_CRE_ITEM ~uxshd01~ #0 #0 #0 ~IDENTIFIED~ ~SHIELD~ EQUIP // TWOHANDED
-ADD_CRE_ITEM ~plat02~ #0 #0 #0 ~IDENTIFIED~ ~ARMOR~ EQUIP // TWOHANDED
+ADD_CRE_ITEM ~plat04~ #0 #0 #0 ~IDENTIFIED~ ~ARMOR~ EQUIP // TWOHANDED
 ADD_CRE_ITEM ~uxhel02~ #0 #0 #0 ~IDENTIFIED~ ~HELMET~ EQUIP // TWOHANDED
 
 LAF ux_cre_compile STR_VAR name = "athar" code = "ath" END
