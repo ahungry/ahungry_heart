@@ -1,21 +1,66 @@
 (use ./lib/dialog)
 (load-imports)
 
-(var banter-1-tree
-     (say {:cond [(g "ux_olrun_is_bantering")
-                  (g "ux_olrun_banter_id" 0)]}
-          "This is our first banter"
-          (rep {:code [(ig "ux_olrun_banter_id")]}
-               "Cool!")
-          (rep "Not now..." (mute :olrun))))
+(var
+ banters-to-player
+ [
+  (s {:cond [(g "ux_olrun_is_bantering")
+             (g "ux_olrun_banter_id" 0)]}
+     "Hey <CHARNAME>, a coin fer your thoughts?"
+     (r {:code [(ig "ux_olrun_banter_id") "GiveGoldForce(1)"]}
+        "I could always use some coin, what is it Olrun?"
+        (s "You really had to deal with a lot of crap lately.  Are you holding up and
+ hanging in there?"
+           (r "I'm the most amazing I've ever been!"
+              (s "Hah!  I knew a little thing like the death of all your relatives
+ wouldn't get ya down!  But, on a more serious note, if you need an ear to lay your
+ troubles on, you can direct those woes this way, I'm here for ya."
+                 (r "Thanks Olrun, I appreciate your selfless offer."
+                    (s "Of course <CHARNAME>!"))
+                 (r "That's good to hear, I'm not actually as well as I implied, it would
+ be good to have someone to lean on sometime."
+                    (s "I'm here for you."))))
+           (r "I wouldn't say I'm doing great, but I'm not feeling too stressed either."
+              (s "That's a pretty ambivalent attitude <CHARNAME>, you should let your emotions
+ shine through, for better o' worse, there's no point in bottling it all up.  You'll be nothing
+ more than a mindless zombie at that rate."
+                 (r "Did I ask for your thoughts, or did you ask for mine?"
+                    (s "Touche"))
+                 (r "That's something to think on, thanks Olrun."
+                    (s "No doubt!"))))
+           (r "I'm horribly depressed.  I actually haven't felt this vulnerable in a long time, if ever."
+              (s "Wow <CHARNAME>, you are really opening up early.  That's an unhindered answer if I ever
+ saw one.  I appreciate your trusting in me."
+                 (r "Sike!  I'm just pulling your leg, I'm fine."
+                    (s "If you say so."))
+                 (r "Of course Olrun, and I'm hoping you can trust in me as well."
+                    (s "We'll see, although I don't see any reason not to."))))))
 
-(var banter-2-tree
-     (say {:cond [(g "ux_olrun_is_bantering")
-                  (g "ux_olrun_banter_id" 1)]}
-          "This is our second banter"
-          (rep {:code [(ig "ux_olrun_banter_id")]}
-               "Cool!")
-          (rep "Not now..." (mute :olrun))))
+     (r "Not now..." (mute :olrun)))
+
+  (s {:cond [(g "ux_olrun_is_bantering")
+             (g "ux_olrun_banter_id" 1)]}
+     "Hey yo, <CHARNAME>, 2 coins for yer ear this time!"
+     (r {:code [(ig "ux_olrun_banter_id") "GiveGoldForce(2)"]}
+        "I never say no to a gold or two, what's up Olrun?"
+        (s "What's your favorite kind of weapon?"
+           (r "I love swords, the way they cut, just so exciting."
+              (s "Hmm yea, can't go wrong with a good blade.  I'm a fan of hammers
+ myself - if you didn't figure it out."))
+           (r "A good blunt weapon is where it's at.  The feeling of smashing
+ my target as I bludgeon them to death.  Give me a hammer, mace or flail any day!"
+              (s "Now that's music to me ears!"))
+           (r "I love anything that lets me kill from a safe distance.  I'd much rather
+ be sitting a hundred yards away, plinking my foes down before I'm anywhere close
+ to having to smell them."
+              (s "Ah, you should have some words with Anari, she's of a similar mind."))
+           (r "The only weapon I need is my staff or spellbook, I enjoy summoning
+ mystic forces and watching my enemies suffer."
+              (s "Remind me not to get on your bad side."))
+           (r "Violence?  Eww... I prefer to solve my problems with songs or diplomacy."
+              (s "Hmm, no love for a good battle full of combat eh?"))))
+     (r "Not now..." (mute :olrun)))
+ ])
 
 (var pid-1-tree
      (say {:cond ["IsGabber(Player1)"
@@ -118,8 +163,7 @@
             (rep "Nevermind...")))))
 
 (defn main [& args]
-  (var b1 (build-dialog banter-1-tree))
-  (var b2 (build-dialog banter-2-tree))
+  (var b1 (string/join (map build-dialog banters-to-player) "\n"))
   (var p1 (build-dialog pid-1-tree))
   (var p2 (build-dialog pid-2-tree))
-  (string/format "BEGIN uxolrj\n%s" (string/join [b1 b2 p1 p2])))
+  (string/format "BEGIN uxolrj\n%s" (string/join [b1 p1 p2])))

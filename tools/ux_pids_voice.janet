@@ -16,7 +16,10 @@
  a similar set of conditions.  Are you certain that you do not need someone to share
  your problems with?"
                  (r "Thank you for your concern.  I assure you, I am doing fine."
-                    (s "That's good to hear."))))
+                    (s "That's good to hear."))
+                 (r "I appreciate that Voice, you saw through my front, and if I'm
+ feeling vulnerable, I'll reach out in the future."
+                    (s "Absolutely friend, I am here for you."))))
            (r "I feel fine.  I'm not under duress of any sort.  While my scenario is
  unfortunate, I don't feel that it's effected me in any meaningful way."
               (s "I am surprised to hear that <CHARNAME>, I would expect that the
