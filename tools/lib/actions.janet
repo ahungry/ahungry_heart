@@ -13,6 +13,12 @@
 (defn rsgt [s &opt i]
   (string/format "RealSetGlobalTimer(\"%s\", \"GLOBAL\", %d)" s (or i 1)))
 
+(defn nrgte [s]
+  (string/format "!RealGlobalTimerExpired(\"%s\", \"GLOBAL\")" s))
+
+(defn rgte [s]
+  (string/format "RealGlobalTimerExpired(\"%s\", \"GLOBAL\")" s))
+
 # See: https://gibberlings3.github.io/iesdp/files/ids/bgee/gtimes.htm
 # Use something like SEVEN_HOURS
 (defn sgt [s i]

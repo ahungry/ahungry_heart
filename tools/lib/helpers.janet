@@ -12,6 +12,11 @@
                     (rsgt "ux_voice_banter_timer" banter-timer)
                     (rsgt "ux_olrun_banter_timer" banter-timer)
                     (rsgt "ux_zariel_banter_timer" banter-timer)
+                    (rsgt "ux_athar_chillout_timer" chillout-timer-intro)
+                    (rsgt "ux_anari_chillout_timer" chillout-timer-intro)
+                    (rsgt "ux_voice_chillout_timer" chillout-timer-intro)
+                    (rsgt "ux_olrun_chillout_timer" chillout-timer-intro)
+                    (rsgt "ux_zariel_chillout_timer" chillout-timer-intro)
                     (rsgt "ux_urgent_timer" 3)
                     (jp :uxana)
                     (jp :uxath)
@@ -24,6 +29,7 @@
        (rep {:cond [(state 20)]
              :code [(sg "ux_state" 30)
                     (rsgt (string/format "ux_%s_banter_timer" who) banter-timer)
+                    (rsgt (string/format "ux_%s_chillout_timer" who) chillout-timer)
                     (rsgt "ux_urgent_timer" 3)
                     (jp)]}
             "I can't join your group, but I would love to have you join mine.")
