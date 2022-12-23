@@ -40,7 +40,7 @@
 
   (s {:cond [(g "ux_olrun_is_bantering")
              (g "ux_olrun_banter_id" 1)]}
-     "Hey yo, <CHARNAME>, 2 coins for yer ear this time!"
+     "Hey yo, <CHARNAME>, 2 coins for yer ear this time?"
      (r {:code [(ig "ux_olrun_banter_id") "GiveGoldForce(2)"]}
         "I never say no to a gold or two, what's up Olrun?"
         (s "What's your favorite kind of weapon?"
@@ -94,15 +94,15 @@
          (s "Sure <CHARNAME>, what did ya wanna know?"
             (r "What was your early life like?"
                (s "Oh boy, lessee... I'm originally from a dwarven community, as if
- that weren't obvious.  We are a bit of a sub-group in Baldur's Gate, no exotic
+ that much wasn't obvious.  We were a bit of a sub-group in Baldur's Gate, no exotic
  region or from deep underground or at the top of the mountains or anything like that."
                   (r "Wow, a dwarf that isn't even from a proper dwarven location,
  I think I've heard enough."
                      (s "Hah!  Good, I was done sharing with you anyways."))
                   (r "That's interesting Olrun, what was it like being part of a
  smaller community within the large city?"
-                     (s "Thanks were always good, I had a prosperous upbringing, although
- far from nobility's wealth and riches.  My siblings and I would always set out on an
+                     (s "Things were good.  I had a prosperous upbringing, though
+ far from nobility's wealth and riches.  My siblings and I would often set out on an
  excursion, trained in the ways of adventurin' from my elders."))))
 
             (r "What types of things do you enjoy?"
