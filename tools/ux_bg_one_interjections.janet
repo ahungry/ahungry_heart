@@ -18,15 +18,27 @@
 
 (defn joia [slot]
   (ict-once :joia slot
-             [[athar "<CHARNAME>, where are your manners?  Let us help this poor woman."]
+             [[athar "<CHARNAME>, let us help this poor woman."]
               [anari "That sounds horrid, I hate the hobgoblins!"]
               [voice "The audacity of some fiends cannot be understated."]
               [olrun "The only good hobgoblin is a dead hobgoblin."]
               [zariel "Oh boy, a ring, shiny!"]]
              "Ok, so anyways... will you help?"))
 
+(defn commoner [slot]
+  (ict-once :mtowfr slot
+            [[athar "Conversing with the yeoman, a noble path."]
+             [anari "Some are not as informative as others."]
+             [zariel "You can't beat a good gossip."]
+             [olrun "That's some good info right there!"]
+             [voice "I believe that information could be useful."]
+             ]
+            "Who asked you."))
+
 (defn main [& args]
   (string/join
    [
     (joia 1)
+    (joia 3)
+    ;(map commoner (range 0 26))
     ] "\n"))

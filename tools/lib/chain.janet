@@ -108,8 +108,17 @@
          (dialogue->== dialogue)
          ))
 
+# For some reason, randomizing in the sort fn itself won't work, but
+# this seems fine,
+(defn rand-sort [xs]
+  (var sort-weights (map (fn [x] {:val x :rng (math/random)}) xs))
+  (->> (sorted-by (fn [x] (get x :rng)) sort-weights)
+       (map |(get $0 :val))))
+
+# TODO: In addition to the reverse, maybe add a random shuffle here
+# We might be able to incorporate a Random call in the response itself.
 (defn ict-once [append-to slot raw-dialogues closing-line]
-  (var dialogues (reverse raw-dialogues))
+  (var dialogues (rand-sort raw-dialogues))
   (var icts @[])
   (var participants (map get-uxj (get-participants dialogues)))
   (for i 0 (length dialogues)
@@ -119,6 +128,6 @@
     (array/push
      icts
      (ict append-to slot
-          (=== (get-uxj who) msg exclusion-list)
+          (=== (get-uxj who) msg [(string/format "RandomNum(5, %d)" i) ;exclusion-list])
           (=== append-to closing-line [(is-valid-for-party-dialogue (get-uxj who)) ;exclusion-list]))))
   (string/join icts "\n"))
