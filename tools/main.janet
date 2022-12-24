@@ -26,6 +26,8 @@
 (import ./ux_party_banters :as party-banters)
 (import ./ux_bg_one_interjections :as bg1-interjections)
 
+(math/seedrandom (os/cryptorand 8))
+
 (defn main [& args]
   (populate-tras-from-file "../lang/english/game.tra")
 
