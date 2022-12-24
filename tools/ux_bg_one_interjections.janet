@@ -32,8 +32,7 @@
              [zariel "You can't beat a good gossip."]
              [olrun "That's some good info right there!"]
              [voice "I believe that information could be useful."]
-             ]
-            "Who asked you."))
+             ]))
 
 (defn cook [slot]
   (ict-once :mcook2 slot
@@ -41,7 +40,9 @@
              [anari "I was just passing through, your meal is alright, but nothing to compare to home."]
              [olrun "Hah!  Best watch your tone with me mister!"]
              [voice "I apologize for intruding."]
-             [zariel "Hey, I just wanted a snack, gimme a break!"]] "Scram!"))
+             [zariel "Hey, I just wanted a snack, gimme a break!"]]
+            "Scram!"
+            "Git!"))
 
 (defn main [& args]
   (string/join

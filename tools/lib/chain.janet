@@ -117,7 +117,7 @@
 
 # TODO: In addition to the reverse, maybe add a random shuffle here
 # We might be able to incorporate a Random call in the response itself.
-(defn ict-once [append-to slot raw-dialogues closing-line]
+(defn ict-once [append-to slot raw-dialogues & closing-lines]
   (var dialogues (rand-sort raw-dialogues))
   (var icts @[])
   (var participants (map get-uxj (get-participants dialogues)))
@@ -127,7 +127,11 @@
     (def exclusion-list (map nip (array/slice participants (+ 1 i))))
     (array/push
      icts
-     (ict append-to slot
-          (=== (get-uxj who) msg [;exclusion-list])
-          (=== append-to closing-line [(is-valid-for-party-dialogue (get-uxj who)) ;exclusion-list]))))
+     (if (> (length closing-lines) 0)
+       (ict append-to slot
+            (=== (get-uxj who) msg [;exclusion-list])
+            (=== append-to (get (rand-sort closing-lines) 0)
+                 [(is-valid-for-party-dialogue (get-uxj who)) ;exclusion-list]))
+       (ict append-to slot
+           (=== (get-uxj who) msg [;exclusion-list]) ))))
   (string/join icts "\n"))
