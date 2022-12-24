@@ -128,6 +128,6 @@
     (array/push
      icts
      (ict append-to slot
-          (=== (get-uxj who) msg [(string/format "RandomNum(5, %d)" i) ;exclusion-list])
+          (=== (get-uxj who) msg [;exclusion-list])
           (=== append-to closing-line [(is-valid-for-party-dialogue (get-uxj who)) ;exclusion-list]))))
   (string/join icts "\n"))
