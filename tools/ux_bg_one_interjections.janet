@@ -35,10 +35,19 @@
              ]
             "Who asked you."))
 
+(defn cook [slot]
+  (ict-once :mcook2 slot
+            [[athar "I could have went for a nice bite..."]
+             [anari "I was just passing through, your meal is alright, but nothing to compare to home."]
+             [olrun "Hah!  Best watch your tone with me mister!"]
+             [voice "I apologize for intruding."]
+             [zariel "Hey, I just wanted a snack, gimme a break!"]] "Scram!"))
+
 (defn main [& args]
   (string/join
    [
     (joia 1)
     (joia 3)
     ;(map commoner (range 0 26))
+    (cook 0)
     ] "\n"))

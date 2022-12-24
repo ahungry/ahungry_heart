@@ -29,7 +29,7 @@
                     (s "So thick a needle couldn't pierce it perhaps."))
                  (r "That may be the case.  I've never been great at opening up to others."
                     (s "You can let your guard down around me <CHARNAME>.  Feel free to open up."))))
-           (r "I am complete miserable.  Why would you even ask that?  Things have just been hard
+           (r "I am completely miserable.  Why would you even ask that?  Things have just been hard
  lately...so very hard."
               (s "I'm sorry to hear that <CHARNAME>.  I am genuinely sympathetic to your plight,
  and it is good to see that you are able to share your dismay with me."
