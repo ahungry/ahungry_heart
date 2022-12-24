@@ -21,6 +21,14 @@
     :voice :uxvoi
     :athar :uxath kw))
 
+(defn get-uxj [kw]
+  (case kw
+    :anari :uxanaj
+    :zariel :uxzarj
+    :olrun :uxolrj
+    :voice :uxvoij
+    :athar :uxathj kw))
+
 (defn get-uxb [kw]
   (case kw
     :anari :uxbana
@@ -99,3 +107,18 @@
          (get-uxb (get-speaker dialogue)) (get-intro dialogue) codes
          (dialogue->== dialogue)
          ))
+
+(defn ict-once [append-to slot raw-dialogues closing-line]
+  (var dialogues (reverse raw-dialogues))
+  (var icts @[])
+  (var participants (map get-uxj (get-participants dialogues)))
+  (for i 0 (length dialogues)
+    (def who (get (get dialogues i) 0))
+    (def msg (get (get dialogues i) 1))
+    (def exclusion-list (map nip (array/slice participants (+ 1 i))))
+    (array/push
+     icts
+     (ict append-to slot
+          (=== (get-uxj who) msg exclusion-list)
+          (=== append-to closing-line [(is-valid-for-party-dialogue (get-uxj who)) ;exclusion-list]))))
+  (string/join icts "\n"))
