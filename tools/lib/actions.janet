@@ -88,17 +88,35 @@
      (sg (string/format "ux_in_party_%s" (string who))))
     "JoinParty()"))
 
-(defn is-valid-for-party-dialogue [who]
-  (string/format "IsValidForPartyDialogue(\"%s\")" (string who)))
+(defn strip-j [s]
+  (string/slice s 0 (- (length s) 1)))
+
+(defn nip [who]
+  (string/format "!IsValidForPartyDialogue(\"%s\")" (string who)))
+
+(defn is-valid-for-party-dialogue
+  "This should in general always get something like :uxathj as the input, however
+when we do, we want to make sure the trailing `j` is stripped off, as it won't work
+in the check itself."
+  [who]
+  (if (not= 106 (last (string who)))
+    "" # If the j charcode is not last, just skip this check entirely
+    (string/format "IsValidForPartyDialogue(\"%s\")" (strip-j (string who)))))
 
 (defn see [who]
   (string/format "See(\"%s\")" (string who)))
+
+(defn not-see [who]
+  (string/format "!See(\"%s\")" (string who)))
 
 (defn state-check [who state]
   (string/format "StateCheck(\"%s\", %s)" (string who) state))
 
 (defn not-state-check [who state]
   (string/format "!StateCheck(\"%s\", %s)" (string who) state))
+
+(defn cannot-talk [who]
+  (state-check who "CD_STATE_NOTVALID"))
 
 (defn can-talk [who]
   (not-state-check who "CD_STATE_NOTVALID"))

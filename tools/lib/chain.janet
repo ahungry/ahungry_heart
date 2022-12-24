@@ -43,7 +43,7 @@
   (string/format "  == %s IF ~%s %s~ THEN %s DO ~%s~\n"
                  (string who)
                  (is-valid-for-party-dialogue who)
-                 ifs
+                 (string/join ifs " ")
                  (traify s)
                  (string/join rest "\n")))
 

@@ -90,6 +90,7 @@ ACTION_IF GAME_IS ~eet~ BEGIN
 END
 
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/ux_party_banters.d~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dialogues/ux_bg_one_interjections.d~
 
 // The following is appending what we wrote in AR1000.baf to the bottom of
 // AR1000.bcs
