@@ -16,6 +16,7 @@
 #    (=== :uxathj "<CHARNAME>, where are your manners?" [])
 #    (=== :joia "Ok, so anyways... will you help?" [])))
 
+# BEG: FAI
 (defn joia [slot]
   (ict-once :joia slot
              [[athar "<CHARNAME>, let us help this poor woman."]
@@ -94,7 +95,9 @@
              [olrun "Time to go make some wooly spider crunch... err, wrong game."]
              [voice "I better memorize some Slow Poison if we are to deal with such creatures."]
              [zariel "Better write all that down, that's quite a shopping list!"]]))
+# END: FAI
 
+# BEG: Otw to Nashkel
 (defn jase [slot]
   (ict-once :jase slot
             [[athar "Children really shouldn't be out on their own."]
@@ -112,7 +115,9 @@
              [voice "This one has a haughty air about him."]
              [zariel "Oh, a costume party?  Exciting!"]]
             "Yes, so as I was saying..."))
+# END: Otw to Nashkel
 
+# BEG: Nashkel
 (defn neira [slot]
   (ict-once :neira slot
             [[athar "Perhaps we can reason with her."]
@@ -153,6 +158,39 @@
              [olrun "We'll help ya out little one."]
              [voice "This young person needs our assistance."]
              [zariel "This seems like something we can help with."]]))
+# END: Nashkel
+
+# BEG: Nashkel Carnival
+
+# Talking about Prism
+(defn performer [slot]
+  (ict-once :pnashk slot
+            [[athar "The church highly values art, we should investigate."]
+             [anari "It sounds like a local mystery is before us."]
+             [olrun "Sounds like this sculptor is in over his head."]
+             [voice "Many in the temples of Talos, Helm, and Lathander highly value artists.
+ We may wish to assist."]
+             [zariel "We should find this sculptor, I bet he could reward us with some type
+ of commission."]]))
+
+(defn gazib [slot]
+  (ict-once :gazib slot
+            [[athar "This should be entertaining."]
+             [anari "Eww, an exploding ogre?"]
+             [olrun "Hah!  Can't wait to see how big the boom is!"]
+             [voice "This is going to be quite a show I presume."]
+             [zariel "Oh boy!  I love a grotesque show, lets watch some entrails fly!"]]))
+
+(defn farmer [slot]
+  (ict-once :farmbe slot
+            [[athar "It can be hard being a farmer."]
+             [anari "I feel for this man, it must be difficult living as such."]
+             [olrun "To be so weak, the slightest plight could ruin one so, a shame."]
+             [voice "He is but a simple man, a pity we cannot do more to help him."]
+             [zariel "If you're trying to tell us life ain't easy, you're preaching to
+ the choir friend."]]))
+
+# END: Nashkel Carnival
 
 (defn main [& args]
   (string/join
@@ -178,4 +216,7 @@
     ;(map nashkel-female-commoner (range 14 18))
     (nashkel-child-good 0)
     ;(map nashkel-child-bad (range 1 8))
+    ;(map performer (range 0 4))
+    (gazib 0)
+    ;(map farmer (range 0 9))
     ] "\n"))
