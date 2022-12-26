@@ -104,6 +104,48 @@
              [zariel "You're lucky to have parents, run along back to 'em now."]]
             "Hmph."))
 
+(defn foresh [slot]
+  (ict-once :foresh slot
+            [[athar "Lord Ribald?  I wonder if he speaks of the Adventurer's Mart purveyor?"]
+             [anari "I think he may be mocking us."]
+             [olrun "Ah, an appreciation for my suave looks, about time!"]
+             [voice "This one has a haughty air about him."]
+             [zariel "Oh, a costume party?  Exciting!"]]
+            "Yes, so as I was saying..."))
+
+(defn neira [slot]
+  (ict-once :neira slot
+            [[athar "Perhaps we can reason with her."]
+             [anari "<CHARNAME>, do not waste your breath here, she has already made up her mind."]
+             [olrun "Lets make her work for her coin."]
+             [voice "I sense a purely evil intention."]
+             [zariel "I think she has a bit 'o coin that'll be ours soon."]]
+            "Was I addressing you peon?"))
+
+(defn nashkel-male-commoner [slot]
+  (ict-once :mtowna slot
+            [[athar "This sounds like something we should investigate."]
+             [anari "I feel that we have a good opportunity to help."]
+             [olrun "Let us venture forth into the mines!"]
+             [voice "It is our duty to see what we may do to assist."]
+             [zariel "This town needs some help, and doing so might help us get a little richer."]]))
+
+(defn nashkel-female-commoner [slot]
+  (ict-once :ftowna slot
+            [[athar "She seems distressed, we must aid her."]
+             [anari "Let us look further into this issue."]
+             [olrun "Helping here is a heroes duty."]
+             [voice "She may be unable to help herself, but we can certainly do so."]
+             [zariel "Hey lady, don't dismay, we'll give you a hand."]]))
+
+(defn nashkel-child [slot]
+  (ict-once :chilna slot
+            [[athar "Ah, the joys of youth."]
+             [anari "Such excitement."]
+             [olrun "Hah, sounds like a good time!"]
+             [voice "Such innocence among the young ones."]
+             [zariel "We need to check that out!"]]))
+
 (defn main [& args]
   (string/join
    [
@@ -119,5 +161,12 @@
     (landri 1)
     (landri 2)
     (jase 0)
+    (foresh 0)
     (cook 0)
+    (neira 0)
+    ;(map nashkel-male-commoner (range 0 6))
+    ;(map nashkel-male-commoner (range 14 19))
+    ;(map nashkel-female-commoner (range 0 6))
+    ;(map nashkel-female-commoner (range 14 17))
+    ;(map nashkel-child (range 0 7))
     ] "\n"))
