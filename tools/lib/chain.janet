@@ -133,5 +133,5 @@
             (=== append-to (get (rand-sort closing-lines) 0)
                  [(is-valid-for-party-dialogue (get-uxj who)) ;exclusion-list]))
        (ict append-to slot
-           (=== (get-uxj who) msg [;exclusion-list]) ))))
+            (=== (get-uxj who) msg [;exclusion-list]) ))))
   (string/join icts "\n"))
