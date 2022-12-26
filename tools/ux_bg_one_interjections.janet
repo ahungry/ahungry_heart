@@ -138,7 +138,7 @@
              [voice "She may be unable to help herself, but we can certainly do so."]
              [zariel "Hey lady, don't dismay, we'll give you a hand."]]))
 
-(defn nashkel-child [slot]
+(defn nashkel-child-good [slot]
   (ict-once :chilna slot
             [[athar "Ah, the joys of youth."]
              [anari "Such excitement."]
@@ -146,13 +146,21 @@
              [voice "Such innocence among the young ones."]
              [zariel "We need to check that out!"]]))
 
+(defn nashkel-child-bad [slot]
+  (ict-once :chilna slot
+            [[athar "Poor kid, we need to lend a hand."]
+             [anari "No child should have to deal with this."]
+             [olrun "We'll help ya out little one."]
+             [voice "This young person needs our assistance."]
+             [zariel "This seems like something we can help with."]]))
+
 (defn main [& args]
   (string/join
    [
     (joia 1)
     (joia 3)
-    ;(map commoner (range 0 18))
-    ;(map fcommoner (range 0 11))
+    ;(map commoner (range 0 19))
+    ;(map fcommoner (range 0 12))
     (whelp-cordial 1)
     (whelp-eye 2)
     (dorn 0)
@@ -164,9 +172,10 @@
     (foresh 0)
     (cook 0)
     (neira 0)
-    ;(map nashkel-male-commoner (range 0 6))
-    ;(map nashkel-male-commoner (range 14 19))
-    ;(map nashkel-female-commoner (range 0 6))
-    ;(map nashkel-female-commoner (range 14 17))
-    ;(map nashkel-child (range 0 7))
+    ;(map nashkel-male-commoner (range 0 7))
+    ;(map nashkel-male-commoner (range 14 20))
+    ;(map nashkel-female-commoner (range 0 7))
+    ;(map nashkel-female-commoner (range 14 18))
+    (nashkel-child-good 0)
+    ;(map nashkel-child-bad (range 1 8))
     ] "\n"))
