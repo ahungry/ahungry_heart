@@ -210,6 +210,22 @@
              [zariel "You don't seem so fair to me."]]
             "Well, shall we face the impossible or not?"))
 
+(defn mulahe [slot]
+  (ict-once :mulahe slot
+            [[athar "This one isn't too bright, but we may get more info if we can charm him."]
+             [anari "Not a paradigm of intellect, we may get more out of him if we can charm him."]
+             [olrun "What a buffoon, though we may get more info if we can charm him."]
+             [voice "Allow me to cast charm before engaging, I think we'll find out a bit more."]
+             [zariel "Yikes, this one isn't too bright.  Put a charm on him, we may find out more."]]
+            "Huh, what're they sayin?  So, why are you here?"))
+
+(defn mulahe-charm [slot]
+  (ict-once :mulahe slot
+            [[athar "I think he has outlived his usefulness."]
+             [anari "Time to put this one out of his misery."]
+             [olrun "Well, I'd say it's time to give this one a good beating."]
+             [voice "Let us proceed with what is necessary."]
+             [zariel "Lets send this one to the afterlife now."]]))
 # mulahe - do we want a dialog or not
 
 # END: Nashkel Mine
@@ -243,4 +259,6 @@
     ;(map farmer (range 0 9))
     ;(map nashkel-miner (range 0 12))
     (xan 1)
+    (mulahe 0)
+    (mulahe-charm 7)
     ] "\n"))
