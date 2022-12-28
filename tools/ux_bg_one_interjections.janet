@@ -190,7 +190,29 @@
              [zariel "If you're trying to tell us life ain't easy, you're preaching to
  the choir friend."]]))
 
+(defn nashkel-miner [slot]
+  (ict-once :minern slot
+            [[athar "Fear not friend, we are here to assist."]
+             [anari "Let us help clear your mines."]
+             [olrun "Don't worry bud, I'm here to smash some skulls."]
+             [voice "Your prayers are answered, we are here to help."]
+             [zariel "You guys are only a step above livin' on the street, we'll do what we can."]]))
+
 # END: Nashkel Carnival
+
+# BEG: Nashkel Mine
+(defn xan [slot]
+  (ict-once :xan slot
+            [[athar "Dear elf, we'll see you are able to leave safely."]
+             [anari "Xan, your troubles are at an end, you are safe now."]
+             [olrun "What's wrong with living as a dwarf?"]
+             [voice "Fear not friend, we are here to help."]
+             [zariel "You don't seem so fair to me."]]
+            "Well, shall we face the impossible or not?"))
+
+# mulahe - do we want a dialog or not
+
+# END: Nashkel Mine
 
 (defn main [& args]
   (string/join
@@ -219,4 +241,6 @@
     ;(map performer (range 0 4))
     (gazib 0)
     ;(map farmer (range 0 9))
+    ;(map nashkel-miner (range 0 12))
+    (xan 1)
     ] "\n"))
