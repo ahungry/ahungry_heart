@@ -75,6 +75,15 @@
 (defn state<= [n]
   (glt "ux_state" (+ n 1)))
 
+(defn chapter= [n]
+  (g "Chapter" n))
+
+(defn chapter>= [n]
+  (ggt "Chapter" (- n 1)))
+
+(defn chapter<= [n]
+  (glt "Chapter" (+ n 1)))
+
 (defn lp [&opt who]
   (if who
     (ao who "LeaveParty()")

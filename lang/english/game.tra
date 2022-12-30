@@ -684,7 +684,6 @@
 @000760 = ~Conversing with the yeoman, a noble path.~
 @000762 = ~I am completely miserable.  Why would you even ask that?  Things have just been hard lately...so very hard.~
 @000764 = ~Hey, I just wanted a snack, gimme a break!~
-@000765 = ~Scram!~
 @000766 = ~I apologize for intruding.~
 @000767 = ~I could have went for a nice bite...~
 @000768 = ~Hah!  Best watch your tone with me mister!~
@@ -789,3 +788,8 @@
 @000879 = ~Lets send this one to the afterlife now.~
 @000880 = ~Well, I'd say it's time to give this one a good beating.~
 @000881 = ~Time to put this one out of his misery.~
+@000883 = ~Scram!~
+@000886 = ~What should we do?~
+@000888 = ~Where should we go now?~
+@000889 = ~Just enjoy the prologue, I don't think we have much to do.~
+@000890 = ~I believe we should investigate what's happening near the Friendly Arm Inn.~

@@ -1,5 +1,6 @@
 (use ./lib/dialog)
 (load-imports)
+(use ./ux_chapter_pids)
 
 (var
  banters-to-player
@@ -138,6 +139,9 @@
                  (s "I'm sorry you're sorry."))))
 
         (r "I changed my mind." (s "Fine."))))
+
+
+    ;(chapter-reply-say-blocks :athar)
 
     (r {:cond [(state>= 70)
                "OR(5)"
