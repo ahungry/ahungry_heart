@@ -105,7 +105,8 @@
      "Athar, can we talk about you for a bit?"
      (s "Certainly <CHARNAME>, about what?"
 
-        (r "What was your early life like?"
+        (r {:cond ["RandomNum(3, 1)"]}
+           "What was your early life like?"
            (s "My family is from the noble caste.  I'm originally from Baldur's Gate myself, although my
  parents traveled there soon after getting married.  They still reside there, however I'm rarely home
  due to all my adventuring."
@@ -119,7 +120,8 @@
                     (r "You sound like a stuck up twit." (s "Quite rude."))))
               (r "That's enough about that topic." (s "As you wish."))))
 
-        (r "What types of things do you enjoy?"
+        (r {:cond ["RandomNum(3, 2)"]}
+           "What types of things do you enjoy?"
            (s "I'm quite fond of music.  I've been trying to get better at playing
  a lute, though I'm far from a bard."
               (r "So, a paladin by career, and a bard by hobby?"
@@ -128,7 +130,8 @@
  a good whack of my shield."))
               (r "Ok, thanks for sharing." (s "Absolutely."))))
 
-        (r "What do you look for in a friend?"
+        (r {:cond ["RandomNum(3, 3)"]}
+           "What do you look for in a friend?"
            (s "I believe in having a strong sense of virtue.  One must be pure of heart and
  mind, or at least be attempting to better oneself into doing so. A moderate demeanor is also
  important - fanatacism can be quite troublesome."
