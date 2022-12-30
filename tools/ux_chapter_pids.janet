@@ -7,6 +7,8 @@
 # Chapter 2 = Past Nashkel, no Mulahey
 # Chapter 3 = Killed Mulahey
 
+# Should be one higher than our actual listing
+(def chapters-defined 4)
 (def Chapter
   @{
     :q0 "What should we do?"
@@ -15,6 +17,12 @@
     :q1 "Where should we go now?"
     1 "I think you needed to head to the Friendly Arm Inn?"
 
+    :q2 "What were we supposed to do again?"
+    2 "I believe we need to investigate the Nashkel mines, or talk to the Mayor about it."
+
+    :q3 "Now that Mulahey is dead, what should we do?"
+    3 "Lets head back to Nashkel to report our progress."
+
     :question (fn [self chapter] (get self (keyword (string "q" chapter))))
     :answer (fn [self chapter] (get self chapter))
     })
@@ -22,6 +30,7 @@
 (def ChapterAthar
   (table/setproto
    @{
+     1 "I believe we should investigate what's happening near the Friendly Arm Inn."
      1 "I believe we should investigate what's happening near the Friendly Arm Inn."
     } Chapter))
 
@@ -67,7 +76,7 @@
   (map
    (fn [chapter]
      (let [[question answer] (chapter-lookup who chapter)]
-       (r {:code [(rsgt (string "ux_" who "_chillout_timer") chillout-timer)
-                  (chapter= chapter)]}
+       (r {:cond [(chapter= chapter)]
+           :code [(rsgt (string "ux_" who "_chillout_timer") chillout-timer)]}
           question
-          (s answer)))) (range 0 2)))
+          (s answer)))) (range 0 chapters-defined)))

@@ -140,7 +140,6 @@
 
         (r "I changed my mind." (s "Fine."))))
 
-
     ;(chapter-reply-say-blocks :athar)
 
     (r {:cond [(state>= 70)
