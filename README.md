@@ -57,7 +57,7 @@ make regen
 
 ## What's the Janet stuff?
 
-I wrote a custom dialog tree AST in Janet (as well as convenience
+I wrote a custom dialogue tree DSL in Janet (as well as convenience
 functions) so that I didn't have to code in the BASIC like language
 that is tp2.  The building command produces the proper output for a
 standard Infinity Engine mod from it.
