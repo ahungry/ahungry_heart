@@ -34,6 +34,34 @@ https://www.gibberlings3.net/forums/topic/36224-the-first-ai-designed-mod-the-he
 
 ## Add (reuse?) the Areas
 
+# Dev Notes
+
+## Why the "ux" prefix on mod elements?
+
+Per community registry here: http://www.blackwyrmlair.net/prefixes/ I
+have the "ux" prefix, so each mod asset/script etc. needs to start
+with it (mirror: https://dark0dave.github.io/bg_mod_prefixes_mirror/).
+
+## Dependencies for building
+
+- Janet 1.3 https://janet-lang.org/
+
+## Building
+
+Preferably after `make local-install` or `make install` if the
+`dialogues` directory is missing.
+
+```
+make regen
+```
+
+## What's the Janet stuff?
+
+I wrote a custom dialog tree AST in Janet (as well as convenience
+functions) so that I didn't have to code in the BASIC like language
+that is tp2.  The building command produces the proper output for a
+standard Infinity Engine mod from it.
+
 # License
 
 ## Source code:
